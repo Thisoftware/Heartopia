@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heartopia 货币系统 - 六种货币用途·免费获取攻略</title>
+<meta name="description" content="Heartopia 货币系统完整解析，心钻、许愿星、月光晶石等6种货币的用途和免费获取方式。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.dg-table{width:100%;border-collapse:collapse;font-size:13px;}
+.dg-table th{background:var(--surface2);padding:8px 10px;text-align:left;font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.05em;text-transform:uppercase;border-bottom:1px solid var(--border);}
+.dg-table td{padding:8px 10px;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top;line-height:1.5;}
+.dg-table tr:last-child td{border-bottom:none;}
+.dg-table .lv{font-weight:600;color:var(--text);white-space:nowrap;}
+.dg-table .unlock{color:var(--pink);font-weight:500;}
+.dg-highlight{background:var(--pink-light)!important;}
+.energy-bar-wrap{background:var(--surface2);border-radius:10px;height:10px;overflow:hidden;margin:6px 0 4px;}
+.energy-bar{height:100%;border-radius:10px;background:linear-gradient(90deg,var(--teal),#5dd8c0);}
+.mat-row{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:13px;}
+.mat-row:last-child{border-bottom:none;}
+.mat-icon{font-size:18px;min-width:24px;}
+.mat-info{flex:1;}
+.mat-name{font-weight:500;color:var(--text);}
+.mat-how{color:var(--text2);font-size:12px;margin-top:2px;line-height:1.5;}
+.method-row{display:flex;gap:10px;margin-bottom:8px;align-items:flex-start;}
+.method-pts{min-width:80px;font-size:12px;font-weight:600;padding:3px 8px;border-radius:10px;background:var(--surface);border:1px solid var(--border);color:var(--text2);text-align:center;flex-shrink:0;}
+.method-text{font-size:13px;color:var(--text2);line-height:1.5;}
+.tip-line{font-size:11px;color:var(--text3);margin-top:2px;}
+.reward-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-top:12px;}
+.reward-chip{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:8px 10px;}
+.reward-chip .lv{font-size:11px;color:var(--text3);margin-bottom:3px;}
+.reward-chip .rv{font-size:13px;font-weight:500;}
+.hobby-row{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);}
+.hobby-row:last-child{border-bottom:none;}
+.hobby-icon-box{width:38px;height:38px;border-radius:var(--radius-sm);background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.hobby-info{flex:1;}
+.hobby-name{font-size:13px;font-weight:500;}
+.hobby-tip{font-size:12px;color:var(--text2);line-height:1.5;margin-top:2px;}
+.hobby-btn{font-size:12px;color:var(--text2);padding:4px 10px;border-radius:var(--radius-sm);border:1px solid var(--border);cursor:pointer;background:var(--surface);white-space:nowrap;font-family:"Noto Sans SC",sans-serif;}
+.currency-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.currency-card{border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;background:var(--surface2);}
+.currency-name{font-size:13px;font-weight:500;margin-bottom:4px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.currency-use{font-size:12px;color:var(--text2);line-height:1.5;margin-bottom:5px;}
+.currency-how{font-size:11px;color:var(--text3);}
+.event-item{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--border);}
+.event-item:last-child{border-bottom:none;}
+.event-date{font-size:11px;color:var(--text3);min-width:80px;padding-top:2px;}
+.event-name{font-size:13px;font-weight:500;}
+.event-desc{font-size:12px;color:var(--text2);margin-top:2px;line-height:1.5;}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--border);margin-top:5px;flex-shrink:0;}
+.dot-active{background:var(--teal);}
+.check-tag{font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600;flex-shrink:0;margin-top:2px;}
+.tag-medal{background:#fdf0cc;color:#8a6200;}
+.tag-gold{background:var(--green-light);color:var(--green);}
+.tag-daily{background:var(--teal-light);color:#0e7a62;}
+.tag-explore{background:var(--purple-light);color:var(--purple);}
+</style>
+</head>
+<body>
+<div id="header-placeholder"></div>
+<main class="main">
+
+<div class="notice warn">⚠️ 游戏内货币种类繁多，新手建议先搞清楚哪些可以免费获取，再决定是否消费。</div>
+
+    <div class="guide-block">
+      <h3>💎 货币一览</h3>
+      <div class="currency-grid">
+        <div class="currency-card">
+          <p class="currency-name">💎 心钻（Heart Diamonds）<span class="badge badge-paid">付费</span></p>
+          <p class="currency-use">顶级通用货币，可购买几乎所有高级内容</p>
+          <p class="currency-how">主要途径：充值购买</p>
+        </div>
+        <div class="currency-card">
+          <p class="currency-name">🌙 月光晶石（Moonlight Crystals）<span class="badge badge-both">可免</span></p>
+          <p class="currency-use">用于购买粉色抽卡券（Pink Gacha Coins）</p>
+          <p class="currency-how">日常任务、活动、心钻兑换</p>
+        </div>
+        <div class="currency-card">
+          <p class="currency-name">🎫 粉色抽卡券<span class="badge badge-both">可免</span></p>
+          <p class="currency-use">用于抽取特殊道具和皮肤</p>
+          <p class="currency-how">月光晶石兑换 / 每日任务</p>
+        </div>
+        <div class="currency-card">
+          <p class="currency-name">🎟️ 展览通行证（Exhibition Pass）<span class="badge badge-both">可免</span></p>
+          <p class="currency-use">限时活动开箱，获取限定家具/服装</p>
+          <p class="currency-how">活动奖励 / 心钻购买</p>
+        </div>
+        <div class="currency-card">
+          <p class="currency-name">🏅 贡献勋章<span class="badge badge-free">免费</span></p>
+          <p class="currency-use">提升开发者公会等级，解锁游戏功能</p>
+          <p class="currency-how">日常任务、NPC 委托</p>
+        </div>
+        <div class="currency-card">
+          <p class="currency-name">⭐ 许愿星（Wishing Stars）<span class="badge badge-both">可免</span></p>
+          <p class="currency-use">限时卡池抽取服装和家具</p>
+          <p class="currency-how">活动、登录奖励、心钻兑换</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="guide-block">
+      <h3>🆓 免费玩家货币建议</h3>
+      <ol class="step-list">
+        <li>优先用贡献勋章提升公会等级，解锁更多免费内容</li>
+        <li>每日任务积攒月光晶石，专注某一个抽卡池，不要分散</li>
+        <li>活动展览通行证能免费获取，提前关注活动时间</li>
+        <li>限定内容通常会在后续活动重新出现，不必为了错过而消费</li>
+        <li>优先购买对游戏进度有帮助的道具，而非纯装饰品</li>
+      </ol>
+    </div>
+
+</main>
+<div id="footer-placeholder"></div>
+<script src="common.js"></script>
+<script>
+  document.getElementById('header-placeholder').innerHTML = renderHeader('currency');
+  document.getElementById('footer-placeholder').innerHTML = renderFooter();
+  function toggleNPC(card){var body=card.querySelector('.npc-body'),chevron=card.querySelector('.chevron'),isOpen=body.classList.contains('open');body.classList.toggle('open',!isOpen);chevron.classList.toggle('open',!isOpen);}
+  function filterNPC(cat,btn){document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('on'));btn.classList.add('on');document.querySelectorAll('.npc-card').forEach(c=>{c.style.display=(cat==='all'||c.dataset.cat===cat)?'':'none';});}
+  function toggleCheck(li){li.classList.toggle('done');li.querySelector('.check-box').textContent=li.classList.contains('done')?'✓':'';}
+</script>
+</body>
+</html>
