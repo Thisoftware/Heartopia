@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heartopia 工具中心 - 計算器·追蹤器·資料庫 - 繁體中文版</title>
+<meta name="description" content="Heartopia 全套在线工具，包含利潤計算器、好感度追蹤器、重置倒計時、農作物規劃器等，一站提升游戏效率。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.tool-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem; margin-bottom:10px; display:flex; gap:14px; align-items:flex-start; transition:border-color .15s,box-shadow .15s; text-decoration:none; color:inherit; }
+.tool-card:hover { border-color:var(--pink-mid); box-shadow:var(--shadow); }
+.tool-icon-box { width:48px; height:48px; border-radius:var(--radius-sm); display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0; }
+.tool-info { flex:1; }
+.tool-title { font-size:15px; font-weight:500; margin-bottom:4px; display:flex; align-items:center; gap:8px; }
+.tool-desc { font-size:13px; color:var(--text2); line-height:1.5; margin-bottom:8px; }
+.tool-tags { display:flex; gap:6px; flex-wrap:wrap; }
+.tool-arrow { color:var(--text3); font-size:18px; align-self:center; flex-shrink:0; }
+</style>
+</head>
+<body>
+<div id="header-placeholder"></div>
+<main class="main">
+
+<div class="hero">
+  <h1>🛠️ 工具中心</h1>
+  <p>計算器 · 追蹤器 · 資料庫 · 互動地图 — 全套在线工具</p>
+</div>
+
+<div class="stats-row">
+  <div class="stat-chip"><div class="sv">7</div><div class="sl">在线工具</div></div>
+  <div class="stat-chip"><div class="sv">本地</div><div class="sl">資料儲存</div></div>
+  <div class="stat-chip"><div class="sv">实时</div><div class="sl">倒計時更新</div></div>
+  <div class="stat-chip"><div class="sv">免费</div><div class="sl">全部免费</div></div>
+</div>
+
+<div class="section-label">🧮 計算器</div>
+
+<a href="tool-profit.html" class="tool-card">
+  <div class="tool-icon-box" style="background:#fce8f2">💰</div>
+  <div class="tool-info">
+    <div class="tool-title">利潤計算器 <span class="badge badge-new">热门</span></div>
+    <div class="tool-desc">計算烹飪 vs 原材料的最优卖出方案，支持品質加成和 D.G. 会员倍率，含釣魚 ROI 分析和快速参考表。</div>
+    <div class="tool-tags"><span class="badge badge-free">烹飪利潤</span><span class="badge badge-free">釣魚 ROI</span><span class="badge badge-free">快速参考</span></div>
+  </div>
+  <span class="tool-arrow">→</span>
+</a>
+
+<a href="crops.html" class="tool-card">
+  <div class="tool-icon-box" style="background:#e8f5e2">🌱</div>
+  <div class="tool-info">
+    <div class="tool-title">農作物規劃器</div>
+    <div class="tool-desc">输入地塊数量和規劃天数，自动推荐最优種植方案。含 24 种作物完整資料庫，按日利潤、生长速度排序篩選。</div>
+    <div class="tool-tags"><span class="badge badge-free">24 种作物</span><span class="badge badge-free">日利潤排行</span><span class="badge badge-free">規劃器</span></div>
+  </div>
+  <span class="tool-arrow">→</span>
+</a>
+
+<div class="section-label">📋 追蹤器</div>
+
+<a href="tool-timer.html" class="tool-card">
+  <div class="tool-icon-box" style="background:#e0f7f2">⏱️</div>
+  <div class="tool-info">
+    <div class="tool-title">重置倒計時 <span class="badge badge-new">实时</span></div>
+    <div class="tool-desc">实时顯示距每日重置和周常重置的剩余时间，自动换算你的本地时间。内置今日任務打勾清單，实时追蹤完成进度。</div>
+    <div class="tool-tags"><span class="badge badge-free">每日倒計時</span><span class="badge badge-free">周常倒計時</span><span class="badge badge-free">任務清單</span></div>
+  </div>
+  <span class="tool-arrow">→</span>
+</a>
+
+<a href="tool-friendship.html" class="tool-card">
+  <div class="tool-icon-box" style="background:#fce8f2">💕</div>
+  <div class="tool-info">
+    <div class="tool-title">好感度追蹤器</div>
+    <div class="tool-desc">记录每个 NPC 的好感度等级和今日是否已送礼，浏览器本地儲存，含每位 NPC 的最爱禮物快速查看。</div>
+    <div class="tool-tags"><span class="badge badge-free">13 个 NPC</span><span class="badge badge-free">本地儲存</span><span class="badge badge-free">禮物提示</span></div>
+  </div>
+  <span class="tool-arrow">→</span>
+</a>
+
+<a href="daily.html" class="tool-card">
+  <div class="tool-icon-box" style="background:#e0f7f2">✅</div>
+  <div class="tool-info">
+    <div class="tool-title">每日清單</div>
+    <div class="tool-desc">完整的每日任務清單，分必做、建議做、别忘了找三个優先级，含體力管理指南和周常目标追蹤。</div>
+    <div class="tool-tags"><span class="badge badge-free">三级優先级</span><span class="badge badge-free">體力管理</span><span class="badge badge-free">周常提醒</span></div>
+  </div>
+  <span class="tool-arrow">→</span>
+</a>
+
+<div class="section-label">📚 資料庫</div>
+
+<a href="fish.html" class="tool-card">
+  <div class="tool-icon-box" style="background:#edf3ff">🐟</div>
+  <div class="tool-info">
+    <div class="tool-title">魚類圖鑑</div>
+    <div class="tool-desc">94 种魚類完整记录，含釣魚地点、出现天气、时段、售價，支持多维度篩選，高利潤鱼速查表。</div>
+    <div class="tool-tags"><span class="badge badge-free">94 种鱼</span><span class="badge badge-free">可篩選</span><span class="badge badge-free">利潤排行</span></div>
+  </div>
+  <span class="tool-arrow">→</span>
+</a>
+
+<a href="recipes.html" class="tool-card">
+  <div class="tool-icon-box" style="background:#fff3cc">🍳</div>
+  <div class="tool-info">
+    <div class="tool-title">食譜圖鑑</div>
+    <div class="tool-desc">98 种食譜完整資料，含烹飪等级、食材来源、售價、利潤，支持按等级和分类篩選，附利潤 Top 10 排行。</div>
+    <div class="tool-tags"><span class="badge badge-free">98 种食譜</span><span class="badge badge-free">利潤排行</span><span class="badge badge-free">食材来源</span></div>
+  </div>
+  <span class="tool-arrow">→</span>
+</a>
+
+<a href="bugs.html" class="tool-card">
+  <div class="tool-icon-box" style="background:#ede8f8">🦋</div>
+  <div class="tool-info">
+    <div class="tool-title">昆蟲圖鑑</div>
+    <div class="tool-desc">76 种昆蟲完整记录，含出现地点、时段、天气条件、售價，支持多条件篩選，附捉蟲效率技巧。</div>
+    <div class="tool-tags"><span class="badge badge-free">76 种昆蟲</span><span class="badge badge-free">可篩選</span><span class="badge badge-free">效率技巧</span></div>
+  </div>
+  <span class="tool-arrow">→</span>
+</a>
+
+<a href="birds.html" class="tool-card">
+  <div class="tool-icon-box" style="background:#e0f7f2">🐦</div>
+  <div class="tool-info">
+    <div class="tool-title">鳥類圖鑑</div>
+    <div class="tool-desc">68 种鳥類完整记录，含出现地点、时段、拍照技巧、照片价值，支持篩選，附拍照效率路线。</div>
+    <div class="tool-tags"><span class="badge badge-free">68 种鳥類</span><span class="badge badge-free">拍照技巧</span><span class="badge badge-free">可篩選</span></div>
+  </div>
+  <span class="tool-arrow">→</span>
+</a>
+
+<div class="section-label">🗺️ 地图</div>
+
+<a href="map.html" class="tool-card">
+  <div class="tool-icon-box" style="background:#e8f5e2">🗺️</div>
+  <div class="tool-info">
+    <div class="tool-title">互動地图 <span class="badge badge-new">新上线</span></div>
+    <div class="tool-desc">标注全镇 NPC 位置、商店、釣魚点、資源節點、野生动物，點擊標記查看详情，支持分类篩選和路线規劃。</div>
+    <div class="tool-tags"><span class="badge badge-free">NPC 位置</span><span class="badge badge-free">釣魚点</span><span class="badge badge-free">資源節點</span><span class="badge badge-free">路线規劃</span></div>
+  </div>
+  <span class="tool-arrow">→</span>
+</a>
+
+</main>
+<div id="footer-placeholder"></div>
+<script src="common.js"></script>
+<script>
+document.getElementById('header-placeholder').innerHTML = renderHeader('tools');
+document.getElementById('footer-placeholder').innerHTML = renderFooter();
+</script>
+</body>
+</html>

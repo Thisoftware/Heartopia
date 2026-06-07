@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heartopia D.G. 公會等级攻略 - 升級路线·解鎖内容表 - 繁體中文版</title>
+<meta name="description" content="Heartopia 開發者公會等级完整攻略，貢獻勳章獲取、關鍵解鎖節點、最快升級路线。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.dg-table{width:100%;border-collapse:collapse;font-size:13px;}
+.dg-table th{background:var(--surface2);padding:8px 10px;text-align:left;font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.05em;text-transform:uppercase;border-bottom:1px solid var(--border);}
+.dg-table td{padding:8px 10px;border-bottom:1px solid var(--border);color:var(--text2);vertical-align:top;line-height:1.5;}
+.dg-table tr:last-child td{border-bottom:none;}
+.dg-table .lv{font-weight:600;color:var(--text);white-space:nowrap;}
+.dg-table .unlock{color:var(--pink);font-weight:500;}
+.dg-highlight{background:var(--pink-light)!important;}
+.energy-bar-wrap{background:var(--surface2);border-radius:10px;height:10px;overflow:hidden;margin:6px 0 4px;}
+.energy-bar{height:100%;border-radius:10px;background:linear-gradient(90deg,var(--teal),#5dd8c0);}
+.mat-row{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);font-size:13px;}
+.mat-row:last-child{border-bottom:none;}
+.mat-icon{font-size:18px;min-width:24px;}
+.mat-info{flex:1;}
+.mat-name{font-weight:500;color:var(--text);}
+.mat-how{color:var(--text2);font-size:12px;margin-top:2px;line-height:1.5;}
+.method-row{display:flex;gap:10px;margin-bottom:8px;align-items:flex-start;}
+.method-pts{min-width:80px;font-size:12px;font-weight:600;padding:3px 8px;border-radius:10px;background:var(--surface);border:1px solid var(--border);color:var(--text2);text-align:center;flex-shrink:0;}
+.method-text{font-size:13px;color:var(--text2);line-height:1.5;}
+.tip-line{font-size:11px;color:var(--text3);margin-top:2px;}
+.reward-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-top:12px;}
+.reward-chip{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-sm);padding:8px 10px;}
+.reward-chip .lv{font-size:11px;color:var(--text3);margin-bottom:3px;}
+.reward-chip .rv{font-size:13px;font-weight:500;}
+.hobby-row{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);}
+.hobby-row:last-child{border-bottom:none;}
+.hobby-icon-box{width:38px;height:38px;border-radius:var(--radius-sm);background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.hobby-info{flex:1;}
+.hobby-name{font-size:13px;font-weight:500;}
+.hobby-tip{font-size:12px;color:var(--text2);line-height:1.5;margin-top:2px;}
+.hobby-btn{font-size:12px;color:var(--text2);padding:4px 10px;border-radius:var(--radius-sm);border:1px solid var(--border);cursor:pointer;background:var(--surface);white-space:nowrap;font-family:"Noto Sans SC",sans-serif;}
+.currency-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.currency-card{border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px;background:var(--surface2);}
+.currency-name{font-size:13px;font-weight:500;margin-bottom:4px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
+.currency-use{font-size:12px;color:var(--text2);line-height:1.5;margin-bottom:5px;}
+.currency-how{font-size:11px;color:var(--text3);}
+.event-item{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--border);}
+.event-item:last-child{border-bottom:none;}
+.event-date{font-size:11px;color:var(--text3);min-width:80px;padding-top:2px;}
+.event-name{font-size:13px;font-weight:500;}
+.event-desc{font-size:12px;color:var(--text2);margin-top:2px;line-height:1.5;}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--border);margin-top:5px;flex-shrink:0;}
+.dot-active{background:var(--teal);}
+.check-tag{font-size:10px;padding:2px 7px;border-radius:10px;font-weight:600;flex-shrink:0;margin-top:2px;}
+.tag-medal{background:#fdf0cc;color:#8a6200;}
+.tag-gold{background:var(--green-light);color:var(--green);}
+.tag-daily{background:var(--teal-light);color:#0e7a62;}
+.tag-explore{background:var(--purple-light);color:var(--purple);}
+</style>
+</head>
+<body>
+<div id="header-placeholder"></div>
+<main class="main">
+
+<div class="notice">🎖️ D.G.（開發者公會）等级是游戏的主进度条，几乎所有核心功能都需要它解鎖。免费玩家和付费玩家每日可获勳章数量相同，稳定日常比氪金更重要。</div>
+
+    <div class="section-label">升級方法</div>
+    <div class="guide-block">
+      <h3>🏅 貢獻勳章獲取途径</h3>
+      <div class="method-row">
+        <span class="method-pts">日常委託 ★★★</span>
+        <div>
+          <p class="method-text"><strong>每天 5 次居民委託</strong>，每次 +10 勳章，共 +50 勳章</p>
+          <p class="tip-line">每日 6:00 AM（伺服器时间）重置，不累计！这是最稳定的来源</p>
+        </div>
+      </div>
+      <div class="method-row">
+        <span class="method-pts">主线剧情 ★★★</span>
+        <div>
+          <p class="method-text"><strong>推进主线任務</strong>，每个節點给大量勳章并解鎖新功能</p>
+          <p class="tip-line">约 90% 的游戏内容需要主线推进才能解鎖，切勿只做日常</p>
+        </div>
+      </div>
+      <div class="method-row">
+        <span class="method-pts">周常任務 ★★☆</span>
+        <div>
+          <p class="method-text"><strong>每周目标</strong>，獎勵 30–50 勳章（D.G. 13 级后解鎖更多）</p>
+          <p class="tip-line">每周六 6:00 AM 重置，提前規劃好本周目标</p>
+        </div>
+      </div>
+      <div class="method-row">
+        <span class="method-pts">小游戏活動 ★☆☆</span>
+        <div>
+          <p class="method-text"><strong>活動排名獎勵</strong>，额外 +5–15 勳章</p>
+          <p class="tip-line">D.G. 13 级后收益显著，可以考虑参与</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-label">等级解鎖表（關鍵節點）</div>
+    <div class="guide-block" style="padding: 0; overflow: hidden;">
+      <table class="dg-table">
+        <thead>
+          <tr><th>D.G. 等级</th><th>解鎖内容</th><th>重要度</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="lv">等级 0</td><td>初始小屋 · 工作台 · 镐头 · 修复包 · 釣魚愛好</td><td>—</td></tr>
+          <tr><td class="lv">等级 1</td><td>園藝愛好（找 Blanc）· 仓库解鎖</td><td>⭐⭐⭐</td></tr>
+          <tr><td class="lv">等级 2</td><td>向 Albert Jr. 出售物品 · 烹飪愛好（找 Massimo）</td><td>⭐⭐⭐</td></tr>
+          <tr><td class="lv">等级 3</td><td>捉蟲愛好（找 Naniwa）</td><td>⭐⭐</td></tr>
+          <tr class="dg-highlight"><td class="lv">等级 5</td><td class="unlock">第一次地塊扩建 · 觀鳥愛好（找 Bailey J）</td><td>⭐⭐⭐</td></tr>
+          <tr><td class="lv">等级 7</td><td>参与活動资格（如嘉年华）</td><td>⭐⭐⭐</td></tr>
+          <tr class="dg-highlight"><td class="lv">等级 8</td><td class="unlock">联机共建（Co-op 建造）</td><td>⭐⭐⭐</td></tr>
+          <tr><td class="lv">等级 10</td><td>仓库容量扩展 · 更多地塊</td><td>⭐⭐</td></tr>
+          <tr><td class="lv">等级 13</td><td>周常任務獎勵大幅提升（30–50 勳章）</td><td>⭐⭐</td></tr>
+          <tr class="dg-highlight"><td class="lv">等级 20+</td><td class="unlock">高级地塊 · 岛屿功能 · 传送装置（Order Machine）</td><td>⭐⭐⭐</td></tr>
+          <tr><td class="lv">等级 27</td><td>互動家具升級 · 专属套装家具解鎖</td><td>⭐⭐</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="notice warn">⚠️ 勳章是<strong>时间门控</strong>的，每天上限固定，存钱氪金买不到更多勳章（付费仅有 1.1 倍金币加成）。稳定每日登录完成 5 次委託远比偶尔爆肝有效。</div>
+
+    <div class="section-label">操作建議</div>
+    <div class="guide-block">
+      <h3>📋 D.G. 升級最优路线</h3>
+      <ol class="step-list">
+        <li>打开手机图标 → 找"D.G. 会员公會"图标（左上角星形），查看当前勳章数和升級所需</li>
+        <li>每天<strong>先做完 5 次日常委託</strong>，再推主线，再做其他</li>
+        <li>不要忘记每周六前完成<strong>周常目标</strong>，獎勵远大于日常</li>
+        <li>凑够勳章后手动點擊"升級"按钮，不会自动升</li>
+        <li>升級后立刻查看新解鎖的功能并優先体验，部分解鎖内容有时间限制</li>
+      </ol>
+    </div>
+
+</main>
+<div id="footer-placeholder"></div>
+<script src="common.js"></script>
+<script>
+  document.getElementById('header-placeholder').innerHTML = renderHeader('dg');
+  document.getElementById('footer-placeholder').innerHTML = renderFooter();
+  function toggleNPC(card){var body=card.querySelector('.npc-body'),chevron=card.querySelector('.chevron'),isOpen=body.classList.contains('open');body.classList.toggle('open',!isOpen);chevron.classList.toggle('open',!isOpen);}
+  function filterNPC(cat,btn){document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('on'));btn.classList.add('on');document.querySelectorAll('.npc-card').forEach(c=>{c.style.display=(cat==='all'||c.dataset.cat===cat)?'':'none';});}
+  function toggleCheck(li){li.classList.toggle('done');li.querySelector('.check-box').textContent=li.classList.contains('done')?'✓':'';}
+</script>
+</body>
+</html>

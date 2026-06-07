@@ -10,19 +10,19 @@ body{display:flex;align-items:center;justify-content:center;min-height:100vh;fle
 .logo-big{font-family:'Outfit',sans-serif;font-size:32px;font-weight:700;color:var(--pink)}
 .logo-big span{color:var(--text)}
 .lang-picks{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-.lang-pick{padding:10px 24px;border-radius:var(--radius);border:1px solid var(--border);background:var(--surface);font-size:15px;text-decoration:none;color:var(--text);transition:all .15s;font-family:'Noto Sans SC',sans-serif}
+.lang-pick{padding:10px 24px;border-radius:var(--radius);border:1px solid var(--border);background:var(--surface);font-size:15px;text-decoration:none;color:var(--text);transition:all .15s;font-family:'Inter', 'Noto Sans SC',sans-serif}
 .lang-pick:hover{border-color:var(--pink-mid);color:var(--pink);box-shadow:var(--shadow)}
 .lang-pick.primary{background:var(--pink);color:white;border-color:var(--pink)}
 p{font-size:13px;color:var(--text3)}
 </style>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="logo-big">♥ <span>Heartopia</span></div>
 <p>Select your language / 选择语言 / 選擇語言</p>
 <div class="lang-picks">
-  <a href="zh/index.html" class="lang-pick primary">🇨🇳 简体中文</a>
-  <a href="zh-tw/index.html" class="lang-pick">🇹🇼 繁體中文</a>
+  <a href="zh/index.html" class="lang-pick primary">🇨🇳  简体 中文</a>
+  <a href="zh-tw/index.html" class="lang-pick">🇹🇼  繁體 中文</a>
   <a href="en/index.html" class="lang-pick">🇬🇧 English</a>
 </div>
 <script>
@@ -33,7 +33,7 @@ p{font-size:13px;color:var(--text3)}
   } else if (lang.startsWith('zh')) {
     location.replace('zh/index.html');
   } else if (!lang.startsWith('zh')) {
-    // 非中文语言先不自动跳转，让用户选择（避免中文用户被跳到英文）
+    // 非中文语言先不自动跳转，让Use the 户选择（避免中文Use the 户被跳到英文）
     // location.replace('en/index.html');
   }
 </script>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heartopia 农作物数据库 - 全24种作物生长时间·利润·季节</title>
+<meta name="description" content="Heartopia 农作物完整数据库，24种作物的种子价格、生长时间、售价、每日利润和季节，附农作物规划工具。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.best-badge { background:var(--green-light); color:var(--green); font-size:10px; padding:2px 7px; border-radius:10px; font-weight:700; }
+.season-tag { font-size:11px; padding:2px 6px; border-radius:6px; font-weight:600; }
+.s-spring { background:#fce8f2; color:#c0336e; }
+.s-summer { background:#fff3cc; color:#8a6000; }
+.s-autumn { background:#fde8d8; color:#a04010; }
+.s-winter { background:#e8f0fe; color:#2d5fbe; }
+.s-all { background:var(--teal-light); color:#0e7a62; }
+.planner-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-bottom:12px; }
+@media(max-width:500px){ .planner-grid{grid-template-columns:1fr 1fr;} }
+</style>
+</head>
+<body>
+<div id="header-placeholder"></div>
+<main class="main">
+
+<div class="hero">
+  <h1>🌱 农作物数据库</h1>
+  <p>24 种作物 · 生长时间 · 每日利润 · 季节 · 规划器</p>
+</div>
+
+<div class="stats-row">
+  <div class="stat-chip"><div class="sv">24</div><div class="sl">作物种类</div></div>
+  <div class="stat-chip"><div class="sv">1天</div><div class="sl">最快生长</div></div>
+  <div class="stat-chip"><div class="sv">草莓</div><div class="sl">最高日利润</div></div>
+  <div class="stat-chip"><div class="sv">Blanc</div><div class="sl">种子导师</div></div>
+</div>
+
+<div class="notice tip">💡 农作物是烹饪食材的核心来源，优先种植高日利润作物，同时配合烹饪食谱获得更高收益（料理售价是原材料 3–4 倍）。</div>
+
+<!-- 规划器 -->
+<div class="guide-block">
+  <h3>🗓️ 作物规划器</h3>
+  <div class="planner-grid">
+    <div class="input-group">
+      <label style="font-size:12px;color:var(--text2);font-weight:500;display:block;margin-bottom:5px">可用地块数</label>
+      <input type="number" id="p-plots" value="4" min="1" max="18" style="width:100%;padding:8px 12px;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--surface2);font-size:14px;font-family:'Noto Sans SC',sans-serif;outline:none">
+    </div>
+    <div class="input-group">
+      <label style="font-size:12px;color:var(--text2);font-weight:500;display:block;margin-bottom:5px">规划天数</label>
+      <input type="number" id="p-days" value="7" min="1" max="30" style="width:100%;padding:8px 12px;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--surface2);font-size:14px;font-family:'Noto Sans SC',sans-serif;outline:none">
+    </div>
+    <div class="input-group">
+      <label style="font-size:12px;color:var(--text2);font-weight:500;display:block;margin-bottom:5px">目标</label>
+      <select id="p-goal" style="width:100%;padding:8px 12px;border-radius:var(--radius-sm);border:1px solid var(--border);background:var(--surface2);font-size:13px;font-family:'Noto Sans SC',sans-serif;outline:none">
+        <option value="profit">最大利润</option>
+        <option value="cooking">烹饪食材</option>
+        <option value="fast">最快收获</option>
+      </select>
+    </div>
+  </div>
+  <button onclick="runPlanner()" style="padding:10px 20px;border-radius:var(--radius-sm);border:none;background:var(--pink);color:white;font-size:14px;font-family:'Noto Sans SC',sans-serif;font-weight:500;cursor:pointer">生成种植方案</button>
+  <div id="planner-result" style="margin-top:12px;display:none"></div>
+</div>
+
+<!-- 筛选 -->
+<div class="guide-block">
+  <h3>🔍 筛选作物</h3>
+  <div class="filter-row">
+    <input type="text" id="crop-search" placeholder="搜索作物名..." oninput="filterCrops()" style="flex:2;min-width:120px">
+    <select id="crop-season" onchange="filterCrops()">
+      <option value="">所有季节</option>
+      <option>春季</option><option>夏季</option><option>秋季</option><option>冬季</option><option>全年</option>
+    </select>
+    <select id="crop-sort" onchange="filterCrops()">
+      <option value="profit">按日利润排序</option>
+      <option value="grow">按生长时间排序</option>
+      <option value="price">按售价排序</option>
+    </select>
+  </div>
+  <p id="crop-count" style="font-size:12px;color:var(--text3);margin-top:4px">显示全部 24 种作物</p>
+</div>
+
+<!-- 完整数据表 -->
+<div class="guide-block" style="padding:0;overflow:hidden">
+  <div style="padding:1rem 1.25rem 0.75rem;border-bottom:1px solid var(--border)">
+    <h3 style="margin-bottom:0">📊 完整农作物图鉴</h3>
+  </div>
+  <div style="overflow-x:auto">
+    <table class="data-table" id="crop-table">
+      <thead>
+        <tr>
+          <th>作物</th><th>种子价格</th><th>生长天数</th><th>售价</th><th>日利润</th><th>用途</th><th>季节</th>
+        </tr>
+      </thead>
+      <tbody id="crop-tbody">
+        <tr data-season="春季" data-grow="2" data-profit="35" data-price="80"><td class="name">🍓 草莓</td><td>30G</td><td>2天</td><td>80G</td><td class="profit">+35G/天 <span class="best-badge">最高</span></td><td>甜点·果汁</td><td><span class="season-tag s-spring">春季</span></td></tr>
+        <tr data-season="全年" data-grow="1" data-profit="30" data-price="50"><td class="name">🥕 胡萝卜</td><td>20G</td><td>1天</td><td>50G</td><td class="profit">+30G/天</td><td>烹饪·礼物</td><td><span class="season-tag s-all">全年</span></td></tr>
+        <tr data-season="夏季" data-grow="3" data-profit="27" data-price="100"><td class="name">🍅 番茄</td><td>20G</td><td>3天</td><td>100G</td><td class="profit">+27G/天</td><td>沙拉·意面</td><td><span class="season-tag s-summer">夏季</span></td></tr>
+        <tr data-season="全年" data-grow="1" data-profit="25" data-price="40"><td class="name">🥬 生菜</td><td>15G</td><td>1天</td><td>40G</td><td class="profit">+25G/天</td><td>沙拉</td><td><span class="season-tag s-all">全年</span></td></tr>
+        <tr data-season="秋季" data-grow="4" data-profit="24" data-price="115"><td class="name">🎃 南瓜</td><td>20G</td><td>4天</td><td>115G</td><td class="profit">+24G/天</td><td>汤·甜点</td><td><span class="season-tag s-autumn">秋季</span></td></tr>
+        <tr data-season="春季" data-grow="3" data-profit="22" data-price="85"><td class="name">🌷 郁金香</td><td>19G</td><td>3天</td><td>85G</td><td class="profit">+22G/天</td><td>装饰·礼物</td><td><span class="season-tag s-spring">春季</span></td></tr>
+        <tr data-season="夏季" data-grow="2" data-profit="20" data-price="60"><td class="name">🥒 黄瓜</td><td>20G</td><td>2天</td><td>60G</td><td class="profit">+20G/天</td><td>沙拉</td><td><span class="season-tag s-summer">夏季</span></td></tr>
+        <tr data-season="全年" data-grow="2" data-profit="18" data-price="55"><td class="name">🧅 洋葱</td><td>19G</td><td>2天</td><td>55G</td><td class="profit">+18G/天</td><td>烹饪基础</td><td><span class="season-tag s-all">全年</span></td></tr>
+        <tr data-season="秋季" data-grow="3" data-profit="18" data-price="72"><td class="name">🍄 蘑菇</td><td>18G</td><td>3天</td><td>72G</td><td class="profit">+18G/天</td><td>汤·派（高价值）</td><td><span class="season-tag s-autumn">秋季</span></td></tr>
+        <tr data-season="夏季" data-grow="4" data-profit="17" data-price="87"><td class="name">🌽 玉米</td><td>19G</td><td>4天</td><td>87G</td><td class="profit">+17G/天</td><td>沙拉·烤制</td><td><span class="season-tag s-summer">夏季</span></td></tr>
+        <tr data-season="全年" data-grow="2" data-profit="16" data-price="50"><td class="name">🌿 香草</td><td>18G</td><td>2天</td><td>50G</td><td class="profit">+16G/天</td><td>调味·料理</td><td><span class="season-tag s-all">全年</span></td></tr>
+        <tr data-season="冬季" data-grow="3" data-profit="15" data-price="62"><td class="name">❄️ 冬葱</td><td>17G</td><td>3天</td><td>62G</td><td class="profit">+15G/天</td><td>汤品·调味</td><td><span class="season-tag s-winter">冬季</span></td></tr>
+        <tr data-season="春季" data-grow="4" data-profit="14" data-price="74"><td class="name">🫐 蓝莓</td><td>18G</td><td>4天</td><td>74G</td><td class="profit">+14G/天</td><td>甜点·果汁</td><td><span class="season-tag s-spring">春季</span></td></tr>
+        <tr data-season="全年" data-grow="3" data-profit="13" data-price="58"><td class="name">🧄 大蒜</td><td>19G</td><td>3天</td><td>58G</td><td class="profit">+13G/天</td><td>调味·料理</td><td><span class="season-tag s-all">全年</span></td></tr>
+        <tr data-season="夏季" data-grow="5" data-profit="13" data-price="82"><td class="name">🍆 茄子</td><td>17G</td><td>5天</td><td>82G</td><td class="profit">+13G/天</td><td>烹饪·装饰</td><td><span class="season-tag s-summer">夏季</span></td></tr>
+        <tr data-season="秋季" data-grow="5" data-profit="12" data-price="78"><td class="name">🥦 西兰花</td><td>18G</td><td>5天</td><td>78G</td><td class="profit">+12G/天</td><td>沙拉·汤</td><td><span class="season-tag s-autumn">秋季</span></td></tr>
+        <tr data-season="冬季" data-grow="4" data-profit="11" data-price="62"><td class="name">🫚 萝卜</td><td>18G</td><td>4天</td><td>62G</td><td class="profit">+11G/天</td><td>汤品</td><td><span class="season-tag s-winter">冬季</span></td></tr>
+        <tr data-season="春季" data-grow="5" data-profit="11" data-price="73"><td class="name">🌻 向日葵</td><td>18G</td><td>5天</td><td>73G</td><td class="profit">+11G/天</td><td>装饰·礼物</td><td><span class="season-tag s-spring">春季</span></td></tr>
+        <tr data-season="全年" data-grow="3" data-profit="10" data-price="47"><td class="name">🌾 小麦</td><td>17G</td><td>3天</td><td>47G</td><td class="profit">+10G/天</td><td>面粉·烘焙</td><td><span class="season-tag s-all">全年</span></td></tr>
+        <tr data-season="冬季" data-grow="5" data-profit="9" data-price="62"><td class="name">🍠 甘薯</td><td>17G</td><td>5天</td><td>62G</td><td class="profit">+9G/天</td><td>汤·甜点</td><td><span class="season-tag s-winter">冬季</span></td></tr>
+        <tr data-season="夏季" data-grow="6" data-profit="9" data-price="70"><td class="name">🍉 西瓜</td><td>16G</td><td>6天</td><td>70G</td><td class="profit">+9G/天</td><td>饮料·甜点</td><td><span class="season-tag s-summer">夏季</span></td></tr>
+        <tr data-season="秋季" data-grow="6" data-profit="8" data-price="65"><td class="name">🍇 葡萄</td><td>17G</td><td>6天</td><td>65G</td><td class="profit">+8G/天</td><td>饮料·甜点</td><td><span class="season-tag s-autumn">秋季</span></td></tr>
+        <tr data-season="冬季" data-grow="7" data-profit="7" data-price="65"><td class="name">❄️ 冰晶花</td><td>16G</td><td>7天</td><td>65G</td><td class="profit">+7G/天</td><td>装饰·礼物</td><td><span class="season-tag s-winter">冬季</span></td></tr>
+        <tr data-season="春季" data-grow="7" data-profit="6" data-price="58"><td class="name">🌸 樱花</td><td>16G</td><td>7天</td><td>58G</td><td class="profit">+6G/天</td><td>装饰·节日</td><td><span class="season-tag s-spring">春季</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</main>
+<div id="footer-placeholder"></div>
+<script src="common.js"></script>
+<script>
+document.getElementById('header-placeholder').innerHTML = renderHeader('hobbies');
+document.getElementById('footer-placeholder').innerHTML = renderFooter();
+
+const plannerData = {
+  profit: { crops: ['草莓','胡萝卜','番茄'], tip: '最大化金币收益，优先种高日利润作物' },
+  cooking: { crops: ['蘑菇','番茄','胡萝卜'], tip: '以烹饪食材为主，蘑菇是高价食谱的核心原料' },
+  fast: { crops: ['胡萝卜','生菜','香草'], tip: '1天生长作物可快速回本，适合短期规划' }
+};
+
+function runPlanner() {
+  const plots = parseInt(document.getElementById('p-plots').value) || 4;
+  const days = parseInt(document.getElementById('p-days').value) || 7;
+  const goal = document.getElementById('p-goal').value;
+  const p = plannerData[goal];
+  const profitMap = { '草莓':35,'胡萝卜':30,'番茄':27,'生菜':25,'蘑菇':18,'香草':16 };
+  const perCrop = Math.ceil(plots / p.crops.length);
+  let totalProfit = 0;
+  let rows = p.crops.map(c => {
+    const d = profitMap[c] || 20;
+    const t = d * days * perCrop;
+    totalProfit += t;
+    return `<tr><td class="name">${c}</td><td>${perCrop} 块</td><td>+${d}G/天</td><td class="profit">+${t}G</td></tr>`;
+  }).join('');
+  document.getElementById('planner-result').style.display = 'block';
+  document.getElementById('planner-result').innerHTML = `
+    <p style="font-size:13px;color:var(--text2);margin-bottom:10px">💡 ${p.tip}</p>
+    <table class="data-table"><thead><tr><th>推荐作物</th><th>分配地块</th><th>日利润</th><th>${days}天总利润</th></tr></thead>
+    <tbody>${rows}<tr style="font-weight:700"><td colspan="3">合计（${plots}块地 × ${days}天）</td><td class="profit">+${totalProfit}G</td></tr></tbody></table>`;
+}
+
+function filterCrops() {
+  const q = document.getElementById('crop-search').value.toLowerCase();
+  const season = document.getElementById('crop-season').value;
+  const sort = document.getElementById('crop-sort').value;
+  const tbody = document.getElementById('crop-tbody');
+  let rows = Array.from(tbody.querySelectorAll('tr'));
+  rows.forEach(r => {
+    const text = r.textContent.toLowerCase();
+    const rs = r.dataset.season || '';
+    const show = (!q || text.includes(q)) && (!season || rs === season);
+    r.style.display = show ? '' : 'none';
+  });
+  const visible = rows.filter(r => r.style.display !== 'none');
+  visible.sort((a,b) => {
+    if (sort === 'profit') return (parseInt(b.dataset.profit)||0) - (parseInt(a.dataset.profit)||0);
+    if (sort === 'grow') return (parseInt(a.dataset.grow)||0) - (parseInt(b.dataset.grow)||0);
+    if (sort === 'price') return (parseInt(b.dataset.price)||0) - (parseInt(a.dataset.price)||0);
+  });
+  visible.forEach(r => tbody.appendChild(r));
+  document.getElementById('crop-count').textContent = `显示 ${visible.length} 种作物`;
+}
+</script>
+</body>
+</html>

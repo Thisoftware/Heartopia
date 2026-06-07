@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heartopia FAQ 常見問題解答 - 新手疑问·存档·联机·貨幣 - 繁體中文版</title>
+<meta name="description" content="Heartopia 最常見問題解答，涵盖新手疑问、存档安全、联机方法、貨幣獲取等实用内容。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.faq-item { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); margin-bottom:8px; overflow:hidden; }
+.faq-q { padding:1rem 1.25rem; font-size:14px; font-weight:500; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:12px; }
+.faq-q:hover { background:var(--surface2); }
+.faq-a { padding:0 1.25rem 1rem; font-size:13px; color:var(--text2); line-height:1.7; display:none; border-top:1px solid var(--border); padding-top:0.75rem; }
+.faq-a.open { display:block; }
+.faq-icon { flex-shrink:0; color:var(--text3); transition:transform 0.2s; }
+.faq-icon.open { transform:rotate(45deg); }
+</style>
+</head>
+<body>
+<div id="header-placeholder"></div>
+<main class="main">
+
+  <div class="hero">
+    <h1>❓ 常見問題 FAQ</h1>
+    <p>新手疑问 · 存档 · 联机 · 貨幣 · 技术问题</p>
+  </div>
+
+  <div class="section-label">🌱 新手入门问题</div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFAQ(this)">游戏免费吗？需要付费才能正常游玩吗？<span class="faq-icon">＋</span></div>
+    <div class="faq-a">Heartopia 是免费下载游玩的。游戏内有付费貨幣（心钻），但不是强制的。免费玩家通过每日任務和活動可以正常推进所有主要内容。付费主要加速进度或獲取限定装饰，不影响核心玩法体验。</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFAQ(this)">如何出售物品换金币？<span class="faq-icon">＋</span></div>
+    <div class="faq-a">找游荡在镇上各处的 <strong>Albert Jr.</strong>，他是游戏内唯一可以出售物品的 NPC。魚類、農作物、烹飪成品等都可以卖给他。他没有固定位置，需要在镇上巡逻找到他。养成每天找他卖货的习惯是积累金币的關鍵。</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFAQ(this)">體力（Energy）耗尽了怎么办？<span class="faq-icon">＋</span></div>
+    <div class="faq-a">有几个方法：① 吃食物快速恢复——自制料理比购买更划算，基础混合果酱回复约 22 点體力；② 让角色上床睡觉进行被动恢复；③ 等每日 6:00 AM 伺服器时间重置，體力回满；④ 體力耗尽时可以继续做不消耗體力的活動，如摆家具、与 NPC 对话、逛商店。</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFAQ(this)">工具坏了怎么修？能重新做吗？<span class="faq-icon">＋</span></div>
+    <div class="faq-a">工具有耐久度，用修复包（Repair Kit）可以修复，不需要重新制作（重新制作成本更高）。修复包可以从 Bob 工坊购买，或通过任務、气泡獲得。建議在背包里常备 3–5 个修复包，出门前检查工具耐久。</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFAQ(this)">D.G. 公會等级怎么快速提升？<span class="faq-icon">＋</span></div>
+    <div class="faq-a">最高效路线：① 每天完成 5 次居民委託（+50 勳章/天，不可累计，错过浪费）；② 积极推进主线剧情，每个主线節點给大量勳章；③ D.G. 13 级后完成周常任務（+30–50 勳章/周）；④ 参加活動獲取额外勳章。勳章是时间门控的，每天登录完成日常比氪金更重要。</div>
+  </div>
+
+  <div class="section-label">💾 存档与账号问题</div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFAQ(this)">换手机/电脑会丢失存档吗？<span class="faq-icon">＋</span></div>
+    <div class="faq-a">只要你用同一个账号登录（Google/Apple/XD Games账号），存档会自动同步到云端，换设备不会丢失。切换设备前务必确认已登录账号，不要用访客模式游玩以免丢档。</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFAQ(this)">iOS 和 Android 之间可以互通存档吗？<span class="faq-icon">＋</span></div>
+    <div class="faq-a">可以。Heartopia 支持跨平台存档同步，iOS、Android、PC（Steam）之间使用同一账号即可共享存档和进度。注意：不同平台的付费貨幣购买记录可能绑定对应平台账号。</div>
+  </div>
+
+  <div class="section-label">🌐 联机与社交</div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFAQ(this)">如何与朋友一起玩？<span class="faq-icon">＋</span></div>
+    <div class="faq-a">联机功能需要 <strong>D.G. 等级 8</strong> 解鎖。解鎖后可以邀请朋友参观你的家园，或前往朋友的家。联机建造（Co-op Building）也在同等级解鎖，可以一起裝修布置房间。加朋友方法：游戏内點擊社交图标 → 搜尋玩家ID → 发送好友申请。</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFAQ(this)">可以拜访陌生人的家园吗？<span class="faq-icon">＋</span></div>
+    <div class="faq-a">可以。游戏内有公开家园浏览功能，可以参观其他玩家公开展示的家园，獲取裝修靈感，也可以给喜欢的家园点赞。参观别人家园偶尔还能獲得資源气泡。</div>
+  </div>
+
+  <div class="section-label">💰 貨幣与付费问题</div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFAQ(this)">许愿星（Wishing Stars）哪里免费獲得？<span class="faq-icon">＋</span></div>
+    <div class="faq-a">免费来源：① 每日登录獎勵（偶尔出现）；② 活動完成獎勵；③ 主线任務獎勵；④ 兌換碼（查看我们的<a href="codes.html" style="color:var(--pink)">兌換碼页面</a>，目前有多个含许愿星的有效码）；⑤ D.G. 等级升級獎勵。付费可用心钻兌換，不建議直接付费购买，等活動和日常积攒更划算。</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFAQ(this)">金币不够用怎么办？<span class="faq-icon">＋</span></div>
+    <div class="faq-a">最高效金币来源：① 烹飪食材后出售（料理售價是原材料 3–4 倍，蘑菇炖汤利潤约 +500G/份）；② 每天找 Albert Jr. 出售钓到的鱼（高品質鱼收益可观）；③ 采集稀有矿石出售；④ 完成高獎勵委託任務。参考<a href="recipes.html" style="color:var(--pink)">食譜圖鑑</a>找利潤最高的烹飪路线。</div>
+  </div>
+
+  <div class="section-label">🔧 技术问题</div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFAQ(this)">游戏卡顿/闪退怎么解决？<span class="faq-icon">＋</span></div>
+    <div class="faq-a">常见解决方法：① 降低游戏画质設置（設置 → 图形质量）；② 关闭后台其他 App 释放内存；③ 重启游戏或设备；④ 确保网络连接稳定；⑤ 检查游戏是否需要更新。iOS 用户遇到闪退可以尝试重新安装（存档不会丢失，只要绑定了账号）。</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q" onclick="toggleFAQ(this)">在哪里可以下载 Heartopia？<span class="faq-icon">＋</span></div>
+    <div class="faq-a">官方下载渠道：① iOS：App Store 搜尋「Heartopia」；② Android：Google Play 搜尋「Heartopia」，或在 TapTap 平台下载；③ PC：Steam 平台，搜尋「Heartopia」。请只从官方渠道下载，避免使用第三方渠道以防账号安全风险。</div>
+  </div>
+
+  <div class="notice tip" style="margin-top:1.5rem">💬 有其他问题没找到答案？可以加入 Heartopia 官方 Discord，或在官方 X（@myheartopia）留言。社区玩家通常响应很快。</div>
+
+</main>
+<div id="footer-placeholder"></div>
+<script src="common.js"></script>
+<script>
+  document.getElementById('header-placeholder').innerHTML = renderHeader('faq');
+  document.getElementById('footer-placeholder').innerHTML = renderFooter();
+
+  function toggleFAQ(q) {
+    const a = q.nextElementSibling;
+    const icon = q.querySelector('.faq-icon');
+    const isOpen = a.classList.contains('open');
+    a.classList.toggle('open', !isOpen);
+    icon.classList.toggle('open', !isOpen);
+  }
+</script>
+</body>
+</html>

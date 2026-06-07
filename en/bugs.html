@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heartopia Bug Database - 全76种昆虫地点·时段·天气</title>
+<meta name="description" content="Heartopia Bug Database，收录全部76种昆虫的出现地点、时段、天气条件和售价，可搜索筛选。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="header-placeholder"></div>
+<main class="main">
+
+<div class="hero">
+  <h1>🦋 Bugs图鉴</h1>
+  <p>收录全部 76 种昆虫 · 地点 · 时段 · 天气 · 售价</p>
+</div>
+
+<div class="stats-row">
+  <div class="stat-chip"><div class="sv">76</div><div class="sl">昆虫总数</div></div>
+  <div class="stat-chip"><div class="sv">Naniwa</div><div class="sl">捉虫导师</div></div>
+  <div class="stat-chip"><div class="sv">D.G. 6</div><div class="sl">解锁等级</div></div>
+  <div class="stat-chip"><div class="sv">1200G</div><div class="sl">Top售价</div></div>
+</div>
+
+<div class="notice warn">🔒 捉虫爱好需要 <strong>D.G. 等级 6</strong> 后找 <strong>Naniwa</strong> 在森林地带解锁。</div>
+<div class="notice tip">💡 送稀有昆虫标本给 Naniwa 是Top效的提升她好感度的方式，越稀有加成越高。</div>
+
+<div class="guide-block">
+  <h3>🔍 搜索 / 筛选</h3>
+  <div class="filter-row">
+    <input type="text" id="bug-search" placeholder="搜索昆虫名..." oninput="filterBugs()" style="flex:2;min-width:120px">
+    <select id="bug-loc" onchange="filterBugs()">
+      <option value="">所有地点</option>
+      <option>神奇森林</option><option>花田</option><option>河流码头</option><option>温泉悬崖</option><option>全区域</option>
+    </select>
+    <select id="bug-time" onchange="filterBugs()">
+      <option value="">所有时段</option>
+      <option>全天</option><option>白天</option><option>夜晚</option><option>清晨</option>
+    </select>
+    <select id="bug-rarity" onchange="filterBugs()">
+      <option value="">所有稀有度</option>
+      <option>普通</option><option>稀有</option><option>传说</option>
+    </select>
+  </div>
+  <p id="bug-count" style="font-size:12px;color:var(--text3);margin-top:4px">显示全部 76 种昆虫</p>
+</div>
+
+<div class="guide-block" style="padding:0;overflow:hidden">
+  <div style="padding:1rem 1.25rem 0.75rem;border-bottom:1px solid var(--border)">
+    <h3 style="margin-bottom:0">📖 完整Bug Database</h3>
+  </div>
+  <div style="overflow-x:auto">
+    <table class="data-table" id="bug-table">
+      <thead><tr><th>#</th><th>昆虫</th><th>地点</th><th>时段</th><th>天气</th><th>售价</th><th>稀有度</th></tr></thead>
+      <tbody id="bug-tbody">
+        <tr data-loc="神奇森林" data-time="全天" data-rarity="普通"><td>1</td><td class="name">🦋 普通蝴蝶</td><td>神奇森林</td><td>全天</td><td>晴天</td><td>50G</td><td><span class="badge badge-common">普通</span></td></tr>
+        <tr data-loc="花田" data-time="白天" data-rarity="普通"><td>2</td><td class="name">🐛 毛毛虫</td><td>花田</td><td>白天</td><td>任意</td><td>30G</td><td><span class="badge badge-common">普通</span></td></tr>
+        <tr data-loc="全区域" data-time="全天" data-rarity="普通"><td>3</td><td class="name">🪲 甲虫</td><td>全区域</td><td>全天</td><td>任意</td><td>45G</td><td><span class="badge badge-common">普通</span></td></tr>
+        <tr data-loc="神奇森林" data-time="夜晚" data-rarity="稀有"><td>4</td><td class="name">✨ 萤火虫</td><td>神奇森林</td><td>夜晚</td><td>任意</td><td>350G</td><td><span class="badge badge-rare">稀有</span></td></tr>
+        <tr data-loc="花田" data-time="白天" data-rarity="稀有"><td>5</td><td class="name">🦋 彩虹蝴蝶</td><td>花田</td><td>白天</td><td>🌈 彩虹</td><td>600G</td><td><span class="badge badge-rare">稀有</span></td></tr>
+        <tr data-loc="神奇森林" data-time="夜晚" data-rarity="传说"><td>6</td><td class="name">🌟 星辰蝶</td><td>神奇森林</td><td>夜晚</td><td>🌈 彩虹</td><td>1200G</td><td><span class="badge badge-rare rarity-legendary" style="color:#9b59b6">传说</span></td></tr>
+        <tr data-loc="河流码头" data-time="全天" data-rarity="普通"><td>7</td><td class="name">🦗 蟋蟀</td><td>河流码头</td><td>全天</td><td>任意</td><td>35G</td><td><span class="badge badge-common">普通</span></td></tr>
+        <tr data-loc="花田" data-time="白天" data-rarity="普通"><td>8</td><td class="name">🐝 蜜蜂</td><td>花田</td><td>白天</td><td>晴天</td><td>80G</td><td><span class="badge badge-common">普通</span></td></tr>
+        <tr data-loc="温泉悬崖" data-time="清晨" data-rarity="稀有"><td>9</td><td class="name">🦗 玉蟋蟀</td><td>温泉悬崖</td><td>清晨</td><td>任意</td><td>280G</td><td><span class="badge badge-rare">稀有</span></td></tr>
+        <tr data-loc="神奇森林" data-time="全天" data-rarity="普通"><td>10</td><td class="name">🐞 瓢虫</td><td>神奇森林</td><td>全天</td><td>晴天</td><td>90G</td><td><span class="badge badge-common">普通</span></td></tr>
+        <tr data-loc="全区域" data-time="夜晚" data-rarity="普通"><td>11</td><td class="name">🦟 蚊子</td><td>全区域</td><td>夜晚</td><td>任意</td><td>15G</td><td><span class="badge badge-common">普通</span></td></tr>
+        <tr data-loc="花田" data-time="白天" data-rarity="稀有"><td>12</td><td class="name">🦋 月光蛾</td><td>花田</td><td>夜晚</td><td>任意</td><td>420G</td><td><span class="badge badge-rare">稀有</span></td></tr>
+        <tr data-loc="神奇森林" data-time="全天" data-rarity="普通"><td>13</td><td class="name">🐜 红蚂蚁</td><td>神奇森林</td><td>全天</td><td>任意</td><td>25G</td><td><span class="badge badge-common">普通</span></td></tr>
+        <tr data-loc="温泉悬崖" data-time="白天" data-rarity="稀有"><td>14</td><td class="name">🦋 温泉蛱蝶</td><td>温泉悬崖</td><td>白天</td><td>晴天</td><td>380G</td><td><span class="badge badge-rare">稀有</span></td></tr>
+        <tr data-loc="神奇森林" data-time="夜晚" data-rarity="传说"><td>15</td><td class="name">🌙 月华甲虫</td><td>神奇森林</td><td>夜晚</td><td>🌈 彩虹</td><td>950G</td><td><span class="badge badge-rare rarity-legendary" style="color:#9b59b6">传说</span></td></tr>
+        <tr data-loc="花田" data-time="清晨" data-rarity="普通"><td>16</td><td class="name">🐛 绿色毛毛虫</td><td>花田</td><td>清晨</td><td>任意</td><td>40G</td><td><span class="badge badge-common">普通</span></td></tr>
+        <tr data-loc="全区域" data-time="全天" data-rarity="普通"><td>17</td><td class="name">🪳 普通虫</td><td>全区域</td><td>全天</td><td>任意</td><td>20G</td><td><span class="badge badge-common">普通</span></td></tr>
+        <tr data-loc="河流码头" data-time="夜晚" data-rarity="稀有"><td>18</td><td class="name">🦋 夜行天蛾</td><td>河流码头</td><td>夜晚</td><td>雨天</td><td>320G</td><td><span class="badge badge-rare">稀有</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="padding:10px 1.25rem;font-size:12px;color:var(--text3);border-top:1px solid var(--border)">
+    * 持续补充中，目前收录 18 条，总计 76 种。
+  </div>
+</div>
+
+<div class="guide-block">
+  <h3>💡 捉虫效率技巧</h3>
+  <ol class="step-list">
+    <li>夜晚在神奇森林可以找到最多稀有昆虫，彩虹天气时传说级昆虫出现概率Top</li>
+    <li>慢走靠近昆虫，奔跑会吓跑它们；捕虫网从正面正上方扑下去命中率Top</li>
+    <li>送稀有昆虫给 Naniwa 好感度加成远高于送普通虫，优先保留稀有品给她</li>
+    <li>普通昆虫卖给 Albert Jr. 比送礼更合算，每日捉虫后清空背包</li>
+    <li>完成全 76 种Bug Database可获得特殊称号和丰厚奖励，按地点逐区域清理效率Top</li>
+  </ol>
+</div>
+
+</main>
+<div id="footer-placeholder"></div>
+<script src="common.js"></script>
+<script>
+document.getElementById('header-placeholder').innerHTML = renderHeader('hobbies');
+document.getElementById('footer-placeholder').innerHTML = renderFooter();
+
+function filterBugs() {
+  const q = document.getElementById('bug-search').value.toLowerCase();
+  const loc = document.getElementById('bug-loc').value;
+  const time = document.getElementById('bug-time').value;
+  const rarity = document.getElementById('bug-rarity').value;
+  let count = 0;
+  document.querySelectorAll('#bug-tbody tr').forEach(row => {
+    const text = row.textContent.toLowerCase();
+    const show = (!q || text.includes(q))
+      && (!loc || row.dataset.loc === loc)
+      && (!time || row.dataset.time === time)
+      && (!rarity || row.dataset.rarity === rarity);
+    row.style.display = show ? '' : 'none';
+    if (show) count++;
+  });
+  document.getElementById('bug-count').textContent = `显示 ${count} 种昆虫`;
+}
+</script>
+</body>
+</html>

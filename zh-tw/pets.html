@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heartopia 寵物系统攻略 - 猫狗解鎖·喂养·Oak-Oak - 繁體中文版</title>
+<meta name="description" content="Heartopia 寵物系统完整攻略，包含猫狗解鎖条件（D.G. 12级）、喂养方法、特殊寵物 Oak-Oak 路线。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="header-placeholder"></div>
+<main class="main">
+
+  <div class="hero">
+    <h1>🐾 寵物系统</h1>
+    <p>猫狗解鎖条件 · 喂养方法 · 好感度 · 特殊寵物</p>
+  </div>
+
+  <div class="notice warn">🔒 寵物系统需要 <strong>D.G. 等级 12</strong> 才能解鎖，找寵物店老板娘 <strong>Mrs. Joan</strong> 购买。</div>
+
+  <div class="section-label">寵物解鎖</div>
+  <div class="guide-block">
+    <h3>🐱🐶 猫和狗</h3>
+    <ol class="step-list">
+      <li>达到 <strong>D.G. 等级 12</strong>，解鎖寵物系统</li>
+      <li>前往<strong>寵物店</strong>找 Mrs. Joan，购买猫或狗（需要金币）</li>
+      <li>将寵物带回家，摆放<strong>寵物床</strong>和<strong>食盆</strong></li>
+      <li>每天喂食、互動，提升寵物好感度</li>
+      <li>与 Mrs. Joan 提升好感度，可解鎖<strong>特殊毛色或个性</strong>的限定寵物</li>
+    </ol>
+  </div>
+
+  <div class="section-label">喂养与互動</div>
+  <div class="guide-block">
+    <h3>🍖 每日寵物清單</h3>
+    <ul class="checklist">
+      <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">喂食（食盆里补充寵物食品）</span><span class="check-tag tag-daily">每日必做</span></li>
+      <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">抚摸互動（點擊寵物）</span><span class="check-tag tag-daily">好感度+</span></li>
+      <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">和寵物玩耍（消耗玩具耐久）</span><span class="check-tag tag-daily">好感度++</span></li>
+      <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">检查寵物心情（避免负面状态）</span><span class="check-tag tag-daily">每日必查</span></li>
+    </ul>
+  </div>
+
+  <div class="guide-block">
+    <h3>💕 寵物好感度獎勵</h3>
+    <table class="data-table">
+      <thead><tr><th>好感度等级</th><th>解鎖内容</th></tr></thead>
+      <tbody>
+        <tr><td class="name">普通伙伴</td><td>寵物跟随你走动</td></tr>
+        <tr><td class="name">好朋友</td><td>寵物可以出门散步</td></tr>
+        <tr><td class="name">最好的朋友</td><td>寵物技能激活 · 特殊互動动作解鎖</td></tr>
+        <tr><td class="name">灵魂伴侣</td><td>限定寵物外观 · 专属互動 CG</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-label">特殊寵物</div>
+  <div class="guide-block">
+    <h3>🌳 Oak-Oak（橡树精灵）</h3>
+    <div class="notice">Oak-Oak 并非普通寵物，而是一个<strong>极稀有的隱藏生物</strong>，在全镇随机位置游荡，可能需要数天到数周才能偶遇一次。</div>
+    <ol class="step-list">
+      <li>Oak-Oak 每天在不同随机位置出现，没有固定路线</li>
+      <li>遇到时不要移动，慢慢靠近，否则会受惊跑开</li>
+      <li>社区目前仍在记录 Oak-Oak 的出没规律，已发现地点：神奇森林、温泉悬崖附近</li>
+      <li>与 Oak-Oak 互動后会獲得<strong>神秘獎勵</strong>（具体内容随机）</li>
+    </ol>
+    <p class="strategy-box">✨ 遇到 Oak-Oak 记得截图并分享到社区！这是很多玩家梦寐以求的稀有体验。</p>
+  </div>
+
+  <div class="section-label">寵物食品来源</div>
+  <div class="guide-block">
+    <h3>🛒 哪里买寵物食品</h3>
+    <table class="data-table">
+      <thead><tr><th>食品类型</th><th>购买地点</th><th>价格</th><th>备注</th></tr></thead>
+      <tbody>
+        <tr><td class="name">普通猫粮</td><td>寵物店（Mrs. Joan）</td><td>50G/袋</td><td>基础喂食</td></tr>
+        <tr><td class="name">普通狗粮</td><td>寵物店（Mrs. Joan）</td><td>50G/袋</td><td>基础喂食</td></tr>
+        <tr><td class="name">优质猫咪零食</td><td>寵物店（Mrs. Joan）</td><td>200G</td><td>好感度加成 x2</td></tr>
+        <tr><td class="name">骨头（狗）</td><td>杂货店（Ka Ching）</td><td>120G</td><td>好感度加成 x1.5</td></tr>
+        <tr><td class="name">自制寵物零食</td><td>工作台制作</td><td>食材成本</td><td>高好感度 Mrs. Joan 后解鎖配方</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</main>
+<div id="footer-placeholder"></div>
+<script src="common.js"></script>
+<script>
+  document.getElementById('header-placeholder').innerHTML = renderHeader('pets');
+  document.getElementById('footer-placeholder').innerHTML = renderFooter();
+</script>
+</body>
+</html>

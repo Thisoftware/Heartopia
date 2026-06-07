@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heartopia 好感度追踪器 - NPC礼物偏好·进度记录</title>
+<meta name="description" content="Heartopia 好感度追踪器，记录每个 NPC 的好感度进度和今日是否已送礼，浏览器本地保存。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<style>
+.npc-tracker { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:1rem 1.25rem; margin-bottom:10px; }
+.npc-tr-head { display:flex; align-items:center; gap:12px; }
+.npc-tr-avatar { width:40px; height:40px; border-radius:50%; background:var(--surface2); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+.npc-tr-info { flex:1; }
+.npc-tr-name { font-size:14px; font-weight:500; color:var(--text); }
+.npc-tr-role { font-size:12px; color:var(--text2); }
+.npc-tr-body { margin-top:12px; padding-top:12px; border-top:1px solid var(--border); }
+.level-select { display:flex; gap:6px; flex-wrap:wrap; margin:6px 0 10px; }
+.lv-btn { padding:4px 12px; border-radius:10px; border:1px solid var(--border); font-size:12px; cursor:pointer; background:var(--surface); font-family:'Noto Sans SC',sans-serif; transition:all .12s; }
+.lv-btn.on { background:var(--pink-light); border-color:var(--pink-mid); color:var(--pink); font-weight:500; }
+.gift-row { display:flex; align-items:center; justify-content:space-between; margin-top:8px; }
+.gift-label { font-size:12px; color:var(--text2); }
+.gift-toggle { display:flex; align-items:center; gap:8px; cursor:pointer; }
+.gift-toggle input { width:16px; height:16px; accent-color:var(--teal); cursor:pointer; }
+.fav-gifts { font-size:12px; color:var(--text3); background:var(--surface2); border-radius:var(--radius-sm); padding:6px 10px; margin-top:8px; line-height:1.5; }
+.heart-bar { height:6px; background:var(--surface2); border-radius:10px; overflow:hidden; margin:4px 0; }
+.heart-fill { height:100%; border-radius:10px; background:linear-gradient(90deg, var(--pink-mid), var(--pink)); transition:width .3s; }
+.save-note { font-size:11px; color:var(--text3); text-align:center; margin-top:1rem; }
+</style>
+</head>
+<body>
+<div id="header-placeholder"></div>
+<main class="main">
+
+<div class="hero">
+  <h1>💕 好感度追踪器</h1>
+  <p>记录每个 NPC 的好感度进度 · 今日送礼状态 · 浏览器本地保存</p>
+</div>
+
+<div class="notice tip">💾 数据保存在浏览器本地，不会上传。每次打开自动恢复上次记录。每日重置（早 6:00）后记得重置送礼状态。</div>
+
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+  <div class="section-label" style="margin:0">全部 NPC</div>
+  <div style="display:flex;gap:8px">
+    <button onclick="resetGifts()" style="font-size:12px;padding:5px 12px;border-radius:var(--radius-sm);border:1px solid var(--border);cursor:pointer;background:var(--surface);color:var(--text2);font-family:'Noto Sans SC',sans-serif">重置今日送礼</button>
+    <button onclick="clearAll()" style="font-size:12px;padding:5px 12px;border-radius:var(--radius-sm);border:1px solid var(--border);cursor:pointer;background:var(--surface);color:var(--red);font-family:'Noto Sans SC',sans-serif">清除所有记录</button>
+  </div>
+</div>
+
+<div id="tracker-list"></div>
+
+<p class="save-note">💡 数据自动保存到本地浏览器（localStorage）· 清除浏览器缓存会丢失数据，建议定期截图备份</p>
+
+</main>
+<div id="footer-placeholder"></div>
+<script src="common.js"></script>
+<script>
+document.getElementById('header-placeholder').innerHTML = renderHeader('npc');
+document.getElementById('footer-placeholder').innerHTML = renderFooter();
+
+const NPCS = [
+  { id:'vanya',    emoji:'🎣', name:'Vanya',     role:'钓鱼导师', gifts:'各种鱼类、海鲜、钓鱼用品' },
+  { id:'blanc',    emoji:'🌱', name:'Blanc',     role:'园艺导师', gifts:'稀有花卉、种子、农作物' },
+  { id:'massimo',  emoji:'👨‍🍳', name:'Massimo', role:'烹饪导师', gifts:'烹饪成品、稀有食材' },
+  { id:'naniwa',   emoji:'🦋', name:'Naniwa',    role:'捉虫导师', gifts:'稀有昆虫标本、各种虫子' },
+  { id:'baileyj',  emoji:'📷', name:'Bailey J',  role:'观鸟导师', gifts:'高质量鸟类照片、自然系道具' },
+  { id:'bill',     emoji:'⚓', name:'Bill',      role:'海钓导师', gifts:'各种鱼、海鲜' },
+  { id:'mrsjoan',  emoji:'🐾', name:'Mrs. Joan', role:'宠物店',   gifts:'宠物用品、零食' },
+  { id:'bob',      emoji:'🏗️', name:'Bob',       role:'建筑师',   gifts:'建筑材料相关' },
+  { id:'dorothee', emoji:'👗', name:'Dorothee',  role:'服装店',   gifts:'时尚相关道具' },
+  { id:'kaching',  emoji:'🏪', name:'Ka Ching',  role:'杂货店',   gifts:'（暂无记录）' },
+  { id:'mayor',    emoji:'🏛️', name:'市长',       role:'镇长',     gifts:'（暂无记录）' },
+  { id:'patti',    emoji:'🎨', name:'Patti',     role:'画家',     gifts:'玩具、糖果、美术用品' },
+  { id:'andrew',   emoji:'🚗', name:'Andrew',    role:'驾驶导师', gifts:'（暂无记录）' },
+];
+
+const LEVELS = ['陌生人','普通朋友','好友','最好的朋友'];
+const LEVEL_COLORS = ['var(--text3)','var(--amber)','var(--teal)','var(--pink)'];
+
+function saveData() {
+  const data = {};
+  NPCS.forEach(n => {
+    data[n.id] = {
+      level: document.querySelector(`#lv-${n.id}`).dataset.level || '0',
+      gifted: document.querySelector(`#gift-${n.id}`).checked,
+    };
+  });
+  localStorage.setItem('heartopia_friendship', JSON.stringify(data));
+}
+
+function loadData() {
+  try { return JSON.parse(localStorage.getItem('heartopia_friendship') || '{}'); } catch { return {}; }
+}
+
+function render() {
+  const saved = loadData();
+  const list = document.getElementById('tracker-list');
+  list.innerHTML = NPCS.map(n => {
+    const s = saved[n.id] || { level:'0', gifted:false };
+    const lv = parseInt(s.level) || 0;
+    const pct = [0,33,66,100][lv];
+    return `
+    <div class="npc-tracker">
+      <div class="npc-tr-head">
+        <div class="npc-tr-avatar">${n.emoji}</div>
+        <div class="npc-tr-info">
+          <div class="npc-tr-name">${n.name}</div>
+          <div class="npc-tr-role">${n.role}</div>
+        </div>
+        <span style="font-size:12px;font-weight:600;color:${LEVEL_COLORS[lv]}">${LEVELS[lv]}</span>
+      </div>
+      <div class="npc-tr-body">
+        <div style="font-size:12px;color:var(--text3);margin-bottom:4px">好感度等级</div>
+        <div class="heart-bar"><div class="heart-fill" style="width:${pct}%"></div></div>
+        <div class="level-select" id="lv-${n.id}" data-level="${lv}">
+          ${LEVELS.map((lname,i) => `<button class="lv-btn ${i===lv?'on':''}" onclick="setLevel('${n.id}',${i})">${lname}</button>`).join('')}
+        </div>
+        <div class="fav-gifts">❤️ 最爱礼物：${n.gifts}</div>
+        <div class="gift-row">
+          <span class="gift-label">今日已送礼</span>
+          <label class="gift-toggle">
+            <input type="checkbox" id="gift-${n.id}" ${s.gifted?'checked':''} onchange="saveData()">
+            <span style="font-size:13px;color:var(--text2)">${s.gifted?'✓ 已送':'未送'}</span>
+          </label>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function setLevel(id, lv) {
+  const container = document.getElementById(`lv-${id}`);
+  container.dataset.level = lv;
+  container.querySelectorAll('.lv-btn').forEach((b,i) => b.classList.toggle('on', i===lv));
+  // update bar
+  const pct = [0,33,66,100][lv];
+  const card = container.closest('.npc-tracker');
+  card.querySelector('.heart-fill').style.width = pct+'%';
+  card.querySelector('.npc-tr-head span').textContent = LEVELS[lv];
+  card.querySelector('.npc-tr-head span').style.color = LEVEL_COLORS[lv];
+  saveData();
+}
+
+function resetGifts() {
+  NPCS.forEach(n => {
+    const cb = document.getElementById(`gift-${n.id}`);
+    if (cb) { cb.checked = false; cb.nextElementSibling.textContent = '未送'; }
+  });
+  saveData();
+}
+
+function clearAll() {
+  if (confirm('确定要清除所有好感度记录吗？')) {
+    localStorage.removeItem('heartopia_friendship');
+    render();
+  }
+}
+
+render();
+</script>
+</body>
+</html>
