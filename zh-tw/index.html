@@ -1,41 +1,176 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Heartopia Guide - 繁體中文版</title>
-<link rel="stylesheet" href="style.css">
-<style>
-body{display:flex;align-items:center;justify-content:center;min-height:100vh;flex-direction:column;gap:1.5rem;text-align:center;padding:2rem}
-.logo-big{font-family:'Outfit',sans-serif;font-size:32px;font-weight:700;color:var(--pink)}
-.logo-big span{color:var(--text)}
-.lang-picks{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-.lang-pick{padding:10px 24px;border-radius:var(--radius);border:1px solid var(--border);background:var(--surface);font-size:15px;text-decoration:none;color:var(--text);transition:all .15s;font-family:'Noto Sans SC',sans-serif}
-.lang-pick:hover{border-color:var(--pink-mid);color:var(--pink);box-shadow:var(--shadow)}
-.lang-pick.primary{background:var(--pink);color:white;border-color:var(--pink)}
-p{font-size:13px;color:var(--text3)}
-</style>
+<title>Heartopia 繁體攻略站 - 兌換碼·圖鑑·工具·地圖·NPC</title>
+<meta name="description" content="Heartopia 最全中文攻略站，兌換碼、魚類/食譜/昆蟲/鳥類圖鑑、互動地圖、利潤計算器、NPC好感度、每日清單，持续更新。">
+<meta name="keywords" content="Heartopia攻略,Heartopia中文,Heartopia兌換碼,Heartopia NPC,Heartopia钓鱼,Heartopia食譜,Heartopia地圖">
+<meta property="og:title" content="Heartopia 中文攻略站">
+<meta property="og:description" content="兌換碼·圖鑑·工具·地圖·NPC — 最全中文攻略一站搞定">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="logo-big">♥ <span>Heartopia</span></div>
-<p>Select your language / 选择语言 / 選擇語言</p>
-<div class="lang-picks">
-  <a href="zh/index.html" class="lang-pick primary">🇨🇳 繁體中文</a>
-  <a href="zh-tw/index.html" class="lang-pick">🇹🇼 繁體中文</a>
-  <a href="en/index.html" class="lang-pick">🇬🇧 English</a>
-</div>
+<div id="header-placeholder"></div>
+<main class="main">
+
+  <div class="hero">
+    <h1><span class="heart">♥</span> Heartopia 中文攻略站</h1>
+    <p>兌換碼 · NPC圖鑑 · 魚類&食譜&昆蟲&鳥類資料庫 · 互動地圖 · 利潤計算器 · 每日清單</p>
+    <div class="hero-btns">
+      <a href="codes.html" class="hero-btn primary">🎁 領取兌換碼</a>
+      <a href="map.html" class="hero-btn secondary">🗺️ 互動地圖</a>
+      <a href="tools.html" class="hero-btn secondary">🛠️ 工具中心</a>
+      <a href="tool-timer.html" class="hero-btn secondary">⏱️ 重置倒計時</a>
+    </div>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-chip"><div class="sv">15+</div><div class="sl">有效兌換碼</div></div>
+    <div class="stat-chip"><div class="sv">94</div><div class="sl">魚類收錄</div></div>
+    <div class="stat-chip"><div class="sv">98</div><div class="sl">食譜收錄</div></div>
+    <div class="stat-chip"><div class="sv">76</div><div class="sl">昆蟲收錄</div></div>
+    <div class="stat-chip"><div class="sv">68</div><div class="sl">鳥類收錄</div></div>
+    <div class="stat-chip"><div class="sv">24</div><div class="sl">農作物收錄</div></div>
+  </div>
+
+  <div class="notice warn" style="margin-bottom:1.25rem">⏰ 限時提醒：兌換碼 <strong>dcthx4u</strong> 截止 <strong>6月29日</strong>，還未領取請儘快 → <a href="codes.html" style="color:var(--pink);font-weight:500">立即領取</a></div>
+
+  <div class="section-label">🔥 高頻工具</div>
+  <div class="card-grid">
+    <a href="codes.html" class="card">
+      <div class="card-icon">🎁</div>
+      <p class="card-title">兌換碼</p>
+      <p class="card-desc">15 个有效码 · 含截止日期 · 一鍵複製</p>
+    </a>
+    <a href="tool-timer.html" class="card">
+      <div class="card-icon">⏱️</div>
+      <p class="card-title">重置倒計時</p>
+      <p class="card-desc">即時倒計時 · 本地時區換算 · 任務打勾</p>
+    </a>
+    <a href="tool-profit.html" class="card">
+      <div class="card-icon">💰</div>
+      <p class="card-title">利潤計算器</p>
+      <p class="card-desc">烹飪 vs 原料 · 釣魚 ROI · 快速參考</p>
+    </a>
+    <a href="map.html" class="card">
+      <div class="card-icon">🗺️</div>
+      <p class="card-title">互動地圖</p>
+      <p class="card-desc">NPC位置 · 釣魚點 · 資源 · 路線規劃</p>
+    </a>
+    <a href="tool-friendship.html" class="card">
+      <div class="card-icon">💕</div>
+      <p class="card-title">好感度追蹤器</p>
+      <p class="card-desc">13 NPC進度 · 送禮記錄 · 本地儲存</p>
+    </a>
+    <a href="daily.html" class="card">
+      <div class="card-icon">✅</div>
+      <p class="card-title">每日清單</p>
+      <p class="card-desc">每日任務打勾 · 重置 6:00 · 體力管理</p>
+    </a>
+  </div>
+
+  <div class="section-label">📖 圖鑑資料庫</div>
+  <div class="card-grid">
+    <a href="fish.html" class="card">
+      <div class="card-icon">🐟</div>
+      <p class="card-title">魚類圖鑑</p>
+      <p class="card-desc">94 種 · 地點·天氣·售價</p>
+    </a>
+    <a href="recipes.html" class="card">
+      <div class="card-icon">🍳</div>
+      <p class="card-title">食譜圖鑑</p>
+      <p class="card-desc">98 種 · 利潤排行 · 食材來源</p>
+    </a>
+    <a href="bugs.html" class="card">
+      <div class="card-icon">🦋</div>
+      <p class="card-title">昆蟲圖鑑</p>
+      <p class="card-desc">76 種 · 地點·時段·天氣</p>
+    </a>
+    <a href="birds.html" class="card">
+      <div class="card-icon">🐦</div>
+      <p class="card-title">鳥類圖鑑</p>
+      <p class="card-desc">68 種 · 拍照技巧 · 地點</p>
+    </a>
+    <a href="crops.html" class="card">
+      <div class="card-icon">🌱</div>
+      <p class="card-title">農作物数据库</p>
+      <p class="card-desc">24 種 · 日利潤 · 規劃器</p>
+    </a>
+    <a href="npc.html" class="card">
+      <div class="card-icon">👥</div>
+      <p class="card-title">NPC 圖鑑</p>
+      <p class="card-desc">禮物偏好 · 好感度 · 隱藏角色</p>
+    </a>
+  </div>
+
+  <div class="section-label">🏠 建造與設計</div>
+  <div class="card-grid">
+    <a href="house-designs.html" class="card">
+      <div class="card-icon">🏡</div>
+      <p class="card-title">家居設計靈感</p>
+      <p class="card-desc">田園·現代·自然·日系風格方案</p>
+    </a>
+    <a href="building.html" class="card">
+      <div class="card-icon">🏗️</div>
+      <p class="card-title">建造攻略</p>
+      <p class="card-desc">地塊擴建 · 建材獲取 · 裝修技巧</p>
+    </a>
+    <a href="dg.html" class="card">
+      <div class="card-icon">🎖️</div>
+      <p class="card-title">公會等級</p>
+      <p class="card-desc">D.G. 等級表 · 解鎖內容 · 升級路線</p>
+    </a>
+    <a href="hobbies.html" class="card">
+      <div class="card-icon">🎣</div>
+      <p class="card-title">愛好攻略</p>
+      <p class="card-desc">六大愛好 · 解鎖条件 · 效率路线</p>
+    </a>
+    <a href="pets.html" class="card">
+      <div class="card-icon">🐾</div>
+      <p class="card-title">寵物系統</p>
+      <p class="card-desc">貓狗解鎖 · 餵養 · Oak-Oak</p>
+    </a>
+    <a href="currency.html" class="card">
+      <div class="card-icon">💎</div>
+      <p class="card-title">貨幣系統</p>
+      <p class="card-desc">6 種貨幣 · 免費獲取 · 花錢建議</p>
+    </a>
+    <a href="events.html" class="card">
+      <div class="card-icon">📅</div>
+      <p class="card-title">活動日历</p>
+      <p class="card-desc">嘉年華 · 限時獎勵 · 參與條件</p>
+    </a>
+    <a href="faq.html" class="card">
+      <div class="card-icon">❓</div>
+      <p class="card-title">FAQ</p>
+      <p class="card-desc">新手疑問 · 存檔 · 聯機 · 貨幣</p>
+    </a>
+  </div>
+
+  <div class="section-label">新手入門</div>
+  <div class="guide-block">
+    <h3>🌱 開局第一週該做什麼</h3>
+    <ol class="step-list">
+      <li>先去<a href="codes.html" style="color:var(--pink)">兌換碼页面</a>領取免費獎勵，<strong>dcthx4u</strong> 截止 6月29日</li>
+      <li>完成新手主線，解鎖 D.G. 公會等級系統——幾乎所有功能都需要公會等級</li>
+      <li>每天完成 5 次居民委託（+50 勳章），不累計，錯過永久丟失</li>
+      <li>找 <strong>Andrew</strong> 解鎖骑行，找 <strong>Vanya</strong> 解鎖釣魚——這兩件事最先做</li>
+      <li>釣到的魚可以直接送給 Vanya 提好感，或賣給 Albert Jr. 換金幣</li>
+      <li>雨天/彩虹天气出门找隐藏 NPC <strong>Doris</strong>，她售賣無法通過其他途徑獲取的稀有食譜</li>
+    </ol>
+  </div>
+  <div class="notice tip">💡 用<a href="tool-timer.html" style="color:var(--teal)">重置倒計時工具</a>設好提醒，不要錯過每天 6:00 的重置！每日委託是提升公會等級最穩定的來源。</div>
+
+</main>
+<div id="footer-placeholder"></div>
+<script src="common.js"></script>
 <script>
-  // 自动检测语言跳转
-  const lang = navigator.language || navigator.userLanguage || '';
-  if (lang.startsWith('zh-TW') || lang.startsWith('zh-HK') || lang.startsWith('zh-MO')) {
-    location.replace('zh-tw/index.html');
-  } else if (lang.startsWith('zh')) {
-    location.replace('zh/index.html');
-  } else if (!lang.startsWith('zh')) {
-    // 非中文语言先不自动跳转，让用户选择（避免中文用户被跳到英文）
-    // location.replace('en/index.html');
-  }
+  document.getElementById('header-placeholder').innerHTML = renderHeader('index');
+  document.getElementById('footer-placeholder').innerHTML = renderFooter();
 </script>
 </body>
 </html>

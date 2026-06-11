@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Heartopia 重置倒計時 - 每日/每周重置时间 - 繁體中文版</title>
-<meta name="description" content="Heartopia 每日重置倒計時工具，顯示距下次重置剩余时间，支持本地时区换算。">
+<title>Heartopia 重置倒計時 - 每日/每周重置時间</title>
+<meta name="description" content="Heartopia 每日重置倒計時工具，顯示距下次重置剩余時间，支持本地時区換算。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -36,7 +36,7 @@
 
 <div class="hero">
   <h1>⏱️ 重置倒計時</h1>
-  <p>每日委託 · 商店刷新 · 周常任務 · 实时倒計時</p>
+  <p>每日委託 · 商店刷新 · 週常任務 · 實時倒計時</p>
 </div>
 
 <!-- 主倒計時 -->
@@ -47,40 +47,40 @@
   <div class="timer-sub" id="daily-local">計算中...</div>
 </div>
 
-<!-- 重置时间换算 -->
+<!-- 重置時间換算 -->
 <div class="reset-grid">
   <div class="reset-chip">
-    <div class="rc-label">🌏 你的本地时间</div>
+    <div class="rc-label">🌏 你的本地時间</div>
     <div class="rc-time" id="local-now">--:--</div>
     <div class="rc-local" id="local-tz"></div>
   </div>
   <div class="reset-chip">
-    <div class="rc-label">🕕 伺服器重置时间</div>
+    <div class="rc-label">🕕 伺服器重置時间</div>
     <div class="rc-time">6:00 AM</div>
-    <div class="rc-local">伺服器时区 UTC+1</div>
+    <div class="rc-local">伺服器時区 UTC+1</div>
   </div>
   <div class="reset-chip">
     <div class="rc-label">📅 本地每日重置</div>
     <div class="rc-time" id="local-reset">--:--</div>
-    <div class="rc-local">你的时区换算</div>
+    <div class="rc-local">你的時区換算</div>
   </div>
   <div class="reset-chip">
-    <div class="rc-label">📆 本地周常重置</div>
-    <div class="rc-time" id="weekly-reset">每周六</div>
+    <div class="rc-label">📆 本地週常重置</div>
+    <div class="rc-time" id="weekly-reset">每週六</div>
     <div class="rc-local" id="weekly-local">--:--</div>
   </div>
 </div>
 
-<!-- 周常倒計時 -->
+<!-- 週常倒計時 -->
 <div class="timer-card" style="background:var(--surface2)">
-  <div class="timer-label">距周常重置（每周六 UTC+1 早 6:00）</div>
+  <div class="timer-label">距週常重置（每週六 UTC+1 早 6:00）</div>
   <div class="timer-display" id="weekly-timer" style="font-size:36px;color:var(--purple)">--:--:--</div>
   <div class="timer-sub" id="weekly-sub">計算中...</div>
 </div>
 
-<!-- 今日进度打勾 -->
+<!-- 今日進度打勾 -->
 <div class="guide-block">
-  <h3>✅ 今日任務进度</h3>
+  <h3>✅ 今日任務進度</h3>
   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
     <span style="font-size:12px;color:var(--text3)">已完成 <span id="done-count">0</span> / <span id="total-count">0</span> 项</span>
     <button onclick="resetAll()" style="font-size:12px;padding:4px 10px;border-radius:var(--radius-sm);border:1px solid var(--border);cursor:pointer;background:var(--surface);color:var(--text2);font-family:'Noto Sans SC',sans-serif">重置</button>
@@ -89,13 +89,13 @@
   <ul class="checklist-mini" id="task-list">
     <li onclick="tick(this)"><div class="check-mini"></div><span>完成 5 次居民委託（+50 勳章）</span></li>
     <li onclick="tick(this)"><div class="check-mini"></div><span>查收邮箱领取签到獎勵</span></li>
-    <li onclick="tick(this)"><div class="check-mini"></div><span>推进主线剧情</span></li>
+    <li onclick="tick(this)"><div class="check-mini"></div><span>推進主线剧情</span></li>
     <li onclick="tick(this)"><div class="check-mini"></div><span>浇花 / 收穫農作物</span></li>
     <li onclick="tick(this)"><div class="check-mini"></div><span>找 Albert Jr. 出售物品</span></li>
     <li onclick="tick(this)"><div class="check-mini"></div><span>向 NPC 赠礼（每人每天 1 次）</span></li>
-    <li onclick="tick(this)"><div class="check-mini"></div><span>捡地图气泡（Prize Bubble）</span></li>
+    <li onclick="tick(this)"><div class="check-mini"></div><span>捡地圖气泡（Prize Bubble）</span></li>
     <li onclick="tick(this)"><div class="check-mini"></div><span>喂养寵物并互動</span></li>
-    <li onclick="tick(this)"><div class="check-mini"></div><span>烹飪料理（體力允许时）</span></li>
+    <li onclick="tick(this)"><div class="check-mini"></div><span>烹飪料理（體力允许時）</span></li>
     <li onclick="tick(this)"><div class="check-mini"></div><span>若下雨/彩虹 → 找 Doris</span></li>
   </ul>
 </div>
@@ -148,7 +148,7 @@ function updateTimers() {
   document.getElementById('local-reset').textContent = `${pad(lrH)}:${pad(lrM)}`;
 
   // weekly reset = Saturday 6:00 AM server
-  const wDay = ['周六','周日','周一','周二','周三','周四','周五'];
+  const wDay = ['週六','周日','周一','周二','周三','周四','周五'];
   document.getElementById('weekly-local').textContent = `${wDay[0]} ${pad(lrH)}:${pad(lrM)}`;
 
   // Now display
@@ -178,7 +178,7 @@ function updateTimers() {
   const wD = Math.floor(weeklyMs/86400000);
   const wRem = weeklyMs % 86400000;
   document.getElementById('weekly-timer').textContent = `${wD}天 ${fmtHMS(wRem)}`;
-  document.getElementById('weekly-sub').textContent = `下次周常重置：${nextWeekly.toLocaleString('zh-CN',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'})}`;
+  document.getElementById('weekly-sub').textContent = `下次週常重置：${nextWeekly.toLocaleString('zh-CN',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'})}`;
 }
 
 updateTimers();

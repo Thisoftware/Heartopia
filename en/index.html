@@ -3,39 +3,174 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Heartopia Guide</title>
+<title>Heartopia Guide - Codes · Database · Tools · Map · NPCs</title>
+<meta name="description" content="Heartopia 最全中文Guide站，Codes、Fish/Recipes/Insects/BirdsDatabase、InteractiveMap、Profit Calculator、NPCFriendship、Daily Checklist，持续更新。">
+<meta name="keywords" content="HeartopiaGuide,Heartopia中文,HeartopiaCodes,Heartopia NPC,HeartopiaFishing,HeartopiaRecipes,HeartopiaMap">
+<meta property="og:title" content="Heartopia Guide">
+<meta property="og:description" content="Codes·Database·Tools · Map·NPC — 最全中文Guide一站搞定">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<style>
-body{display:flex;align-items:center;justify-content:center;min-height:100vh;flex-direction:column;gap:1.5rem;text-align:center;padding:2rem}
-.logo-big{font-family:'Outfit',sans-serif;font-size:32px;font-weight:700;color:var(--pink)}
-.logo-big span{color:var(--text)}
-.lang-picks{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-.lang-pick{padding:10px 24px;border-radius:var(--radius);border:1px solid var(--border);background:var(--surface);font-size:15px;text-decoration:none;color:var(--text);transition:all .15s;font-family:'Inter', 'Noto Sans SC',sans-serif}
-.lang-pick:hover{border-color:var(--pink-mid);color:var(--pink);box-shadow:var(--shadow)}
-.lang-pick.primary{background:var(--pink);color:white;border-color:var(--pink)}
-p{font-size:13px;color:var(--text3)}
-</style>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="logo-big">♥ <span>Heartopia</span></div>
-<p>Select your language / 选择语言 / 選擇語言</p>
-<div class="lang-picks">
-  <a href="zh/index.html" class="lang-pick primary">🇨🇳  简体 中文</a>
-  <a href="zh-tw/index.html" class="lang-pick">🇹🇼  繁體 中文</a>
-  <a href="en/index.html" class="lang-pick">🇬🇧 English</a>
-</div>
+<div id="header-placeholder"></div>
+<main class="main">
+
+  <div class="hero">
+    <h1><span class="heart">♥</span> Heartopia Guide</h1>
+    <p>Codes · NPCs · Fish/Recipe/Bug/Bird DB · Interactive Map · Profit Calc · Daily Checklist</p>
+    <div class="hero-btns">
+      <a href="codes.html" class="hero-btn primary">🎁 Get Codes</a>
+      <a href="map.html" class="hero-btn secondary">🗺️ InteractiveMap</a>
+      <a href="tools.html" class="hero-btn secondary">🛠️ Tool Hub</a>
+      <a href="tool-timer.html" class="hero-btn secondary">⏱️ Reset Timer</a>
+    </div>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-chip"><div class="sv">15+</div><div class="sl">Active Codes</div></div>
+    <div class="stat-chip"><div class="sv">94</div><div class="sl">FishEntries</div></div>
+    <div class="stat-chip"><div class="sv">98</div><div class="sl">RecipesEntries</div></div>
+    <div class="stat-chip"><div class="sv">76</div><div class="sl">InsectsEntries</div></div>
+    <div class="stat-chip"><div class="sv">68</div><div class="sl">BirdsEntries</div></div>
+    <div class="stat-chip"><div class="sv">24</div><div class="sl">CropsEntries</div></div>
+  </div>
+
+  <div class="notice warn" style="margin-bottom:1.25rem">⏰ Reminder: Code <strong>dcthx4u</strong> expires <strong>June 29</strong> — claim now → <a href="codes.html" style="color:var(--pink);font-weight:500">Claim</a></div>
+
+  <div class="section-label">🔥 Popular Tools</div>
+  <div class="card-grid">
+    <a href="codes.html" class="card">
+      <div class="card-icon">🎁</div>
+      <p class="card-title">Codes</p>
+      <p class="card-desc">15 active codes · With expiry dates · One-click copy</p>
+    </a>
+    <a href="tool-timer.html" class="card">
+      <div class="card-icon">⏱️</div>
+      <p class="card-title">Reset Timer</p>
+      <p class="card-desc">Live countdown · Local timezone · Task checklist</p>
+    </a>
+    <a href="tool-profit.html" class="card">
+      <div class="card-icon">💰</div>
+      <p class="card-title">Profit Calculator</p>
+      <p class="card-desc">Cooking vs raw · Fishing ROI · Quick reference</p>
+    </a>
+    <a href="map.html" class="card">
+      <div class="card-icon">🗺️</div>
+      <p class="card-title">InteractiveMap</p>
+      <p class="card-desc">NPC locations · Fishing spots · Resources · Route planning</p>
+    </a>
+    <a href="tool-friendship.html" class="card">
+      <div class="card-icon">💕</div>
+      <p class="card-title">Friendship Tracker</p>
+      <p class="card-desc">13 NPCs · Gift log · Local storage</p>
+    </a>
+    <a href="daily.html" class="card">
+      <div class="card-icon">✅</div>
+      <p class="card-title">Daily Checklist</p>
+      <p class="card-desc">Daily tasks · Resets 6 AM · Energy tips</p>
+    </a>
+  </div>
+
+  <div class="section-label">📖 Databases</div>
+  <div class="card-grid">
+    <a href="fish.html" class="card">
+      <div class="card-icon">🐟</div>
+      <p class="card-title">FishDatabase</p>
+      <p class="card-desc">94 Fish · Location · Weather · Price</p>
+    </a>
+    <a href="recipes.html" class="card">
+      <div class="card-icon">🍳</div>
+      <p class="card-title">RecipesDatabase</p>
+      <p class="card-desc">98 Recipes · Profit rank · Ingredients</p>
+    </a>
+    <a href="bugs.html" class="card">
+      <div class="card-icon">🦋</div>
+      <p class="card-title">InsectsDatabase</p>
+      <p class="card-desc">76 Insects · Location · Time · Weather</p>
+    </a>
+    <a href="birds.html" class="card">
+      <div class="card-icon">🐦</div>
+      <p class="card-title">BirdsDatabase</p>
+      <p class="card-desc">68 Birds · Photo tips · Location</p>
+    </a>
+    <a href="crops.html" class="card">
+      <div class="card-icon">🌱</div>
+      <p class="card-title">Crop Database</p>
+      <p class="card-desc">24 Crops · Daily profit · Planner</p>
+    </a>
+    <a href="npc.html" class="card">
+      <div class="card-icon">👥</div>
+      <p class="card-title">NPC Database</p>
+      <p class="card-desc">Gift prefs · Friendship · Hidden NPCs</p>
+    </a>
+  </div>
+
+  <div class="section-label">🏠 Building & Design</div>
+  <div class="card-grid">
+    <a href="house-designs.html" class="card">
+      <div class="card-icon">🏡</div>
+      <p class="card-title">House Design Ideas</p>
+      <p class="card-desc">Cottage · Modern · Nature · Japanese styles</p>
+    </a>
+    <a href="building.html" class="card">
+      <div class="card-icon">🏗️</div>
+      <p class="card-title">BuildingGuide</p>
+      <p class="card-desc">Plot expansion · Materials · Decor tips</p>
+    </a>
+    <a href="dg.html" class="card">
+      <div class="card-icon">🎖️</div>
+      <p class="card-title">GuildLevel</p>
+      <p class="card-desc">D.G. level table · Unlocks · Leveling route</p>
+    </a>
+    <a href="hobbies.html" class="card">
+      <div class="card-icon">🎣</div>
+      <p class="card-title">HobbiesGuide</p>
+      <p class="card-desc">6 hobbies · Unlock conditions · Efficiency tips</p>
+    </a>
+    <a href="pets.html" class="card">
+      <div class="card-icon">🐾</div>
+      <p class="card-title">PetSystem</p>
+      <p class="card-desc">Cat & dog unlock · Feeding · Oak-Oak</p>
+    </a>
+    <a href="currency.html" class="card">
+      <div class="card-icon">💎</div>
+      <p class="card-title">CurrencySystem</p>
+      <p class="card-desc">6 currencies · Free sources · Spending tips</p>
+    </a>
+    <a href="events.html" class="card">
+      <div class="card-icon">📅</div>
+      <p class="card-title">Event Calendar</p>
+      <p class="card-desc">Festival · Limited rewards · Requirements</p>
+    </a>
+    <a href="faq.html" class="card">
+      <div class="card-icon">❓</div>
+      <p class="card-title">FAQ</p>
+      <p class="card-desc">Beginner questions · Save data · Multiplayer · Currency</p>
+    </a>
+  </div>
+
+  <div class="section-label">BeginnerBeginner Guide</div>
+  <div class="guide-block">
+    <h3>🌱 What to do in your first week</h3>
+    <ol class="step-list">
+      <li>First, head to the<a href="codes.html" style="color:var(--pink)">Codes page</a>for free rewards.<strong>dcthx4u</strong> expires June 29</li>
+      <li>Complete the tutorial main quest to unlock the D.G. Guild system — almost every feature requires Guild level</li>
+      <li>Complete 5 Resident Requests daily (+50 Medals). They do NOT stack — missed ones are gone forever</li>
+      <li>Find <strong>Andrew</strong> to unlock riding, find <strong>Vanya</strong> to unlock fishing — do these two things first</li>
+      <li>Caught fish can be gifted to Vanya for friendship, or sold to Albert Jr. for Coins</li>
+      <li>On rainy/rainbow days, find hidden NPC <strong>Doris</strong> — she sells rare recipes unavailable elsewhere</li>
+    </ol>
+  </div>
+  <div class="notice tip">💡 Use the<a href="tool-timer.html" style="color:var(--teal)">Reset Timer</a>to set reminders — never miss the 6:00 AM reset! Daily requests are the most reliable source of Guild medals.</div>
+
+</main>
+<div id="footer-placeholder"></div>
+<script src="common.js"></script>
 <script>
-  // 自动检测语言跳转
-  const lang = navigator.language || navigator.userLanguage || '';
-  if (lang.startsWith('zh-TW') || lang.startsWith('zh-HK') || lang.startsWith('zh-MO')) {
-    location.replace('zh-tw/index.html');
-  } else if (lang.startsWith('zh')) {
-    location.replace('zh/index.html');
-  } else if (!lang.startsWith('zh')) {
-    // 非中文语言先不自动跳转，让Use the 户选择（避免中文Use the 户被跳到英文）
-    // location.replace('en/index.html');
-  }
+  document.getElementById('header-placeholder').innerHTML = renderHeader('index');
+  document.getElementById('footer-placeholder').innerHTML = renderFooter();
 </script>
 </body>
 </html>

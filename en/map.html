@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Heartopia Interactive Map - NPC·商店·钓鱼点·资源位置</title>
-<meta name="description" content="Heartopia Interactive Map，标注所有NPC位置、商店、钓鱼点、资源节点，点击查看详情。">
+<title>Heartopia Interactive Map - NPCs, Shops, Fishing Spots & Resources</title>
+<meta name="description" content="Heartopia InteractiveMap，标注AllNPC位置、Shops、Fishing Spots、ResourceNode，点击查看详情。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
 .map-wrap { position:relative; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; margin-bottom:12px; }
@@ -14,7 +14,7 @@
 .map-marker { cursor:pointer; transition:transform .15s; }
 .map-marker:hover { transform:scale(1.2); }
 .map-filter-bar { display:flex; gap:6px; flex-wrap:wrap; padding:10px 1rem; background:var(--surface2); border-bottom:1px solid var(--border); }
-.map-filter-btn { padding:4px 12px; border-radius:10px; border:1px solid var(--border); font-size:12px; cursor:pointer; background:var(--surface); font-family:'Inter', 'Noto Sans SC',sans-serif; }
+.map-filter-btn { padding:4px 12px; border-radius:10px; border:1px solid var(--border); font-size:12px; cursor:pointer; background:var(--surface); font-family:'Noto Sans SC',sans-serif; }
 .map-filter-btn.on { color:white; border-color:transparent; }
 .cat-npc { background:#e8659a; }
 .cat-shop { background:#3abfa0; }
@@ -37,49 +37,49 @@
 <main class="main">
 
 <div class="hero">
-  <h1>🗺️ Interactive Map</h1>
-  <p>NPC · 商店 · 钓鱼点 · 资源节点 · 野生动物 — 点击标记查看详情</p>
+  <h1>🗺️ InteractiveMap</h1>
+  <p>NPCs · Shops · Fishing Spots · Resource Nodes · Wildlife — Click markers for details</p>
 </div>
 
-<!-- 筛选 -->
+<!-- Filter -->
 <div class="map-wrap">
   <div class="map-filter-bar">
-    <button class="map-filter-btn on" onclick="filterMap('all',this)" style="background:var(--text);color:white;border-color:transparent">全部</button>
-    <button class="map-filter-btn" onclick="filterMap('npc',this)" data-cat="npc">👥 NPCs</button>
-    <button class="map-filter-btn" onclick="filterMap('shop',this)" data-cat="shop">🏪 商店</button>
-    <button class="map-filter-btn" onclick="filterMap('fish',this)" data-cat="fish">🎣 钓鱼</button>
-    <button class="map-filter-btn" onclick="filterMap('res',this)" data-cat="res">⛏️ 资源</button>
-    <button class="map-filter-btn" onclick="filterMap('wild',this)" data-cat="wild">🐾 野生动物</button>
+    <button class="map-filter-btn on" onclick="filterMap('all',this)" style="background:var(--text);color:white;border-color:transparent">All</button>
+    <button class="map-filter-btn" onclick="filterMap('npc',this)" data-cat="npc">👥 NPC</button>
+    <button class="map-filter-btn" onclick="filterMap('shop',this)" data-cat="shop">🏪 Shops</button>
+    <button class="map-filter-btn" onclick="filterMap('fish',this)" data-cat="fish">🎣 Fishing</button>
+    <button class="map-filter-btn" onclick="filterMap('res',this)" data-cat="res">⛏️ Resource</button>
+    <button class="map-filter-btn" onclick="filterMap('wild',this)" data-cat="wild">🐾 Wildlife</button>
   </div>
 
-  <!-- SVG 地图 -->
+  <!-- SVG Map -->
   <svg class="map-svg" viewBox="0 0 800 520" xmlns="http://www.w3.org/2000/svg">
     <!-- 背景 -->
     <rect width="800" height="520" fill="#e8f5e2"/>
-    <!-- 海洋 -->
+    <!-- Ocean -->
     <ellipse cx="650" cy="420" rx="160" ry="100" fill="#b3d9f7" opacity=".7"/>
-    <text x="650" y="425" text-anchor="middle" font-size="13" fill="#2d5fbe" font-family="sans-serif">海洋</text>
+    <text x="650" y="425" text-anchor="middle" font-size="13" fill="#2d5fbe" font-family="sans-serif">Ocean</text>
 
     <!-- 区域色块 -->
-    <!-- 城镇中央 -->
+    <!-- Central Town -->
     <rect x="280" y="160" width="240" height="180" rx="20" fill="#fce8f2" opacity=".7"/>
-    <text x="400" y="205" text-anchor="middle" font-size="14" fill="#c0336e" font-weight="bold" font-family="sans-serif">城镇中央</text>
+    <text x="400" y="205" text-anchor="middle" font-size="14" fill="#c0336e" font-weight="bold" font-family="sans-serif">Central Town</text>
 
-    <!-- 神奇森林 -->
+    <!-- Amazing Forest -->
     <ellipse cx="140" cy="200" rx="120" ry="110" fill="#c8e6c9" opacity=".7"/>
-    <text x="140" y="205" text-anchor="middle" font-size="13" fill="#2e7d32" font-weight="bold" font-family="sans-serif">神奇森林</text>
+    <text x="140" y="205" text-anchor="middle" font-size="13" fill="#2e7d32" font-weight="bold" font-family="sans-serif">Amazing Forest</text>
 
-    <!-- 花田 -->
+    <!-- Flower Field -->
     <ellipse cx="140" cy="390" rx="100" ry="80" fill="#f8bbd0" opacity=".6"/>
-    <text x="140" y="395" text-anchor="middle" font-size="13" fill="#880e4f" font-weight="bold" font-family="sans-serif">花田</text>
+    <text x="140" y="395" text-anchor="middle" font-size="13" fill="#880e4f" font-weight="bold" font-family="sans-serif">Flower Field</text>
 
-    <!-- 温泉悬崖 -->
+    <!-- Onsen Cliff -->
     <ellipse cx="660" cy="180" rx="120" ry="90" fill="#fff3e0" opacity=".7"/>
-    <text x="660" y="185" text-anchor="middle" font-size="13" fill="#e65100" font-weight="bold" font-family="sans-serif">温泉悬崖</text>
+    <text x="660" y="185" text-anchor="middle" font-size="13" fill="#e65100" font-weight="bold" font-family="sans-serif">Onsen Cliff</text>
 
-    <!-- 渔村 -->
+    <!-- Fishing Village -->
     <ellipse cx="530" cy="420" rx="90" ry="70" fill="#bbdefb" opacity=".7"/>
-    <text x="530" y="425" text-anchor="middle" font-size="13" fill="#0d47a1" font-weight="bold" font-family="sans-serif">渔村</text>
+    <text x="530" y="425" text-anchor="middle" font-size="13" fill="#0d47a1" font-weight="bold" font-family="sans-serif">Fishing Village</text>
 
     <!-- 道路 -->
     <line x1="280" y1="250" x2="260" y2="250" stroke="#d4b896" stroke-width="8" stroke-linecap="round"/>
@@ -88,99 +88,99 @@
     <line x1="400" y1="160" x2="400" y2="140" stroke="#d4b896" stroke-width="8" stroke-linecap="round"/>
 
     <!-- NPC 标记 -->
-    <g class="map-marker" data-cat="npc" data-name="Vanya（钓鱼导师）" data-loc="渔村码头" data-tip="找她解锁钓鱼爱好，每日送鱼提升好感度" onclick="showInfo(this)">
+    <g class="map-marker" data-cat="npc" data-name="Vanya（FishingMentor）" data-loc="Fishing Village码头" data-tip="找她UnlockFishingHobbies，Daily送鱼提升Friendship" onclick="showInfo(this)">
       <circle cx="500" cy="390" r="14" fill="#e8659a" stroke="white" stroke-width="2"/>
       <text x="500" y="395" text-anchor="middle" font-size="12">🎣</text>
     </g>
-    <g class="map-marker" data-cat="npc" data-name="Blanc（园艺导师）" data-loc="城镇中央 — 园艺商店" data-tip="园艺爱好导师，随好感度解锁更多种子" onclick="showInfo(this)">
+    <g class="map-marker" data-cat="npc" data-name="Blanc（GardeningMentor）" data-loc="Central Town — GardeningShops" data-tip="GardeningHobbiesMentor，随Friendshipunlock more种子" onclick="showInfo(this)">
       <circle cx="340" cy="230" r="14" fill="#e8659a" stroke="white" stroke-width="2"/>
       <text x="340" y="235" text-anchor="middle" font-size="12">🌱</text>
     </g>
-    <g class="map-marker" data-cat="npc" data-name="Massimo（烹饪导师）" data-loc="城镇中央 — 餐厅" data-tip="烹饪爱好导师，D.G. 等级6后解锁" onclick="showInfo(this)">
+    <g class="map-marker" data-cat="npc" data-name="Massimo（CookingMentor）" data-loc="Central Town — 餐厅" data-tip="CookingHobbiesMentor，D.G. Level6后Unlock" onclick="showInfo(this)">
       <circle cx="420" cy="270" r="14" fill="#e8659a" stroke="white" stroke-width="2"/>
       <text x="420" y="275" text-anchor="middle" font-size="12">👨‍🍳</text>
     </g>
-    <g class="map-marker" data-cat="npc" data-name="Naniwa（捉虫导师）" data-loc="神奇森林" data-tip="捉虫爱好导师，D.G. 等级6后解锁" onclick="showInfo(this)">
+    <g class="map-marker" data-cat="npc" data-name="Naniwa（Bug CatchingMentor）" data-loc="Amazing Forest" data-tip="Bug CatchingHobbiesMentor，D.G. Level6后Unlock" onclick="showInfo(this)">
       <circle cx="160" cy="180" r="14" fill="#e8659a" stroke="white" stroke-width="2"/>
       <text x="160" y="185" text-anchor="middle" font-size="12">🦋</text>
     </g>
-    <g class="map-marker" data-cat="npc" data-name="Bailey J（观鸟导师）" data-loc="小镇公园 / 自然区域" data-tip="观鸟爱好导师，D.G. 等级6后解锁" onclick="showInfo(this)">
+    <g class="map-marker" data-cat="npc" data-name="Bailey J（BirdwatchingMentor）" data-loc="Town Park / 自然区域" data-tip="BirdwatchingHobbiesMentor，D.G. Level6后Unlock" onclick="showInfo(this)">
       <circle cx="370" cy="180" r="14" fill="#e8659a" stroke="white" stroke-width="2"/>
       <text x="370" y="185" text-anchor="middle" font-size="12">📷</text>
     </g>
-    <g class="map-marker" data-cat="npc" data-name="Albert Jr.（收购商）" data-loc="镇上各处游荡" data-tip="唯一收购 NPC，每日巡逻找他卖物品换金币" onclick="showInfo(this)">
+    <g class="map-marker" data-cat="npc" data-name="Albert Jr.（收购商）" data-loc="镇上各处游荡" data-tip="唯一收购 NPC，Daily巡逻找他卖物品换Coins" onclick="showInfo(this)">
       <circle cx="460" cy="230" r="14" fill="#e8659a" stroke="white" stroke-width="2"/>
       <text x="460" y="235" text-anchor="middle" font-size="12">💰</text>
     </g>
-    <g class="map-marker" data-cat="npc" data-name="Doris（隐藏商人）" data-loc="雨天/彩虹天气随机出现" data-tip="只在特殊天气出现，售卖稀有食谱，需许愿星" onclick="showInfo(this)">
+    <g class="map-marker" data-cat="npc" data-name="Doris（Hidden商人）" data-loc="Rainy/RainbowWeather随机出现" data-tip="只在SpecialWeather出现，售卖RareRecipes，需Wishing Stars" onclick="showInfo(this)">
       <circle cx="300" cy="310" r="14" fill="#9b59b6" stroke="white" stroke-width="2"/>
       <text x="300" y="315" text-anchor="middle" font-size="12">🌧️</text>
     </g>
 
-    <!-- 商店 -->
-    <g class="map-marker" data-cat="shop" data-name="Bob 建筑工坊" data-loc="城镇中央" data-tip="扩建地块、购买建材和家具蓝图" onclick="showInfo(this)">
+    <!-- Shops -->
+    <g class="map-marker" data-cat="shop" data-name="Bob 建筑工坊" data-loc="Central Town" data-tip="扩建Plot、购买Materials和Furniture蓝图" onclick="showInfo(this)">
       <circle cx="350" cy="270" r="14" fill="#3abfa0" stroke="white" stroke-width="2"/>
       <text x="350" y="275" text-anchor="middle" font-size="12">🏗️</text>
     </g>
-    <g class="map-marker" data-cat="shop" data-name="Dorothee 服装店" data-loc="城镇中央" data-tip="售卖服装、配件，好感度解锁更多款式" onclick="showInfo(this)">
+    <g class="map-marker" data-cat="shop" data-name="Dorothee 服装店" data-loc="Central Town" data-tip="售卖服装、配件，Friendshipunlock more款式" onclick="showInfo(this)">
       <circle cx="480" cy="270" r="14" fill="#3abfa0" stroke="white" stroke-width="2"/>
       <text x="480" y="275" text-anchor="middle" font-size="12">👗</text>
     </g>
-    <g class="map-marker" data-cat="shop" data-name="Ka Ching 杂货店" data-loc="城镇中央" data-tip="烹饪基础食材、消耗品、烟花" onclick="showInfo(this)">
+    <g class="map-marker" data-cat="shop" data-name="Ka Ching 杂货店" data-loc="Central Town" data-tip="Cooking基础食材、消耗品、烟花" onclick="showInfo(this)">
       <circle cx="400" cy="230" r="14" fill="#3abfa0" stroke="white" stroke-width="2"/>
       <text x="400" y="235" text-anchor="middle" font-size="12">🏪</text>
     </g>
-    <g class="map-marker" data-cat="shop" data-name="Mrs. Joan 宠物店" data-loc="城镇中央" data-tip="售卖猫狗及宠物Use the 品，D.G. 12级解锁" onclick="showInfo(this)">
+    <g class="map-marker" data-cat="shop" data-name="Mrs. Joan Pet店" data-loc="Central Town" data-tip="售卖猫狗及Pet用品，D.G. 12级Unlock" onclick="showInfo(this)">
       <circle cx="440" cy="310" r="14" fill="#3abfa0" stroke="white" stroke-width="2"/>
       <text x="440" y="315" text-anchor="middle" font-size="12">🐾</text>
     </g>
 
-    <!-- 钓鱼点 -->
-    <g class="map-marker" data-cat="fish" data-name="河流码头" data-loc="渔村旁" data-tip="鲤鱼·鳟鱼·传说金龙鱼（彩虹天气）" onclick="showInfo(this)">
+    <!-- Fishing Spots -->
+    <g class="map-marker" data-cat="fish" data-name="River Pier" data-loc="Fishing Village旁" data-tip="Carp·Trout·Legendary金龙鱼（RainbowWeather）" onclick="showInfo(this)">
       <circle cx="545" cy="360" r="14" fill="#2980b9" stroke="white" stroke-width="2"/>
       <text x="545" y="365" text-anchor="middle" font-size="12">🎣</text>
     </g>
-    <g class="map-marker" data-cat="fish" data-name="森林小溪" data-loc="神奇森林内" data-tip="鲑鱼·溪鱼·森林幽灵鱼（夜晚雨天）" onclick="showInfo(this)">
+    <g class="map-marker" data-cat="fish" data-name="Forest Creek" data-loc="Amazing Forest内" data-tip="Salmon·溪鱼·森林幽灵鱼（NightRainy）" onclick="showInfo(this)">
       <circle cx="110" cy="240" r="14" fill="#2980b9" stroke="white" stroke-width="2"/>
       <text x="110" y="245" text-anchor="middle" font-size="12">🐟</text>
     </g>
-    <g class="map-marker" data-cat="fish" data-name="温泉悬崖钓鱼点" data-loc="温泉悬崖" data-tip="彩虹鱼（彩虹天气1400G）·热泉鱼" onclick="showInfo(this)">
+    <g class="map-marker" data-cat="fish" data-name="Onsen CliffFishing Spots" data-loc="Onsen Cliff" data-tip="Rainbow鱼（RainbowWeather1400G）·热泉鱼" onclick="showInfo(this)">
       <circle cx="660" cy="220" r="14" fill="#2980b9" stroke="white" stroke-width="2"/>
       <text x="660" y="225" text-anchor="middle" font-size="12">🌊</text>
     </g>
-    <g class="map-marker" data-cat="fish" data-name="花田池塘" data-loc="花田" data-tip="锦鲤（晴天800G）·花蝶鱼（彩虹天气）" onclick="showInfo(this)">
+    <g class="map-marker" data-cat="fish" data-name="Flower Field池塘" data-loc="Flower Field" data-tip="Koi Carp（Sunny800G）·花蝶鱼（RainbowWeather）" onclick="showInfo(this)">
       <circle cx="140" cy="430" r="14" fill="#2980b9" stroke="white" stroke-width="2"/>
       <text x="140" y="435" text-anchor="middle" font-size="12">🪷</text>
     </g>
-    <g class="map-marker" data-cat="fish" data-name="海洋（比尔带队）" data-loc="渔村出发" data-tip="剑鱼·蓝鳍金枪鱼·锤头鲨（雨天1600G）" onclick="showInfo(this)">
+    <g class="map-marker" data-cat="fish" data-name="Ocean（比尔带队）" data-loc="Fishing Village出发" data-tip="Swordfish·Bluefin Tuna·Hammerhead Shark（Rainy1600G）" onclick="showInfo(this)">
       <circle cx="660" cy="440" r="14" fill="#2980b9" stroke="white" stroke-width="2"/>
       <text x="660" y="445" text-anchor="middle" font-size="12">⚓</text>
     </g>
 
-    <!-- 资源 -->
-    <g class="map-marker" data-cat="res" data-name="石材节点" data-loc="家园周边 / 温泉悬崖" data-tip="每日刷New，提供石材和稀有矿石" onclick="showInfo(this)">
+    <!-- Resource -->
+    <g class="map-marker" data-cat="res" data-name="石材Node" data-loc="家园周边 / Onsen Cliff" data-tip="Daily刷新，提供石材和Rare矿石" onclick="showInfo(this)">
       <circle cx="310" cy="380" r="14" fill="#8b6cd4" stroke="white" stroke-width="2"/>
       <text x="310" y="385" text-anchor="middle" font-size="12">⛏️</text>
     </g>
-    <g class="map-marker" data-cat="res" data-name="木材树（游荡橡树）" data-loc="神奇森林 / 各处" data-tip="每日刷New，提供木材；Oak-Oak 也在此区域" onclick="showInfo(this)">
+    <g class="map-marker" data-cat="res" data-name="木材树（游荡橡树）" data-loc="Amazing Forest / 各处" data-tip="Daily刷新，提供木材；Oak-Oak 也在此区域" onclick="showInfo(this)">
       <circle cx="110" cy="155" r="14" fill="#8b6cd4" stroke="white" stroke-width="2"/>
       <text x="110" y="160" text-anchor="middle" font-size="12">🌳</text>
     </g>
-    <g class="map-marker" data-cat="res" data-name="气泡刷New点（Prize Bubble）" data-loc="全镇 5 个区域随机" data-tip="每日随机刷New，含蓝图/材料/金币" onclick="showInfo(this)">
+    <g class="map-marker" data-cat="res" data-name="气泡刷新点（Prize Bubble）" data-loc="全镇 5 个区域随机" data-tip="Daily随机刷新，含蓝图/材料/Coins" onclick="showInfo(this)">
       <circle cx="400" cy="140" r="14" fill="#8b6cd4" stroke="white" stroke-width="2"/>
       <text x="400" y="145" text-anchor="middle" font-size="12">🫧</text>
     </g>
 
-    <!-- 野生动物 -->
-    <g class="map-marker" data-cat="wild" data-name="熊猫（野生动物槽）" data-loc="神奇森林" data-tip="每日喂食，好感度解锁特殊互动" onclick="showInfo(this)">
+    <!-- Wildlife -->
+    <g class="map-marker" data-cat="wild" data-name="熊猫（Wildlife槽）" data-loc="Amazing Forest" data-tip="Daily喂食，FriendshipUnlockSpecialInteractive" onclick="showInfo(this)">
       <circle cx="185" cy="155" r="14" fill="#e67e22" stroke="white" stroke-width="2"/>
       <text x="185" y="160" text-anchor="middle" font-size="12">🐼</text>
     </g>
-    <g class="map-marker" data-cat="wild" data-name="羊驼（野生动物槽）" data-loc="花田高地" data-tip="每日喂食" onclick="showInfo(this)">
+    <g class="map-marker" data-cat="wild" data-name="羊驼（Wildlife槽）" data-loc="Flower Field高地" data-tip="Daily喂食" onclick="showInfo(this)">
       <circle cx="175" cy="350" r="14" fill="#e67e22" stroke="white" stroke-width="2"/>
       <text x="175" y="355" text-anchor="middle" font-size="12">🦙</text>
     </g>
-    <g class="map-marker" data-cat="wild" data-name="水豚（野生动物槽）" data-loc="温泉悬崖温泉旁" data-tip="每日喂食，温泉区最受欢迎的野生动物" onclick="showInfo(this)">
+    <g class="map-marker" data-cat="wild" data-name="水豚（Wildlife槽）" data-loc="Onsen Cliff温泉旁" data-tip="Daily喂食，温泉区最受欢迎的Wildlife" onclick="showInfo(this)">
       <circle cx="700" cy="200" r="14" fill="#e67e22" stroke="white" stroke-width="2"/>
       <text x="700" y="205" text-anchor="middle" font-size="12">🦫</text>
     </g>
@@ -188,56 +188,56 @@
     <!-- 图例 -->
     <rect x="10" y="450" width="270" height="62" rx="8" fill="white" opacity=".85"/>
     <circle cx="28" cy="466" r="7" fill="#e8659a"/><text x="40" y="470" font-size="11" fill="#444" font-family="sans-serif">NPC</text>
-    <circle cx="80" cy="466" r="7" fill="#3abfa0"/><text x="92" y="470" font-size="11" fill="#444" font-family="sans-serif">商店</text>
-    <circle cx="130" cy="466" r="7" fill="#2980b9"/><text x="142" y="470" font-size="11" fill="#444" font-family="sans-serif">钓鱼</text>
-    <circle cx="175" cy="466" r="7" fill="#8b6cd4"/><text x="187" y="470" font-size="11" fill="#444" font-family="sans-serif">资源</text>
-    <circle cx="220" cy="466" r="7" fill="#e67e22"/><text x="232" y="470" font-size="11" fill="#444" font-family="sans-serif">野生动物</text>
-    <text x="18" y="500" font-size="11" fill="#888" font-family="sans-serif">点击标记查看详情</text>
+    <circle cx="80" cy="466" r="7" fill="#3abfa0"/><text x="92" y="470" font-size="11" fill="#444" font-family="sans-serif">Shops</text>
+    <circle cx="130" cy="466" r="7" fill="#2980b9"/><text x="142" y="470" font-size="11" fill="#444" font-family="sans-serif">Fishing</text>
+    <circle cx="175" cy="466" r="7" fill="#8b6cd4"/><text x="187" y="470" font-size="11" fill="#444" font-family="sans-serif">Resource</text>
+    <circle cx="220" cy="466" r="7" fill="#e67e22"/><text x="232" y="470" font-size="11" fill="#444" font-family="sans-serif">Wildlife</text>
+    <text x="18" y="500" font-size="11" fill="#888" font-family="sans-serif">Click markers for details</text>
   </svg>
 </div>
 
 <!-- 信息面板 -->
 <div class="info-panel" id="info-panel">
-  <h3 id="info-name" style="color:var(--text3)">点击地图上的标记查看详情</h3>
+  <h3 id="info-name" style="color:var(--text3)">Click map markers for details</h3>
   <p id="info-loc"></p>
   <p id="info-tip" style="margin-top:6px"></p>
 </div>
 
-<!-- 区域指南 -->
-<div class="section-label">区域指南</div>
+<!-- Region Guide -->
+<div class="section-label">Region Guide</div>
 <div class="region-chip">
-  <h4>🏘️ 城镇中央（Central Town）</h4>
-  <p>主要商业区，所有商店和大部分 NPC 都在这里。每日任务优先从这里开始，一次拜访可完成送礼、购物、接委托。</p>
+  <h4>🏘️ Central Town（Central Town）</h4>
+  <p>The main commercial hub — all shops and most NPCs are here. Start your daily tasks here; one visit covers gifting, shopping, and requests.</p>
   <div class="region-tags">
-    <span class="badge badge-both">全部商店</span><span class="badge badge-free">大部分 NPC</span><span class="badge badge-new">委托中心</span>
+    <span class="badge badge-both">AllShops</span><span class="badge badge-free">Most NPCs</span><span class="badge badge-new">Request Hub</span>
   </div>
 </div>
 <div class="region-chip">
-  <h4>🌲 神奇森林（Amazing Forest）</h4>
-  <p>捉虫、观鸟、采集木材的主要区域。夜晚稀有昆虫出没，彩虹天气有传说级蝴蝶。Oak-Oak 偶尔在此游荡。</p>
+  <h4>🌲 Amazing Forest（Amazing Forest）</h4>
+  <p>Main area for bug catching, birdwatching, and wood gathering. Rare insects appear at night; legendary butterflies spawn during rainbow weather. Oak-Oak occasionally wanders here.</p>
   <div class="region-tags">
-    <span class="badge badge-free">捉虫 🦋</span><span class="badge badge-free">观鸟 🐦</span><span class="badge badge-free">木材 🪵</span><span class="badge badge-rare">Oak-Oak ✨</span>
+    <span class="badge badge-free">Bug Catching 🦋</span><span class="badge badge-free">Birdwatching 🐦</span><span class="badge badge-free">Lumber 🪵</span><span class="badge badge-rare">Oak-Oak ✨</span>
   </div>
 </div>
 <div class="region-chip">
-  <h4>🌸 花田（Flower Field）</h4>
-  <p>园艺种植和观鸟的好去处，花田池塘可钓锦鲤（晴天 800G）。红鹤在黄昏时分出现。</p>
+  <h4>🌸 Flower Field（Flower Field）</h4>
+  <p>Great for gardening and birdwatching. The Flower Pond has Koi Carp (800G on sunny days). Flamingos appear at dusk.</p>
   <div class="region-tags">
-    <span class="badge badge-free">钓鱼 🎣</span><span class="badge badge-free">观鸟 🦩</span><span class="badge badge-free">花卉 🌷</span>
+    <span class="badge badge-free">Fishing 🎣</span><span class="badge badge-free">Birdwatching 🦩</span><span class="badge badge-free">Flowers 🌷</span>
   </div>
 </div>
 <div class="region-chip">
-  <h4>♨️ 温泉悬崖（Onsen Mountain）</h4>
-  <p>稀有矿石节点集中在这里，钓鱼点出彩虹鱼（彩虹天气 1400G）。水豚在温泉旁悠闲泡澡。</p>
+  <h4>♨️ Onsen Cliff（Onsen Mountain）</h4>
+  <p>Rare ore nodes are concentrated here. The fishing spot yields Rainbow Fish (1400G in rainbow weather). Capybaras lounge in the hot spring.</p>
   <div class="region-tags">
-    <span class="badge badge-free">钓鱼 🎣</span><span class="badge badge-rare">稀有矿石 💎</span><span class="badge badge-free">水豚 🦫</span>
+    <span class="badge badge-free">Fishing 🎣</span><span class="badge badge-rare">Rare Ore 💎</span><span class="badge badge-free">Capybara 🦫</span>
   </div>
 </div>
 <div class="region-chip">
-  <h4>⚓ 渔村（Fishing Village）</h4>
-  <p>Vanya 在这里，Bill 负责组织海洋钓鱼活动。海洋区域有游戏内最贵的鱼（锤头鲨雨天 1600G）。</p>
+  <h4>⚓ Fishing Village（Fishing Village）</h4>
+  <p>Vanya is here, and Bill organizes sea fishing events. The ocean has the most expensive fish in the game (Hammerhead Shark, 1600G in rain).</p>
   <div class="region-tags">
-    <span class="badge badge-free">河流钓鱼 🎣</span><span class="badge badge-both">海洋钓鱼 ⚓</span><span class="badge badge-free">Vanya 🎣</span>
+    <span class="badge badge-free">River Fishing 🎣</span><span class="badge badge-both">OceanFishing ⚓</span><span class="badge badge-free">Vanya 🎣</span>
   </div>
 </div>
 

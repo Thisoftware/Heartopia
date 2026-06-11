@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Heartopia 鳥類圖鑑 - 全68种鳥類地点·拍照技巧 - 繁體中文版</title>
-<meta name="description" content="Heartopia 鳥類圖鑑，收錄全部68种鳥類的出现地点、时段、拍照技巧，帮你高效完成觀鳥圖鑑。">
+<title>Heartopia 鳥類圖鑑 - 全68种鳥類地點·拍照技巧</title>
+<meta name="description" content="Heartopia 鳥類圖鑑，收錄全部68种鳥類的出现地點、時段、拍照技巧，帮你高效完成觀鳥圖鑑。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -15,27 +15,27 @@
 
 <div class="hero">
   <h1>🐦 鳥類圖鑑</h1>
-  <p>收錄全部 68 种鳥類 · 地点 · 时段 · 拍照技巧</p>
+  <p>收錄全部 68 种鳥類 · 地點 · 時段 · 拍照技巧</p>
 </div>
 
 <div class="stats-row">
-  <div class="stat-chip"><div class="sv">68</div><div class="sl">鳥類總數</div></div>
+  <div class="stat-chip"><div class="sv">68</div><div class="sl">鳥類总数</div></div>
   <div class="stat-chip"><div class="sv">Bailey J</div><div class="sl">觀鳥導師</div></div>
-  <div class="stat-chip"><div class="sv">D.G. 6</div><div class="sl">解鎖等级</div></div>
-  <div class="stat-chip"><div class="sv">5张/天</div><div class="sl">信息卡上限</div></div>
+  <div class="stat-chip"><div class="sv">D.G. 6</div><div class="sl">解鎖等級</div></div>
+  <div class="stat-chip"><div class="sv">5张/天</div><div class="sl">資訊卡上限</div></div>
 </div>
 
-<div class="notice warn">🔒 觀鳥愛好需要 <strong>D.G. 等级 6</strong> 后找 <strong>Bailey J</strong> 解鎖。每天最多向 Bailey J 提交 <strong>5 张信息卡</strong>。</div>
-<div class="notice tip">💡 Blanc（園藝導師）头上常年站着一只鸟，每天与他对话可顺带积累觀鳥经验，不消耗體力。</div>
+<div class="notice warn">🔒 觀鳥愛好需要 <strong>D.G. 等級 6</strong> 後找 <strong>Bailey J</strong> 解鎖。每天最多向 Bailey J 提交 <strong>5 张資訊卡</strong>。</div>
+<div class="notice tip">💡 Blanc（園藝導師）头上常年站着一只鳥，每天与他對話可顺帶积累觀鳥經驗，不消耗體力。</div>
 
 <div class="guide-block">
   <h3>📷 拍照技巧</h3>
   <ol class="step-list">
-    <li>使用望远镜拉近视角，拍摄距离越近照片品質越高</li>
+    <li>使用望遠鏡拉近视角，拍摄距离越近照片品質越高</li>
     <li>保持静止并慢慢接近，奔跑或跳跃会吓跑鳥類</li>
-    <li>清晨和黄昏光线好，拍出照片品質更高，售價更贵</li>
-    <li>送高质量鳥類照片给 Bailey J 好感度加成最高</li>
-    <li>每日最多提交 5 张信息卡，優先提交稀有鳥類的记录</li>
+    <li>清晨和黃昏光线好，拍出照片品質更高，售價更贵</li>
+    <li>送高质量鳥類照片給 Bailey J 好感度加成最高</li>
+    <li>每日最多提交 5 张資訊卡，優先提交稀有鳥類的記錄</li>
   </ol>
 </div>
 
@@ -43,14 +43,14 @@
 <div class="guide-block">
   <h3>🔍 搜尋 / 篩選</h3>
   <div class="filter-row">
-    <input type="text" id="bird-search" placeholder="搜尋鸟名..." oninput="filterBirds()" style="flex:2;min-width:120px">
+    <input type="text" id="bird-search" placeholder="搜尋鳥名..." oninput="filterBirds()" style="flex:2;min-width:120px">
     <select id="bird-loc" onchange="filterBirds()">
-      <option value="">所有地点</option>
-      <option>神奇森林</option><option>花田</option><option>温泉悬崖</option><option>河流码头</option><option>小镇公园</option><option>全區域</option>
+      <option value="">所有地點</option>
+      <option>神奇森林</option><option>花田</option><option>溫泉懸崖</option><option>河流碼頭</option><option>小鎮公園</option><option>全區域</option>
     </select>
     <select id="bird-time" onchange="filterBirds()">
-      <option value="">所有时段</option>
-      <option>全天</option><option>清晨</option><option>白天</option><option>黄昏</option><option>夜晚</option>
+      <option value="">所有時段</option>
+      <option>全天</option><option>清晨</option><option>白天</option><option>黃昏</option><option>夜晚</option>
     </select>
     <select id="bird-rarity" onchange="filterBirds()">
       <option value="">所有稀有度</option>
@@ -66,20 +66,20 @@
   </div>
   <div style="overflow-x:auto">
     <table class="data-table">
-      <thead><tr><th>#</th><th>鳥類</th><th>地点</th><th>时段</th><th>天气</th><th>照片价值</th><th>稀有度</th></tr></thead>
+      <thead><tr><th>#</th><th>鳥類</th><th>地點</th><th>時段</th><th>天氣</th><th>照片价值</th><th>稀有度</th></tr></thead>
       <tbody id="bird-tbody">
-        <tr data-loc="小镇公园" data-time="全天" data-rarity="普通"><td>1</td><td class="name">🐦 麻雀</td><td>小镇公园</td><td>全天</td><td>任意</td><td>30G</td><td><span class="badge badge-common">普通</span></td></tr>
+        <tr data-loc="小鎮公園" data-time="全天" data-rarity="普通"><td>1</td><td class="name">🐦 麻雀</td><td>小鎮公園</td><td>全天</td><td>任意</td><td>30G</td><td><span class="badge badge-common">普通</span></td></tr>
         <tr data-loc="花田" data-time="清晨" data-rarity="普通"><td>2</td><td class="name">🐤 黄鹂</td><td>花田</td><td>清晨</td><td>晴天</td><td>80G</td><td><span class="badge badge-common">普通</span></td></tr>
-        <tr data-loc="河流码头" data-time="全天" data-rarity="普通"><td>3</td><td class="name">🦆 野鸭</td><td>河流码头</td><td>全天</td><td>任意</td><td>60G</td><td><span class="badge badge-common">普通</span></td></tr>
+        <tr data-loc="河流碼頭" data-time="全天" data-rarity="普通"><td>3</td><td class="name">🦆 野鸭</td><td>河流碼頭</td><td>全天</td><td>任意</td><td>60G</td><td><span class="badge badge-common">普通</span></td></tr>
         <tr data-loc="神奇森林" data-time="白天" data-rarity="普通"><td>4</td><td class="name">🦜 鹦鹉</td><td>神奇森林</td><td>白天</td><td>晴天</td><td>120G</td><td><span class="badge badge-common">普通</span></td></tr>
-        <tr data-loc="温泉悬崖" data-time="清晨" data-rarity="稀有"><td>5</td><td class="name">🦅 苍鹰</td><td>温泉悬崖</td><td>清晨</td><td>晴天</td><td>450G</td><td><span class="badge badge-rare">稀有</span></td></tr>
+        <tr data-loc="溫泉懸崖" data-time="清晨" data-rarity="稀有"><td>5</td><td class="name">🦅 苍鹰</td><td>溫泉懸崖</td><td>清晨</td><td>晴天</td><td>450G</td><td><span class="badge badge-rare">稀有</span></td></tr>
         <tr data-loc="神奇森林" data-time="夜晚" data-rarity="稀有"><td>6</td><td class="name">🦉 猫头鹰</td><td>神奇森林</td><td>夜晚</td><td>任意</td><td>380G</td><td><span class="badge badge-rare">稀有</span></td></tr>
-        <tr data-loc="花田" data-time="黄昏" data-rarity="稀有"><td>7</td><td class="name">🦩 红鹤</td><td>花田</td><td>黄昏</td><td>晴天</td><td>520G</td><td><span class="badge badge-rare">稀有</span></td></tr>
-        <tr data-loc="全區域" data-time="全天" data-rarity="普通"><td>8</td><td class="name">🐧 小企鹅</td><td>温泉悬崖</td><td>全天</td><td>任意</td><td>150G</td><td><span class="badge badge-common">普通</span></td></tr>
+        <tr data-loc="花田" data-time="黃昏" data-rarity="稀有"><td>7</td><td class="name">🦩 红鹤</td><td>花田</td><td>黃昏</td><td>晴天</td><td>520G</td><td><span class="badge badge-rare">稀有</span></td></tr>
+        <tr data-loc="全區域" data-time="全天" data-rarity="普通"><td>8</td><td class="name">🐧 小企鹅</td><td>溫泉懸崖</td><td>全天</td><td>任意</td><td>150G</td><td><span class="badge badge-common">普通</span></td></tr>
         <tr data-loc="神奇森林" data-time="清晨" data-rarity="傳說"><td>9</td><td class="name">🌈 彩虹雀</td><td>神奇森林</td><td>清晨</td><td>🌈 彩虹</td><td>1200G</td><td><span class="badge badge-rare" style="color:#9b59b6">傳說</span></td></tr>
-        <tr data-loc="小镇公园" data-time="白天" data-rarity="普通"><td>10</td><td class="name">🐦 鸽子</td><td>小镇公园</td><td>白天</td><td>任意</td><td>25G</td><td><span class="badge badge-common">普通</span></td></tr>
-        <tr data-loc="河流码头" data-time="清晨" data-rarity="稀有"><td>11</td><td class="name">🦢 白天鹅</td><td>河流码头</td><td>清晨</td><td>晴天</td><td>480G</td><td><span class="badge badge-rare">稀有</span></td></tr>
-        <tr data-loc="温泉悬崖" data-time="黄昏" data-rarity="傳說"><td>12</td><td class="name">✨ 凤凰</td><td>温泉悬崖</td><td>黄昏</td><td>🌈 彩虹</td><td>1500G</td><td><span class="badge badge-rare" style="color:#9b59b6">傳說</span></td></tr>
+        <tr data-loc="小鎮公園" data-time="白天" data-rarity="普通"><td>10</td><td class="name">🐦 鸽子</td><td>小鎮公園</td><td>白天</td><td>任意</td><td>25G</td><td><span class="badge badge-common">普通</span></td></tr>
+        <tr data-loc="河流碼頭" data-time="清晨" data-rarity="稀有"><td>11</td><td class="name">🦢 白天鹅</td><td>河流碼頭</td><td>清晨</td><td>晴天</td><td>480G</td><td><span class="badge badge-rare">稀有</span></td></tr>
+        <tr data-loc="溫泉懸崖" data-time="黃昏" data-rarity="傳說"><td>12</td><td class="name">✨ 凤凰</td><td>溫泉懸崖</td><td>黃昏</td><td>🌈 彩虹</td><td>1500G</td><td><span class="badge badge-rare" style="color:#9b59b6">傳說</span></td></tr>
         <tr data-loc="花田" data-time="白天" data-rarity="普通"><td>13</td><td class="name">🦚 孔雀</td><td>花田</td><td>白天</td><td>晴天</td><td>200G</td><td><span class="badge badge-common">普通</span></td></tr>
         <tr data-loc="神奇森林" data-time="全天" data-rarity="普通"><td>14</td><td class="name">🦜 金刚鹦鹉</td><td>神奇森林</td><td>全天</td><td>任意</td><td>160G</td><td><span class="badge badge-common">普通</span></td></tr>
         <tr data-loc="全區域" data-time="夜晚" data-rarity="稀有"><td>15</td><td class="name">🌙 月鸮</td><td>全區域</td><td>夜晚</td><td>任意</td><td>400G</td><td><span class="badge badge-rare">稀有</span></td></tr>
@@ -87,7 +87,7 @@
     </table>
   </div>
   <div style="padding:10px 1.25rem;font-size:12px;color:var(--text3);border-top:1px solid var(--border)">
-    * 持續补充中，目前收錄 15 条，總計 68 种。照片品質越高售價越高，5★ 照片最高可达基础值 1.8 倍。
+    * 持續補充中，目前收錄 15 條，總計 68 種。照片品質越高售價越高，5★ 照片最高可達基礎值 1.8 倍。
   </div>
 </div>
 

@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Heartopia Profit Calc - 烹饪vs原料·钓鱼ROI·最优卖出方案</title>
-<meta name="description" content="Heartopia Profit Calc，快速对比烹饪成品与原材料售价，找到最赚金币的卖出策略。">
+<title>Heartopia Profit Calculator - Cooking vs Raw, Fishing ROI & Best Sell Strategy</title>
+<meta name="description" content="Heartopia Profit计算器，快速对比Cooking成品与原材料Sell Price，找到最赚Coins的卖出策略。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
 .calc-section { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem; margin-bottom:12px; }
@@ -14,9 +14,9 @@
 .input-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:12px; }
 .input-group { display:flex; flex-direction:column; gap:5px; }
 .input-group label { font-size:12px; color:var(--text2); font-weight:500; }
-.input-group input, .input-group select { padding:8px 12px; border-radius:var(--radius-sm); border:1px solid var(--border); background:var(--surface2); font-size:14px; font-family:'Inter', 'Noto Sans SC',sans-serif; color:var(--text); outline:none; }
+.input-group input, .input-group select { padding:8px 12px; border-radius:var(--radius-sm); border:1px solid var(--border); background:var(--surface2); font-size:14px; font-family:'Noto Sans SC',sans-serif; color:var(--text); outline:none; }
 .input-group input:focus, .input-group select:focus { border-color:var(--pink-mid); }
-.calc-btn { width:100%; padding:10px; border-radius:var(--radius-sm); border:none; background:var(--pink); color:white; font-size:14px; font-family:'Inter', 'Noto Sans SC',sans-serif; font-weight:500; cursor:pointer; margin-top:4px; }
+.calc-btn { width:100%; padding:10px; border-radius:var(--radius-sm); border:none; background:var(--pink); color:white; font-size:14px; font-family:'Noto Sans SC',sans-serif; font-weight:500; cursor:pointer; margin-top:4px; }
 .calc-btn:hover { opacity:0.9; }
 .result-box { background:var(--surface2); border-radius:var(--radius-sm); padding:1rem; margin-top:12px; display:none; }
 .result-box.show { display:block; }
@@ -41,63 +41,63 @@
 <main class="main">
 
 <div class="hero">
-  <h1>💰 Profit Calc</h1>
-  <p>计算烹饪 vs 原料售价 · 钓鱼 ROI · 找最优卖出方案</p>
+  <h1>💰 Profit Calculator</h1>
+  <p>Calculate cooking vs raw material profit · Fishing ROI · Find the best sell strategy</p>
 </div>
 
 <div class="stats-row">
-  <div class="stat-chip"><div class="sv">3–4x</div><div class="sl">料理溢价倍数</div></div>
-  <div class="stat-chip"><div class="sv">1.1x</div><div class="sl">D.G. 会员加成</div></div>
-  <div class="stat-chip"><div class="sv">+80%</div><div class="sl">5★ 品质加成</div></div>
-  <div class="stat-chip"><div class="sv">500G</div><div class="sl">蘑菇汤Top利润</div></div>
+  <div class="stat-chip"><div class="sv">3–4x</div><div class="sl">Dish price multiplier</div></div>
+  <div class="stat-chip"><div class="sv">1.1x</div><div class="sl">D.G. Member Bonus</div></div>
+  <div class="stat-chip"><div class="sv">+80%</div><div class="sl">5★ Quality Bonus</div></div>
+  <div class="stat-chip"><div class="sv">500G</div><div class="sl">Mushroom Stew highest profit</div></div>
 </div>
 
 <!-- Tab 切换 -->
 <div class="tab-strip">
-  <button class="tab-btn on" onclick="switchTab('cooking',this)">🍳 烹饪利润</button>
-  <button class="tab-btn" onclick="switchTab('fish',this)">🐟 钓鱼 ROI</button>
-  <button class="tab-btn" onclick="switchTab('quick',this)">⚡ 快速参考表</button>
+  <button class="tab-btn on" onclick="switchTab('cooking',this)">🍳 CookingProfit</button>
+  <button class="tab-btn" onclick="switchTab('fish',this)">🐟 Fishing ROI</button>
+  <button class="tab-btn" onclick="switchTab('quick',this)">⚡ Quick Reference Table</button>
 </div>
 
-<!-- 烹饪Profit Calc -->
+<!-- CookingProfit计算器 -->
 <div id="tab-cooking" class="tab-content active">
   <div class="calc-section">
-    <h3>🍳 烹饪利润计算</h3>
+    <h3>🍳 Cooking Profit Calculator</h3>
     <div class="input-grid">
       <div class="input-group">
-        <label>食谱名（可选）</label>
+        <label>Recipe (optional)</label>
         <select id="c-preset" onchange="loadPreset()">
-          <option value="">自定义输入</option>
-          <option value="230,80">鱼薯条 Fish N Chips</option>
-          <option value="120,30">简单沙拉 House Salad</option>
-          <option value="650,150">蘑菇炖汤 Mushroom Stew</option>
-          <option value="650,200">纽扣蘑菇派 Button Mushroom Pie</option>
-          <option value="600,250">三文鱼寿司 Salmon Sushi</option>
-          <option value="620,300">海鲜披萨 Seafood Pizza</option>
-          <option value="580,280">奶酪蛋糕 Cheesecake</option>
-          <option value="460,180">胡萝卜蛋糕 Carrot Cake</option>
-          <option value="460,200">肉酱意面 Meat Sauce Pasta</option>
-          <option value="340,100">温泉蔬菜沙拉</option>
-          <option value="320,100">烤鱼</option>
+          <option value="">Custom Input</option>
+          <option value="230,80">Fish N Chips Fish N Chips</option>
+          <option value="120,30">House Salad House Salad</option>
+          <option value="650,150">Mushroom Stew Mushroom Stew</option>
+          <option value="650,200">Button Mushroom Pie Button Mushroom Pie</option>
+          <option value="600,250">Salmon Sushi Salmon Sushi</option>
+          <option value="620,300">Seafood Pizza Seafood Pizza</option>
+          <option value="580,280">Cheesecake Cheesecake</option>
+          <option value="460,180">Carrot Cake Carrot Cake</option>
+          <option value="460,200">Meat Sauce Pasta Meat Sauce Pasta</option>
+          <option value="340,100">Onsen Veggie Salad</option>
+          <option value="320,100">Grilled Fish</option>
         </select>
       </div>
       <div class="input-group">
-        <label>食材总成本（G）</label>
+        <label>Ingredient Cost (G)</label>
         <input type="number" id="c-cost" placeholder="如：80" min="0">
       </div>
       <div class="input-group">
-        <label>料理基础售价（G）</label>
+        <label>Base Sell Price (G)</label>
         <input type="number" id="c-price" placeholder="如：230" min="0">
       </div>
       <div class="input-group">
-        <label>批量数量</label>
+        <label>Batch Quantity</label>
         <input type="number" id="c-qty" value="1" min="1" max="999">
       </div>
     </div>
     <div class="input-group" style="margin-bottom:10px">
-      <label>料理品质（影响售价）</label>
+      <label>Dish Quality (affects price)</label>
       <div class="star-select">
-        <button class="star-btn on" onclick="setStar(1,this)">1★ 基础</button>
+        <button class="star-btn on" onclick="setStar(1,this)">1★ Base</button>
         <button class="star-btn" onclick="setStar(1.2,this)">2★ +20%</button>
         <button class="star-btn" onclick="setStar(1.4,this)">3★ +40%</button>
         <button class="star-btn" onclick="setStar(1.6,this)">4★ +60%</button>
@@ -106,112 +106,112 @@
     </div>
     <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px">
       <input type="checkbox" id="c-member" style="width:16px;height:16px;accent-color:var(--pink)">
-      <label for="c-member" style="font-size:13px;color:var(--text2)">D.G. 会员加成（×1.1）</label>
+      <label for="c-member" style="font-size:13px;color:var(--text2)">D.G. Member Bonus（×1.1）</label>
     </div>
-    <button class="calc-btn" onclick="calcCooking()">计算利润</button>
+    <button class="calc-btn" onclick="calcCooking()">Calculate Profit</button>
     <div class="result-box" id="c-result">
-      <div class="result-row"><span>食材成本</span><span id="c-r-cost"></span></div>
-      <div class="result-row"><span>品质加成后售价</span><span id="c-r-price"></span></div>
-      <div class="result-row"><span>D.G. 会员加成</span><span id="c-r-member"></span></div>
-      <div class="result-row"><span>每份利润</span><span id="c-r-unit"></span></div>
-      <div class="result-row"><span>批量利润（×<span id="c-r-qty-label"></span>份）</span><span id="c-r-total"></span></div>
+      <div class="result-row"><span>Ingredient Cost</span><span id="c-r-cost"></span></div>
+      <div class="result-row"><span>Quality-Adjusted Price</span><span id="c-r-price"></span></div>
+      <div class="result-row"><span>D.G. Member Bonus</span><span id="c-r-member"></span></div>
+      <div class="result-row"><span>Profit per Dish</span><span id="c-r-unit"></span></div>
+      <div class="result-row"><span>Batch Profit (×<span id="c-r-qty-label"></span> dishes)</span><span id="c-r-total"></span></div>
     </div>
   </div>
 
-  <div class="notice tip">💡 Use the  3★ 以上食材烹饪可显著提升料理品质，5★ 料理售价是基础的 1.8 倍。D.G. 会员额外再加 10%。</div>
+  <div class="notice tip">💡 Using 3★+ ingredients significantly boosts dish quality. 5★ dishes sell for 1.8× the base price. D.G. members get an extra 10% on top.</div>
 </div>
 
-<!-- 钓鱼 ROI -->
+<!-- Fishing ROI -->
 <div id="tab-fish" class="tab-content">
   <div class="calc-section">
-    <h3>🎣 钓鱼 ROI 计算</h3>
+    <h3>🎣 Fishing ROI Calculator</h3>
     <div class="input-grid">
       <div class="input-group">
-        <label>鱼类预设</label>
+        <label>Fish Preset</label>
         <select id="f-preset" onchange="loadFishPreset()">
-          <option value="">自定义</option>
-          <option value="80,0">鲤鱼（80G）</option>
-          <option value="250,0">鳟鱼（250G）</option>
-          <option value="600,0">鲑鱼（600G）</option>
-          <option value="800,0">锦鲤（800G）</option>
-          <option value="950,0">剑鱼（950G）</option>
-          <option value="1200,0">蓝鳍金枪鱼（1200G）</option>
-          <option value="1800,0">传说金龙鱼（1800G）</option>
+          <option value="">Custom</option>
+          <option value="80,0">Carp（80G）</option>
+          <option value="250,0">Trout（250G）</option>
+          <option value="600,0">Salmon（600G）</option>
+          <option value="800,0">Koi Carp（800G）</option>
+          <option value="950,0">Swordfish（950G）</option>
+          <option value="1200,0">Bluefin Tuna（1200G）</option>
+          <option value="1800,0">Legendary Golden Dragon Fish (1800G)</option>
         </select>
       </div>
       <div class="input-group">
-        <label>单条鱼售价（G）</label>
+        <label>Sell Price per Fish (G)</label>
         <input type="number" id="f-price" placeholder="如：250" min="0">
       </div>
       <div class="input-group">
-        <label>鱼饵成本（G/次，无则填0）</label>
+        <label>Bait Cost (G/cast, 0 if none)</label>
         <input type="number" id="f-bait" placeholder="0" value="0" min="0">
       </div>
       <div class="input-group">
-        <label>修复包成本分摊（G/次）</label>
+        <label>Repair Kit Cost (G/cast)</label>
         <input type="number" id="f-repair" placeholder="如：10" value="10" min="0">
       </div>
       <div class="input-group">
-        <label>每小时钓获量（条）</label>
+        <label>Catch Rate (fish/hour)</label>
         <input type="number" id="f-qty" placeholder="如：20" value="20" min="1">
       </div>
       <div class="input-group">
-        <label>钓鱼时长（分钟）</label>
+        <label>Fishing Duration (minutes)</label>
         <input type="number" id="f-time" placeholder="如：30" value="30" min="1">
       </div>
     </div>
     <div style="display:flex;gap:8px;align-items:center;margin-bottom:10px">
       <input type="checkbox" id="f-member" style="width:16px;height:16px;accent-color:var(--pink)">
-      <label for="f-member" style="font-size:13px;color:var(--text2)">D.G. 会员加成（×1.1）</label>
+      <label for="f-member" style="font-size:13px;color:var(--text2)">D.G. Member Bonus（×1.1）</label>
     </div>
-    <button class="calc-btn" onclick="calcFish()">计算收益</button>
+    <button class="calc-btn" onclick="calcFish()">Calculate Returns</button>
     <div class="result-box" id="f-result">
-      <div class="result-row"><span>预计钓获量</span><span id="f-r-qty"></span></div>
-      <div class="result-row"><span>总售价收入</span><span id="f-r-income"></span></div>
-      <div class="result-row"><span>总成本（鱼饵+修复）</span><span id="f-r-cost"></span></div>
-      <div class="result-row"><span>净利润</span><span id="f-r-profit"></span></div>
-      <div class="result-row"><span>每小时净收益</span><span id="f-r-hourly"></span></div>
+      <div class="result-row"><span>Estimated Catch</span><span id="f-r-qty"></span></div>
+      <div class="result-row"><span>Total Sell Income</span><span id="f-r-income"></span></div>
+      <div class="result-row"><span>Total Cost (bait + repair)</span><span id="f-r-cost"></span></div>
+      <div class="result-row"><span>Net Profit</span><span id="f-r-profit"></span></div>
+      <div class="result-row"><span>Net Earnings/Hour</span><span id="f-r-hourly"></span></div>
     </div>
   </div>
-  <div class="notice">🎣 修复包成本建议按每次 10–15G 分摊（一个修复包约修 5–8 次）。高利润鱼建议配合美人鱼鱼饵使Use the 。</div>
+  <div class="notice">🎣 Tip: budget 10–15G per cast for Repair Kit costs (one kit handles ~5–8 repairs). High-profit fish pair well with Mermaid Bait.</div>
 </div>
 
 <!-- 快速参考表 -->
 <div id="tab-quick" class="tab-content">
   <div class="calc-section">
-    <h3>⚡ 烹饪利润排行（基础 1★）</h3>
+    <h3>⚡ Cooking Profit Ranking (Base 1★)</h3>
     <table class="quick-table">
-      <thead><tr><th>食谱</th><th>成本</th><th>售价</th><th>利润</th><th>利润率</th></tr></thead>
+      <thead><tr><th>Recipes</th><th>Cost</th><th>Sell Price</th><th>Profit</th><th>Profit Rate</th></tr></thead>
       <tbody>
-        <tr><td class="name">🍲 蘑菇炖汤</td><td>~150G</td><td>650G</td><td class="profit">+500G</td><td>77%</td></tr>
-        <tr><td class="name">🥧 纽扣蘑菇派</td><td>~200G</td><td>650G</td><td class="profit">+450G</td><td>69%</td></tr>
-        <tr><td class="name">🍣 三文鱼寿司</td><td>~250G</td><td>600G</td><td class="profit">+350G</td><td>58%</td></tr>
-        <tr><td class="name">🍕 海鲜披萨</td><td>~300G</td><td>620G</td><td class="profit">+320G</td><td>52%</td></tr>
-        <tr><td class="name">🍰 奶酪蛋糕</td><td>~280G</td><td>580G</td><td class="profit">+300G</td><td>52%</td></tr>
-        <tr><td class="name">🥕 胡萝卜蛋糕</td><td>~180G</td><td>460G</td><td class="profit">+280G</td><td>61%</td></tr>
-        <tr><td class="name">🍝 肉酱意面</td><td>~200G</td><td>460G</td><td class="profit">+260G</td><td>57%</td></tr>
-        <tr><td class="name">🥗 温泉蔬菜沙拉</td><td>~100G</td><td>340G</td><td class="profit">+240G</td><td>71%</td></tr>
-        <tr><td class="name">🐟 烤鱼</td><td>~100G</td><td>320G</td><td class="profit">+220G</td><td>69%</td></tr>
-        <tr><td class="name">🍟 鱼薯条</td><td>~80G</td><td>230G</td><td class="profit">+150G</td><td>65%</td></tr>
-        <tr><td class="name">🥗 简单沙拉</td><td>~30G</td><td>120G</td><td class="profit">+90G</td><td>75%</td></tr>
+        <tr><td class="name">🍲 Mushroom Stew</td><td>~150G</td><td>650G</td><td class="profit">+500G</td><td>77%</td></tr>
+        <tr><td class="name">🥧 Button Mushroom Pie</td><td>~200G</td><td>650G</td><td class="profit">+450G</td><td>69%</td></tr>
+        <tr><td class="name">🍣 Salmon Sushi</td><td>~250G</td><td>600G</td><td class="profit">+350G</td><td>58%</td></tr>
+        <tr><td class="name">🍕 Seafood Pizza</td><td>~300G</td><td>620G</td><td class="profit">+320G</td><td>52%</td></tr>
+        <tr><td class="name">🍰 Cheesecake</td><td>~280G</td><td>580G</td><td class="profit">+300G</td><td>52%</td></tr>
+        <tr><td class="name">🥕 Carrot Cake</td><td>~180G</td><td>460G</td><td class="profit">+280G</td><td>61%</td></tr>
+        <tr><td class="name">🍝 Meat Sauce Pasta</td><td>~200G</td><td>460G</td><td class="profit">+260G</td><td>57%</td></tr>
+        <tr><td class="name">🥗 Onsen Veggie Salad</td><td>~100G</td><td>340G</td><td class="profit">+240G</td><td>71%</td></tr>
+        <tr><td class="name">🐟 Grilled Fish</td><td>~100G</td><td>320G</td><td class="profit">+220G</td><td>69%</td></tr>
+        <tr><td class="name">🍟 Fish N Chips</td><td>~80G</td><td>230G</td><td class="profit">+150G</td><td>65%</td></tr>
+        <tr><td class="name">🥗 House Salad</td><td>~30G</td><td>120G</td><td class="profit">+90G</td><td>75%</td></tr>
       </tbody>
     </table>
   </div>
   <div class="calc-section">
-    <h3>🐟 钓鱼售价参考</h3>
+    <h3>🐟 Fishing Sell Price Reference</h3>
     <table class="quick-table">
-      <thead><tr><th>鱼类</th><th>售价</th><th>地点</th><th>天气</th></tr></thead>
+      <thead><tr><th>Fish</th><th>Sell Price</th><th>Location</th><th>Weather</th></tr></thead>
       <tbody>
-        <tr><td class="name">传说金龙鱼</td><td class="profit">1800G</td><td>河流码头</td><td>🌈 彩虹</td></tr>
-        <tr><td class="name">锤头鲨</td><td class="profit">1600G</td><td>海洋</td><td>⛈️ 雨天</td></tr>
-        <tr><td class="name">彩虹鱼</td><td class="profit">1400G</td><td>温泉悬崖</td><td>🌈 彩虹</td></tr>
-        <tr><td class="name">蓝鳍金枪鱼</td><td class="profit">1200G</td><td>海洋</td><td>任意</td></tr>
-        <tr><td class="name">神秘河豚</td><td class="profit">1100G</td><td>海洋</td><td>🌧️ 雨天</td></tr>
-        <tr><td class="name">剑鱼</td><td class="profit">950G</td><td>海洋</td><td>任意</td></tr>
-        <tr><td class="name">锦鲤</td><td class="profit">800G</td><td>花田池塘</td><td>晴天</td></tr>
-        <tr><td class="name">鲑鱼</td><td class="profit">600G</td><td>森林小溪</td><td>任意</td></tr>
-        <tr><td class="name">鳟鱼</td><td class="profit">250G</td><td>河流码头</td><td>雨天</td></tr>
-        <tr><td class="name">鲤鱼</td><td>80G</td><td>河流码头</td><td>任意</td></tr>
+        <tr><td class="name">Legendary Golden Dragon Fish</td><td class="profit">1800G</td><td>River Pier</td><td>🌈 Rainbow</td></tr>
+        <tr><td class="name">Hammerhead Shark</td><td class="profit">1600G</td><td>Ocean</td><td>⛈️ Rainy</td></tr>
+        <tr><td class="name">Rainbow Fish</td><td class="profit">1400G</td><td>Onsen Cliff</td><td>🌈 Rainbow</td></tr>
+        <tr><td class="name">Bluefin Tuna</td><td class="profit">1200G</td><td>Ocean</td><td>Any</td></tr>
+        <tr><td class="name">Mystery Pufferfish</td><td class="profit">1100G</td><td>Ocean</td><td>🌧️ Rainy</td></tr>
+        <tr><td class="name">Swordfish</td><td class="profit">950G</td><td>Ocean</td><td>Any</td></tr>
+        <tr><td class="name">Koi Carp</td><td class="profit">800G</td><td>Flower Pond</td><td>Sunny</td></tr>
+        <tr><td class="name">Salmon</td><td class="profit">600G</td><td>Forest Creek</td><td>Any</td></tr>
+        <tr><td class="name">Trout</td><td class="profit">250G</td><td>River Pier</td><td>Rainy</td></tr>
+        <tr><td class="name">Carp</td><td>80G</td><td>River Pier</td><td>Any</td></tr>
       </tbody>
     </table>
   </div>

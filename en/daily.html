@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Heartopia Daily Checklist - 每日任务·重置时间·体力管理</title>
-<meta name="description" content="Heartopia 每日任务清单，委托重置时间、体力管理技巧、每周目标，一键打勾追踪进度。">
+<title>Heartopia Daily Checklist - Tasks, Reset Time & Energy Management</title>
+<meta name="description" content="Heartopia Daily Tasks清单，RequestReset Time、Energy ManagementTips、Weekly Goals，一键打勾TrackProgress。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
 .dg-table{width:100%;border-collapse:collapse;font-size:13px;}
@@ -63,71 +63,71 @@
 <main class="main">
 
 <div class="info-grid" style="margin-bottom:1rem">
-      <div class="info-chip"><p class="ic-label">每日重置时间</p><p class="ic-val">早 6:00（服务器时间）</p></div>
-      <div class="info-chip"><p class="ic-label">每周重置</p><p class="ic-val">周六早 6:00</p></div>
-      <div class="info-chip"><p class="ic-label">日常委托次数</p><p class="ic-val">5 次 / 天（不累计）</p></div>
-      <div class="info-chip"><p class="ic-label">服务器时区</p><p class="ic-val">全球服 UTC+1</p></div>
+      <div class="info-chip"><p class="ic-label">DailyReset Time</p><p class="ic-val">6:00 AM (Server Time)</p></div>
+      <div class="info-chip"><p class="ic-label">WeeklyReset</p><p class="ic-val">Saturday 6:00 AM</p></div>
+      <div class="info-chip"><p class="ic-label">Daily Request Count</p><p class="ic-val">5 per day (non-stackable)</p></div>
+      <div class="info-chip"><p class="ic-label">Server Timezone</p><p class="ic-val">Global server UTC+1</p></div>
     </div>
 
-    <div class="notice warn">⏰ 委托<strong>不累计</strong>，每天 5 次到点即重置！错过等于白白丢失 50 枚贡献勋章。建议设置提醒。</div>
+    <div class="notice warn">⏰ Request<strong>Non-stackable</strong> — all 5 reset on time every day! Missing them permanently wastes 50 Contribution Medals. Set a reminder.</div>
 
-    <div class="section-label">Daily Checklist（点击打勾）</div>
+    <div class="section-label">Daily Checklist (click to check off)</div>
     <div class="guide-block">
-      <h3>☀️ 必做（关键进度）</h3>
+      <h3>☀️ Must Do (critical)</h3>
       <ul class="checklist" id="cl-must">
-        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">完成 5 次居民委托（Resident Requests）</span><span class="check-tag tag-medal">+50 勋章</span></li>
-        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">查收邮箱，领取每日登录奖励</span><span class="check-tag tag-daily">Free奖励</span></li>
-        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">推进主线剧情（至少完成 1 个主线任务）</span><span class="check-tag tag-medal">+勋章</span></li>
-        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">检查活动页面，确认是否有限时任务</span><span class="check-tag tag-daily">活动进度</span></li>
+        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Complete 5 Resident Requests</span><span class="check-tag tag-medal">+50 Medal</span></li>
+        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Collect your daily login reward from the mailbox</span><span class="check-tag tag-daily">FreeReward</span></li>
+        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Advance the main quest (at least 1 main quest task)</span><span class="check-tag tag-medal">+Medal</span></li>
+        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Check the event page for limited-time tasks</span><span class="check-tag tag-daily">EventsProgress</span></li>
       </ul>
     </div>
     <div class="guide-block">
-      <h3>🌿 建议做（资源积累）</h3>
+      <h3>🌿 Recommended (resource building)</h3>
       <ul class="checklist" id="cl-rec">
-        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">浇花 / 收获菜园农作物</span><span class="check-tag tag-gold">产出金币</span></li>
-        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">找 Albert Jr. 出售积累的鱼 / 作物</span><span class="check-tag tag-gold">金币入账</span></li>
-        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">采集木材、石材（消耗体力时优先做）</span><span class="check-tag tag-daily">建材补充</span></li>
-        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">喂养宠物并互动（达到条件后每日送礼）</span><span class="check-tag tag-daily">好感/礼物</span></li>
-        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">向 NPC 赠礼（每人每天 1 次计分）</span><span class="check-tag tag-daily">好感度</span></li>
-        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">烹饪料理（进度 + 体力回复食物储备）</span><span class="check-tag tag-gold">利润丰厚</span></li>
+        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Water plants / harvest crops</span><span class="check-tag tag-gold">Earns Coins</span></li>
+        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Find Albert Jr. to sell your fish / crops</span><span class="check-tag tag-gold">Coins earned</span></li>
+        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Gather Lumber and Stone (prioritize when Energy is full)</span><span class="check-tag tag-daily">Materials restocked</span></li>
+        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Feed and interact with your pet (gift daily once conditions are met)</span><span class="check-tag tag-daily">Friendship / Gift</span></li>
+        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Gift NPCs (counted once per person per day)</span><span class="check-tag tag-daily">Friendship</span></li>
+        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Cook dishes (progress + stock Energy-restoring food)</span><span class="check-tag tag-gold">High profit</span></li>
       </ul>
     </div>
     <div class="guide-block">
-      <h3>🔍 别忘了找这些（随机刷New）</h3>
+      <h3>🔍 Don't Forget (random spawns)</h3>
       <ul class="checklist" id="cl-explore">
-        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">捡地图气泡（Prize Bubble）：城镇广场、温泉悬崖、渔村、神奇森林、花田</span><span class="check-tag tag-explore">蓝图/材料</span></li>
-        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">寻找 Oak-Oak（位置每日变化）</span><span class="check-tag tag-explore">随机奖励</span></li>
-        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">若下雨/彩虹天气 → 找 Doris 购买特殊食谱</span><span class="check-tag tag-explore">稀有食谱</span></li>
-        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">查各商店New货（Bob / Dorothee / Ka Ching 每日刷New）</span><span class="check-tag tag-explore">限量货品</span></li>
-        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">向 Bailey J. 提交信息卡（每日上限 5 张）</span><span class="check-tag tag-explore">观鸟进度</span></li>
+        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Collect Prize Bubbles: Town Square, Onsen Cliff, Fishing Village, Amazing Forest, Flower Field</span><span class="check-tag tag-explore">Blueprints / Materials</span></li>
+        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Look for Oak-Oak (location changes daily)</span><span class="check-tag tag-explore">Random reward</span></li>
+        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">If rainy/rainbow weather → find Doris for special recipes</span><span class="check-tag tag-explore">RareRecipes</span></li>
+        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Check shops for new stock (Bob / Dorothee / Ka Ching refresh daily)</span><span class="check-tag tag-explore">Limited stock</span></li>
+        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Submit info cards to Bailey J (max 5 per day)</span><span class="check-tag tag-explore">BirdwatchingProgress</span></li>
       </ul>
     </div>
 
-    <div class="section-label">体力（Energy）管理</div>
+    <div class="section-label">Energy Management</div>
     <div class="guide-block">
-      <h3>⚡ 体力系统说明</h3>
+      <h3>⚡ Energy System</h3>
       <div style="margin-bottom:12px">
-        <p style="font-size:13px;color:var(--text2);margin-bottom:4px">体力条示意（每日重置后满格）</p>
+        <p style="font-size:13px;color:var(--text2);margin-bottom:4px">Energy bar (fully restored after daily reset)</p>
         <div class="energy-bar-wrap"><div class="energy-bar" style="width:75%"></div></div>
-        <p style="font-size:11px;color:var(--text3)">🪓 砍树 · 🎣 钓鱼 · ⛏️ 挖矿 消耗体力；步行 · 对话 · 建造 不消耗体力</p>
+        <p style="font-size:11px;color:var(--text3)">🪓 Chopping · 🎣 Fishing · ⛏️ Mining use Energy; walking · talking · building do NOT</p>
       </div>
       <ol class="step-list">
-        <li><strong>每日 6:00 AM</strong> 服务器重置时体力完全回满，安排高消耗活动在重置后进行</li>
-        <li>体力低于 20 时无法奔跑，只能慢走；可以骑车代步维持效率</li>
-        <li>吃食物快速回复体力——基础混合果酱（Mixed Jam）回复 22 点，高级料理如松露蘑菇派回复量可观</li>
-        <li>睡觉是最省事的被动回复方式，下线前让角色上床睡觉</li>
-        <li>体力耗尽时可以继续做<strong>不消耗体力的活动</strong>：摆家具、与 NPC 对话、逛商店</li>
+        <li><strong>Daily 6:00 AM</strong> Energy fully restores at server reset — schedule energy-intensive activities right after</li>
+        <li>When Energy drops below 20 you can only walk — use your bike to stay efficient</li>
+        <li>Eat food to quickly restore Energy — Mixed Jam restores 22 points; advanced dishes like Truffle Mushroom Pie restore much more</li>
+        <li>Sleeping is the easiest passive recovery — put your character to bed before logging off</li>
+        <li>When Energy is depleted you can still do<strong>Energy-free activities</strong>: arrange furniture, chat with NPCs, or browse shops</li>
       </ol>
     </div>
 
-    <div class="section-label">周常任务</div>
+    <div class="section-label">Weekly Tasks</div>
     <div class="guide-block">
-      <h3>📅 每周重点目标</h3>
+      <h3>📅 Weekly Goals</h3>
       <ol class="step-list">
-        <li>周常任务比日常任务奖励大得多，优先级高于其他支线</li>
-        <li>D.G. 13 级后周常勋章奖励跳升至 30–50 枚，是加速升级的关键期</li>
-        <li>每周六早 6:00 重置，周五下线前确认本周任务完成情况</li>
-        <li>领取奖励需手动点击"领取"按钮，不会自动发放到背包</li>
+        <li>Weekly tasks offer far bigger rewards than daily tasks — prioritize them over side activities</li>
+        <li>After D.G. Level 13, weekly medal rewards jump to 30–50 — a key acceleration phase</li>
+        <li>Resets Saturday 6:00 AM — confirm your weekly task completion before logging off Friday</li>
+        <li>You must manually click "Claim" — rewards won't auto-deliver to your inventory</li>
       </ol>
     </div>
 

@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Heartopia Fish Database - 全94种鱼地点·售价·天气大全</title>
-<meta name="description" content="Heartopia Fish Database，收录全部 94 种鱼的钓鱼地点、出现天气、季节、售价，可搜索筛选。">
+<title>Heartopia Fish Database - All 94 Fish: Location, Weather & Sell Price</title>
+<meta name="description" content="Heartopia FishDatabase，EntriesAll 94 种鱼的FishingLocation、出现Weather、Season、Sell Price，Searchable & Filterable。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
 .rarity-legendary { color: #9b59b6; font-weight: 700; }
@@ -19,124 +19,123 @@
 <main class="main">
 
   <div class="hero">
-    <h1>🐟 Fish图鉴</h1>
-    <p>收录全部 94 种鱼 · 地点 · 天气 · 售价 · 可搜索筛选</p>
+    <h1>🐟 FishDatabase</h1>
+    <p>All 94 Fish · Location · Weather · Sell Price · Searchable & Filterable</p>
   </div>
 
   <div class="stats-row">
-    <div class="stat-chip"><div class="sv">94</div><div class="sl">鱼类总数</div></div>
-    <div class="stat-chip"><div class="sv">14</div><div class="sl">钓鱼地点</div></div>
-    <div class="stat-chip"><div class="sv">1800G</div><div class="sl">Top售价</div></div>
-    <div class="stat-chip"><div class="sv">Vanya</div><div class="sl">钓鱼导师</div></div>
+    <div class="stat-chip"><div class="sv">94</div><div class="sl">Total Fish</div></div>
+    <div class="stat-chip"><div class="sv">14</div><div class="sl">FishingLocation</div></div>
+    <div class="stat-chip"><div class="sv">1800G</div><div class="sl">HighestSell Price</div></div>
+    <div class="stat-chip"><div class="sv">Vanya</div><div class="sl">FishingMentor</div></div>
   </div>
 
-  <div class="notice tip">💡 <strong>赚金币路线：</strong>稳定钓取你当前等级能钓的鱼，比专门等待稀有天气更高效。稀有天气（雨/彩虹）当作额外收益，提前准备好路线再去。</div>
+  <div class="notice tip">💡 <strong>Best Coin Route:</strong>Consistently fish at your current level rather than waiting for rare weather. Treat rainy/rainbow days as a bonus — plan your route before heading out.</div>
 
-  <!-- 筛选 -->
+  <!-- Filter -->
   <div class="guide-block">
-    <h3>🔍 搜索 / 筛选</h3>
+    <h3>🔍 Search / Filter</h3>
     <div class="filter-row">
-      <input type="text" id="fish-search" placeholder="搜索鱼名、地点..." oninput="filterFish()" style="flex:2;min-width:150px">
+      <input type="text" id="fish-search" placeholder="SearchFish Name、Location..." oninput="filterFish()" style="flex:2;min-width:150px">
       <select id="fish-location" onchange="filterFish()">
-        <option value="">所有地点</option>
-        <option>河流码头</option>
-        <option>森林小溪</option>
-        <option>温泉悬崖</option>
-        <option>海洋（比尔）</option>
-        <option>神奇森林</option>
-        <option>花田池塘</option>
+        <option value="">AllLocation</option>
+        <option>River Pier</option>
+        <option>Forest Creek</option>
+        <option>Onsen Cliff</option>
+        <option>Ocean (Bill)</option>
+        <option>Amazing Forest</option>
+        <option>Flower Pond</option>
       </select>
       <select id="fish-rarity" onchange="filterFish()">
-        <option value="">所有稀有度</option>
-        <option>普通</option>
-        <option>稀有</option>
-        <option>传说</option>
+        <option value="">AllRarity</option>
+        <option>Common</option>
+        <option>Rare</option>
+        <option>Legendary</option>
       </select>
       <select id="fish-weather" onchange="filterFish()">
-        <option value="">所有天气</option>
-        <option>晴天</option>
-        <option>雨天</option>
-        <option>彩虹</option>
-        <option>任意</option>
+        <option value="">AllWeather</option>
+        <option>Sunny</option>
+        <option>Rainy</option>
+        <option>Rainbow</option>
+        <option>Any</option>
       </select>
     </div>
-    <p id="fish-count" style="font-size:12px;color:var(--text3);margin-top:4px">显示 94 条记录</p>
+    <p id="fish-count" style="font-size:12px;color:var(--text3);margin-top:4px">Showing 94 entries</p>
   </div>
 
-  <!-- 高利润速查 -->
+  <!-- 高Profit速查 -->
   <div class="guide-block">
-    <h3>💰 高利润鱼类速查</h3>
+    <h3>💰 Top Profit Fish</h3>
     <table class="data-table">
-      <thead><tr><th>鱼名</th><th>地点</th><th>天气</th><th>售价</th><th>稀有度</th></tr></thead>
+      <thead><tr><th>Fish Name</th><th>Location</th><th>Weather</th><th>Sell Price</th><th>Rarity</th></tr></thead>
       <tbody>
-        <tr><td class="name">🐟 传说金龙鱼</td><td>河流码头</td><td>🌈 彩虹</td><td class="profit">1800G</td><td><span class="badge badge-rare rarity-legendary">传说</span></td></tr>
-        <tr><td class="name">🦈 锤头鲨</td><td>海洋（比尔）</td><td>⛈️ 雨天</td><td class="profit">1600G</td><td><span class="badge badge-rare rarity-legendary">传说</span></td></tr>
-        <tr><td class="name">🐠 彩虹鱼</td><td>温泉悬崖</td><td>🌈 彩虹</td><td class="profit">1400G</td><td><span class="badge badge-rare rarity-legendary">传说</span></td></tr>
-        <tr><td class="name">🐟 蓝鳍金枪鱼</td><td>海洋（比尔）</td><td>任意</td><td class="profit">1200G</td><td><span class="badge badge-rare rarity-rare">稀有</span></td></tr>
-        <tr><td class="name">🐡 神秘河豚</td><td>海洋（比尔）</td><td>🌧️ 雨天</td><td class="profit">1100G</td><td><span class="badge badge-rare rarity-rare">稀有</span></td></tr>
-        <tr><td class="name">🐟 剑鱼</td><td>海洋（比尔）</td><td>任意</td><td class="profit">950G</td><td><span class="badge badge-rare rarity-rare">稀有</span></td></tr>
-        <tr><td class="name">🐟 锦鲤</td><td>花田池塘</td><td>晴天</td><td class="profit">800G</td><td><span class="badge badge-rare rarity-rare">稀有</span></td></tr>
-        <tr><td class="name">🐟 鲑鱼</td><td>森林小溪</td><td>任意</td><td class="profit">600G</td><td><span class="badge badge-common rarity-rare">稀有</span></td></tr>
+        <tr><td class="name">🐟 Legendary Golden Dragon Fish</td><td>River Pier</td><td>🌈 Rainbow</td><td class="profit">1800G</td><td><span class="badge badge-rare rarity-legendary">Legendary</span></td></tr>
+        <tr><td class="name">🦈 Hammerhead Shark</td><td>Ocean (Bill)</td><td>⛈️ Rainy</td><td class="profit">1600G</td><td><span class="badge badge-rare rarity-legendary">Legendary</span></td></tr>
+        <tr><td class="name">🐠 Rainbow Fish</td><td>Onsen Cliff</td><td>🌈 Rainbow</td><td class="profit">1400G</td><td><span class="badge badge-rare rarity-legendary">Legendary</span></td></tr>
+        <tr><td class="name">🐟 Bluefin Tuna</td><td>Ocean (Bill)</td><td>Any</td><td class="profit">1200G</td><td><span class="badge badge-rare rarity-rare">Rare</span></td></tr>
+        <tr><td class="name">🐡 Mystery Pufferfish</td><td>Ocean (Bill)</td><td>🌧️ Rainy</td><td class="profit">1100G</td><td><span class="badge badge-rare rarity-rare">Rare</span></td></tr>
+        <tr><td class="name">🐟 Swordfish</td><td>Ocean (Bill)</td><td>Any</td><td class="profit">950G</td><td><span class="badge badge-rare rarity-rare">Rare</span></td></tr>
+        <tr><td class="name">🐟 Koi Carp</td><td>Flower Pond</td><td>Sunny</td><td class="profit">800G</td><td><span class="badge badge-rare rarity-rare">Rare</span></td></tr>
+        <tr><td class="name">🐟 Salmon</td><td>Forest Creek</td><td>Any</td><td class="profit">600G</td><td><span class="badge badge-common rarity-rare">Rare</span></td></tr>
       </tbody>
     </table>
   </div>
 
-  <!-- 完整图鉴表格 -->
+  <!-- CompleteDatabase表格 -->
   <div class="guide-block" style="padding:0;overflow:hidden">
     <div style="padding:1rem 1.25rem 0.75rem;border-bottom:1px solid var(--border)">
-      <h3 style="margin-bottom:0">📖 完整Fish Database</h3>
+      <h3 style="margin-bottom:0">📖 CompleteFishDatabase</h3>
     </div>
     <div style="overflow-x:auto">
       <table class="data-table" id="fish-table">
         <thead>
-          <tr><th>#</th><th>鱼名</th><th>地点</th><th>天气</th><th>时段</th><th>售价</th><th>稀有度</th></tr>
+          <tr><th>#</th><th>Fish Name</th><th>Location</th><th>Weather</th><th>Time Window</th><th>Sell Price</th><th>Rarity</th></tr>
         </thead>
         <tbody id="fish-tbody">
-          <!-- 河流码头 -->
-          <tr data-loc="河流码头" data-rarity="普通" data-weather="任意"><td>1</td><td class="name">🐟 鲤鱼</td><td>河流码头</td><td>任意</td><td>全天</td><td class="price">80G</td><td><span class="badge badge-common">普通</span></td></tr>
-          <tr data-loc="河流码头" data-rarity="普通" data-weather="任意"><td>2</td><td class="name">🐟 鲫鱼</td><td>河流码头</td><td>任意</td><td>全天</td><td class="price">65G</td><td><span class="badge badge-common">普通</span></td></tr>
-          <tr data-loc="河流码头" data-rarity="普通" data-weather="晴天"><td>3</td><td class="name">🐟 草鱼</td><td>河流码头</td><td>晴天</td><td>全天</td><td class="price">90G</td><td><span class="badge badge-common">普通</span></td></tr>
-          <tr data-loc="河流码头" data-rarity="稀有" data-weather="任意"><td>4</td><td class="name">🐟 鲶鱼</td><td>河流码头</td><td>任意</td><td>夜晚</td><td class="price">180G</td><td><span class="badge badge-rare">稀有</span></td></tr>
-          <tr data-loc="河流码头" data-rarity="稀有" data-weather="雨天"><td>5</td><td class="name">🐟 鳟鱼</td><td>河流码头</td><td>雨天</td><td>全天</td><td class="price">250G</td><td><span class="badge badge-rare">稀有</span></td></tr>
-          <tr data-loc="河流码头" data-rarity="传说" data-weather="彩虹"><td>6</td><td class="name">🐟 传说金龙鱼</td><td>河流码头</td><td>🌈 彩虹</td><td>全天</td><td class="price profit">1800G</td><td><span class="badge badge-rare rarity-legendary">传说</span></td></tr>
-          <!-- 森林小溪 -->
-          <tr data-loc="森林小溪" data-rarity="普通" data-weather="任意"><td>7</td><td class="name">🐟 溪鱼</td><td>森林小溪</td><td>任意</td><td>全天</td><td class="price">70G</td><td><span class="badge badge-common">普通</span></td></tr>
-          <tr data-loc="森林小溪" data-rarity="普通" data-weather="任意"><td>8</td><td class="name">🐟 河虾</td><td>森林小溪</td><td>任意</td><td>全天</td><td class="price">55G</td><td><span class="badge badge-common">普通</span></td></tr>
-          <tr data-loc="森林小溪" data-rarity="稀有" data-weather="任意"><td>9</td><td class="name">🐟 鲑鱼</td><td>森林小溪</td><td>任意</td><td>早晨</td><td class="price">600G</td><td><span class="badge badge-rare">稀有</span></td></tr>
-          <tr data-loc="森林小溪" data-rarity="稀有" data-weather="雨天"><td>10</td><td class="name">🐟 森林幽灵鱼</td><td>森林小溪</td><td>雨天</td><td>夜晚</td><td class="price">420G</td><td><span class="badge badge-rare">稀有</span></td></tr>
-          <!-- 温泉悬崖 -->
-          <tr data-loc="温泉悬崖" data-rarity="普通" data-weather="任意"><td>11</td><td class="name">🐟 热泉鱼</td><td>温泉悬崖</td><td>任意</td><td>全天</td><td class="price">120G</td><td><span class="badge badge-common">普通</span></td></tr>
-          <tr data-loc="温泉悬崖" data-rarity="稀有" data-weather="任意"><td>12</td><td class="name">🐠 彩色小丑鱼</td><td>温泉悬崖</td><td>晴天</td><td>正午</td><td class="price">380G</td><td><span class="badge badge-rare">稀有</span></td></tr>
-          <tr data-loc="温泉悬崖" data-rarity="传说" data-weather="彩虹"><td>13</td><td class="name">🐠 彩虹鱼</td><td>温泉悬崖</td><td>🌈 彩虹</td><td>全天</td><td class="price profit">1400G</td><td><span class="badge badge-rare rarity-legendary">传说</span></td></tr>
-          <!-- 海洋 -->
-          <tr data-loc="海洋（比尔）" data-rarity="普通" data-weather="任意"><td>14</td><td class="name">🐟 沙丁鱼</td><td>海洋（比尔）</td><td>任意</td><td>全天</td><td class="price">95G</td><td><span class="badge badge-common">普通</span></td></tr>
-          <tr data-loc="海洋（比尔）" data-rarity="普通" data-weather="任意"><td>15</td><td class="name">🐟 鲭鱼</td><td>海洋（比尔）</td><td>任意</td><td>全天</td><td class="price">110G</td><td><span class="badge badge-common">普通</span></td></tr>
-          <tr data-loc="海洋（比尔）" data-rarity="普通" data-weather="任意"><td>16</td><td class="name">🦐 大虾</td><td>海洋（比尔）</td><td>任意</td><td>全天</td><td class="price">130G</td><td><span class="badge badge-common">普通</span></td></tr>
-          <tr data-loc="海洋（比尔）" data-rarity="稀有" data-weather="任意"><td>17</td><td class="name">🐟 剑鱼</td><td>海洋（比尔）</td><td>任意</td><td>全天</td><td class="price">950G</td><td><span class="badge badge-rare">稀有</span></td></tr>
-          <tr data-loc="海洋（比尔）" data-rarity="稀有" data-weather="任意"><td>18</td><td class="name">🐟 蓝鳍金枪鱼</td><td>海洋（比尔）</td><td>任意</td><td>全天</td><td class="price">1200G</td><td><span class="badge badge-rare">稀有</span></td></tr>
-          <tr data-loc="海洋（比尔）" data-rarity="稀有" data-weather="雨天"><td>19</td><td class="name">🐡 神秘河豚</td><td>海洋（比尔）</td><td>雨天</td><td>全天</td><td class="price">1100G</td><td><span class="badge badge-rare">稀有</span></td></tr>
-          <tr data-loc="海洋（比尔）" data-rarity="传说" data-weather="雨天"><td>20</td><td class="name">🦈 锤头鲨</td><td>海洋（比尔）</td><td>⛈️ 雨天</td><td>全天</td><td class="price profit">1600G</td><td><span class="badge badge-rare rarity-legendary">传说</span></td></tr>
-          <!-- 花田池塘 -->
-          <tr data-loc="花田池塘" data-rarity="普通" data-weather="晴天"><td>21</td><td class="name">🐟 花田鲫</td><td>花田池塘</td><td>晴天</td><td>全天</td><td class="price">85G</td><td><span class="badge badge-common">普通</span></td></tr>
-          <tr data-loc="花田池塘" data-rarity="稀有" data-weather="晴天"><td>22</td><td class="name">🐟 锦鲤</td><td>花田池塘</td><td>晴天</td><td>全天</td><td class="price">800G</td><td><span class="badge badge-rare">稀有</span></td></tr>
-          <tr data-loc="花田池塘" data-rarity="传说" data-weather="彩虹"><td>23</td><td class="name">🌸 花蝶鱼</td><td>花田池塘</td><td>🌈 彩虹</td><td>全天</td><td class="price profit">1350G</td><td><span class="badge badge-rare rarity-legendary">传说</span></td></tr>
-          <!-- 更多鱼类（省略版，实际应有94条） -->
-          <tr data-loc="河流码头" data-rarity="普通" data-weather="任意"><td>24</td><td class="name">🐟 鳙鱼</td><td>河流码头</td><td>任意</td><td>全天</td><td class="price">75G</td><td><span class="badge badge-common">普通</span></td></tr>
-          <tr data-loc="河流码头" data-rarity="普通" data-weather="任意"><td>25</td><td class="name">🐟 罗非鱼</td><td>河流码头</td><td>任意</td><td>全天</td><td class="price">68G</td><td><span class="badge badge-common">普通</span></td></tr>
-          <tr data-loc="森林小溪" data-rarity="普通" data-weather="任意"><td>26</td><td class="name">🦀 小螃蟹</td><td>森林小溪</td><td>任意</td><td>全天</td><td class="price">60G</td><td><span class="badge badge-common">普通</span></td></tr>
-          <tr data-loc="海洋（比尔）" data-rarity="普通" data-weather="任意"><td>27</td><td class="name">🦑 小章鱼</td><td>海洋（比尔）</td><td>任意</td><td>夜晚</td><td class="price">200G</td><td><span class="badge badge-common">普通</span></td></tr>
-          <tr data-loc="神奇森林" data-rarity="稀有" data-weather="任意"><td>28</td><td class="name">✨ 发光鱼</td><td>神奇森林</td><td>夜晚</td><td>夜晚</td><td class="price">500G</td><td><span class="badge badge-rare">稀有</span></td></tr>
-          <tr data-loc="神奇森林" data-rarity="传说" data-weather="彩虹"><td>29</td><td class="name">🌟 星辰鱼</td><td>神奇森林</td><td>🌈 彩虹</td><td>夜晚</td><td class="price profit">1500G</td><td><span class="badge badge-rare rarity-legendary">传说</span></td></tr>
-          <tr data-loc="温泉悬崖" data-rarity="普通" data-weather="任意"><td>30</td><td class="name">🐟 温泉鲈</td><td>温泉悬崖</td><td>任意</td><td>全天</td><td class="price">100G</td><td><span class="badge badge-common">普通</span></td></tr>
+          <!-- River Pier -->
+          <tr data-loc="River Pier" data-rarity="Common" data-weather="Any"><td>1</td><td class="name">🐟 Carp</td><td>River Pier</td><td>Any</td><td>All Day</td><td class="price">80G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="River Pier" data-rarity="Common" data-weather="Any"><td>2</td><td class="name">🐟 Crucian Carp</td><td>River Pier</td><td>Any</td><td>All Day</td><td class="price">65G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="River Pier" data-rarity="Common" data-weather="Sunny"><td>3</td><td class="name">🐟 Grass Carp</td><td>River Pier</td><td>Sunny</td><td>All Day</td><td class="price">90G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="River Pier" data-rarity="Rare" data-weather="Any"><td>4</td><td class="name">🐟 Catfish</td><td>River Pier</td><td>Any</td><td>Night</td><td class="price">180G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+          <tr data-loc="River Pier" data-rarity="Rare" data-weather="Rainy"><td>5</td><td class="name">🐟 Trout</td><td>River Pier</td><td>Rainy</td><td>All Day</td><td class="price">250G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+          <tr data-loc="River Pier" data-rarity="Legendary" data-weather="Rainbow"><td>6</td><td class="name">🐟 Legendary Golden Dragon Fish</td><td>River Pier</td><td>🌈 Rainbow</td><td>All Day</td><td class="price profit">1800G</td><td><span class="badge badge-rare rarity-legendary">Legendary</span></td></tr>
+          <!-- Forest Creek -->
+          <tr data-loc="Forest Creek" data-rarity="Common" data-weather="Any"><td>7</td><td class="name">🐟 Stream Fish</td><td>Forest Creek</td><td>Any</td><td>All Day</td><td class="price">70G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Forest Creek" data-rarity="Common" data-weather="Any"><td>8</td><td class="name">🐟 River Shrimp</td><td>Forest Creek</td><td>Any</td><td>All Day</td><td class="price">55G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Forest Creek" data-rarity="Rare" data-weather="Any"><td>9</td><td class="name">🐟 Salmon</td><td>Forest Creek</td><td>Any</td><td>Morning</td><td class="price">600G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+          <tr data-loc="Forest Creek" data-rarity="Rare" data-weather="Rainy"><td>10</td><td class="name">🐟 Forest Ghost Fish</td><td>Forest Creek</td><td>Rainy</td><td>Night</td><td class="price">420G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+          <!-- Onsen Cliff -->
+          <tr data-loc="Onsen Cliff" data-rarity="Common" data-weather="Any"><td>11</td><td class="name">🐟 Hot Spring Fish</td><td>Onsen Cliff</td><td>Any</td><td>All Day</td><td class="price">120G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Onsen Cliff" data-rarity="Rare" data-weather="Any"><td>12</td><td class="name">🐠 Colorful Clownfish</td><td>Onsen Cliff</td><td>Sunny</td><td>Noon</td><td class="price">380G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+          <tr data-loc="Onsen Cliff" data-rarity="Legendary" data-weather="Rainbow"><td>13</td><td class="name">🐠 Rainbow Fish</td><td>Onsen Cliff</td><td>🌈 Rainbow</td><td>All Day</td><td class="price profit">1400G</td><td><span class="badge badge-rare rarity-legendary">Legendary</span></td></tr>
+          <!-- Ocean -->
+          <tr data-loc="Ocean (Bill)" data-rarity="Common" data-weather="Any"><td>14</td><td class="name">🐟 Sardine</td><td>Ocean (Bill)</td><td>Any</td><td>All Day</td><td class="price">95G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Ocean (Bill)" data-rarity="Common" data-weather="Any"><td>15</td><td class="name">🐟 Mackerel</td><td>Ocean (Bill)</td><td>Any</td><td>All Day</td><td class="price">110G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Ocean (Bill)" data-rarity="Common" data-weather="Any"><td>16</td><td class="name">🦐 Large Shrimp</td><td>Ocean (Bill)</td><td>Any</td><td>All Day</td><td class="price">130G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Ocean (Bill)" data-rarity="Rare" data-weather="Any"><td>17</td><td class="name">🐟 Swordfish</td><td>Ocean (Bill)</td><td>Any</td><td>All Day</td><td class="price">950G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+          <tr data-loc="Ocean (Bill)" data-rarity="Rare" data-weather="Any"><td>18</td><td class="name">🐟 Bluefin Tuna</td><td>Ocean (Bill)</td><td>Any</td><td>All Day</td><td class="price">1200G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+          <tr data-loc="Ocean (Bill)" data-rarity="Rare" data-weather="Rainy"><td>19</td><td class="name">🐡 Mystery Pufferfish</td><td>Ocean (Bill)</td><td>Rainy</td><td>All Day</td><td class="price">1100G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+          <tr data-loc="Ocean (Bill)" data-rarity="Legendary" data-weather="Rainy"><td>20</td><td class="name">🦈 Hammerhead Shark</td><td>Ocean (Bill)</td><td>⛈️ Rainy</td><td>All Day</td><td class="price profit">1600G</td><td><span class="badge badge-rare rarity-legendary">Legendary</span></td></tr>
+          <!-- Flower Pond -->
+          <tr data-loc="Flower Pond" data-rarity="Common" data-weather="Sunny"><td>21</td><td class="name">🐟 Flower Carp</td><td>Flower Pond</td><td>Sunny</td><td>All Day</td><td class="price">85G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Flower Pond" data-rarity="Rare" data-weather="Sunny"><td>22</td><td class="name">🐟 Koi Carp</td><td>Flower Pond</td><td>Sunny</td><td>All Day</td><td class="price">800G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+          <tr data-loc="Flower Pond" data-rarity="Legendary" data-weather="Rainbow"><td>23</td><td class="name">🌸 Flower Butterfly Fish</td><td>Flower Pond</td><td>🌈 Rainbow</td><td>All Day</td><td class="price profit">1350G</td><td><span class="badge badge-rare rarity-legendary">Legendary</span></td></tr>
+          <!-- 更多Fish（省略版，实际应有94条） -->
+          <tr data-loc="River Pier" data-rarity="Common" data-weather="Any"><td>24</td><td class="name">🐟 Bighead Carp</td><td>River Pier</td><td>Any</td><td>All Day</td><td class="price">75G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="River Pier" data-rarity="Common" data-weather="Any"><td>25</td><td class="name">🐟 Tilapia</td><td>River Pier</td><td>Any</td><td>All Day</td><td class="price">68G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Forest Creek" data-rarity="Common" data-weather="Any"><td>26</td><td class="name">🦀 Small Crab</td><td>Forest Creek</td><td>Any</td><td>All Day</td><td class="price">60G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Ocean (Bill)" data-rarity="Common" data-weather="Any"><td>27</td><td class="name">🦑 Small Octopus</td><td>Ocean (Bill)</td><td>Any</td><td>Night</td><td class="price">200G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Amazing Forest" data-rarity="Rare" data-weather="Any"><td>28</td><td class="name">✨ Glowing Fish</td><td>Amazing Forest</td><td>Night</td><td>Night</td><td class="price">500G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+          <tr data-loc="Amazing Forest" data-rarity="Legendary" data-weather="Rainbow"><td>29</td><td class="name">🌟 Starfish</td><td>Amazing Forest</td><td>🌈 Rainbow</td><td>Night</td><td class="price profit">1500G</td><td><span class="badge badge-rare rarity-legendary">Legendary</span></td></tr>
+          <tr data-loc="Onsen Cliff" data-rarity="Common" data-weather="Any"><td>30</td><td class="name">🐟 Hot Spring Bass</td><td>Onsen Cliff</td><td>Any</td><td>All Day</td><td class="price">100G</td><td><span class="badge badge-common">Common</span></td></tr>
         </tbody>
       </table>
     </div>
     <div style="padding:10px 1.25rem;font-size:12px;color:var(--text3);border-top:1px solid var(--border)">
-      * 完整图鉴持续补充中，目前收录 30 条，总计 94 种。售价为基础 1★ 价格，高品质鱼售价更高。
-    </div>
+      * Database expanding. Currently 30 of 94 fish listed. Prices are 1★ base — higher quality fish sell for more.</div>
   </div>
 
-  <div class="notice">🎣 钓鱼技巧：Use the  Vanya 出售的<strong>美人鱼鱼饵</strong>可提高稀有鱼出现概率。雨天/彩虹天气提前规划好要去的钓鱼地点，不要临时找地方。</div>
+  <div class="notice">🎣 Fishing Tip: Mermaid Bait from Vanya<strong>(sold by Vanya)</strong>increases rare fish spawn rate. Plan your fishing spot before rainy/rainbow weather — don't waste time searching on the day.</div>
 
 </main>
 <div id="footer-placeholder"></div>
@@ -163,7 +162,7 @@
       row.style.display = show ? '' : 'none';
       if (show) count++;
     });
-    document.getElementById('fish-count').textContent = `显示 ${count} 条记录`;
+    document.getElementById('fish-count').textContent = `Show  ${count} 条Record`;
   }
 </script>
 </body>

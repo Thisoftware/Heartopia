@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Heartopia 每日清單 - 每日任務·重置时间·體力管理 - 繁體中文版</title>
-<meta name="description" content="Heartopia 每日任務清單，委託重置时间、體力管理技巧、每周目标，一键打勾追蹤进度。">
+<title>Heartopia 每日清單 - 每日任務·重置時间·體力管理</title>
+<meta name="description" content="Heartopia 每日任務清單，委託重置時间、體力管理技巧、每周目标，一键打勾追蹤進度。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -63,71 +63,71 @@
 <main class="main">
 
 <div class="info-grid" style="margin-bottom:1rem">
-      <div class="info-chip"><p class="ic-label">每日重置时间</p><p class="ic-val">早 6:00（伺服器时间）</p></div>
-      <div class="info-chip"><p class="ic-label">每周重置</p><p class="ic-val">周六早 6:00</p></div>
+      <div class="info-chip"><p class="ic-label">每日重置時间</p><p class="ic-val">早 6:00（伺服器時间）</p></div>
+      <div class="info-chip"><p class="ic-label">每周重置</p><p class="ic-val">週六早 6:00</p></div>
       <div class="info-chip"><p class="ic-label">日常委託次数</p><p class="ic-val">5 次 / 天（不累计）</p></div>
-      <div class="info-chip"><p class="ic-label">伺服器时区</p><p class="ic-val">全球服 UTC+1</p></div>
+      <div class="info-chip"><p class="ic-label">伺服器時区</p><p class="ic-val">全球服 UTC+1</p></div>
     </div>
 
     <div class="notice warn">⏰ 委託<strong>不累计</strong>，每天 5 次到点即重置！错过等于白白丢失 50 枚貢獻勳章。建議設置提醒。</div>
 
     <div class="section-label">每日清單（點擊打勾）</div>
     <div class="guide-block">
-      <h3>☀️ 必做（關鍵进度）</h3>
+      <h3>☀️ 必做（關鍵進度）</h3>
       <ul class="checklist" id="cl-must">
         <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">完成 5 次居民委託（Resident Requests）</span><span class="check-tag tag-medal">+50 勳章</span></li>
-        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">查收邮箱，领取每日登录獎勵</span><span class="check-tag tag-daily">免费獎勵</span></li>
-        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">推进主线剧情（至少完成 1 个主线任務）</span><span class="check-tag tag-medal">+勳章</span></li>
-        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">检查活動页面，确认是否有限時任務</span><span class="check-tag tag-daily">活動进度</span></li>
+        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">查收邮箱，领取每日登录獎勵</span><span class="check-tag tag-daily">免費獎勵</span></li>
+        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">推進主线剧情（至少完成 1 個主线任務）</span><span class="check-tag tag-medal">+勳章</span></li>
+        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">檢查活動頁面，確認是否有限時任務</span><span class="check-tag tag-daily">活動進度</span></li>
       </ul>
     </div>
     <div class="guide-block">
       <h3>🌿 建議做（資源积累）</h3>
       <ul class="checklist" id="cl-rec">
-        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">浇花 / 收穫菜园農作物</span><span class="check-tag tag-gold">产出金币</span></li>
-        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">找 Albert Jr. 出售积累的鱼 / 作物</span><span class="check-tag tag-gold">金币入账</span></li>
-        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">采集木材、石材（消耗體力时優先做）</span><span class="check-tag tag-daily">建材补充</span></li>
-        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">喂养寵物并互動（达到条件后每日送礼）</span><span class="check-tag tag-daily">好感/禮物</span></li>
+        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">浇花 / 收穫菜園農作物</span><span class="check-tag tag-gold">产出金幣</span></li>
+        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">找 Albert Jr. 出售积累的魚 / 作物</span><span class="check-tag tag-gold">金幣入账</span></li>
+        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">采集木材、石材（消耗體力時優先做）</span><span class="check-tag tag-daily">建材补充</span></li>
+        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">餵養寵物並互動（達到條件後每日送禮）</span><span class="check-tag tag-daily">好感/禮物</span></li>
         <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">向 NPC 赠礼（每人每天 1 次计分）</span><span class="check-tag tag-daily">好感度</span></li>
-        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">烹飪料理（进度 + 體力回复食物储备）</span><span class="check-tag tag-gold">利潤丰厚</span></li>
+        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">烹飪料理（進度 + 體力回复食物储备）</span><span class="check-tag tag-gold">利潤丰厚</span></li>
       </ul>
     </div>
     <div class="guide-block">
-      <h3>🔍 别忘了找这些（随机刷新）</h3>
+      <h3>🔍 別忘了找這些（隨机刷新）</h3>
       <ul class="checklist" id="cl-explore">
-        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">捡地图气泡（Prize Bubble）：城镇广场、温泉悬崖、渔村、神奇森林、花田</span><span class="check-tag tag-explore">蓝图/材料</span></li>
-        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">寻找 Oak-Oak（位置每日变化）</span><span class="check-tag tag-explore">随机獎勵</span></li>
-        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">若下雨/彩虹天气 → 找 Doris 购买特殊食譜</span><span class="check-tag tag-explore">稀有食譜</span></li>
-        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">查各商店新货（Bob / Dorothee / Ka Ching 每日刷新）</span><span class="check-tag tag-explore">限量货品</span></li>
-        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">向 Bailey J. 提交信息卡（每日上限 5 张）</span><span class="check-tag tag-explore">觀鳥进度</span></li>
+        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">捡地圖气泡（Prize Bubble）：城鎮廣場、溫泉懸崖、漁村、神奇森林、花田</span><span class="check-tag tag-explore">藍圖/材料</span></li>
+        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">寻找 Oak-Oak（位置每日变化）</span><span class="check-tag tag-explore">隨机獎勵</span></li>
+        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">若下雨/彩虹天氣 → 找 Doris 購買特殊食譜</span><span class="check-tag tag-explore">稀有食譜</span></li>
+        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">查各商店新貨（Bob / Dorothee / Ka Ching 每日刷新）</span><span class="check-tag tag-explore">限量貨品</span></li>
+        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">向 Bailey J. 提交資訊卡（每日上限 5 张）</span><span class="check-tag tag-explore">觀鳥進度</span></li>
       </ul>
     </div>
 
     <div class="section-label">體力（Energy）管理</div>
     <div class="guide-block">
-      <h3>⚡ 體力系统说明</h3>
+      <h3>⚡ 體力系統說明</h3>
       <div style="margin-bottom:12px">
-        <p style="font-size:13px;color:var(--text2);margin-bottom:4px">體力条示意（每日重置后满格）</p>
+        <p style="font-size:13px;color:var(--text2);margin-bottom:4px">體力条示意（每日重置後滿格）</p>
         <div class="energy-bar-wrap"><div class="energy-bar" style="width:75%"></div></div>
-        <p style="font-size:11px;color:var(--text3)">🪓 砍树 · 🎣 釣魚 · ⛏️ 挖矿 消耗體力；步行 · 对话 · 建造 不消耗體力</p>
+        <p style="font-size:11px;color:var(--text3)">🪓 砍树 · 🎣 釣魚 · ⛏️ 挖矿 消耗體力；步行 · 對話 · 建造 不消耗體力</p>
       </div>
       <ol class="step-list">
-        <li><strong>每日 6:00 AM</strong> 伺服器重置时體力完全回满，安排高消耗活動在重置后进行</li>
-        <li>體力低于 20 时无法奔跑，只能慢走；可以骑车代步维持效率</li>
-        <li>吃食物快速回复體力——基础混合果酱（Mixed Jam）回复 22 点，高级料理如松露蘑菇派回复量可观</li>
+        <li><strong>每日 6:00 AM</strong> 伺服器重置時體力完全回滿，安排高消耗活動在重置後進行</li>
+        <li>體力低于 20 時无法奔跑，只能慢走；可以骑车代步维持效率</li>
+        <li>吃食物快速回复體力——基礎混合果酱（Mixed Jam）回复 22 点，高級料理如松露蘑菇派回复量可觀</li>
         <li>睡觉是最省事的被动回复方式，下线前让角色上床睡觉</li>
-        <li>體力耗尽时可以继续做<strong>不消耗體力的活動</strong>：摆家具、与 NPC 对话、逛商店</li>
+        <li>體力耗尽時可以继续做<strong>不消耗體力的活動</strong>：摆家具、与 NPC 對話、逛商店</li>
       </ol>
     </div>
 
-    <div class="section-label">周常任務</div>
+    <div class="section-label">週常任務</div>
     <div class="guide-block">
       <h3>📅 每周重点目标</h3>
       <ol class="step-list">
-        <li>周常任務比日常任務獎勵大得多，優先级高于其他支线</li>
-        <li>D.G. 13 级后周常勳章獎勵跳升至 30–50 枚，是加速升級的關鍵期</li>
-        <li>每周六早 6:00 重置，周五下线前确认本周任務完成情况</li>
-        <li>领取獎勵需手动點擊"领取"按钮，不会自动发放到背包</li>
+        <li>週常任務比日常任務獎勵大得多，優先級高於其他支線</li>
+        <li>D.G. 13 級後週常勳章獎勵跳升至 30–50 枚，是加速升級的關鍵期</li>
+        <li>每週六早 6:00 重置，周五下线前確認本周任務完成情况</li>
+        <li>領取獎勵需手動點擊「領取」按鈕，不會自動發放到背包</li>
       </ol>
     </div>
 

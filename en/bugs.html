@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Heartopia Bug Database - 全76种昆虫地点·时段·天气</title>
-<meta name="description" content="Heartopia Bug Database，收录全部76种昆虫的出现地点、时段、天气条件和售价，可搜索筛选。">
+<title>Heartopia Bug Database - All 76 Insects: Location, Time & Weather</title>
+<meta name="description" content="Heartopia InsectsDatabase，EntriesAll76种Insects的出现Location、Time Window、Weather条件和Sell Price，可SearchFilter。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,82 +14,82 @@
 <main class="main">
 
 <div class="hero">
-  <h1>🦋 Bugs图鉴</h1>
-  <p>收录全部 76 种昆虫 · 地点 · 时段 · 天气 · 售价</p>
+  <h1>🦋 InsectsDatabase</h1>
+  <p>All 76 Insects · Location · Time Window · Weather · Sell Price</p>
 </div>
 
 <div class="stats-row">
-  <div class="stat-chip"><div class="sv">76</div><div class="sl">昆虫总数</div></div>
-  <div class="stat-chip"><div class="sv">Naniwa</div><div class="sl">捉虫导师</div></div>
-  <div class="stat-chip"><div class="sv">D.G. 6</div><div class="sl">解锁等级</div></div>
-  <div class="stat-chip"><div class="sv">1200G</div><div class="sl">Top售价</div></div>
+  <div class="stat-chip"><div class="sv">76</div><div class="sl">Total Insects</div></div>
+  <div class="stat-chip"><div class="sv">Naniwa</div><div class="sl">Bug CatchingMentor</div></div>
+  <div class="stat-chip"><div class="sv">D.G. 6</div><div class="sl">UnlockLevel</div></div>
+  <div class="stat-chip"><div class="sv">1200G</div><div class="sl">HighestSell Price</div></div>
 </div>
 
-<div class="notice warn">🔒 捉虫爱好需要 <strong>D.G. 等级 6</strong> 后找 <strong>Naniwa</strong> 在森林地带解锁。</div>
-<div class="notice tip">💡 送稀有昆虫标本给 Naniwa 是Top效的提升她好感度的方式，越稀有加成越高。</div>
+<div class="notice warn">🔒 Bug Catching requires <strong>D.G. Level 6</strong> after finding <strong>Naniwa</strong> Unlock in the forest area.</div>
+<div class="notice tip">💡 Gifting Rare Insect Specimens to Naniwa is the most efficient way to raise her Friendship. Rarer = bigger bonus.</div>
 
 <div class="guide-block">
-  <h3>🔍 搜索 / 筛选</h3>
+  <h3>🔍 Search / Filter</h3>
   <div class="filter-row">
-    <input type="text" id="bug-search" placeholder="搜索昆虫名..." oninput="filterBugs()" style="flex:2;min-width:120px">
+    <input type="text" id="bug-search" placeholder="SearchInsects名..." oninput="filterBugs()" style="flex:2;min-width:120px">
     <select id="bug-loc" onchange="filterBugs()">
-      <option value="">所有地点</option>
-      <option>神奇森林</option><option>花田</option><option>河流码头</option><option>温泉悬崖</option><option>全区域</option>
+      <option value="">AllLocation</option>
+      <option>Amazing Forest</option><option>Flower Field</option><option>River Pier</option><option>Onsen Cliff</option><option>All Areas</option>
     </select>
     <select id="bug-time" onchange="filterBugs()">
-      <option value="">所有时段</option>
-      <option>全天</option><option>白天</option><option>夜晚</option><option>清晨</option>
+      <option value="">AllTime Window</option>
+      <option>All Day</option><option>Daytime</option><option>Night</option><option>Morning</option>
     </select>
     <select id="bug-rarity" onchange="filterBugs()">
-      <option value="">所有稀有度</option>
-      <option>普通</option><option>稀有</option><option>传说</option>
+      <option value="">AllRarity</option>
+      <option>Common</option><option>Rare</option><option>Legendary</option>
     </select>
   </div>
-  <p id="bug-count" style="font-size:12px;color:var(--text3);margin-top:4px">显示全部 76 种昆虫</p>
+  <p id="bug-count" style="font-size:12px;color:var(--text3);margin-top:4px">Show ing all 76 Insects</p>
 </div>
 
 <div class="guide-block" style="padding:0;overflow:hidden">
   <div style="padding:1rem 1.25rem 0.75rem;border-bottom:1px solid var(--border)">
-    <h3 style="margin-bottom:0">📖 完整Bug Database</h3>
+    <h3 style="margin-bottom:0">📖 CompleteInsectsDatabase</h3>
   </div>
   <div style="overflow-x:auto">
     <table class="data-table" id="bug-table">
-      <thead><tr><th>#</th><th>昆虫</th><th>地点</th><th>时段</th><th>天气</th><th>售价</th><th>稀有度</th></tr></thead>
+      <thead><tr><th>#</th><th>Insects</th><th>Location</th><th>Time Window</th><th>Weather</th><th>Sell Price</th><th>Rarity</th></tr></thead>
       <tbody id="bug-tbody">
-        <tr data-loc="神奇森林" data-time="全天" data-rarity="普通"><td>1</td><td class="name">🦋 普通蝴蝶</td><td>神奇森林</td><td>全天</td><td>晴天</td><td>50G</td><td><span class="badge badge-common">普通</span></td></tr>
-        <tr data-loc="花田" data-time="白天" data-rarity="普通"><td>2</td><td class="name">🐛 毛毛虫</td><td>花田</td><td>白天</td><td>任意</td><td>30G</td><td><span class="badge badge-common">普通</span></td></tr>
-        <tr data-loc="全区域" data-time="全天" data-rarity="普通"><td>3</td><td class="name">🪲 甲虫</td><td>全区域</td><td>全天</td><td>任意</td><td>45G</td><td><span class="badge badge-common">普通</span></td></tr>
-        <tr data-loc="神奇森林" data-time="夜晚" data-rarity="稀有"><td>4</td><td class="name">✨ 萤火虫</td><td>神奇森林</td><td>夜晚</td><td>任意</td><td>350G</td><td><span class="badge badge-rare">稀有</span></td></tr>
-        <tr data-loc="花田" data-time="白天" data-rarity="稀有"><td>5</td><td class="name">🦋 彩虹蝴蝶</td><td>花田</td><td>白天</td><td>🌈 彩虹</td><td>600G</td><td><span class="badge badge-rare">稀有</span></td></tr>
-        <tr data-loc="神奇森林" data-time="夜晚" data-rarity="传说"><td>6</td><td class="name">🌟 星辰蝶</td><td>神奇森林</td><td>夜晚</td><td>🌈 彩虹</td><td>1200G</td><td><span class="badge badge-rare rarity-legendary" style="color:#9b59b6">传说</span></td></tr>
-        <tr data-loc="河流码头" data-time="全天" data-rarity="普通"><td>7</td><td class="name">🦗 蟋蟀</td><td>河流码头</td><td>全天</td><td>任意</td><td>35G</td><td><span class="badge badge-common">普通</span></td></tr>
-        <tr data-loc="花田" data-time="白天" data-rarity="普通"><td>8</td><td class="name">🐝 蜜蜂</td><td>花田</td><td>白天</td><td>晴天</td><td>80G</td><td><span class="badge badge-common">普通</span></td></tr>
-        <tr data-loc="温泉悬崖" data-time="清晨" data-rarity="稀有"><td>9</td><td class="name">🦗 玉蟋蟀</td><td>温泉悬崖</td><td>清晨</td><td>任意</td><td>280G</td><td><span class="badge badge-rare">稀有</span></td></tr>
-        <tr data-loc="神奇森林" data-time="全天" data-rarity="普通"><td>10</td><td class="name">🐞 瓢虫</td><td>神奇森林</td><td>全天</td><td>晴天</td><td>90G</td><td><span class="badge badge-common">普通</span></td></tr>
-        <tr data-loc="全区域" data-time="夜晚" data-rarity="普通"><td>11</td><td class="name">🦟 蚊子</td><td>全区域</td><td>夜晚</td><td>任意</td><td>15G</td><td><span class="badge badge-common">普通</span></td></tr>
-        <tr data-loc="花田" data-time="白天" data-rarity="稀有"><td>12</td><td class="name">🦋 月光蛾</td><td>花田</td><td>夜晚</td><td>任意</td><td>420G</td><td><span class="badge badge-rare">稀有</span></td></tr>
-        <tr data-loc="神奇森林" data-time="全天" data-rarity="普通"><td>13</td><td class="name">🐜 红蚂蚁</td><td>神奇森林</td><td>全天</td><td>任意</td><td>25G</td><td><span class="badge badge-common">普通</span></td></tr>
-        <tr data-loc="温泉悬崖" data-time="白天" data-rarity="稀有"><td>14</td><td class="name">🦋 温泉蛱蝶</td><td>温泉悬崖</td><td>白天</td><td>晴天</td><td>380G</td><td><span class="badge badge-rare">稀有</span></td></tr>
-        <tr data-loc="神奇森林" data-time="夜晚" data-rarity="传说"><td>15</td><td class="name">🌙 月华甲虫</td><td>神奇森林</td><td>夜晚</td><td>🌈 彩虹</td><td>950G</td><td><span class="badge badge-rare rarity-legendary" style="color:#9b59b6">传说</span></td></tr>
-        <tr data-loc="花田" data-time="清晨" data-rarity="普通"><td>16</td><td class="name">🐛 绿色毛毛虫</td><td>花田</td><td>清晨</td><td>任意</td><td>40G</td><td><span class="badge badge-common">普通</span></td></tr>
-        <tr data-loc="全区域" data-time="全天" data-rarity="普通"><td>17</td><td class="name">🪳 普通虫</td><td>全区域</td><td>全天</td><td>任意</td><td>20G</td><td><span class="badge badge-common">普通</span></td></tr>
-        <tr data-loc="河流码头" data-time="夜晚" data-rarity="稀有"><td>18</td><td class="name">🦋 夜行天蛾</td><td>河流码头</td><td>夜晚</td><td>雨天</td><td>320G</td><td><span class="badge badge-rare">稀有</span></td></tr>
+        <tr data-loc="Amazing Forest" data-time="All Day" data-rarity="Common"><td>1</td><td class="name">🦋 Common Butterfly</td><td>Amazing Forest</td><td>All Day</td><td>Sunny</td><td>50G</td><td><span class="badge badge-common">Common</span></td></tr>
+        <tr data-loc="Flower Field" data-time="Daytime" data-rarity="Common"><td>2</td><td class="name">🐛 Caterpillar</td><td>Flower Field</td><td>Daytime</td><td>Any</td><td>30G</td><td><span class="badge badge-common">Common</span></td></tr>
+        <tr data-loc="All Areas" data-time="All Day" data-rarity="Common"><td>3</td><td class="name">🪲 Beetle</td><td>All Areas</td><td>All Day</td><td>Any</td><td>45G</td><td><span class="badge badge-common">Common</span></td></tr>
+        <tr data-loc="Amazing Forest" data-time="Night" data-rarity="Rare"><td>4</td><td class="name">✨ Firefly</td><td>Amazing Forest</td><td>Night</td><td>Any</td><td>350G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+        <tr data-loc="Flower Field" data-time="Daytime" data-rarity="Rare"><td>5</td><td class="name">🦋 Rainbow Butterfly</td><td>Flower Field</td><td>Daytime</td><td>🌈 Rainbow</td><td>600G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+        <tr data-loc="Amazing Forest" data-time="Night" data-rarity="Legendary"><td>6</td><td class="name">🌟 Starlight Butterfly</td><td>Amazing Forest</td><td>Night</td><td>🌈 Rainbow</td><td>1200G</td><td><span class="badge badge-rare rarity-legendary" style="color:#9b59b6">Legendary</span></td></tr>
+        <tr data-loc="River Pier" data-time="All Day" data-rarity="Common"><td>7</td><td class="name">🦗 Cricket</td><td>River Pier</td><td>All Day</td><td>Any</td><td>35G</td><td><span class="badge badge-common">Common</span></td></tr>
+        <tr data-loc="Flower Field" data-time="Daytime" data-rarity="Common"><td>8</td><td class="name">🐝 Honeybee</td><td>Flower Field</td><td>Daytime</td><td>Sunny</td><td>80G</td><td><span class="badge badge-common">Common</span></td></tr>
+        <tr data-loc="Onsen Cliff" data-time="Morning" data-rarity="Rare"><td>9</td><td class="name">🦗 Jade Cricket</td><td>Onsen Cliff</td><td>Morning</td><td>Any</td><td>280G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+        <tr data-loc="Amazing Forest" data-time="All Day" data-rarity="Common"><td>10</td><td class="name">🐞 Ladybug</td><td>Amazing Forest</td><td>All Day</td><td>Sunny</td><td>90G</td><td><span class="badge badge-common">Common</span></td></tr>
+        <tr data-loc="All Areas" data-time="Night" data-rarity="Common"><td>11</td><td class="name">🦟 Mosquito</td><td>All Areas</td><td>Night</td><td>Any</td><td>15G</td><td><span class="badge badge-common">Common</span></td></tr>
+        <tr data-loc="Flower Field" data-time="Daytime" data-rarity="Rare"><td>12</td><td class="name">🦋 Moonlight Moth</td><td>Flower Field</td><td>Night</td><td>Any</td><td>420G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+        <tr data-loc="Amazing Forest" data-time="All Day" data-rarity="Common"><td>13</td><td class="name">🐜 Red Ant</td><td>Amazing Forest</td><td>All Day</td><td>Any</td><td>25G</td><td><span class="badge badge-common">Common</span></td></tr>
+        <tr data-loc="Onsen Cliff" data-time="Daytime" data-rarity="Rare"><td>14</td><td class="name">🦋 Hot Spring Butterfly</td><td>Onsen Cliff</td><td>Daytime</td><td>Sunny</td><td>380G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+        <tr data-loc="Amazing Forest" data-time="Night" data-rarity="Legendary"><td>15</td><td class="name">🌙 Moonlit Beetle</td><td>Amazing Forest</td><td>Night</td><td>🌈 Rainbow</td><td>950G</td><td><span class="badge badge-rare rarity-legendary" style="color:#9b59b6">Legendary</span></td></tr>
+        <tr data-loc="Flower Field" data-time="Morning" data-rarity="Common"><td>16</td><td class="name">🐛 Green Caterpillar</td><td>Flower Field</td><td>Morning</td><td>Any</td><td>40G</td><td><span class="badge badge-common">Common</span></td></tr>
+        <tr data-loc="All Areas" data-time="All Day" data-rarity="Common"><td>17</td><td class="name">🪳 Common Bug</td><td>All Areas</td><td>All Day</td><td>Any</td><td>20G</td><td><span class="badge badge-common">Common</span></td></tr>
+        <tr data-loc="River Pier" data-time="Night" data-rarity="Rare"><td>18</td><td class="name">🦋 Nocturnal Hawk Moth</td><td>River Pier</td><td>Night</td><td>Rainy</td><td>320G</td><td><span class="badge badge-rare">Rare</span></td></tr>
       </tbody>
     </table>
   </div>
   <div style="padding:10px 1.25rem;font-size:12px;color:var(--text3);border-top:1px solid var(--border)">
-    * 持续补充中，目前收录 18 条，总计 76 种。
+    * Database expanding. Currently 18 of 76 insects listed.
   </div>
 </div>
 
 <div class="guide-block">
-  <h3>💡 捉虫效率技巧</h3>
+  <h3>💡 Bug CatchingEfficiencyTips</h3>
   <ol class="step-list">
-    <li>夜晚在神奇森林可以找到最多稀有昆虫，彩虹天气时传说级昆虫出现概率Top</li>
-    <li>慢走靠近昆虫，奔跑会吓跑它们；捕虫网从正面正上方扑下去命中率Top</li>
-    <li>送稀有昆虫给 Naniwa 好感度加成远高于送普通虫，优先保留稀有品给她</li>
-    <li>普通昆虫卖给 Albert Jr. 比送礼更合算，每日捉虫后清空背包</li>
-    <li>完成全 76 种Bug Database可获得特殊称号和丰厚奖励，按地点逐区域清理效率Top</li>
+    <li>Night in the Amazing Forest yields the most Rare Insects. Legendary insects have the highest spawn rate during Rainbow weather</li>
+    <li>Walk slowly toward insects — running scares them away. Swing your net from directly above for the highest hit rate</li>
+    <li>Gifting Rare Insects to Naniwa gives far more Friendship than Common bugs — save your rare catches for her</li>
+    <li>Selling Common Insects to Albert Jr. is more profitable than gifting them — clear your inventory after each daily Bug Catching session</li>
+    <li>Completing all 76 insects in your collection earns a Special title and rich rewards — work through one area at a time for maximum efficiency</li>
   </ol>
 </div>
 
@@ -115,7 +115,7 @@ function filterBugs() {
     row.style.display = show ? '' : 'none';
     if (show) count++;
   });
-  document.getElementById('bug-count').textContent = `显示 ${count} 种昆虫`;
+  document.getElementById('bug-count').textContent = `Show  ${count} 种Insects`;
 }
 </script>
 </body>

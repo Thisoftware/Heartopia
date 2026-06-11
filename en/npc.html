@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Heartopia NPC Database - 全角色好感度·礼物偏好·隐藏角色</title>
-<meta name="description" content="Heartopia 全 NPC Database，好感度提升方法、礼物偏好、隐藏角色 Doris、Albert Jr. 完整攻略。">
+<title>Heartopia NPC Database - All Characters: Friendship, Gifts & Hidden NPCs</title>
+<meta name="description" content="Heartopia 全 NPC Database，Friendship提升方法、Gift Preferences、Hidden Characters Doris、Albert Jr. CompleteGuide。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
 .dg-table{width:100%;border-collapse:collapse;font-size:13px;}
@@ -63,70 +63,70 @@
 <main class="main">
 
 <div class="guide-block" style="margin-bottom:12px">
-      <h3>💕 好感度提升方法</h3>
+      <h3>💕 How to Raise Friendship</h3>
       <div class="method-row">
-        <span class="method-pts">赠礼 ★★★</span>
+        <span class="method-pts">Gifting ★★★</span>
         <div>
-          <p class="method-text"><strong>每日送 1 件礼物</strong>，送喜爱物品效果Top</p>
-          <p class="tip-line">每天只计一次；生日当天送礼有 3 倍加成</p>
+          <p class="method-text"><strong>Gift 1 item per day</strong> — gifting loved items gives the biggest boost</p>
+          <p class="tip-line">Counted once per day; gifting on their birthday gives a 3× bonus</p>
         </div>
       </div>
       <div class="method-row">
-        <span class="method-pts">任务 ★★★</span>
+        <span class="method-pts">Task ★★★</span>
         <div>
-          <p class="method-text"><strong>完成 NPC 委托</strong>，单次 +50–200 点，最快的爆发来源</p>
-          <p class="tip-line">故事委托（Story Delegation）解锁后会提供特殊剧情奖励</p>
+          <p class="method-text"><strong>Complete NPC Request</strong>, each gives +50–200 points — fastest burst source</p>
+          <p class="tip-line">Story Delegation quests unlock special story rewards after completion</p>
         </div>
       </div>
       <div class="method-row">
-        <span class="method-pts">对话 ★☆☆</span>
+        <span class="method-pts">Talking ★☆☆</span>
         <div>
-          <p class="method-text"><strong>每日交谈</strong>，每次 +5–15 点，选友好对话选项</p>
+          <p class="method-text"><strong>Chat daily</strong>, each gives +5–15 points — choose friendly dialogue options</p>
         </div>
       </div>
       <div class="method-row">
-        <span class="method-pts">活动 ★★☆</span>
+        <span class="method-pts">Events ★★☆</span>
         <div>
-          <p class="method-text"><strong>生日 / 节日活动</strong>，生日送礼 3 倍加成，+100–500 点</p>
+          <p class="method-text"><strong>Birthday / Festival Events</strong> — birthday gifts give 3× bonus, +100–500 points</p>
         </div>
       </div>
       <div class="reward-row">
-        <div class="reward-chip"><p class="lv">普通朋友</p><p class="rv">解锁更多对话</p></div>
-        <div class="reward-chip"><p class="lv">好友</p><p class="rv">店铺解锁New品</p></div>
-        <div class="reward-chip"><p class="lv">最好的朋友</p><p class="rv">30% 折扣 + 专属任务</p></div>
-        <div class="reward-chip"><p class="lv">最好的朋友</p><p class="rv">稀有道具 / 爱好扩展券</p></div>
+        <div class="reward-chip"><p class="lv">Regular Friend</p><p class="rv">Unlock more dialogue</p></div>
+        <div class="reward-chip"><p class="lv">Good Friend</p><p class="rv">Shop unlocks new items</p></div>
+        <div class="reward-chip"><p class="lv">Best Friend</p><p class="rv">30% discount + exclusive quests</p></div>
+        <div class="reward-chip"><p class="lv">Best Friend</p><p class="rv">Rare items / Hobby expansion tickets</p></div>
       </div>
     </div>
 
     <!-- Filter -->
     <div class="tab-strip">
-      <button class="tab-btn on" onclick="filterNPC('all',this)">全部</button>
-      <button class="tab-btn" onclick="filterNPC('mentor',this)">爱好导师</button>
-      <button class="tab-btn" onclick="filterNPC('shop',this)">商店 NPC</button>
-      <button class="tab-btn" onclick="filterNPC('town',this)">镇民</button>
-      <button class="tab-btn" onclick="filterNPC('special',this)">隐藏 / 特殊</button>
+      <button class="tab-btn on" onclick="filterNPC('all',this)">All</button>
+      <button class="tab-btn" onclick="filterNPC('mentor',this)">HobbiesMentor</button>
+      <button class="tab-btn" onclick="filterNPC('shop',this)">Shop NPCs</button>
+      <button class="tab-btn" onclick="filterNPC('town',this)">Townsperson</button>
+      <button class="tab-btn" onclick="filterNPC('special',this)">Hidden / Special</button>
     </div>
 
-    <div class="section-label">爱好导师</div>
+    <div class="section-label">HobbiesMentor</div>
 
     <div class="npc-card" data-cat="mentor" onclick="toggleNPC(this)">
       <div class="npc-head">
         <div class="npc-avatar">🎣</div>
         <div class="npc-meta">
           <p class="npc-name">Vanya <span class="chevron">▾</span></p>
-          <p class="npc-role">钓鱼导师 · 渔夫女</p>
-          <p class="npc-loc">📍 河流码头（River Pier）</p>
+          <p class="npc-role">Fishing Mentor · Fisherwoman</p>
+          <p class="npc-loc">📍 River Pier（River Pier）</p>
         </div>
-        <span class="npc-tag tag-mentor">爱好导师</span>
+        <span class="npc-tag tag-mentor">HobbiesMentor</span>
       </div>
       <div class="npc-body">
-        <p class="npc-desc">初见就会给你第一根钓竿和爱好扩展票。熟悉 Heartopia 水域、崇尚自然的平静导师。</p>
+        <p class="npc-desc">On first meeting she gives you your first fishing rod and a hobby expansion ticket. A calm mentor who knows Heartopia's waters well.</p>
         <div class="gift-section">
-          <div class="gift-col love"><p class="gl">❤️ 最爱</p><p class="gi">各种鱼类<br>海鲜<br>钓鱼Use the 品</p></div>
-          <div class="gift-col like"><p class="gl">👍 喜欢</p><p class="gi">高品质鱼<br>钓鱼相关道具</p></div>
-          <div class="gift-col hate"><p class="gl">✖ 讨厌</p><p class="gi">垃圾<br>矿石</p></div>
+          <div class="gift-col love"><p class="gl">❤️ Loves</p><p class="gi">Any Fish<br>Seafood<br>Fishing Gear</p></div>
+          <div class="gift-col like"><p class="gl">👍 Likes</p><p class="gi">High-Quality Fish<br>Fishing-related items</p></div>
+          <div class="gift-col hate"><p class="gl">✖ Dislikes</p><p class="gi">Trash<br>Ore</p></div>
         </div>
-        <p class="strategy-box">💡 把钓上来的鱼直接送给她效率Top，无需额外处理。</p>
+        <p class="strategy-box">💡 Gift fish directly as you catch them — most efficient, no extra steps needed.</p>
       </div>
     </div>
 
@@ -135,19 +135,19 @@
         <div class="npc-avatar">🌱</div>
         <div class="npc-meta">
           <p class="npc-name">Blanc <span class="chevron">▾</span></p>
-          <p class="npc-role">园艺导师 · 园艺店店主</p>
-          <p class="npc-loc">📍 园艺商店（Gardening Shop）</p>
+          <p class="npc-role">Gardening Mentor · Garden Shop Owner</p>
+          <p class="npc-loc">📍 Gardening Shop</p>
         </div>
-        <span class="npc-tag tag-mentor">爱好导师</span>
+        <span class="npc-tag tag-mentor">HobbiesMentor</span>
       </div>
       <div class="npc-body">
-        <p class="npc-desc">热爱花园的知识型店主，随等级解锁更多种子售卖。头上站着一只鸟——与他对话可同时积累观鸟经验！</p>
+        <p class="npc-desc">A knowledgeable garden-loving shop owner. A bird always sits on his head — chatting with him also builds Birdwatching XP!</p>
         <div class="gift-section">
-          <div class="gift-col love"><p class="gl">❤️ 最爱</p><p class="gi">稀有花卉<br>种子</p></div>
-          <div class="gift-col like"><p class="gl">👍 喜欢</p><p class="gi">自己种的农作物</p></div>
-          <div class="gift-col hate"><p class="gl">✖ 讨厌</p><p class="gi">虫子</p></div>
+          <div class="gift-col love"><p class="gl">❤️ Loves</p><p class="gi">Rare Flowers<br>Seeds</p></div>
+          <div class="gift-col like"><p class="gl">👍 Likes</p><p class="gi">Home-grown crops</p></div>
+          <div class="gift-col hate"><p class="gl">✖ Dislikes</p><p class="gi">Insects</p></div>
         </div>
-        <p class="strategy-box">💡 送自家菜园收获的作物即可，稀有花卉加成更高。</p>
+        <p class="strategy-box">💡 Gift your own harvested crops. Rare flowers give a bigger friendship bonus.</p>
       </div>
     </div>
 
@@ -156,19 +156,19 @@
         <div class="npc-avatar">👨‍🍳</div>
         <div class="npc-meta">
           <p class="npc-name">Massimo <span class="chevron">▾</span></p>
-          <p class="npc-role">烹饪导师 · 主厨</p>
-          <p class="npc-loc">📍 城镇广场 / 餐厅</p>
+          <p class="npc-role">Cooking Mentor · Head Chef</p>
+          <p class="npc-loc">📍 Town Square / Restaurant</p>
         </div>
-        <span class="npc-tag tag-mentor">爱好导师</span>
+        <span class="npc-tag tag-mentor">HobbiesMentor</span>
       </div>
       <div class="npc-body">
-        <p class="npc-desc">充满热情的主厨，随好感度解锁高级食谱售卖。多Use the 几个炉子提高烹饪效率，但注意别烧糊！</p>
+        <p class="npc-desc">An enthusiastic head chef who unlocks advanced recipes as friendship grows. Use multiple stoves to cook efficiently — just don't burn anything!</p>
         <div class="gift-section">
-          <div class="gift-col love"><p class="gl">❤️ 最爱</p><p class="gi">烹饪成品<br>稀有食材</p></div>
-          <div class="gift-col like"><p class="gl">👍 喜欢</p><p class="gi">食谱道具</p></div>
-          <div class="gift-col hate"><p class="gl">✖ 讨厌</p><p class="gi">（暂无记录）</p></div>
+          <div class="gift-col love"><p class="gl">❤️ Loves</p><p class="gi">Cooked Dishes<br>Rare Ingredients</p></div>
+          <div class="gift-col like"><p class="gl">👍 Likes</p><p class="gi">Recipe-related items</p></div>
+          <div class="gift-col hate"><p class="gl">✖ Dislikes</p><p class="gi">(No data yet)</p></div>
         </div>
-        <p class="strategy-box">💡 做一盘海鲜料理送他效果最佳，他看重烹饪品质。</p>
+        <p class="strategy-box">💡 A seafood dish works best as a gift. He values cooking quality over raw ingredients.</p>
       </div>
     </div>
 
@@ -177,19 +177,19 @@
         <div class="npc-avatar">🦋</div>
         <div class="npc-meta">
           <p class="npc-name">Naniwa <span class="chevron">▾</span></p>
-          <p class="npc-role">捉虫导师 · 昆虫学家</p>
-          <p class="npc-loc">📍 森林地带</p>
+          <p class="npc-role">Bug Catching Mentor · Entomologist</p>
+          <p class="npc-loc">📍 Forest Area</p>
         </div>
-        <span class="npc-tag tag-mentor">爱好导师</span>
+        <span class="npc-tag tag-mentor">HobbiesMentor</span>
       </div>
       <div class="npc-body">
-        <p class="npc-desc">精力充沛的昆虫爱好者，在森林里四处奔跑。解锁捉虫后可购买网和虫笼升级。</p>
+        <p class="npc-desc">An energetic insect enthusiast who runs through the forest. After unlocking Bug Catching, you can buy nets and bug cages from her.</p>
         <div class="gift-section">
-          <div class="gift-col love"><p class="gl">❤️ 最爱</p><p class="gi">稀有昆虫标本<br>各种虫子</p></div>
-          <div class="gift-col like"><p class="gl">👍 喜欢</p><p class="gi">自然相关道具</p></div>
-          <div class="gift-col hate"><p class="gl">✖ 讨厌</p><p class="gi">（暂无记录）</p></div>
+          <div class="gift-col love"><p class="gl">❤️ Loves</p><p class="gi">Rare Insect Specimens<br>Any Insects</p></div>
+          <div class="gift-col like"><p class="gl">👍 Likes</p><p class="gi">Nature-themed items</p></div>
+          <div class="gift-col hate"><p class="gl">✖ Dislikes</p><p class="gi">(No data yet)</p></div>
         </div>
-        <p class="strategy-box">💡 送刚抓的New虫或稀有标本，越罕见越好。</p>
+        <p class="strategy-box">💡 Gift freshly caught insects or rare specimens — rarer is always better.</p>
       </div>
     </div>
 
@@ -198,19 +198,19 @@
         <div class="npc-avatar">📷</div>
         <div class="npc-meta">
           <p class="npc-name">Bailey J <span class="chevron">▾</span></p>
-          <p class="npc-role">观鸟导师 · 鸟类学家</p>
-          <p class="npc-loc">📍 自然区域 / 小镇公园</p>
+          <p class="npc-role">Birdwatching Mentor · Ornithologist</p>
+          <p class="npc-loc">📍 Nature Area / Town Park</p>
         </div>
-        <span class="npc-tag tag-mentor">爱好导师</span>
+        <span class="npc-tag tag-mentor">HobbiesMentor</span>
       </div>
       <div class="npc-body">
-        <p class="npc-desc">安静耐心的观鸟者与摄影师，专注于记录 Heartopia 鸟类。解锁后可购买望远镜和鸟食。</p>
+        <p class="npc-desc">A quiet, patient birdwatcher and photographer dedicated to recording Heartopia's birds. After unlocking, you can buy telescopes and bird food.</p>
         <div class="gift-section">
-          <div class="gift-col love"><p class="gl">❤️ 最爱</p><p class="gi">高质量鸟类照片<br>自然系道具</p></div>
-          <div class="gift-col like"><p class="gl">👍 喜欢</p><p class="gi">自然摄影<br>鸟类主题物品</p></div>
-          <div class="gift-col hate"><p class="gl">✖ 讨厌</p><p class="gi">（暂无记录）</p></div>
+          <div class="gift-col love"><p class="gl">❤️ Loves</p><p class="gi">High-quality bird photos<br>Nature-themed items</p></div>
+          <div class="gift-col like"><p class="gl">👍 Likes</p><p class="gi">Nature photography<br>Bird-themed items</p></div>
+          <div class="gift-col hate"><p class="gl">✖ Dislikes</p><p class="gi">(No data yet)</p></div>
         </div>
-        <p class="strategy-box">💡 送游戏内拍摄的鸟类照片，评级越高越好。</p>
+        <p class="strategy-box">💡 Gift in-game bird photos. Higher rating = bigger friendship boost.</p>
       </div>
     </div>
 
@@ -219,42 +219,42 @@
         <div class="npc-avatar">⚓</div>
         <div class="npc-meta">
           <p class="npc-name">Bill <span class="chevron">▾</span></p>
-          <p class="npc-role">进阶钓鱼导师 · 海钓组织者</p>
-          <p class="npc-loc">📍 渔村（Fishing Village）</p>
+          <p class="npc-role">Advanced Fishing Mentor · Sea Fishing Organizer</p>
+          <p class="npc-loc">📍 Fishing Village（Fishing Village）</p>
         </div>
-        <span class="npc-tag tag-mentor">爱好导师</span>
+        <span class="npc-tag tag-mentor">HobbiesMentor</span>
       </div>
       <div class="npc-body">
-        <p class="npc-desc">经验丰富的老渔夫，负责组织海洋钓鱼活动，想参加多人海钓必须找他报名。售卖各种鱼饵。</p>
+        <p class="npc-desc">A seasoned fisherman who organizes sea fishing events. You must register with him to join group sea fishing. Sells various baits.</p>
         <div class="gift-section">
-          <div class="gift-col love"><p class="gl">❤️ 最爱</p><p class="gi">各种鱼<br>海鲜</p></div>
-          <div class="gift-col like"><p class="gl">👍 喜欢</p><p class="gi">海鲜料理</p></div>
-          <div class="gift-col hate"><p class="gl">✖ 讨厌</p><p class="gi">（暂无记录）</p></div>
+          <div class="gift-col love"><p class="gl">❤️ Loves</p><p class="gi">Any Fish<br>Seafood</p></div>
+          <div class="gift-col like"><p class="gl">👍 Likes</p><p class="gi">Seafood dishes</p></div>
+          <div class="gift-col hate"><p class="gl">✖ Dislikes</p><p class="gi">(No data yet)</p></div>
         </div>
-        <p class="strategy-box">💡 送高品质鱼或海鲜菜肴均可。</p>
+        <p class="strategy-box">💡 High-quality fish or seafood dishes both work as gifts.</p>
       </div>
     </div>
 
-    <div class="section-label">商店 NPC</div>
+    <div class="section-label">Shop NPCs</div>
 
     <div class="npc-card" data-cat="shop" onclick="toggleNPC(this)">
       <div class="npc-head">
         <div class="npc-avatar">🐾</div>
         <div class="npc-meta">
           <p class="npc-name">Mrs. Joan <span class="chevron">▾</span></p>
-          <p class="npc-role">宠物店老板娘</p>
-          <p class="npc-loc">📍 宠物店</p>
+          <p class="npc-role">Pet Shop Owner</p>
+          <p class="npc-loc">📍 Pet Shop</p>
         </div>
-        <span class="npc-tag tag-shop">商店 NPC</span>
+        <span class="npc-tag tag-shop">Shop NPCs</span>
       </div>
       <div class="npc-body">
-        <p class="npc-desc">温柔的宠物专家，售卖猫和狗及宠物Use the 品。提升好感度可解锁特殊宠物。</p>
+        <p class="npc-desc">A gentle pet specialist who sells cats, dogs, and pet supplies. Raise her friendship to unlock special pets.</p>
         <div class="gift-section">
-          <div class="gift-col love"><p class="gl">❤️ 最爱</p><p class="gi">宠物Use the 品<br>零食</p></div>
-          <div class="gift-col like"><p class="gl">👍 喜欢</p><p class="gi">（暂无记录）</p></div>
-          <div class="gift-col hate"><p class="gl">✖ 讨厌</p><p class="gi">（暂无记录）</p></div>
+          <div class="gift-col love"><p class="gl">❤️ Loves</p><p class="gi">Pet supplies<br>Treats</p></div>
+          <div class="gift-col like"><p class="gl">👍 Likes</p><p class="gi">(No data yet)</p></div>
+          <div class="gift-col hate"><p class="gl">✖ Dislikes</p><p class="gi">(No data yet)</p></div>
         </div>
-        <p class="strategy-box">💡 好感度高后解锁特殊毛色或个性的限定宠物。</p>
+        <p class="strategy-box">💡 High friendship unlocks limited pets with special coat colors or personalities.</p>
       </div>
     </div>
 
@@ -263,17 +263,17 @@
         <div class="npc-avatar">🏗️</div>
         <div class="npc-meta">
           <p class="npc-name">Bob <span class="chevron">▾</span></p>
-          <p class="npc-role">建筑师 · 家具工坊</p>
-          <p class="npc-loc">📍 建造工坊</p>
+          <p class="npc-role">Architect · Furniture Workshop</p>
+          <p class="npc-loc">📍 Building Workshop</p>
         </div>
-        <span class="npc-tag tag-shop">商店 NPC</span>
+        <span class="npc-tag tag-shop">Shop NPCs</span>
       </div>
       <div class="npc-body">
-        <p class="npc-desc">负责地块扩建和建材供给，是建造系玩家最重要的 NPC。售卖家具、制作配方、木材和石材。</p>
+        <p class="npc-desc">Handles plot expansion and material supply — the most important NPC for builders. Sells furniture, crafting recipes, lumber, and stone.</p>
         <div class="gift-section">
-          <div class="gift-col love"><p class="gl">❤️ 最爱</p><p class="gi">（暂无记录）</p></div>
-          <div class="gift-col like"><p class="gl">👍 喜欢</p><p class="gi">建筑材料相关</p></div>
-          <div class="gift-col hate"><p class="gl">✖ 讨厌</p><p class="gi">（暂无记录）</p></div>
+          <div class="gift-col love"><p class="gl">❤️ Loves</p><p class="gi">(No data yet)</p></div>
+          <div class="gift-col like"><p class="gl">👍 Likes</p><p class="gi">Building Materials</p></div>
+          <div class="gift-col hate"><p class="gl">✖ Dislikes</p><p class="gi">(No data yet)</p></div>
         </div>
       </div>
     </div>
@@ -283,17 +283,17 @@
         <div class="npc-avatar">👗</div>
         <div class="npc-meta">
           <p class="npc-name">Dorothee <span class="chevron">▾</span></p>
-          <p class="npc-role">服装店店主</p>
-          <p class="npc-loc">📍 服装店</p>
+          <p class="npc-role">Clothing Store Owner</p>
+          <p class="npc-loc">📍 Clothing Store</p>
         </div>
-        <span class="npc-tag tag-shop">商店 NPC</span>
+        <span class="npc-tag tag-shop">Shop NPCs</span>
       </div>
       <div class="npc-body">
-        <p class="npc-desc">售卖日常服装，上衣、下装、鞋帽、配件一应俱全。好感度提升可解锁更多款式。</p>
+        <p class="npc-desc">Sells everyday clothing — tops, bottoms, shoes, hats, and accessories. Raise friendship to unlock more styles.</p>
         <div class="gift-section">
-          <div class="gift-col love"><p class="gl">❤️ 最爱</p><p class="gi">（暂无记录）</p></div>
-          <div class="gift-col like"><p class="gl">👍 喜欢</p><p class="gi">时尚相关道具</p></div>
-          <div class="gift-col hate"><p class="gl">✖ 讨厌</p><p class="gi">（暂无记录）</p></div>
+          <div class="gift-col love"><p class="gl">❤️ Loves</p><p class="gi">(No data yet)</p></div>
+          <div class="gift-col like"><p class="gl">👍 Likes</p><p class="gi">Fashion Items</p></div>
+          <div class="gift-col hate"><p class="gl">✖ Dislikes</p><p class="gi">(No data yet)</p></div>
         </div>
       </div>
     </div>
@@ -303,39 +303,39 @@
         <div class="npc-avatar">🏪</div>
         <div class="npc-meta">
           <p class="npc-name">Ka Ching <span class="chevron">▾</span></p>
-          <p class="npc-role">杂货店老板</p>
-          <p class="npc-loc">📍 杂货店</p>
+          <p class="npc-role">General Store Owner</p>
+          <p class="npc-loc">📍 General Store</p>
         </div>
-        <span class="npc-tag tag-shop">商店 NPC</span>
+        <span class="npc-tag tag-shop">Shop NPCs</span>
       </div>
       <div class="npc-body">
-        <p class="npc-desc">售卖烹饪基础食材（面粉、盐、糖等）、烟花和各种消耗品，日常必买。</p>
+        <p class="npc-desc">Sells basic cooking ingredients (flour, salt, sugar, etc.), fireworks, and various consumables — a daily must-visit.</p>
         <div class="gift-section">
-          <div class="gift-col love"><p class="gl">❤️ 最爱</p><p class="gi">（暂无记录）</p></div>
-          <div class="gift-col like"><p class="gl">👍 喜欢</p><p class="gi">（暂无记录）</p></div>
-          <div class="gift-col hate"><p class="gl">✖ 讨厌</p><p class="gi">（暂无记录）</p></div>
+          <div class="gift-col love"><p class="gl">❤️ Loves</p><p class="gi">(No data yet)</p></div>
+          <div class="gift-col like"><p class="gl">👍 Likes</p><p class="gi">(No data yet)</p></div>
+          <div class="gift-col hate"><p class="gl">✖ Dislikes</p><p class="gi">(No data yet)</p></div>
         </div>
       </div>
     </div>
 
-    <div class="section-label">镇民 · 故事角色</div>
+    <div class="section-label">Townspeople & Story Characters</div>
 
     <div class="npc-card" data-cat="town" onclick="toggleNPC(this)">
       <div class="npc-head">
         <div class="npc-avatar">🏛️</div>
         <div class="npc-meta">
-          <p class="npc-name">市长（The Mayor）<span class="chevron">▾</span></p>
-          <p class="npc-role">鲸鱼岛镇长 · D.G. 引导</p>
-          <p class="npc-loc">📍 镇政厅</p>
+          <p class="npc-name">The Mayor<span class="chevron">▾</span></p>
+          <p class="npc-role">Mayor of Whale Island · D.G. Guide</p>
+          <p class="npc-loc">📍 Town Hall</p>
         </div>
-        <span class="npc-tag tag-town">镇民</span>
+        <span class="npc-tag tag-town">Townsperson</span>
       </div>
       <div class="npc-body">
-        <p class="npc-desc">带领New玩家完成 D.G. 公会任务，每周提供一个任务。是Guild Levels解锁的核心引导角色。</p>
+        <p class="npc-desc">Guides new players through D.G. Guild quests and provides one weekly task. The core guide for unlocking Guild levels.</p>
         <div class="gift-section">
-          <div class="gift-col love"><p class="gl">❤️ 最爱</p><p class="gi">（暂无记录）</p></div>
-          <div class="gift-col like"><p class="gl">👍 喜欢</p><p class="gi">（暂无记录）</p></div>
-          <div class="gift-col hate"><p class="gl">✖ 讨厌</p><p class="gi">（暂无记录）</p></div>
+          <div class="gift-col love"><p class="gl">❤️ Loves</p><p class="gi">(No data yet)</p></div>
+          <div class="gift-col like"><p class="gl">👍 Likes</p><p class="gi">(No data yet)</p></div>
+          <div class="gift-col hate"><p class="gl">✖ Dislikes</p><p class="gi">(No data yet)</p></div>
         </div>
       </div>
     </div>
@@ -345,17 +345,17 @@
         <div class="npc-avatar">🎨</div>
         <div class="npc-meta">
           <p class="npc-name">Patti <span class="chevron">▾</span></p>
-          <p class="npc-role">画家 · 守林人</p>
-          <p class="npc-loc">📍 护林站 / 森林入口</p>
+          <p class="npc-role">Painter · Forest Ranger</p>
+          <p class="npc-loc">📍 Ranger Station / Forest Entrance</p>
         </div>
-        <span class="npc-tag tag-town">镇民</span>
+        <span class="npc-tag tag-town">Townsperson</span>
       </div>
       <div class="npc-body">
-        <p class="npc-desc">站在护林站旁的艺术家，常常在风景区寻找创作灵感。</p>
+        <p class="npc-desc">An artist stationed at the ranger station who wanders scenic areas looking for inspiration.</p>
         <div class="gift-section">
-          <div class="gift-col love"><p class="gl">❤️ 最爱</p><p class="gi">玩具<br>糖果<br>美术Use the 品</p></div>
-          <div class="gift-col like"><p class="gl">👍 喜欢</p><p class="gi">自然风景相关</p></div>
-          <div class="gift-col hate"><p class="gl">✖ 讨厌</p><p class="gi">（暂无记录）</p></div>
+          <div class="gift-col love"><p class="gl">❤️ Loves</p><p class="gi">Toys<br>Candy<br>Art Supplies</p></div>
+          <div class="gift-col like"><p class="gl">👍 Likes</p><p class="gi">Nature scenery items</p></div>
+          <div class="gift-col hate"><p class="gl">✖ Dislikes</p><p class="gi">(No data yet)</p></div>
         </div>
       </div>
     </div>
@@ -365,42 +365,42 @@
         <div class="npc-avatar">🚗</div>
         <div class="npc-meta">
           <p class="npc-name">Andrew <span class="chevron">▾</span></p>
-          <p class="npc-role">驾驶导师 · 摩托玩家</p>
-          <p class="npc-loc">📍 小镇道路</p>
+          <p class="npc-role">Riding Mentor · Motorcycle Enthusiast</p>
+          <p class="npc-loc">📍 Town Road</p>
         </div>
-        <span class="npc-tag tag-town">镇民</span>
+        <span class="npc-tag tag-town">Townsperson</span>
       </div>
       <div class="npc-body">
-        <p class="npc-desc">可以帮你解锁骑行/驾驶功能，骑车比步行快很多，是早期非常值得找的 NPC。</p>
+        <p class="npc-desc">Helps you unlock the riding/driving feature — biking is much faster than walking, making him one of the most valuable early NPCs to find.</p>
         <div class="gift-section">
-          <div class="gift-col love"><p class="gl">❤️ 最爱</p><p class="gi">（暂无记录）</p></div>
-          <div class="gift-col like"><p class="gl">👍 喜欢</p><p class="gi">（暂无记录）</p></div>
-          <div class="gift-col hate"><p class="gl">✖ 讨厌</p><p class="gi">（暂无记录）</p></div>
+          <div class="gift-col love"><p class="gl">❤️ Loves</p><p class="gi">(No data yet)</p></div>
+          <div class="gift-col like"><p class="gl">👍 Likes</p><p class="gi">(No data yet)</p></div>
+          <div class="gift-col hate"><p class="gl">✖ Dislikes</p><p class="gi">(No data yet)</p></div>
         </div>
-        <p class="strategy-box">💡 New手优先找 Andrew，解锁骑行后移动速度大幅提升。</p>
+        <p class="strategy-box">💡 Find Andrew early — unlocking riding dramatically increases movement speed.</p>
       </div>
     </div>
 
-    <div class="section-label">隐藏 / 特殊 NPC</div>
+    <div class="section-label">Hidden / Special NPC</div>
 
     <div class="npc-card" data-cat="special" onclick="toggleNPC(this)">
       <div class="npc-head">
         <div class="npc-avatar">🌧️</div>
         <div class="npc-meta">
           <p class="npc-name">Doris <span class="chevron">▾</span></p>
-          <p class="npc-role">隐藏商人 · 秘密食谱贩售者</p>
-          <p class="npc-loc">📍 雨天 / 彩虹天气出现</p>
+          <p class="npc-role">Hidden Merchant · Secret Recipe Seller</p>
+          <p class="npc-loc">📍 Appears on rainy / rainbow weather days</p>
         </div>
-        <span class="npc-tag tag-special">隐藏 NPC</span>
+        <span class="npc-tag tag-special">Hidden NPC</span>
       </div>
       <div class="npc-body">
-        <p class="npc-desc">只在下雨或彩虹天气时现身的神秘商人。售卖特殊食谱如「原味卷蛋糕」，使Use the 许愿星购买。</p>
+        <p class="npc-desc">A mysterious merchant who only appears on rainy or rainbow weather days. Sells special recipes like Plain Roll Cake — purchased with Wishing Stars.</p>
         <div class="gift-section">
-          <div class="gift-col love"><p class="gl">❤️ 最爱</p><p class="gi">（暂无记录）</p></div>
-          <div class="gift-col like"><p class="gl">👍 喜欢</p><p class="gi">（暂无记录）</p></div>
-          <div class="gift-col hate"><p class="gl">✖ 讨厌</p><p class="gi">（暂无记录）</p></div>
+          <div class="gift-col love"><p class="gl">❤️ Loves</p><p class="gi">(No data yet)</p></div>
+          <div class="gift-col like"><p class="gl">👍 Likes</p><p class="gi">(No data yet)</p></div>
+          <div class="gift-col hate"><p class="gl">✖ Dislikes</p><p class="gi">(No data yet)</p></div>
         </div>
-        <p class="strategy-box">⚠️ 下雨天务必出门巡逻找 Doris！她的食谱无法通过其他途径获取。</p>
+        <p class="strategy-box">⚠️ Always check for Doris on rainy days! Her recipes cannot be obtained any other way.</p>
       </div>
     </div>
 
@@ -409,19 +409,19 @@
         <div class="npc-avatar">💰</div>
         <div class="npc-meta">
           <p class="npc-name">Albert Jr. <span class="chevron">▾</span></p>
-          <p class="npc-role">流动收购商</p>
-          <p class="npc-loc">📍 小镇各处游荡</p>
+          <p class="npc-role">Roaming Buyer</p>
+          <p class="npc-loc">📍 Roams all around town</p>
         </div>
-        <span class="npc-tag tag-special">特殊 NPC</span>
+        <span class="npc-tag tag-special">Special NPC</span>
       </div>
       <div class="npc-body">
-        <p class="npc-desc">游戏内唯一可以卖出道具的 NPC！他四处游荡，你必须主动找到他。鱼类、园艺收获等物品卖给他换金币。</p>
+        <p class="npc-desc">The only NPC in the game who buys your items! He roams town — you must actively find him. Sell fish, crops, and more for Coins.</p>
         <div class="gift-section">
-          <div class="gift-col love"><p class="gl">❤️ 最爱</p><p class="gi">（收购商，不送礼）</p></div>
-          <div class="gift-col like"><p class="gl">👍 喜欢</p><p class="gi">—</p></div>
-          <div class="gift-col hate"><p class="gl">✖ 讨厌</p><p class="gi">—</p></div>
+          <div class="gift-col love"><p class="gl">❤️ Loves</p><p class="gi">(Buyer — not a gift recipient)</p></div>
+          <div class="gift-col like"><p class="gl">👍 Likes</p><p class="gi">—</p></div>
+          <div class="gift-col hate"><p class="gl">✖ Dislikes</p><p class="gi">—</p></div>
         </div>
-        <p class="strategy-box">⚠️ 金币匮乏时优先寻找 Albert Jr.！建立固定"卖货"习惯。</p>
+        <p class="strategy-box">⚠️ When short on coins, find Albert Jr. first! Build a regular selling routine.</p>
       </div>
     </div>
 
@@ -430,19 +430,19 @@
         <div class="npc-avatar">🌳</div>
         <div class="npc-meta">
           <p class="npc-name">Oak-Oak <span class="chevron">▾</span></p>
-          <p class="npc-role">游荡的橡树精灵</p>
-          <p class="npc-loc">📍 随机地点，极为稀有</p>
+          <p class="npc-role">Wandering Oak Spirit</p>
+          <p class="npc-loc">📍 Random locations, extremely rare</p>
         </div>
-        <span class="npc-tag tag-special">隐藏 NPC</span>
+        <span class="npc-tag tag-special">Hidden NPC</span>
       </div>
       <div class="npc-body">
-        <p class="npc-desc">神秘的树灵，出没于不同地点。稀有度极高，可能需要数周才能偶遇一次。社区仍在追踪出没规律。</p>
+        <p class="npc-desc">A mysterious tree spirit that appears in random locations. Extremely rare — may take weeks to encounter. The community is still tracking its patterns.</p>
         <div class="gift-section">
-          <div class="gift-col love"><p class="gl">❤️ 最爱</p><p class="gi">（暂无记录）</p></div>
-          <div class="gift-col like"><p class="gl">👍 喜欢</p><p class="gi">（暂无记录）</p></div>
-          <div class="gift-col hate"><p class="gl">✖ 讨厌</p><p class="gi">（暂无记录）</p></div>
+          <div class="gift-col love"><p class="gl">❤️ Loves</p><p class="gi">(No data yet)</p></div>
+          <div class="gift-col like"><p class="gl">👍 Likes</p><p class="gi">(No data yet)</p></div>
+          <div class="gift-col hate"><p class="gl">✖ Dislikes</p><p class="gi">(No data yet)</p></div>
         </div>
-        <p class="strategy-box">✨ 遇到时记得截图分享！</p>
+        <p class="strategy-box">✨ Take a screenshot and share it with the community!</p>
       </div>
     </div>
 

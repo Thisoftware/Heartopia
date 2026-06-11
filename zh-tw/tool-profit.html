@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Heartopia 利潤計算器 - 烹飪vs原料·釣魚ROI·最优卖出方案 - 繁體中文版</title>
-<meta name="description" content="Heartopia 利潤計算器，快速对比烹飪成品与原材料售價，找到最赚金币的卖出策略。">
+<title>Heartopia 利潤計算器 - 烹飪vs原料·釣魚ROI·最优賣出方案</title>
+<meta name="description" content="Heartopia 利潤計算器，快速对比烹飪成品与原材料售價，找到最赚金幣的賣出策略。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -42,7 +42,7 @@
 
 <div class="hero">
   <h1>💰 利潤計算器</h1>
-  <p>計算烹飪 vs 原料售價 · 釣魚 ROI · 找最优卖出方案</p>
+  <p>計算烹飪 vs 原料售價 · 釣魚 ROI · 找最优賣出方案</p>
 </div>
 
 <div class="stats-row">
@@ -52,11 +52,11 @@
   <div class="stat-chip"><div class="sv">500G</div><div class="sl">蘑菇汤最高利潤</div></div>
 </div>
 
-<!-- Tab 切换 -->
+<!-- Tab 切換 -->
 <div class="tab-strip">
   <button class="tab-btn on" onclick="switchTab('cooking',this)">🍳 烹飪利潤</button>
   <button class="tab-btn" onclick="switchTab('fish',this)">🐟 釣魚 ROI</button>
-  <button class="tab-btn" onclick="switchTab('quick',this)">⚡ 快速参考表</button>
+  <button class="tab-btn" onclick="switchTab('quick',this)">⚡ 快速參考表</button>
 </div>
 
 <!-- 烹飪利潤計算器 -->
@@ -68,17 +68,17 @@
         <label>食譜名（可选）</label>
         <select id="c-preset" onchange="loadPreset()">
           <option value="">自定义输入</option>
-          <option value="230,80">鱼薯条 Fish N Chips</option>
-          <option value="120,30">简单沙拉 House Salad</option>
+          <option value="230,80">魚薯条 Fish N Chips</option>
+          <option value="120,30">簡單沙拉 House Salad</option>
           <option value="650,150">蘑菇炖汤 Mushroom Stew</option>
           <option value="650,200">纽扣蘑菇派 Button Mushroom Pie</option>
-          <option value="600,250">三文鱼寿司 Salmon Sushi</option>
-          <option value="620,300">海鲜披萨 Seafood Pizza</option>
+          <option value="600,250">三文魚寿司 Salmon Sushi</option>
+          <option value="620,300">海鮮披萨 Seafood Pizza</option>
           <option value="580,280">奶酪蛋糕 Cheesecake</option>
           <option value="460,180">胡萝卜蛋糕 Carrot Cake</option>
           <option value="460,200">肉酱意面 Meat Sauce Pasta</option>
           <option value="340,100">温泉蔬菜沙拉</option>
-          <option value="320,100">烤鱼</option>
+          <option value="320,100">烤魚</option>
         </select>
       </div>
       <div class="input-group">
@@ -86,7 +86,7 @@
         <input type="number" id="c-cost" placeholder="如：80" min="0">
       </div>
       <div class="input-group">
-        <label>料理基础售價（G）</label>
+        <label>料理基礎售價（G）</label>
         <input type="number" id="c-price" placeholder="如：230" min="0">
       </div>
       <div class="input-group">
@@ -97,7 +97,7 @@
     <div class="input-group" style="margin-bottom:10px">
       <label>料理品質（影响售價）</label>
       <div class="star-select">
-        <button class="star-btn on" onclick="setStar(1,this)">1★ 基础</button>
+        <button class="star-btn on" onclick="setStar(1,this)">1★ 基礎</button>
         <button class="star-btn" onclick="setStar(1.2,this)">2★ +20%</button>
         <button class="star-btn" onclick="setStar(1.4,this)">3★ +40%</button>
         <button class="star-btn" onclick="setStar(1.6,this)">4★ +60%</button>
@@ -111,14 +111,14 @@
     <button class="calc-btn" onclick="calcCooking()">計算利潤</button>
     <div class="result-box" id="c-result">
       <div class="result-row"><span>食材成本</span><span id="c-r-cost"></span></div>
-      <div class="result-row"><span>品質加成后售價</span><span id="c-r-price"></span></div>
+      <div class="result-row"><span>品質加成後售價</span><span id="c-r-price"></span></div>
       <div class="result-row"><span>D.G. 会员加成</span><span id="c-r-member"></span></div>
       <div class="result-row"><span>每份利潤</span><span id="c-r-unit"></span></div>
       <div class="result-row"><span>批量利潤（×<span id="c-r-qty-label"></span>份）</span><span id="c-r-total"></span></div>
     </div>
   </div>
 
-  <div class="notice tip">💡 用 3★ 以上食材烹飪可显著提升料理品質，5★ 料理售價是基础的 1.8 倍。D.G. 会员额外再加 10%。</div>
+  <div class="notice tip">💡 用 3★ 以上食材烹飪可顯著提升料理品質，5★ 料理售價是基礎的 1.8 倍。D.G. 會員額外再加 10%。</div>
 </div>
 
 <!-- 釣魚 ROI -->
@@ -127,36 +127,36 @@
     <h3>🎣 釣魚 ROI 計算</h3>
     <div class="input-grid">
       <div class="input-group">
-        <label>魚類预设</label>
+        <label>魚類預設</label>
         <select id="f-preset" onchange="loadFishPreset()">
           <option value="">自定义</option>
-          <option value="80,0">鲤鱼（80G）</option>
-          <option value="250,0">鳟鱼（250G）</option>
-          <option value="600,0">鲑鱼（600G）</option>
-          <option value="800,0">锦鲤（800G）</option>
-          <option value="950,0">剑鱼（950G）</option>
-          <option value="1200,0">蓝鳍金枪鱼（1200G）</option>
-          <option value="1800,0">傳說金龙鱼（1800G）</option>
+          <option value="80,0">鲤魚（80G）</option>
+          <option value="250,0">鳟魚（250G）</option>
+          <option value="600,0">鲑魚（600G）</option>
+          <option value="800,0">錦鯉（800G）</option>
+          <option value="950,0">剑魚（950G）</option>
+          <option value="1200,0">蓝鳍金枪魚（1200G）</option>
+          <option value="1800,0">傳說金龙魚（1800G）</option>
         </select>
       </div>
       <div class="input-group">
-        <label>单条鱼售價（G）</label>
+        <label>單條魚售價（G）</label>
         <input type="number" id="f-price" placeholder="如：250" min="0">
       </div>
       <div class="input-group">
-        <label>鱼饵成本（G/次，无则填0）</label>
+        <label>魚餌成本（G/次，无则填0）</label>
         <input type="number" id="f-bait" placeholder="0" value="0" min="0">
       </div>
       <div class="input-group">
-        <label>修复包成本分摊（G/次）</label>
+        <label>修復包成本分摊（G/次）</label>
         <input type="number" id="f-repair" placeholder="如：10" value="10" min="0">
       </div>
       <div class="input-group">
-        <label>每小时钓获量（条）</label>
+        <label>每小時釣獲量（條）</label>
         <input type="number" id="f-qty" placeholder="如：20" value="20" min="1">
       </div>
       <div class="input-group">
-        <label>釣魚时长（分钟）</label>
+        <label>釣魚時长（分鐘）</label>
         <input type="number" id="f-time" placeholder="如：30" value="30" min="1">
       </div>
     </div>
@@ -166,52 +166,52 @@
     </div>
     <button class="calc-btn" onclick="calcFish()">計算收益</button>
     <div class="result-box" id="f-result">
-      <div class="result-row"><span>预计钓获量</span><span id="f-r-qty"></span></div>
+      <div class="result-row"><span>預計釣獲量</span><span id="f-r-qty"></span></div>
       <div class="result-row"><span>总售價收入</span><span id="f-r-income"></span></div>
-      <div class="result-row"><span>总成本（鱼饵+修复）</span><span id="f-r-cost"></span></div>
+      <div class="result-row"><span>总成本（魚餌+修復）</span><span id="f-r-cost"></span></div>
       <div class="result-row"><span>净利潤</span><span id="f-r-profit"></span></div>
-      <div class="result-row"><span>每小时净收益</span><span id="f-r-hourly"></span></div>
+      <div class="result-row"><span>每小時净收益</span><span id="f-r-hourly"></span></div>
     </div>
   </div>
-  <div class="notice">🎣 修复包成本建議按每次 10–15G 分摊（一个修复包约修 5–8 次）。高利潤鱼建議配合美人鱼鱼饵使用。</div>
+  <div class="notice">🎣 修復包成本建議按每次 10–15G 分摊（一個修復包約修 5–8 次）。高利潤魚建議配合美人魚魚餌使用。</div>
 </div>
 
-<!-- 快速参考表 -->
+<!-- 快速參考表 -->
 <div id="tab-quick" class="tab-content">
   <div class="calc-section">
-    <h3>⚡ 烹飪利潤排行（基础 1★）</h3>
+    <h3>⚡ 烹飪利潤排行（基礎 1★）</h3>
     <table class="quick-table">
       <thead><tr><th>食譜</th><th>成本</th><th>售價</th><th>利潤</th><th>利潤率</th></tr></thead>
       <tbody>
         <tr><td class="name">🍲 蘑菇炖汤</td><td>~150G</td><td>650G</td><td class="profit">+500G</td><td>77%</td></tr>
         <tr><td class="name">🥧 纽扣蘑菇派</td><td>~200G</td><td>650G</td><td class="profit">+450G</td><td>69%</td></tr>
-        <tr><td class="name">🍣 三文鱼寿司</td><td>~250G</td><td>600G</td><td class="profit">+350G</td><td>58%</td></tr>
-        <tr><td class="name">🍕 海鲜披萨</td><td>~300G</td><td>620G</td><td class="profit">+320G</td><td>52%</td></tr>
+        <tr><td class="name">🍣 三文魚寿司</td><td>~250G</td><td>600G</td><td class="profit">+350G</td><td>58%</td></tr>
+        <tr><td class="name">🍕 海鮮披萨</td><td>~300G</td><td>620G</td><td class="profit">+320G</td><td>52%</td></tr>
         <tr><td class="name">🍰 奶酪蛋糕</td><td>~280G</td><td>580G</td><td class="profit">+300G</td><td>52%</td></tr>
         <tr><td class="name">🥕 胡萝卜蛋糕</td><td>~180G</td><td>460G</td><td class="profit">+280G</td><td>61%</td></tr>
         <tr><td class="name">🍝 肉酱意面</td><td>~200G</td><td>460G</td><td class="profit">+260G</td><td>57%</td></tr>
         <tr><td class="name">🥗 温泉蔬菜沙拉</td><td>~100G</td><td>340G</td><td class="profit">+240G</td><td>71%</td></tr>
-        <tr><td class="name">🐟 烤鱼</td><td>~100G</td><td>320G</td><td class="profit">+220G</td><td>69%</td></tr>
-        <tr><td class="name">🍟 鱼薯条</td><td>~80G</td><td>230G</td><td class="profit">+150G</td><td>65%</td></tr>
-        <tr><td class="name">🥗 简单沙拉</td><td>~30G</td><td>120G</td><td class="profit">+90G</td><td>75%</td></tr>
+        <tr><td class="name">🐟 烤魚</td><td>~100G</td><td>320G</td><td class="profit">+220G</td><td>69%</td></tr>
+        <tr><td class="name">🍟 魚薯条</td><td>~80G</td><td>230G</td><td class="profit">+150G</td><td>65%</td></tr>
+        <tr><td class="name">🥗 簡單沙拉</td><td>~30G</td><td>120G</td><td class="profit">+90G</td><td>75%</td></tr>
       </tbody>
     </table>
   </div>
   <div class="calc-section">
-    <h3>🐟 釣魚售價参考</h3>
+    <h3>🐟 釣魚售價參考</h3>
     <table class="quick-table">
-      <thead><tr><th>魚類</th><th>售價</th><th>地点</th><th>天气</th></tr></thead>
+      <thead><tr><th>魚類</th><th>售價</th><th>地點</th><th>天氣</th></tr></thead>
       <tbody>
-        <tr><td class="name">傳說金龙鱼</td><td class="profit">1800G</td><td>河流码头</td><td>🌈 彩虹</td></tr>
+        <tr><td class="name">傳說金龙魚</td><td class="profit">1800G</td><td>河流碼頭</td><td>🌈 彩虹</td></tr>
         <tr><td class="name">锤头鲨</td><td class="profit">1600G</td><td>海洋</td><td>⛈️ 雨天</td></tr>
-        <tr><td class="name">彩虹鱼</td><td class="profit">1400G</td><td>温泉悬崖</td><td>🌈 彩虹</td></tr>
-        <tr><td class="name">蓝鳍金枪鱼</td><td class="profit">1200G</td><td>海洋</td><td>任意</td></tr>
+        <tr><td class="name">彩虹魚</td><td class="profit">1400G</td><td>溫泉懸崖</td><td>🌈 彩虹</td></tr>
+        <tr><td class="name">蓝鳍金枪魚</td><td class="profit">1200G</td><td>海洋</td><td>任意</td></tr>
         <tr><td class="name">神秘河豚</td><td class="profit">1100G</td><td>海洋</td><td>🌧️ 雨天</td></tr>
-        <tr><td class="name">剑鱼</td><td class="profit">950G</td><td>海洋</td><td>任意</td></tr>
-        <tr><td class="name">锦鲤</td><td class="profit">800G</td><td>花田池塘</td><td>晴天</td></tr>
-        <tr><td class="name">鲑鱼</td><td class="profit">600G</td><td>森林小溪</td><td>任意</td></tr>
-        <tr><td class="name">鳟鱼</td><td class="profit">250G</td><td>河流码头</td><td>雨天</td></tr>
-        <tr><td class="name">鲤鱼</td><td>80G</td><td>河流码头</td><td>任意</td></tr>
+        <tr><td class="name">剑魚</td><td class="profit">950G</td><td>海洋</td><td>任意</td></tr>
+        <tr><td class="name">錦鯉</td><td class="profit">800G</td><td>花田池塘</td><td>晴天</td></tr>
+        <tr><td class="name">鲑魚</td><td class="profit">600G</td><td>森林小溪</td><td>任意</td></tr>
+        <tr><td class="name">鳟魚</td><td class="profit">250G</td><td>河流碼頭</td><td>雨天</td></tr>
+        <tr><td class="name">鲤魚</td><td>80G</td><td>河流碼頭</td><td>任意</td></tr>
       </tbody>
     </table>
   </div>
@@ -266,7 +266,7 @@ function calcCooking() {
 
   document.getElementById('c-r-cost').textContent = `-${cost}G`;
   document.getElementById('c-r-price').textContent = `${qualityPrice}G`;
-  document.getElementById('c-r-member').textContent = member > 1 ? `×1.1 → ${finalPrice}G` : '未开启';
+  document.getElementById('c-r-member').textContent = member > 1 ? `×1.1 → ${finalPrice}G` : '未開启';
   document.getElementById('c-r-unit').innerHTML = `<span class="${unitProfit >= 0 ? 'result-positive' : 'result-negative'}">${unitProfit >= 0 ? '+' : ''}${unitProfit}G</span>`;
   document.getElementById('c-r-qty-label').textContent = qty;
   document.getElementById('c-r-total').innerHTML = `<span class="${totalProfit >= 0 ? 'result-positive' : 'result-negative'}">${totalProfit >= 0 ? '+' : ''}${totalProfit}G</span>`;
@@ -292,7 +292,7 @@ function calcFish() {
   document.getElementById('f-r-income').textContent = `${income}G`;
   document.getElementById('f-r-cost').textContent = `-${totalCost}G`;
   document.getElementById('f-r-profit').innerHTML = `<span class="${profit >= 0 ? 'result-positive' : 'result-negative'}">${profit >= 0 ? '+' : ''}${profit}G</span>`;
-  document.getElementById('f-r-hourly').innerHTML = `<span class="${hourly >= 0 ? 'result-positive' : 'result-negative'}">${hourly >= 0 ? '+' : ''}${hourly}G/小时</span>`;
+  document.getElementById('f-r-hourly').innerHTML = `<span class="${hourly >= 0 ? 'result-positive' : 'result-negative'}">${hourly >= 0 ? '+' : ''}${hourly}G/小時</span>`;
 
   document.getElementById('f-result').classList.add('show');
 }

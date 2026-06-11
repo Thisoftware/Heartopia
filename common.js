@@ -30,8 +30,8 @@ function renderHeader(activePage) {
     ${links}
     <div style="flex-shrink:0;display:flex;gap:4px;padding-left:8px;border-left:1px solid var(--border);margin-left:4px">
       <a href="index.html" style="font-size:12px;padding:4px 8px;border-radius:8px;background:var(--pink-light);border:1px solid var(--pink-mid);color:var(--pink);text-decoration:none;white-space:nowrap;font-weight:500">简体</a>
-      <a href="zh-tw/index.html" style="font-size:12px;padding:4px 8px;border-radius:8px;border:1px solid var(--border);color:var(--text2);text-decoration:none;white-space:nowrap">繁體</a>
-      <a href="en/index.html" style="font-size:12px;padding:4px 8px;border-radius:8px;border:1px solid var(--border);color:var(--text2);text-decoration:none;white-space:nowrap">EN</a>
+      <a id="lang-tw" href="#" style="font-size:12px;padding:4px 8px;border-radius:8px;border:1px solid var(--border);color:var(--text2);text-decoration:none;white-space:nowrap">繁體</a>
+      <a id="lang-en" href="#" style="font-size:12px;padding:4px 8px;border-radius:8px;border:1px solid var(--border);color:var(--text2);text-decoration:none;white-space:nowrap">EN</a>
     </div>
   </nav>
 </header>`;
@@ -91,3 +91,13 @@ function toggleCheck(li) {
   li.classList.toggle('done');
   li.querySelector('.check-box').textContent = li.classList.contains('done') ? '✓' : '';
 }
+
+// 语言切换 - 动态跳转到对应语言的当前页面
+document.addEventListener('DOMContentLoaded', function() {
+  var page = location.pathname.split('/').pop();
+  if (!page || !page.endsWith('.html')) page = 'index.html';
+  var tw = document.getElementById('lang-tw');
+  var en = document.getElementById('lang-en');
+  if (tw) tw.href = 'zh-tw/' + page;
+  if (en) en.href = 'en/' + page;
+});
