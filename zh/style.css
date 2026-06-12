@@ -29,8 +29,21 @@ body { font-family: 'Noto Sans SC', sans-serif; background: var(--bg); color: va
 .header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 0 1.5rem; display: flex; align-items: center; gap: 1.5rem; height: 56px; position: sticky; top: 0; z-index: 100; }
 .logo { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 18px; color: var(--pink); letter-spacing: -0.3px; display: flex; align-items: center; gap: 6px; white-space: nowrap; text-decoration: none; }
 .logo span { color: var(--text); }
-.nav-links { display: flex; gap: 4px; flex: 1; overflow-x: auto; scrollbar-width: none; }
+.nav-links {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  scroll-behavior: smooth;
+}
 .nav-links::-webkit-scrollbar { display: none; }
+.nav-links.grabbing { cursor: grabbing; }
+.nav-links.grabbing * { pointer-events: none; }
 .nav-link { padding: 6px 14px; border-radius: 20px; font-size: 13px; color: var(--text2); cursor: pointer; border: none; background: transparent; white-space: nowrap; font-family: 'Noto Sans SC', sans-serif; transition: all 0.15s; text-decoration: none; display: inline-block; }
 .nav-link:hover { background: var(--surface2); color: var(--text); }
 .nav-link.active { background: var(--pink-light); color: var(--pink); font-weight: 500; }
