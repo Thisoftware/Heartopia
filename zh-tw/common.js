@@ -89,24 +89,34 @@ document.addEventListener('DOMContentLoaded', () => {
   if (zh) zh.href = '../zh/' + page;
   if (en) en.href = '../en/' + page;
 
-  const nav = document.getElementById('main-nav');
-  if (nav) {
-    let isDown = false, startX = 0, scrollLeft = 0, moved = false;
-    nav.addEventListener('mousedown', e => {
-      if (e.target.classList.contains('nav-link')) return;
-      isDown = true; moved = false;
-      startX = e.pageX - nav.offsetLeft;
-      scrollLeft = nav.scrollLeft;
+  // 导航栏右侧翻页按钮（显示不完全时出现 › ）
+  (function() {
+    const nav = document.getElementById('main-nav');
+    if (!nav) return;
+
+    const wrap = document.createElement('div');
+    wrap.className = 'nav-scroll-wrap';
+    nav.parentNode.insertBefore(wrap, nav);
+    wrap.appendChild(nav);
+
+    const btn = document.createElement('button');
+    btn.className = 'nav-scroll-btn hidden';
+    btn.innerHTML = '&#8250;';
+    btn.setAttribute('aria-label', 'scroll nav');
+    wrap.appendChild(btn);
+
+    function updateBtn() {
+      const canScroll = nav.scrollWidth > nav.clientWidth + 4;
+      const atEnd = nav.scrollLeft + nav.clientWidth >= nav.scrollWidth - 4;
+      btn.classList.toggle('hidden', !canScroll || atEnd);
+    }
+
+    btn.addEventListener('click', function() {
+      nav.scrollBy({ left: nav.clientWidth * 0.7, behavior: 'smooth' });
     });
-    document.addEventListener('mouseup', () => { isDown = false; nav.classList.remove('grabbing'); });
-    nav.addEventListener('mousemove', e => {
-      if (!isDown) return;
-      const dx = e.pageX - nav.offsetLeft - startX;
-      if (Math.abs(dx) > 3) { moved = true; nav.classList.add('grabbing'); }
-      if (moved) { e.preventDefault(); nav.scrollLeft = scrollLeft - dx; }
-    });
-    nav.addEventListener('click', e => {
-      if (moved) { e.preventDefault(); moved = false; }
-    });
-  }
+
+    nav.addEventListener('scroll', updateBtn);
+    window.addEventListener('resize', updateBtn);
+    updateBtn();
+  })();
 });
