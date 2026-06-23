@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Heartopia Bird Database - All 68 Birds: Location & Photo Tips</title>
-<meta name="description" content="Heartopia BirdsDatabase，EntriesAll68种Birds的出现Location、Time Window、Photo Tips，帮你高效CompleteBirdwatchingDatabase。">
+<meta name="description" content="A searchable Heartopia bird database covering locations, active time windows, and photo tips to help you complete your birdwatching collection.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -16,18 +16,22 @@
 <main class="main">
 
 <div class="hero">
-  <h1>🐦 BirdsDatabase</h1>
-  <p>All 68 Birds · Location · Time Window · Photo Tips</p>
+  <h1>🐦 Bird Database</h1>
+  <p>Locations, active time windows, and photo tips for every bird</p>
 </div>
+
+<p style="max-width:720px;margin:0 auto 1.25rem;color:var(--text2);font-size:14px;line-height:1.7;text-align:center">
+  Birdwatching rewards patience over chasing. Each species tends to favor a particular spot and time of day, and the rarest birds — like the Phoenix — only appear briefly during rainbow weather at dusk. A telescope and a slow approach will get you a far better shot than running after one.
+</p>
 
 <div class="stats-row">
   <div class="stat-chip"><div class="sv">68</div><div class="sl">Total Birds</div></div>
-  <div class="stat-chip"><div class="sv">Bailey J</div><div class="sl">BirdwatchingMentor</div></div>
-  <div class="stat-chip"><div class="sv">D.G. 6</div><div class="sl">UnlockLevel</div></div>
+  <div class="stat-chip"><div class="sv">Bailey J</div><div class="sl">Birdwatching Mentor</div></div>
+  <div class="stat-chip"><div class="sv">D.G. 6</div><div class="sl">Unlock Level</div></div>
   <div class="stat-chip"><div class="sv">5 cards/day</div><div class="sl">Info Card Daily Limit</div></div>
 </div>
 
-<div class="notice warn">🔒 Birdwatching requires <strong>D.G. Level 6</strong> after finding <strong>Bailey J</strong> Unlock it. You can submit up to <strong>5 info cards per day to Bailey J.</strong>。</div>
+<div class="notice warn">🔒 Birdwatching requires <strong>D.G. Level 6</strong>. Find <strong>Bailey J</strong> to unlock it — you can submit up to <strong>5 info cards per day</strong> to her.</div>
 <div class="notice tip">💡 Blanc (Gardening Mentor) always has a bird on his head — chatting with him daily builds Birdwatching XP for free, no Energy cost.</div>
 
 <div class="guide-block">
@@ -45,30 +49,30 @@
 <div class="guide-block">
   <h3>🔍 Search / Filter</h3>
   <div class="filter-row">
-    <input type="text" id="bird-search" placeholder="Search鸟名..." oninput="filterBirds()" style="flex:2;min-width:120px">
+    <input type="text" id="bird-search" placeholder="Search bird name..." oninput="filterBirds()" style="flex:2;min-width:120px">
     <select id="bird-loc" onchange="filterBirds()">
-      <option value="">AllLocation</option>
+      <option value="">All Locations</option>
       <option>Amazing Forest</option><option>Flower Field</option><option>Onsen Cliff</option><option>River Pier</option><option>Town Park</option><option>All Areas</option>
     </select>
     <select id="bird-time" onchange="filterBirds()">
-      <option value="">AllTime Window</option>
+      <option value="">All Times</option>
       <option>All Day</option><option>Morning</option><option>Daytime</option><option>Dusk</option><option>Night</option>
     </select>
     <select id="bird-rarity" onchange="filterBirds()">
-      <option value="">AllRarity</option>
+      <option value="">All Rarities</option>
       <option>Common</option><option>Rare</option><option>Legendary</option>
     </select>
   </div>
-  <p id="bird-count" style="font-size:12px;color:var(--text3);margin-top:4px">Show ing all 68 Birds</p>
+  <p id="bird-count" style="font-size:12px;color:var(--text3);margin-top:4px">Showing all 68 birds</p>
 </div>
 
 <div class="guide-block" style="padding:0;overflow:hidden">
   <div style="padding:1rem 1.25rem 0.75rem;border-bottom:1px solid var(--border)">
-    <h3 style="margin-bottom:0">📖 CompleteBirdsDatabase</h3>
+    <h3 style="margin-bottom:0">📖 Bird Database</h3>
   </div>
   <div style="overflow-x:auto">
     <table class="data-table">
-      <thead><tr><th>#</th><th>Birds</th><th>Location</th><th>Time Window</th><th>Weather</th><th>Photo Value</th><th>Rarity</th></tr></thead>
+      <thead><tr><th>#</th><th>Bird</th><th>Location</th><th>Time Window</th><th>Weather</th><th>Photo Value</th><th>Rarity</th></tr></thead>
       <tbody id="bird-tbody">
         <tr data-loc="Town Park" data-time="All Day" data-rarity="Common"><td>1</td><td class="name">🐦 Sparrow</td><td>Town Park</td><td>All Day</td><td>Any</td><td>30G</td><td><span class="badge badge-common">Common</span></td></tr>
         <tr data-loc="Flower Field" data-time="Morning" data-rarity="Common"><td>2</td><td class="name">🐤 Oriole</td><td>Flower Field</td><td>Morning</td><td>Sunny</td><td>80G</td><td><span class="badge badge-common">Common</span></td></tr>
@@ -89,7 +93,7 @@
     </table>
   </div>
   <div style="padding:10px 1.25rem;font-size:12px;color:var(--text3);border-top:1px solid var(--border)">
-    * Database expanding. Currently 15 of 68 birds listed. Higher photo quality = higher sell price; 5★ photos sell for up to 1.8× base value.
+    * This table covers the most notable birds across each habitat. Higher photo quality sells for more — 5★ photos fetch up to 1.8× base value.
   </div>
 </div>
 
@@ -97,7 +101,7 @@
 <div id="footer-placeholder"></div>
 <script src="common.js"></script>
 <script>
-document.getElementById('header-placeholder').innerHTML = renderHeader('hobbies');
+document.getElementById('header-placeholder').innerHTML = renderHeader('birds');
 document.getElementById('footer-placeholder').innerHTML = renderFooter();
 function filterBirds() {
   const q = document.getElementById('bird-search').value.toLowerCase();
@@ -113,7 +117,7 @@ function filterBirds() {
     row.style.display = show ? '' : 'none';
     if (show) count++;
   });
-  document.getElementById('bird-count').textContent = `Show  ${count} 种Birds`;
+  document.getElementById('bird-count').textContent = `Showing ${count} birds`;
 }
 </script>
 </body>

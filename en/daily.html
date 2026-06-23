@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Heartopia Daily Checklist - Tasks, Reset Time & Energy Management</title>
-<meta name="description" content="Heartopia Daily Tasks清单，RequestReset Time、Energy ManagementTips、Weekly Goals，一键打勾TrackProgress。">
+<meta name="description" content="A complete Heartopia daily checklist covering reset times, energy management, and weekly goals, with a click-to-track progress tool.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -64,23 +64,32 @@
 <div id="header-placeholder"></div>
 <main class="main">
 
+<div class="hero">
+  <h1>✅ Daily Checklist</h1>
+  <p>Reset times, energy management, and what to do each day</p>
+</div>
+
+<p style="max-width:720px;margin:0 auto 1rem;color:var(--text2);font-size:14px;line-height:1.7;text-align:center">
+  Heartopia rewards a short daily routine far more than long grinding sessions. Resident Requests reset every morning and don't carry over, so the highest-value habit you can build is simply logging in and clearing them before doing anything else.
+</p>
+
 <div class="info-grid" style="margin-bottom:1rem">
-      <div class="info-chip"><p class="ic-label">DailyReset Time</p><p class="ic-val">6:00 AM (Server Time)</p></div>
-      <div class="info-chip"><p class="ic-label">WeeklyReset</p><p class="ic-val">Saturday 6:00 AM</p></div>
+      <div class="info-chip"><p class="ic-label">Daily Reset Time</p><p class="ic-val">6:00 AM (Server Time)</p></div>
+      <div class="info-chip"><p class="ic-label">Weekly Reset</p><p class="ic-val">Saturday 6:00 AM</p></div>
       <div class="info-chip"><p class="ic-label">Daily Request Count</p><p class="ic-val">5 per day (non-stackable)</p></div>
       <div class="info-chip"><p class="ic-label">Server Timezone</p><p class="ic-val">Global server UTC+1</p></div>
     </div>
 
-    <div class="notice warn">⏰ Request<strong>Non-stackable</strong> — all 5 reset on time every day! Missing them permanently wastes 50 Contribution Medals. Set a reminder.</div>
+    <div class="notice warn">⏰ Requests are <strong>non-stackable</strong> — all 5 reset on time every day! Missing them permanently wastes 50 Contribution Medals. Set a reminder.</div>
 
     <div class="section-label">Daily Checklist (click to check off)</div>
     <div class="guide-block">
       <h3>☀️ Must Do (critical)</h3>
       <ul class="checklist" id="cl-must">
         <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Complete 5 Resident Requests</span><span class="check-tag tag-medal">+50 Medal</span></li>
-        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Collect your daily login reward from the mailbox</span><span class="check-tag tag-daily">FreeReward</span></li>
-        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Advance the main quest (at least 1 main quest task)</span><span class="check-tag tag-medal">+Medal</span></li>
-        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Check the event page for limited-time tasks</span><span class="check-tag tag-daily">EventsProgress</span></li>
+        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Collect your daily login reward from the mailbox</span><span class="check-tag tag-daily">Free Reward</span></li>
+        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Advance the main quest (at least 1 main quest task)</span><span class="check-tag tag-medal">+Medals</span></li>
+        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Check the event page for limited-time tasks</span><span class="check-tag tag-daily">Event Progress</span></li>
       </ul>
     </div>
     <div class="guide-block">
@@ -99,9 +108,9 @@
       <ul class="checklist" id="cl-explore">
         <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Collect Prize Bubbles: Town Square, Onsen Cliff, Fishing Village, Amazing Forest, Flower Field</span><span class="check-tag tag-explore">Blueprints / Materials</span></li>
         <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Look for Oak-Oak (location changes daily)</span><span class="check-tag tag-explore">Random reward</span></li>
-        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">If rainy/rainbow weather → find Doris for special recipes</span><span class="check-tag tag-explore">RareRecipes</span></li>
+        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">If rainy/rainbow weather → find Doris for special recipes</span><span class="check-tag tag-explore">Rare Recipes</span></li>
         <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Check shops for new stock (Bob / Dorothee / Ka Ching refresh daily)</span><span class="check-tag tag-explore">Limited stock</span></li>
-        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Submit info cards to Bailey J (max 5 per day)</span><span class="check-tag tag-explore">BirdwatchingProgress</span></li>
+        <li onclick="toggleCheck(this)"><span class="check-box"></span><span class="check-text">Submit info cards to Bailey J (max 5 per day)</span><span class="check-tag tag-explore">Birdwatching Progress</span></li>
       </ul>
     </div>
 
@@ -118,7 +127,7 @@
         <li>When Energy drops below 20 you can only walk — use your bike to stay efficient</li>
         <li>Eat food to quickly restore Energy — Mixed Jam restores 22 points; advanced dishes like Truffle Mushroom Pie restore much more</li>
         <li>Sleeping is the easiest passive recovery — put your character to bed before logging off</li>
-        <li>When Energy is depleted you can still do<strong>Energy-free activities</strong>: arrange furniture, chat with NPCs, or browse shops</li>
+        <li>When Energy is depleted you can still do <strong>Energy-free activities</strong>: arrange furniture, chat with NPCs, or browse shops</li>
       </ol>
     </div>
 

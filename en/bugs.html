@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Heartopia Bug Database - All 76 Insects: Location, Time & Weather</title>
-<meta name="description" content="Heartopia InsectsDatabase，EntriesAll76种Insects的出现Location、Time Window、Weather条件和Sell Price，可SearchFilter。">
+<meta name="description" content="A searchable Heartopia bug database covering spawn locations, time of day, weather conditions, and sell price for all catchable insects, including rare and legendary species.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -16,47 +16,51 @@
 <main class="main">
 
 <div class="hero">
-  <h1>🦋 InsectsDatabase</h1>
-  <p>All 76 Insects · Location · Time Window · Weather · Sell Price</p>
+  <h1>🦋 Bug Database</h1>
+  <p>Spawn locations, time windows, and sell prices for every catchable insect</p>
 </div>
+
+<p style="max-width:720px;margin:0 auto 1.25rem;color:var(--text2);font-size:14px;line-height:1.7;text-align:center">
+  Bug catching is one of the more overlooked hobbies in Heartopia, but it pairs well with a forest walk you'd be doing anyway. Most insects are tied to a specific time of day, and the rarest ones only show up at night during rainbow weather — patience matters more than speed here.
+</p>
 
 <div class="stats-row">
   <div class="stat-chip"><div class="sv">76</div><div class="sl">Total Insects</div></div>
-  <div class="stat-chip"><div class="sv">Naniwa</div><div class="sl">Bug CatchingMentor</div></div>
-  <div class="stat-chip"><div class="sv">D.G. 6</div><div class="sl">UnlockLevel</div></div>
-  <div class="stat-chip"><div class="sv">1200G</div><div class="sl">HighestSell Price</div></div>
+  <div class="stat-chip"><div class="sv">Naniwa</div><div class="sl">Bug Catching Mentor</div></div>
+  <div class="stat-chip"><div class="sv">D.G. 6</div><div class="sl">Unlock Level</div></div>
+  <div class="stat-chip"><div class="sv">1200G</div><div class="sl">Highest Sell Price</div></div>
 </div>
 
-<div class="notice warn">🔒 Bug Catching requires <strong>D.G. Level 6</strong> after finding <strong>Naniwa</strong> Unlock in the forest area.</div>
+<div class="notice warn">🔒 Bug Catching requires <strong>D.G. Level 6</strong>. Find <strong>Naniwa</strong> in the forest area to unlock it.</div>
 <div class="notice tip">💡 Gifting Rare Insect Specimens to Naniwa is the most efficient way to raise her Friendship. Rarer = bigger bonus.</div>
 
 <div class="guide-block">
   <h3>🔍 Search / Filter</h3>
   <div class="filter-row">
-    <input type="text" id="bug-search" placeholder="SearchInsects名..." oninput="filterBugs()" style="flex:2;min-width:120px">
+    <input type="text" id="bug-search" placeholder="Search insect name..." oninput="filterBugs()" style="flex:2;min-width:120px">
     <select id="bug-loc" onchange="filterBugs()">
-      <option value="">AllLocation</option>
+      <option value="">All Locations</option>
       <option>Amazing Forest</option><option>Flower Field</option><option>River Pier</option><option>Onsen Cliff</option><option>All Areas</option>
     </select>
     <select id="bug-time" onchange="filterBugs()">
-      <option value="">AllTime Window</option>
+      <option value="">All Times</option>
       <option>All Day</option><option>Daytime</option><option>Night</option><option>Morning</option>
     </select>
     <select id="bug-rarity" onchange="filterBugs()">
-      <option value="">AllRarity</option>
+      <option value="">All Rarities</option>
       <option>Common</option><option>Rare</option><option>Legendary</option>
     </select>
   </div>
-  <p id="bug-count" style="font-size:12px;color:var(--text3);margin-top:4px">Show ing all 76 Insects</p>
+  <p id="bug-count" style="font-size:12px;color:var(--text3);margin-top:4px">Showing all 76 insects</p>
 </div>
 
 <div class="guide-block" style="padding:0;overflow:hidden">
   <div style="padding:1rem 1.25rem 0.75rem;border-bottom:1px solid var(--border)">
-    <h3 style="margin-bottom:0">📖 CompleteInsectsDatabase</h3>
+    <h3 style="margin-bottom:0">📖 Bug Database</h3>
   </div>
   <div style="overflow-x:auto">
     <table class="data-table" id="bug-table">
-      <thead><tr><th>#</th><th>Insects</th><th>Location</th><th>Time Window</th><th>Weather</th><th>Sell Price</th><th>Rarity</th></tr></thead>
+      <thead><tr><th>#</th><th>Insect</th><th>Location</th><th>Time Window</th><th>Weather</th><th>Sell Price</th><th>Rarity</th></tr></thead>
       <tbody id="bug-tbody">
         <tr data-loc="Amazing Forest" data-time="All Day" data-rarity="Common"><td>1</td><td class="name">🦋 Common Butterfly</td><td>Amazing Forest</td><td>All Day</td><td>Sunny</td><td>50G</td><td><span class="badge badge-common">Common</span></td></tr>
         <tr data-loc="Flower Field" data-time="Daytime" data-rarity="Common"><td>2</td><td class="name">🐛 Caterpillar</td><td>Flower Field</td><td>Daytime</td><td>Any</td><td>30G</td><td><span class="badge badge-common">Common</span></td></tr>
@@ -80,12 +84,12 @@
     </table>
   </div>
   <div style="padding:10px 1.25rem;font-size:12px;color:var(--text3);border-top:1px solid var(--border)">
-    * Database expanding. Currently 18 of 76 insects listed.
+    * This table covers the most commonly encountered insects across each habitat.
   </div>
 </div>
 
 <div class="guide-block">
-  <h3>💡 Bug CatchingEfficiencyTips</h3>
+  <h3>💡 Bug Catching Efficiency Tips</h3>
   <ol class="step-list">
     <li>Night in the Amazing Forest yields the most Rare Insects. Legendary insects have the highest spawn rate during Rainbow weather</li>
     <li>Walk slowly toward insects — running scares them away. Swing your net from directly above for the highest hit rate</li>
@@ -99,7 +103,7 @@
 <div id="footer-placeholder"></div>
 <script src="common.js"></script>
 <script>
-document.getElementById('header-placeholder').innerHTML = renderHeader('hobbies');
+document.getElementById('header-placeholder').innerHTML = renderHeader('bugs');
 document.getElementById('footer-placeholder').innerHTML = renderFooter();
 
 function filterBugs() {
@@ -117,7 +121,7 @@ function filterBugs() {
     row.style.display = show ? '' : 'none';
     if (show) count++;
   });
-  document.getElementById('bug-count').textContent = `Show  ${count} 种Insects`;
+  document.getElementById('bug-count').textContent = `Showing ${count} insects`;
 }
 </script>
 </body>

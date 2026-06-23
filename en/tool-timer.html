@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Heartopia Reset Timer - Daily & Weekly Reset Countdown</title>
-<meta name="description" content="Heartopia DailyReset倒计时工具，Show 距下次Reset剩余Time，支持Local时区换算。">
+<meta name="description" content="A live Heartopia reset timer showing the time remaining until the next daily and weekly reset, automatically converted to your local timezone.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -41,7 +41,7 @@
   <p>Daily Requests · Shop Refresh · Weekly Tasks · Live Countdown</p>
 </div>
 
-<!-- 主倒计时 -->
+<!-- Main Countdown -->
 <div class="timer-card">
   <div class="timer-label">Until Daily Reset (UTC+1 6:00 AM)</div>
   <div class="timer-display" id="daily-timer">--:--:--</div>
@@ -49,7 +49,7 @@
   <div class="timer-sub" id="daily-local">Calculating...</div>
 </div>
 
-<!-- Reset Time换算 -->
+<!-- Reset Time Conversion -->
 <div class="reset-grid">
   <div class="reset-chip">
     <div class="rc-label">🌏 Your Local Time</div>
@@ -57,12 +57,12 @@
     <div class="rc-local" id="local-tz"></div>
   </div>
   <div class="reset-chip">
-    <div class="rc-label">🕕 ServerReset Time</div>
+    <div class="rc-label">🕕 Server Reset Time</div>
     <div class="rc-time">6:00 AM</div>
     <div class="rc-local">Server Timezone UTC+1</div>
   </div>
   <div class="reset-chip">
-    <div class="rc-label">📅 LocalDailyReset</div>
+    <div class="rc-label">📅 Local Daily Reset</div>
     <div class="rc-time" id="local-reset">--:--</div>
     <div class="rc-local">Your Timezone</div>
   </div>
@@ -73,14 +73,14 @@
   </div>
 </div>
 
-<!-- 周常倒计时 -->
+<!-- Weekly Countdown -->
 <div class="timer-card" style="background:var(--surface2)">
   <div class="timer-label">Until Weekly Reset (Every Saturday UTC+1 6:00 AM)</div>
   <div class="timer-display" id="weekly-timer" style="font-size:36px;color:var(--purple)">--:--:--</div>
   <div class="timer-sub" id="weekly-sub">Calculating...</div>
 </div>
 
-<!-- 今日Progress打勾 -->
+<!-- Today's Task Progress -->
 <div class="guide-block">
   <h3>✅ Today's Task Progress</h3>
   <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
@@ -108,7 +108,7 @@
 <div id="footer-placeholder"></div>
 <script src="common.js"></script>
 <script>
-document.getElementById('header-placeholder').innerHTML = renderHeader('daily');
+document.getElementById('header-placeholder').innerHTML = renderHeader('tools');
 document.getElementById('footer-placeholder').innerHTML = renderFooter();
 
 function pad(n) { return String(n).padStart(2,'0'); }
@@ -150,7 +150,7 @@ function updateTimers() {
   document.getElementById('local-reset').textContent = `${pad(lrH)}:${pad(lrM)}`;
 
   // weekly reset = Saturday 6:00 AM server
-  const wDay = ['周六','周日','周一','周二','周三','周四','周五'];
+  const wDay = ['Sat','Sun','Mon','Tue','Wed','Thu','Fri'];
   document.getElementById('weekly-local').textContent = `${wDay[0]} ${pad(lrH)}:${pad(lrM)}`;
 
   // Now display
@@ -165,7 +165,7 @@ function updateTimers() {
   const dayTotal = 24*3600*1000;
   document.getElementById('daily-timer').textContent = fmtHMS(dailyMs);
   document.getElementById('daily-bar').style.width = ((dayTotal - dailyMs)/dayTotal*100)+'%';
-  document.getElementById('daily-local').textContent = `下次Reset：${nextReset.toLocaleString('zh-CN',{hour:'2-digit',minute:'2-digit'})}`;
+  document.getElementById('daily-local').textContent = `Next reset: ${nextReset.toLocaleString('en-US',{hour:'2-digit',minute:'2-digit'})}`;
 
   // weekly countdown
   let nextWeekly = new Date(now);
@@ -179,8 +179,8 @@ function updateTimers() {
   const weeklyMs = nextWeekly - now;
   const wD = Math.floor(weeklyMs/86400000);
   const wRem = weeklyMs % 86400000;
-  document.getElementById('weekly-timer').textContent = `${wD}天 ${fmtHMS(wRem)}`;
-  document.getElementById('weekly-sub').textContent = `下次周常Reset：${nextWeekly.toLocaleString('zh-CN',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'})}`;
+  document.getElementById('weekly-timer').textContent = `${wD}d ${fmtHMS(wRem)}`;
+  document.getElementById('weekly-sub').textContent = `Next weekly reset: ${nextWeekly.toLocaleString('en-US',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'})}`;
 }
 
 updateTimers();

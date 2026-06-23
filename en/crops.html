@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Heartopia Crop Database - All 24 Crops: Growth Time, Profit & Season</title>
-<meta name="description" content="Heartopia CropsCompleteDatabase，24种Crop的Seed Price、生长Time、Sell Price、DailyProfit和Season，附CropsPlanning工具。">
+<meta name="description" content="A complete Heartopia crop database covering seed prices, grow times, sell prices, and daily profit for all 24 crops, with a built-in crop planning tool.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -40,7 +40,11 @@
 
 <div class="notice tip">💡 Crops are the core source of cooking ingredients. Prioritize high daily-profit crops and use them in recipes for 3–4× the raw sell price.</div>
 
-<!-- Planning器 -->
+<p style="max-width:720px;margin:1rem auto;color:var(--text2);font-size:14px;line-height:1.7;text-align:center">
+  Not every crop is worth the plot space. Some, like Strawberries, earn back their seed cost almost immediately and keep producing daily profit for weeks; others are mainly useful as cooking ingredients rather than standalone sellers. The planner below recommends a rotation based on how many plots you have free and what you're optimizing for.
+</p>
+
+<!-- Crop Planner -->
 <div class="guide-block">
   <h3>🗓️ Crop Planner</h3>
   <div class="planner-grid">
@@ -69,9 +73,9 @@
 <div class="guide-block">
   <h3>🔍 Filter Crops</h3>
   <div class="filter-row">
-    <input type="text" id="crop-search" placeholder="SearchCrop名..." oninput="filterCrops()" style="flex:2;min-width:120px">
+    <input type="text" id="crop-search" placeholder="Search crop name..." oninput="filterCrops()" style="flex:2;min-width:120px">
     <select id="crop-season" onchange="filterCrops()">
-      <option value="">AllSeason</option>
+      <option value="">All Seasons</option>
       <option>Spring</option><option>Summer</option><option>Autumn</option><option>Winter</option><option>All Year</option>
     </select>
     <select id="crop-sort" onchange="filterCrops()">
@@ -83,10 +87,10 @@
   <p id="crop-count" style="font-size:12px;color:var(--text3);margin-top:4px">Showing All 24 Crops</p>
 </div>
 
-<!-- Complete数据表 -->
+<!-- Full crop table -->
 <div class="guide-block" style="padding:0;overflow:hidden">
   <div style="padding:1rem 1.25rem 0.75rem;border-bottom:1px solid var(--border)">
-    <h3 style="margin-bottom:0">📊 CompleteCropsDatabase</h3>
+    <h3 style="margin-bottom:0">📊 Crop Database</h3>
   </div>
   <div style="overflow-x:auto">
     <table class="data-table" id="crop-table">
@@ -129,13 +133,13 @@
 <div id="footer-placeholder"></div>
 <script src="common.js"></script>
 <script>
-document.getElementById('header-placeholder').innerHTML = renderHeader('hobbies');
+document.getElementById('header-placeholder').innerHTML = renderHeader('crops');
 document.getElementById('footer-placeholder').innerHTML = renderFooter();
 
 const plannerData = {
-  profit: { crops: ['Strawberry','Carrot','Tomato'], tip: '最大化Coins收益，Priority种高Daily ProfitCrop' },
-  cooking: { crops: ['Mushroom','Tomato','Carrot'], tip: '以Cooking Ingredients为主，Mushroom是高价Recipes的核心原料' },
-  fast: { crops: ['Carrot','Lettuce','Herb'], tip: '1 Day生长Crop可快速回本，适合短期Planning' }
+  profit: { crops: ['Strawberry','Carrot','Tomato'], tip: 'Maximize Coin income — prioritize the highest daily-profit crops.' },
+  cooking: { crops: ['Mushroom','Tomato','Carrot'], tip: 'Focus on cooking ingredients — Mushroom is the core ingredient for several high-value recipes.' },
+  fast: { crops: ['Carrot','Lettuce','Herb'], tip: '1-day grow crops pay back fast, ideal for short-term planning.' }
 };
 
 function runPlanner() {
@@ -150,13 +154,13 @@ function runPlanner() {
     const d = profitMap[c] || 20;
     const t = d * days * perCrop;
     totalProfit += t;
-    return `<tr><td class="name">${c}</td><td>${perCrop} 块</td><td>+${d}G/天</td><td class="profit">+${t}G</td></tr>`;
+    return `<tr><td class="name">${c}</td><td>${perCrop} plots</td><td>+${d}G/day</td><td class="profit">+${t}G</td></tr>`;
   }).join('');
   document.getElementById('planner-result').style.display = 'block';
   document.getElementById('planner-result').innerHTML = `
     <p style="font-size:13px;color:var(--text2);margin-bottom:10px">💡 ${p.tip}</p>
-    <table class="data-table"><thead><tr><th>Recommended Crop</th><th>分配Plot</th><th>Daily Profit</th><th>${days}天总Profit</th></tr></thead>
-    <tbody>${rows}<tr style="font-weight:700"><td colspan="3">Total (${plots}块地 × ${days}天）</td><td class="profit">+${totalProfit}G</td></tr></tbody></table>`;
+    <table class="data-table"><thead><tr><th>Recommended Crop</th><th>Plots Assigned</th><th>Daily Profit</th><th>${days}-Day Total Profit</th></tr></thead>
+    <tbody>${rows}<tr style="font-weight:700"><td colspan="3">Total (${plots} plots × ${days} days)</td><td class="profit">+${totalProfit}G</td></tr></tbody></table>`;
 }
 
 function filterCrops() {
@@ -178,7 +182,7 @@ function filterCrops() {
     if (sort === 'price') return (parseInt(b.dataset.price)||0) - (parseInt(a.dataset.price)||0);
   });
   visible.forEach(r => tbody.appendChild(r));
-  document.getElementById('crop-count').textContent = `Show  ${visible.length} 种Crop`;
+  document.getElementById('crop-count').textContent = `Showing ${visible.length} crops`;
 }
 </script>
 </body>

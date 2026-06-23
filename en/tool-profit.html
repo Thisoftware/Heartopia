@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Heartopia Profit Calculator - Cooking vs Raw, Fishing ROI & Best Sell Strategy</title>
-<meta name="description" content="Heartopia Profit计算器，快速对比Cooking成品与原材料Sell Price，找到最赚Coins的卖出策略。">
+<meta name="description" content="A Heartopia profit calculator that compares cooked dishes against raw materials to help you find the most profitable selling strategy, plus a fishing ROI tool.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -54,14 +54,14 @@
   <div class="stat-chip"><div class="sv">500G</div><div class="sl">Mushroom Stew highest profit</div></div>
 </div>
 
-<!-- Tab 切换 -->
+<!-- Tab Switch -->
 <div class="tab-strip">
-  <button class="tab-btn on" onclick="switchTab('cooking',this)">🍳 CookingProfit</button>
+  <button class="tab-btn on" onclick="switchTab('cooking',this)">🍳 Cooking Profit</button>
   <button class="tab-btn" onclick="switchTab('fish',this)">🐟 Fishing ROI</button>
   <button class="tab-btn" onclick="switchTab('quick',this)">⚡ Quick Reference Table</button>
 </div>
 
-<!-- CookingProfit计算器 -->
+<!-- Cooking Profit Calculator -->
 <div id="tab-cooking" class="tab-content active">
   <div class="calc-section">
     <h3>🍳 Cooking Profit Calculator</h3>
@@ -85,11 +85,11 @@
       </div>
       <div class="input-group">
         <label>Ingredient Cost (G)</label>
-        <input type="number" id="c-cost" placeholder="如：80" min="0">
+        <input type="number" id="c-cost" placeholder="e.g. 80" min="0">
       </div>
       <div class="input-group">
         <label>Base Sell Price (G)</label>
-        <input type="number" id="c-price" placeholder="如：230" min="0">
+        <input type="number" id="c-price" placeholder="e.g. 230" min="0">
       </div>
       <div class="input-group">
         <label>Batch Quantity</label>
@@ -108,7 +108,7 @@
     </div>
     <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px">
       <input type="checkbox" id="c-member" style="width:16px;height:16px;accent-color:var(--pink)">
-      <label for="c-member" style="font-size:13px;color:var(--text2)">D.G. Member Bonus（×1.1）</label>
+      <label for="c-member" style="font-size:13px;color:var(--text2)">D.G. Member Bonus (×1.1)</label>
     </div>
     <button class="calc-btn" onclick="calcCooking()">Calculate Profit</button>
     <div class="result-box" id="c-result">
@@ -132,18 +132,18 @@
         <label>Fish Preset</label>
         <select id="f-preset" onchange="loadFishPreset()">
           <option value="">Custom</option>
-          <option value="80,0">Carp（80G）</option>
-          <option value="250,0">Trout（250G）</option>
-          <option value="600,0">Salmon（600G）</option>
-          <option value="800,0">Koi Carp（800G）</option>
-          <option value="950,0">Swordfish（950G）</option>
-          <option value="1200,0">Bluefin Tuna（1200G）</option>
+          <option value="80,0">Carp (80G)</option>
+          <option value="250,0">Trout (250G)</option>
+          <option value="600,0">Salmon (600G)</option>
+          <option value="800,0">Koi Carp (800G)</option>
+          <option value="950,0">Swordfish (950G)</option>
+          <option value="1200,0">Bluefin Tuna (1200G)</option>
           <option value="1800,0">Legendary Golden Dragon Fish (1800G)</option>
         </select>
       </div>
       <div class="input-group">
         <label>Sell Price per Fish (G)</label>
-        <input type="number" id="f-price" placeholder="如：250" min="0">
+        <input type="number" id="f-price" placeholder="e.g. 250" min="0">
       </div>
       <div class="input-group">
         <label>Bait Cost (G/cast, 0 if none)</label>
@@ -151,20 +151,20 @@
       </div>
       <div class="input-group">
         <label>Repair Kit Cost (G/cast)</label>
-        <input type="number" id="f-repair" placeholder="如：10" value="10" min="0">
+        <input type="number" id="f-repair" placeholder="e.g. 10" value="10" min="0">
       </div>
       <div class="input-group">
         <label>Catch Rate (fish/hour)</label>
-        <input type="number" id="f-qty" placeholder="如：20" value="20" min="1">
+        <input type="number" id="f-qty" placeholder="e.g. 20" value="20" min="1">
       </div>
       <div class="input-group">
         <label>Fishing Duration (minutes)</label>
-        <input type="number" id="f-time" placeholder="如：30" value="30" min="1">
+        <input type="number" id="f-time" placeholder="e.g. 30" value="30" min="1">
       </div>
     </div>
     <div style="display:flex;gap:8px;align-items:center;margin-bottom:10px">
       <input type="checkbox" id="f-member" style="width:16px;height:16px;accent-color:var(--pink)">
-      <label for="f-member" style="font-size:13px;color:var(--text2)">D.G. Member Bonus（×1.1）</label>
+      <label for="f-member" style="font-size:13px;color:var(--text2)">D.G. Member Bonus (×1.1)</label>
     </div>
     <button class="calc-btn" onclick="calcFish()">Calculate Returns</button>
     <div class="result-box" id="f-result">
@@ -178,12 +178,12 @@
   <div class="notice">🎣 Tip: budget 10–15G per cast for Repair Kit costs (one kit handles ~5–8 repairs). High-profit fish pair well with Mermaid Bait.</div>
 </div>
 
-<!-- 快速参考表 -->
+<!-- Quick Reference Table -->
 <div id="tab-quick" class="tab-content">
   <div class="calc-section">
     <h3>⚡ Cooking Profit Ranking (Base 1★)</h3>
     <table class="quick-table">
-      <thead><tr><th>Recipes</th><th>Cost</th><th>Sell Price</th><th>Profit</th><th>Profit Rate</th></tr></thead>
+      <thead><tr><th>Recipe</th><th>Cost</th><th>Sell Price</th><th>Profit</th><th>Profit Rate</th></tr></thead>
       <tbody>
         <tr><td class="name">🍲 Mushroom Stew</td><td>~150G</td><td>650G</td><td class="profit">+500G</td><td>77%</td></tr>
         <tr><td class="name">🥧 Button Mushroom Pie</td><td>~200G</td><td>650G</td><td class="profit">+450G</td><td>69%</td></tr>
@@ -268,7 +268,7 @@ function calcCooking() {
 
   document.getElementById('c-r-cost').textContent = `-${cost}G`;
   document.getElementById('c-r-price').textContent = `${qualityPrice}G`;
-  document.getElementById('c-r-member').textContent = member > 1 ? `×1.1 → ${finalPrice}G` : '未开启';
+  document.getElementById('c-r-member').textContent = member > 1 ? `×1.1 → ${finalPrice}G` : 'Not enabled';
   document.getElementById('c-r-unit').innerHTML = `<span class="${unitProfit >= 0 ? 'result-positive' : 'result-negative'}">${unitProfit >= 0 ? '+' : ''}${unitProfit}G</span>`;
   document.getElementById('c-r-qty-label').textContent = qty;
   document.getElementById('c-r-total').innerHTML = `<span class="${totalProfit >= 0 ? 'result-positive' : 'result-negative'}">${totalProfit >= 0 ? '+' : ''}${totalProfit}G</span>`;
@@ -290,11 +290,11 @@ function calcFish() {
   const profit = income - totalCost;
   const hourly = Math.round(profit / (minutes / 60));
 
-  document.getElementById('f-r-qty').textContent = `${qty} 条`;
+  document.getElementById('f-r-qty').textContent = `${qty} fish`;
   document.getElementById('f-r-income').textContent = `${income}G`;
   document.getElementById('f-r-cost').textContent = `-${totalCost}G`;
   document.getElementById('f-r-profit').innerHTML = `<span class="${profit >= 0 ? 'result-positive' : 'result-negative'}">${profit >= 0 ? '+' : ''}${profit}G</span>`;
-  document.getElementById('f-r-hourly').innerHTML = `<span class="${hourly >= 0 ? 'result-positive' : 'result-negative'}">${hourly >= 0 ? '+' : ''}${hourly}G/小时</span>`;
+  document.getElementById('f-r-hourly').innerHTML = `<span class="${hourly >= 0 ? 'result-positive' : 'result-negative'}">${hourly >= 0 ? '+' : ''}${hourly}G/hour</span>`;
 
   document.getElementById('f-result').classList.add('show');
 }

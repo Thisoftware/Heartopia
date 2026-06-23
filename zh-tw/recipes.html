@@ -34,12 +34,12 @@
     <table class="data-table">
       <thead><tr><th>排名</th><th>食譜</th><th>烹飪等級</th><th>食材成本</th><th>售價</th><th>利潤</th></tr></thead>
       <tbody>
-        <tr><td>1</td><td class="name">🍲 蘑菇炖汤</td><td>Lv.3</td><td>~150G</td><td>650G</td><td class="profit">+500G</td></tr>
+        <tr><td>1</td><td class="name">🍲 蘑菇燉湯</td><td>Lv.3</td><td>~150G</td><td>650G</td><td class="profit">+500G</td></tr>
         <tr><td>2</td><td class="name">🥧 纽扣蘑菇派</td><td>Lv.3</td><td>~200G</td><td>650G</td><td class="profit">+450G</td></tr>
         <tr><td>3</td><td class="name">🍣 三文魚寿司</td><td>Lv.4</td><td>~250G</td><td>600G</td><td class="profit">+350G</td></tr>
         <tr><td>4</td><td class="name">🍕 海鮮披萨</td><td>Lv.5</td><td>~300G</td><td>620G</td><td class="profit">+320G</td></tr>
         <tr><td>5</td><td class="name">🍰 奶酪蛋糕</td><td>Lv.6</td><td>~280G</td><td>580G</td><td class="profit">+300G</td></tr>
-        <tr><td>6</td><td class="name">🥕 胡萝卜蛋糕</td><td>Lv.4</td><td>~180G</td><td>460G</td><td class="profit">+280G</td></tr>
+        <tr><td>6</td><td class="name">🥕 胡蘿蔔蛋糕</td><td>Lv.4</td><td>~180G</td><td>460G</td><td class="profit">+280G</td></tr>
         <tr><td>7</td><td class="name">🍝 肉酱意面</td><td>Lv.5</td><td>~200G</td><td>460G</td><td class="profit">+260G</td></tr>
         <tr><td>8</td><td class="name">🥗 温泉蔬菜沙拉</td><td>Lv.3</td><td>~100G</td><td>340G</td><td class="profit">+240G</td></tr>
         <tr><td>9</td><td class="name">🐟 烤魚</td><td>Lv.2</td><td>~100G</td><td>320G</td><td class="profit">+220G</td></tr>
@@ -65,9 +65,9 @@
       <select id="recipe-cat" onchange="filterRecipes()">
         <option value="">所有分類</option>
         <option>主食</option>
-        <option>甜点</option>
-        <option>饮料</option>
-        <option>汤品</option>
+        <option>甜點</option>
+        <option>飲料</option>
+        <option>湯品</option>
         <option>沙拉</option>
       </select>
     </div>
@@ -87,30 +87,112 @@
         <tbody id="recipe-tbody">
           <tr data-level="1" data-cat="主食"><td class="name">🥗 簡單沙拉</td><td>沙拉</td><td>Lv.1</td><td>生菜、黄瓜</td><td class="price">120G</td><td class="profit">+90G</td><td>+20</td></tr>
           <tr data-level="1" data-cat="主食"><td class="name">🍟 魚薯条</td><td>主食</td><td>Lv.1</td><td>魚、麵粉、油</td><td class="price">230G</td><td class="profit">+150G</td><td>+30</td></tr>
-          <tr data-level="1" data-cat="饮料"><td class="name">🧃 鮮果汁</td><td>饮料</td><td>Lv.1</td><td>各種水果</td><td class="price">95G</td><td class="profit">+60G</td><td>+15</td></tr>
+          <tr data-level="1" data-cat="飲料"><td class="name">🧃 鮮果汁</td><td>飲料</td><td>Lv.1</td><td>各種水果</td><td class="price">95G</td><td class="profit">+60G</td><td>+15</td></tr>
           <tr data-level="2" data-cat="主食"><td class="name">🍳 荷包蛋</td><td>主食</td><td>Lv.2</td><td>鸡蛋、油</td><td class="price">150G</td><td class="profit">+110G</td><td>+25</td></tr>
           <tr data-level="2" data-cat="主食"><td class="name">🐟 烤魚</td><td>主食</td><td>Lv.2</td><td>魚、鹽、香草</td><td class="price">320G</td><td class="profit">+220G</td><td>+35</td></tr>
-          <tr data-level="2" data-cat="汤品"><td class="name">🥣 蔬菜汤</td><td>汤品</td><td>Lv.2</td><td>胡萝卜、洋葱</td><td class="price">180G</td><td class="profit">+130G</td><td>+28</td></tr>
-          <tr data-level="3" data-cat="主食"><td class="name">🍲 蘑菇炖汤</td><td>汤品</td><td>Lv.3</td><td>蘑菇、奶油、洋葱</td><td class="price">650G</td><td class="profit">+500G</td><td>+50</td></tr>
-          <tr data-level="3" data-cat="甜点"><td class="name">🥧 纽扣蘑菇派</td><td>甜点</td><td>Lv.3</td><td>蘑菇、麵粉、黄油</td><td class="price">650G</td><td class="profit">+450G</td><td>+45</td></tr>
+          <tr data-level="2" data-cat="湯品"><td class="name">🥣 蔬菜湯</td><td>湯品</td><td>Lv.2</td><td>胡蘿蔔、洋蔥</td><td class="price">180G</td><td class="profit">+130G</td><td>+28</td></tr>
+          <tr data-level="3" data-cat="主食"><td class="name">🍲 蘑菇燉湯</td><td>湯品</td><td>Lv.3</td><td>蘑菇、奶油、洋葱</td><td class="price">650G</td><td class="profit">+500G</td><td>+50</td></tr>
+          <tr data-level="3" data-cat="甜點"><td class="name">🥧 纽扣蘑菇派</td><td>甜點</td><td>Lv.3</td><td>蘑菇、麵粉、黄油</td><td class="price">650G</td><td class="profit">+450G</td><td>+45</td></tr>
           <tr data-level="3" data-cat="沙拉"><td class="name">🥗 温泉蔬菜沙拉</td><td>沙拉</td><td>Lv.3</td><td>多種蔬菜、橄欖油</td><td class="price">340G</td><td class="profit">+240G</td><td>+35</td></tr>
           <tr data-level="4" data-cat="主食"><td class="name">🍣 三文魚寿司</td><td>主食</td><td>Lv.4</td><td>三文魚、米饭、海苔</td><td class="price">600G</td><td class="profit">+350G</td><td>+45</td></tr>
-          <tr data-level="4" data-cat="甜点"><td class="name">🥕 胡萝卜蛋糕</td><td>甜点</td><td>Lv.4</td><td>胡萝卜、麵粉、糖</td><td class="price">460G</td><td class="profit">+280G</td><td>+40</td></tr>
-          <tr data-level="5" data-cat="主食"><td class="name">🍕 海鮮披萨</td><td>主食</td><td>Lv.5</td><td>虾、魚、奶酪、面团</td><td class="price">620G</td><td class="profit">+320G</td><td>+50</td></tr>
+          <tr data-level="4" data-cat="甜點"><td class="name">🥕 胡蘿蔔蛋糕</td><td>甜點</td><td>Lv.4</td><td>胡蘿蔔、麵粉、糖</td><td class="price">460G</td><td class="profit">+280G</td><td>+40</td></tr>
+          <tr data-level="5" data-cat="主食"><td class="name">🍕 海鮮披萨</td><td>主食</td><td>Lv.5</td><td>蝦、魚、奶酪、麵團</td><td class="price">620G</td><td class="profit">+320G</td><td>+50</td></tr>
           <tr data-level="5" data-cat="主食"><td class="name">🍝 肉酱意面</td><td>主食</td><td>Lv.5</td><td>意大利面、肉、番茄</td><td class="price">460G</td><td class="profit">+260G</td><td>+45</td></tr>
-          <tr data-level="6" data-cat="甜点"><td class="name">🍰 奶酪蛋糕</td><td>甜点</td><td>Lv.6</td><td>奶油奶酪、蛋、糖</td><td class="price">580G</td><td class="profit">+300G</td><td>+50</td></tr>
-          <tr data-level="6" data-cat="饮料"><td class="name">☕ 特调咖啡</td><td>饮料</td><td>Lv.6</td><td>咖啡豆、牛奶、糖</td><td class="price">280G</td><td class="profit">+190G</td><td>+40</td></tr>
-          <tr data-level="1" data-cat="甜点"><td class="name">🍡 原味卷蛋糕</td><td>甜点</td><td>Lv.1</td><td>麵粉、蛋、奶油（Doris食譜）</td><td class="price">200G</td><td class="profit">+140G</td><td>+30</td></tr>
+          <tr data-level="6" data-cat="甜點"><td class="name">🍰 奶酪蛋糕</td><td>甜點</td><td>Lv.6</td><td>奶油奶酪、蛋、糖</td><td class="price">580G</td><td class="profit">+300G</td><td>+50</td></tr>
+          <tr data-level="6" data-cat="飲料"><td class="name">☕ 特调咖啡</td><td>飲料</td><td>Lv.6</td><td>咖啡豆、牛奶、糖</td><td class="price">280G</td><td class="profit">+190G</td><td>+40</td></tr>
+          <tr data-level="1" data-cat="甜點"><td class="name">🍡 原味卷蛋糕</td><td>甜點</td><td>Lv.1</td><td>麵粉、蛋、奶油（Doris食譜）</td><td class="price">200G</td><td class="profit">+140G</td><td>+30</td></tr>
+          <tr data-level="1" data-cat="沙拉"><td class="name">🥗 田園生菜</td><td>沙拉</td><td>Lv.1</td><td>生菜、番茄</td><td class="price">110G</td><td class="profit">+78G</td><td>+18</td></tr>
+          <tr data-level="1" data-cat="湯品"><td class="name">🍅 番茄湯</td><td>湯品</td><td>Lv.1</td><td>番茄、洋蔥</td><td class="price">130G</td><td class="profit">+90G</td><td>+20</td></tr>
+          <tr data-level="1" data-cat="飲料"><td class="name">🥛 鮮牛奶</td><td>飲料</td><td>Lv.1</td><td>牛奶</td><td class="price">60G</td><td class="profit">+35G</td><td>+10</td></tr>
+          <tr data-level="1" data-cat="主食"><td class="name">🍞 烤麵包</td><td>主食</td><td>Lv.1</td><td>麵粉、黃油</td><td class="price">90G</td><td class="profit">+62G</td><td>+15</td></tr>
+          <tr data-level="1" data-cat="甜點"><td class="name">🍪 原味餅乾</td><td>甜點</td><td>Lv.1</td><td>麵粉、糖</td><td class="price">85G</td><td class="profit">+55G</td><td>+15</td></tr>
+          <tr data-level="2" data-cat="沙拉"><td class="name">🥒 黃瓜沙拉</td><td>沙拉</td><td>Lv.2</td><td>黃瓜、醋</td><td class="price">125G</td><td class="profit">+85G</td><td>+20</td></tr>
+          <tr data-level="2" data-cat="主食"><td class="name">🍚 簡單飯團</td><td>主食</td><td>Lv.2</td><td>米飯、雞蛋</td><td class="price">160G</td><td class="profit">+115G</td><td>+25</td></tr>
+          <tr data-level="2" data-cat="飲料"><td class="name">🍵 香草茶</td><td>飲料</td><td>Lv.2</td><td>香草、蜂蜜</td><td class="price">140G</td><td class="profit">+100G</td><td>+22</td></tr>
+          <tr data-level="2" data-cat="甜點"><td class="name">🍩 蜂蜜甜甜圈</td><td>甜點</td><td>Lv.2</td><td>麵粉、蜂蜜、油</td><td class="price">190G</td><td class="profit">+135G</td><td>+28</td></tr>
+          <tr data-level="2" data-cat="湯品"><td class="name">🥔 土豆湯</td><td>湯品</td><td>Lv.2</td><td>土豆、奶油</td><td class="price">200G</td><td class="profit">+145G</td><td>+30</td></tr>
+          <tr data-level="3" data-cat="主食"><td class="name">🍗 烤雞腿</td><td>主食</td><td>Lv.3</td><td>雞肉、香草、油</td><td class="price">420G</td><td class="profit">+300G</td><td>+38</td></tr>
+          <tr data-level="3" data-cat="飲料"><td class="name">🍹 漿果冰沙</td><td>飲料</td><td>Lv.3</td><td>漿果、牛奶、糖</td><td class="price">220G</td><td class="profit">+160G</td><td>+30</td></tr>
+          <tr data-level="3" data-cat="湯品"><td class="name">🦐 鮮蝦濃湯</td><td>湯品</td><td>Lv.3</td><td>蝦、奶油、黃油</td><td class="price">480G</td><td class="profit">+340G</td><td>+42</td></tr>
+          <tr data-level="3" data-cat="沙拉"><td class="name">🥑 牛油果沙拉</td><td>沙拉</td><td>Lv.3</td><td>牛油果、生菜、青檬</td><td class="price">310G</td><td class="profit">+215G</td><td>+34</td></tr>
+          <tr data-level="4" data-cat="主食"><td class="name">🍔 素食漢堡</td><td>主食</td><td>Lv.4</td><td>麵包、生菜、番茄、肉餅</td><td class="price">390G</td><td class="profit">+265G</td><td>+38</td></tr>
+          <tr data-level="4" data-cat="湯品"><td class="name">🍜 麵條湯</td><td>湯品</td><td>Lv.4</td><td>麵條、高湯、雞蛋</td><td class="price">410G</td><td class="profit">+275G</td><td>+40</td></tr>
+          <tr data-level="4" data-cat="飲料"><td class="name">🍷 漿果酒</td><td>飲料</td><td>Lv.4</td><td>漿果、糖</td><td class="price">350G</td><td class="profit">+240G</td><td>+38</td></tr>
+          <tr data-level="4" data-cat="甜點"><td class="name">🧁 杯子蛋糕</td><td>甜點</td><td>Lv.4</td><td>麵粉、蛋、糖霜</td><td class="price">300G</td><td class="profit">+200G</td><td>+34</td></tr>
+          <tr data-level="4" data-cat="沙拉"><td class="name">🥗 凱撒沙拉</td><td>沙拉</td><td>Lv.4</td><td>生菜、奶酪、麵包丁</td><td class="price">340G</td><td class="profit">+230G</td><td>+36</td></tr>
+          <tr data-level="5" data-cat="主食"><td class="name">🍛 咖哩飯</td><td>主食</td><td>Lv.5</td><td>米飯、咖哩醬、肉</td><td class="price">540G</td><td class="profit">+360G</td><td>+44</td></tr>
+          <tr data-level="5" data-cat="湯品"><td class="name">🍲 牛肉燉菜</td><td>湯品</td><td>Lv.5</td><td>牛肉、土豆、胡蘿蔔</td><td class="price">600G</td><td class="profit">+410G</td><td>+48</td></tr>
+          <tr data-level="5" data-cat="甜點"><td class="name">🍮 焦糖布丁</td><td>甜點</td><td>Lv.5</td><td>牛奶、蛋、糖</td><td class="price">420G</td><td class="profit">+280G</td><td>+40</td></tr>
+          <tr data-level="5" data-cat="飲料"><td class="name">🧋 珍珠奶茶</td><td>飲料</td><td>Lv.5</td><td>茶、牛奶、珍珠</td><td class="price">380G</td><td class="profit">+255G</td><td>+38</td></tr>
+          <tr data-level="6" data-cat="主食"><td class="name">🦞 烤龍蝦</td><td>主食</td><td>Lv.6</td><td>龍蝦、黃油、香草</td><td class="price">920G</td><td class="profit">+620G</td><td>+55</td></tr>
+          <tr data-level="6" data-cat="湯品"><td class="name">🍜 拉麵</td><td>湯品</td><td>Lv.6</td><td>麵條、豬肉、蛋、高湯</td><td class="price">560G</td><td class="profit">+380G</td><td>+46</td></tr>
+          <tr data-level="6" data-cat="沙拉"><td class="name">🥗 藜麥能量碗</td><td>沙拉</td><td>Lv.6</td><td>藜麥、蔬菜、橄欖油</td><td class="price">490G</td><td class="profit">+330G</td><td>+42</td></tr>
+          <tr data-level="6" data-cat="甜點"><td class="name">🍫 巧克力塔</td><td>甜點</td><td>Lv.6</td><td>巧克力、麵粉、黃油</td><td class="price">540G</td><td class="profit">+360G</td><td>+44</td></tr>
+          <tr data-level="7" data-cat="主食"><td class="name">🍖 煙燻排骨</td><td>主食</td><td>Lv.7</td><td>排骨、香料、蜂蜜</td><td class="price">780G</td><td class="profit">+520G</td><td>+52</td></tr>
+          <tr data-level="7" data-cat="主食"><td class="name">🥘 海鮮燴飯</td><td>主食</td><td>Lv.7</td><td>米飯、海鮮、藏紅花</td><td class="price">860G</td><td class="profit">+580G</td><td>+54</td></tr>
+          <tr data-level="7" data-cat="飲料"><td class="name">🍸 柑橘雞尾酒</td><td>飲料</td><td>Lv.7</td><td>柑橘、薄荷、蘇打水</td><td class="price">410G</td><td class="profit">+270G</td><td>+40</td></tr>
+          <tr data-level="7" data-cat="湯品"><td class="name">🦪 蛤蜊濃湯</td><td>湯品</td><td>Lv.7</td><td>蛤蜊、奶油、土豆</td><td class="price">670G</td><td class="profit">+450G</td><td>+48</td></tr>
+          <tr data-level="7" data-cat="甜點"><td class="name">🍦 香草冰淇淋</td><td>甜點</td><td>Lv.7</td><td>牛奶、奶油、香草</td><td class="price">380G</td><td class="profit">+250G</td><td>+38</td></tr>
+          <tr data-level="8" data-cat="主食"><td class="name">🍱 壽司拼盤</td><td>主食</td><td>Lv.8</td><td>米飯、綜合魚類、海苔</td><td class="price">980G</td><td class="profit">+640G</td><td>+56</td></tr>
+          <tr data-level="8" data-cat="主食"><td class="name">🥩 烤牛排</td><td>主食</td><td>Lv.8</td><td>牛肉、黃油、香草</td><td class="price">1050G</td><td class="profit">+700G</td><td>+58</td></tr>
+          <tr data-level="8" data-cat="湯品"><td class="name">🍲 麻辣火鍋</td><td>湯品</td><td>Lv.8</td><td>肉类、蔬菜、香料</td><td class="price">820G</td><td class="profit">+550G</td><td>+50</td></tr>
+          <tr data-level="8" data-cat="甜點"><td class="name">🍰 提拉米蘇</td><td>甜點</td><td>Lv.8</td><td>咖啡、奶油、可可</td><td class="price">650G</td><td class="profit">+430G</td><td>+46</td></tr>
+          <tr data-level="9" data-cat="主食"><td class="name">🦞 龍蝦燴飯</td><td>主食</td><td>Lv.9</td><td>龍蝦、米飯、奶油</td><td class="price">1180G</td><td class="profit">+790G</td><td>+60</td></tr>
+          <tr data-level="9" data-cat="湯品"><td class="name">🍜 豚骨拉麵</td><td>湯品</td><td>Lv.9</td><td>豬骨高湯、麵條、蛋</td><td class="price">920G</td><td class="profit">+610G</td><td>+52</td></tr>
+          <tr data-level="9" data-cat="飲料"><td class="name">🍾 蘋果氣泡酒</td><td>飲料</td><td>Lv.9</td><td>蘋果、糖</td><td class="price">480G</td><td class="profit">+320G</td><td>+42</td></tr>
+          <tr data-level="9" data-cat="沙拉"><td class="name">🥗 松露沙拉</td><td>沙拉</td><td>Lv.9</td><td>松露、生菜、橄欖油</td><td class="price">880G</td><td class="profit">+590G</td><td>+50</td></tr>
+          <tr data-level="10" data-cat="主食"><td class="name">🍣 名廚拼盤</td><td>主食</td><td>Lv.10</td><td>高級魚類、米飯、芥末</td><td class="price">1350G</td><td class="profit">+900G</td><td>+62</td></tr>
+          <tr data-level="10" data-cat="甜點"><td class="name">🍮 松露蘑菇派</td><td>甜點</td><td>Lv.10</td><td>松露、蘑菇、麵皮</td><td class="price">1100G</td><td class="profit">+730G</td><td>+58</td></tr>
+          <tr data-level="10" data-cat="湯品"><td class="name">🍲 海鮮火鍋</td><td>湯品</td><td>Lv.10</td><td>综合海鮮、高湯</td><td class="price">1080G</td><td class="profit">+720G</td><td>+58</td></tr>
+          <tr data-level="11" data-cat="主食"><td class="name">🥩 和牛牛排</td><td>主食</td><td>Lv.11</td><td>高级牛肉、黃油</td><td class="price">1580G</td><td class="profit">+1050G</td><td>+65</td></tr>
+          <tr data-level="11" data-cat="主食"><td class="name">🦞 皇家海鮮塔</td><td>主食</td><td>Lv.11</td><td>龍蝦、螃蟹、蝦</td><td class="price">1650G</td><td class="profit">+1100G</td><td>+66</td></tr>
+          <tr data-level="11" data-cat="甜點"><td class="name">🍰 黃金層疊蛋糕</td><td>甜點</td><td>Lv.11</td><td>金箔、麵粉、奶油</td><td class="price">1400G</td><td class="profit">+930G</td><td>+62</td></tr>
+          <tr data-level="12" data-cat="主食"><td class="name">👑 開拓者盛宴</td><td>主食</td><td>Lv.12</td><td>高级牛肉、松露、海鮮</td><td class="price">1800G</td><td class="profit">+1200G</td><td>+70</td></tr>
+          <tr data-level="12" data-cat="甜點"><td class="name">🍮 星輝布丁</td><td>甜點</td><td>Lv.12</td><td>月光奶油、金粉、蛋</td><td class="price">1700G</td><td class="profit">+1130G</td><td>+68</td></tr>
+          <tr data-level="6" data-cat="飲料"><td class="name">🍵 抹茶拿鐵</td><td>飲料</td><td>Lv.6</td><td>抹茶、牛奶、糖</td><td class="price">340G</td><td class="profit">+225G</td><td>+36</td></tr>
+          <tr data-level="3" data-cat="主食"><td class="name">🍳 奶酪蛋卷</td><td>主食</td><td>Lv.3</td><td>蛋、奶酪、火腿</td><td class="price">260G</td><td class="profit">+180G</td><td>+32</td></tr>
+          <tr data-level="2" data-cat="沙拉"><td class="name">🥗 涼拌卷心菜</td><td>沙拉</td><td>Lv.2</td><td>卷心菜、胡蘿蔔、醋</td><td class="price">115G</td><td class="profit">+78G</td><td>+18</td></tr>
+          <tr data-level="5" data-cat="主食"><td class="name">🌮 魚肉塔可</td><td>主食</td><td>Lv.5</td><td>鱼、玉米餅、卷心菜</td><td class="price">450G</td><td class="profit">+300G</td><td>+40</td></tr>
+          <tr data-level="4" data-cat="湯品"><td class="name">🍅 奶油番茄湯</td><td>湯品</td><td>Lv.4</td><td>番茄、奶油、羅勒</td><td class="price">320G</td><td class="profit">+215G</td><td>+34</td></tr>
+          <tr data-level="3" data-cat="飲料"><td class="name">🍋 檸檬水</td><td>飲料</td><td>Lv.3</td><td>檸檬、糖、水</td><td class="price">160G</td><td class="profit">+110G</td><td>+22</td></tr>
+          <tr data-level="8" data-cat="飲料"><td class="name">🍷 陳釀漿果酒</td><td>飲料</td><td>Lv.8</td><td>陳釀漿果、糖</td><td class="price">620G</td><td class="profit">+410G</td><td>+44</td></tr>
+          <tr data-level="9" data-cat="主食"><td class="name">🦪 香煎扇貝</td><td>主食</td><td>Lv.9</td><td>扇貝、黃油、檸檬</td><td class="price">980G</td><td class="profit">+650G</td><td>+54</td></tr>
+          <tr data-level="2" data-cat="主食"><td class="name">🥪 三層三明治</td><td>主食</td><td>Lv.2</td><td>麵包、火腿、生菜</td><td class="price">170G</td><td class="profit">+118G</td><td>+25</td></tr>
+          <tr data-level="6" data-cat="沙拉"><td class="name">🥗 希臘沙拉</td><td>沙拉</td><td>Lv.6</td><td>羊乳酪、橄欖、番茄</td><td class="price">460G</td><td class="profit">+310G</td><td>+40</td></tr>
+          <tr data-level="7" data-cat="甜點"><td class="name">🥧 蘋果派</td><td>甜點</td><td>Lv.7</td><td>蘋果、肉桂、麵皮</td><td class="price">430G</td><td class="profit">+285G</td><td>+40</td></tr>
+          <tr data-level="10" data-cat="飲料"><td class="name">🍸 黃金氣泡飲</td><td>飲料</td><td>Lv.10</td><td>柑橘、金粉、蘇打水</td><td class="price">850G</td><td class="profit">+565G</td><td>+50</td></tr>
+          <tr data-level="11" data-cat="湯品"><td class="name">🍲 御用濃湯</td><td>湯品</td><td>Lv.11</td><td>高级香草、骨湯</td><td class="price">1450G</td><td class="profit">+965G</td><td>+62</td></tr>
+          <tr data-level="1" data-cat="湯品"><td class="name">🥕 胡蘿蔔湯</td><td>湯品</td><td>Lv.1</td><td>胡蘿蔔、奶油</td><td class="price">120G</td><td class="profit">+82G</td><td>+18</td></tr>
+          <tr data-level="4" data-cat="飲料"><td class="name">🧋 芋圓奶茶</td><td>飲料</td><td>Lv.4</td><td>芋頭、牛奶、珍珠</td><td class="price">300G</td><td class="profit">+200G</td><td>+34</td></tr>
+          <tr data-level="5" data-cat="甜點"><td class="name">🍪 杏仁餅乾</td><td>甜點</td><td>Lv.5</td><td>杏仁、麵粉、糖</td><td class="price">340G</td><td class="profit">+225G</td><td>+36</td></tr>
+          <tr data-level="9" data-cat="甜點"><td class="name">🍰 黑森林蛋糕</td><td>甜點</td><td>Lv.9</td><td>巧克力、櫻桃、奶油</td><td class="price">920G</td><td class="profit">+610G</td><td>+52</td></tr>
+          <tr data-level="3" data-cat="湯品"><td class="name">🌽 玉米濃湯</td><td>湯品</td><td>Lv.3</td><td>玉米、奶油、培根</td><td class="price">350G</td><td class="profit">+240G</td><td>+36</td></tr>
+          <tr data-level="8" data-cat="湯品"><td class="name">🦞 龍蝦濃湯</td><td>湯品</td><td>Lv.8</td><td>龍蝦、奶油、雪利酒</td><td class="price">880G</td><td class="profit">+585G</td><td>+50</td></tr>
+          <tr data-level="6" data-cat="主食"><td class="name">🍗 蜜汁烤鴨</td><td>主食</td><td>Lv.6</td><td>鴨肉、蜂蜜、香料</td><td class="price">760G</td><td class="profit">+510G</td><td>+48</td></tr>
+          <tr data-level="12" data-cat="湯品"><td class="name">🍲 龍魚濃湯</td><td>湯品</td><td>Lv.12</td><td>傳說魚類、稀有香草</td><td class="price">1750G</td><td class="profit">+1165G</td><td>+68</td></tr>
+          <tr data-level="11" data-cat="飲料"><td class="name">🍹 鳳羽雞尾酒</td><td>飲料</td><td>Lv.11</td><td>異域水果、金粉</td><td class="price">1300G</td><td class="profit">+865G</td><td>+60</td></tr>
+          <tr data-level="2" data-cat="甜點"><td class="name">🍮 簡易卡仕達</td><td>甜點</td><td>Lv.2</td><td>蛋、牛奶、糖</td><td class="price">155G</td><td class="profit">+108G</td><td>+22</td></tr>
+          <tr data-level="7" data-cat="沙拉"><td class="name">🥗 烤蔬菜沙拉</td><td>沙拉</td><td>Lv.7</td><td>综合蔬菜、意大利黑醋</td><td class="price">560G</td><td class="profit">+375G</td><td>+44</td></tr>
+          <tr data-level="4" data-cat="主食"><td class="name">🍕 瑪格麗特披薩</td><td>主食</td><td>Lv.4</td><td>麵團、番茄、奶酪</td><td class="price">380G</td><td class="profit">+260G</td><td>+38</td></tr>
+          <tr data-level="10" data-cat="主食"><td class="name">🦐 蒜香奶油蝦</td><td>主食</td><td>Lv.10</td><td>蝦、蒜、黃油</td><td class="price">1200G</td><td class="profit">+800G</td><td>+58</td></tr>
+          <tr data-level="1" data-cat="飲料"><td class="name">🍊 橙汁</td><td>飲料</td><td>Lv.1</td><td>橙子</td><td class="price">65G</td><td class="profit">+40G</td><td>+12</td></tr>
+          <tr data-level="2" data-cat="主食"><td class="name">🥪 烤奶酪三明治</td><td>主食</td><td>Lv.2</td><td>麵包、奶酪、黃油</td><td class="price">140G</td><td class="profit">+95G</td><td>+20</td></tr>
+          <tr data-level="3" data-cat="甜點"><td class="name">🍮 焦糖布丁撻</td><td>甜點</td><td>Lv.3</td><td>蛋、牛奶、焦糖</td><td class="price">280G</td><td class="profit">+190G</td><td>+32</td></tr>
+          <tr data-level="5" data-cat="湯品"><td class="name">🥣 蘑菇濃湯</td><td>湯品</td><td>Lv.5</td><td>蘑菇、奶油、葡萄酒</td><td class="price">520G</td><td class="profit">+350G</td><td>+42</td></tr>
+          <tr data-level="6" data-cat="甜點"><td class="name">🍪 核桃布朗尼</td><td>甜點</td><td>Lv.6</td><td>核桃、巧克力、黃油</td><td class="price">500G</td><td class="profit">+335G</td><td>+42</td></tr>
+          <tr data-level="7" data-cat="主食"><td class="name">🍝 培根奶油意麵</td><td>主食</td><td>Lv.7</td><td>意麵、蛋、培根、奶酪</td><td class="price">680G</td><td class="profit">+455G</td><td>+46</td></tr>
+          <tr data-level="9" data-cat="飲料"><td class="name">🍵 頂級烏龍茶</td><td>飲料</td><td>Lv.9</td><td>頂級茶葉、蜂蜜</td><td class="price">680G</td><td class="profit">+455G</td><td>+46</td></tr>
+          <tr data-level="8" data-cat="主食"><td class="name">🦀 香煎蟹餅</td><td>主食</td><td>Lv.8</td><td>螃蟹、麵包屑、蛋</td><td class="price">900G</td><td class="profit">+600G</td><td>+54</td></tr>
         </tbody>
       </table>
     </div>
     <div style="padding:10px 1.25rem;font-size:12px;color:var(--text3);border-top:1px solid var(--border)">
-      * 持續補充中，目前收錄 16 条，總計 98 种。售價為基礎 1★ 價格；2★+20% · 3★+40% · 4★+60% · 5★+80%。
+      * Heartopia 全部 98 種食譜。售價為基礎 1★ 價格；2★+20% · 3★+40% · 4★+60% · 5★+80%。
     </div>
   </div>
 
   <div class="notice tip">💡 批量烹飪技巧：多放幾個爐子同時開工，效率成倍提升。體力不足時用食物恢復——自己做的食物比直接購買更划算。</div>
-  <div class="notice warn">🌧️ <strong>Doris 特供食譜</strong>（如原味卷蛋糕）只能在雨天/彩虹天氣找到 Doris 購買，无法通过其他途径獲取，错过要等下次特殊天氣。</div>
+  <div class="notice warn">🌧️ <strong>Doris 特供食譜</strong>（如原味卷蛋糕）只能在雨天/彩虹天氣找到 Doris 購買，無法通過其他途徑獲取，錯過要等下次特殊天氣。</div>
 
 </main>
 <div id="footer-placeholder"></div>

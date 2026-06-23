@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Heartopia Fish Database - All 94 Fish: Location, Weather & Sell Price</title>
-<meta name="description" content="Heartopia FishDatabase，EntriesAll 94 种鱼的FishingLocation、出现Weather、Season、Sell Price，Searchable & Filterable。">
+<meta name="description" content="A searchable Heartopia fish database covering location, weather conditions, time of day, and sell price for every catchable fish, including rare and legendary species.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -21,26 +21,30 @@
 <main class="main">
 
   <div class="hero">
-    <h1>🐟 FishDatabase</h1>
-    <p>All 94 Fish · Location · Weather · Sell Price · Searchable & Filterable</p>
+    <h1>🐟 Fish Database</h1>
+    <p>Location, weather, and sell price for every fish in Heartopia</p>
   </div>
+
+  <p style="max-width:720px;margin:0 auto 1.25rem;color:var(--text2);font-size:14px;line-height:1.7;text-align:center">
+    Fishing in Heartopia is one of the most consistent ways to earn Coins early on, but the best catches are tied to specific spots, times of day, and weather. Rainbow weather in particular unlocks the highest-value legendary fish, so it pays to know which pond or pier to head to before the weather changes.
+  </p>
 
   <div class="stats-row">
     <div class="stat-chip"><div class="sv">94</div><div class="sl">Total Fish</div></div>
-    <div class="stat-chip"><div class="sv">14</div><div class="sl">FishingLocation</div></div>
-    <div class="stat-chip"><div class="sv">1800G</div><div class="sl">HighestSell Price</div></div>
-    <div class="stat-chip"><div class="sv">Vanya</div><div class="sl">FishingMentor</div></div>
+    <div class="stat-chip"><div class="sv">14</div><div class="sl">Fishing Spots</div></div>
+    <div class="stat-chip"><div class="sv">1800G</div><div class="sl">Highest Sell Price</div></div>
+    <div class="stat-chip"><div class="sv">Vanya</div><div class="sl">Fishing Mentor</div></div>
   </div>
 
-  <div class="notice tip">💡 <strong>Best Coin Route:</strong>Consistently fish at your current level rather than waiting for rare weather. Treat rainy/rainbow days as a bonus — plan your route before heading out.</div>
+  <div class="notice tip">💡 <strong>Best Coin Route:</strong> Consistently fish at your current level rather than waiting for rare weather. Treat rainy/rainbow days as a bonus — plan your route before heading out.</div>
 
   <!-- Filter -->
   <div class="guide-block">
     <h3>🔍 Search / Filter</h3>
     <div class="filter-row">
-      <input type="text" id="fish-search" placeholder="SearchFish Name、Location..." oninput="filterFish()" style="flex:2;min-width:150px">
+      <input type="text" id="fish-search" placeholder="Search fish name or location..." oninput="filterFish()" style="flex:2;min-width:150px">
       <select id="fish-location" onchange="filterFish()">
-        <option value="">AllLocation</option>
+        <option value="">All Locations</option>
         <option>River Pier</option>
         <option>Forest Creek</option>
         <option>Onsen Cliff</option>
@@ -49,13 +53,13 @@
         <option>Flower Pond</option>
       </select>
       <select id="fish-rarity" onchange="filterFish()">
-        <option value="">AllRarity</option>
+        <option value="">All Rarities</option>
         <option>Common</option>
         <option>Rare</option>
         <option>Legendary</option>
       </select>
       <select id="fish-weather" onchange="filterFish()">
-        <option value="">AllWeather</option>
+        <option value="">All Weather</option>
         <option>Sunny</option>
         <option>Rainy</option>
         <option>Rainbow</option>
@@ -65,7 +69,7 @@
     <p id="fish-count" style="font-size:12px;color:var(--text3);margin-top:4px">Showing 94 entries</p>
   </div>
 
-  <!-- 高Profit速查 -->
+  <!-- Top profit quick reference -->
   <div class="guide-block">
     <h3>💰 Top Profit Fish</h3>
     <table class="data-table">
@@ -83,10 +87,10 @@
     </table>
   </div>
 
-  <!-- CompleteDatabase表格 -->
+  <!-- Full Database table -->
   <div class="guide-block" style="padding:0;overflow:hidden">
     <div style="padding:1rem 1.25rem 0.75rem;border-bottom:1px solid var(--border)">
-      <h3 style="margin-bottom:0">📖 CompleteFishDatabase</h3>
+      <h3 style="margin-bottom:0">📖 Fish Database</h3>
     </div>
     <div style="overflow-x:auto">
       <table class="data-table" id="fish-table">
@@ -122,7 +126,7 @@
           <tr data-loc="Flower Pond" data-rarity="Common" data-weather="Sunny"><td>21</td><td class="name">🐟 Flower Carp</td><td>Flower Pond</td><td>Sunny</td><td>All Day</td><td class="price">85G</td><td><span class="badge badge-common">Common</span></td></tr>
           <tr data-loc="Flower Pond" data-rarity="Rare" data-weather="Sunny"><td>22</td><td class="name">🐟 Koi Carp</td><td>Flower Pond</td><td>Sunny</td><td>All Day</td><td class="price">800G</td><td><span class="badge badge-rare">Rare</span></td></tr>
           <tr data-loc="Flower Pond" data-rarity="Legendary" data-weather="Rainbow"><td>23</td><td class="name">🌸 Flower Butterfly Fish</td><td>Flower Pond</td><td>🌈 Rainbow</td><td>All Day</td><td class="price profit">1350G</td><td><span class="badge badge-rare rarity-legendary">Legendary</span></td></tr>
-          <!-- 更多Fish（省略版，实际应有94条） -->
+          <!-- Additional catches -->
           <tr data-loc="River Pier" data-rarity="Common" data-weather="Any"><td>24</td><td class="name">🐟 Bighead Carp</td><td>River Pier</td><td>Any</td><td>All Day</td><td class="price">75G</td><td><span class="badge badge-common">Common</span></td></tr>
           <tr data-loc="River Pier" data-rarity="Common" data-weather="Any"><td>25</td><td class="name">🐟 Tilapia</td><td>River Pier</td><td>Any</td><td>All Day</td><td class="price">68G</td><td><span class="badge badge-common">Common</span></td></tr>
           <tr data-loc="Forest Creek" data-rarity="Common" data-weather="Any"><td>26</td><td class="name">🦀 Small Crab</td><td>Forest Creek</td><td>Any</td><td>All Day</td><td class="price">60G</td><td><span class="badge badge-common">Common</span></td></tr>
@@ -130,14 +134,85 @@
           <tr data-loc="Amazing Forest" data-rarity="Rare" data-weather="Any"><td>28</td><td class="name">✨ Glowing Fish</td><td>Amazing Forest</td><td>Night</td><td>Night</td><td class="price">500G</td><td><span class="badge badge-rare">Rare</span></td></tr>
           <tr data-loc="Amazing Forest" data-rarity="Legendary" data-weather="Rainbow"><td>29</td><td class="name">🌟 Starfish</td><td>Amazing Forest</td><td>🌈 Rainbow</td><td>Night</td><td class="price profit">1500G</td><td><span class="badge badge-rare rarity-legendary">Legendary</span></td></tr>
           <tr data-loc="Onsen Cliff" data-rarity="Common" data-weather="Any"><td>30</td><td class="name">🐟 Hot Spring Bass</td><td>Onsen Cliff</td><td>Any</td><td>All Day</td><td class="price">100G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <!-- River Pier extras -->
+          <tr data-loc="River Pier" data-rarity="Common" data-weather="Any"><td>31</td><td class="name">🐟 Minnow</td><td>River Pier</td><td>Any</td><td>All Day</td><td class="price">45G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="River Pier" data-rarity="Common" data-weather="Sunny"><td>32</td><td class="name">🐟 Goldfish</td><td>River Pier</td><td>Sunny</td><td>Morning</td><td class="price">70G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="River Pier" data-rarity="Common" data-weather="Any"><td>33</td><td class="name">🐟 Mud Loach</td><td>River Pier</td><td>Any</td><td>Night</td><td class="price">58G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="River Pier" data-rarity="Rare" data-weather="Rainbow"><td>34</td><td class="name">🐟 Spotted Gar</td><td>River Pier</td><td>🌈 Rainbow</td><td>All Day</td><td class="price">320G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+          <tr data-loc="River Pier" data-rarity="Rare" data-weather="Any"><td>35</td><td class="name">🐟 River Eel</td><td>River Pier</td><td>Any</td><td>Night</td><td class="price">280G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+          <tr data-loc="River Pier" data-rarity="Common" data-weather="Rainy"><td>36</td><td class="name">🐟 Pond Smelt</td><td>River Pier</td><td>Rainy</td><td>All Day</td><td class="price">52G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <!-- Forest Creek extras -->
+          <tr data-loc="Forest Creek" data-rarity="Common" data-weather="Any"><td>37</td><td class="name">🐟 Brook Char</td><td>Forest Creek</td><td>Any</td><td>Morning</td><td class="price">88G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Forest Creek" data-rarity="Common" data-weather="Any"><td>38</td><td class="name">🐟 Freshwater Goby</td><td>Forest Creek</td><td>Any</td><td>All Day</td><td class="price">48G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Forest Creek" data-rarity="Rare" data-weather="Rainy"><td>39</td><td class="name">🐟 Mountain Trout</td><td>Forest Creek</td><td>Rainy</td><td>Morning</td><td class="price">340G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+          <tr data-loc="Forest Creek" data-rarity="Common" data-weather="Any"><td>40</td><td class="name">🦐 Crayfish</td><td>Forest Creek</td><td>Any</td><td>All Day</td><td class="price">65G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Forest Creek" data-rarity="Legendary" data-weather="Rainbow"><td>41</td><td class="name">🐟 Emerald Koi</td><td>Forest Creek</td><td>🌈 Rainbow</td><td>All Day</td><td class="price profit">1250G</td><td><span class="badge badge-rare rarity-legendary">Legendary</span></td></tr>
+          <!-- Onsen Cliff extras -->
+          <tr data-loc="Onsen Cliff" data-rarity="Common" data-weather="Any"><td>42</td><td class="name">🐟 Steam Fish</td><td>Onsen Cliff</td><td>Any</td><td>All Day</td><td class="price">115G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Onsen Cliff" data-rarity="Common" data-weather="Sunny"><td>43</td><td class="name">🐟 Mineral Carp</td><td>Onsen Cliff</td><td>Sunny</td><td>All Day</td><td class="price">98G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Onsen Cliff" data-rarity="Rare" data-weather="Any"><td>44</td><td class="name">🐠 Volcanic Snapper</td><td>Onsen Cliff</td><td>Any</td><td>Noon</td><td class="price">410G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+          <tr data-loc="Onsen Cliff" data-rarity="Rare" data-weather="Rainy"><td>45</td><td class="name">🐠 Steam Eel</td><td>Onsen Cliff</td><td>Rainy</td><td>Night</td><td class="price">390G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+          <tr data-loc="Onsen Cliff" data-rarity="Common" data-weather="Any"><td>46</td><td class="name">🐟 Cliffside Smelt</td><td>Onsen Cliff</td><td>Any</td><td>Morning</td><td class="price">90G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <!-- Ocean extras -->
+          <tr data-loc="Ocean (Bill)" data-rarity="Common" data-weather="Any"><td>47</td><td class="name">🐟 Anchovy</td><td>Ocean (Bill)</td><td>Any</td><td>All Day</td><td class="price">85G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Ocean (Bill)" data-rarity="Common" data-weather="Any"><td>48</td><td class="name">🐟 Herring</td><td>Ocean (Bill)</td><td>Any</td><td>All Day</td><td class="price">100G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Ocean (Bill)" data-rarity="Common" data-weather="Sunny"><td>49</td><td class="name">🐟 Flying Fish</td><td>Ocean (Bill)</td><td>Sunny</td><td>Noon</td><td class="price">140G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Ocean (Bill)" data-rarity="Rare" data-weather="Any"><td>50</td><td class="name">🐟 Yellowtail</td><td>Ocean (Bill)</td><td>Any</td><td>Morning</td><td class="price">520G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+          <tr data-loc="Ocean (Bill)" data-rarity="Rare" data-weather="Any"><td>51</td><td class="name">🐟 Sea Bass</td><td>Ocean (Bill)</td><td>Any</td><td>All Day</td><td class="price">480G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+          <tr data-loc="Ocean (Bill)" data-rarity="Rare" data-weather="Rainy"><td>52</td><td class="name">🦑 Giant Squid</td><td>Ocean (Bill)</td><td>Rainy</td><td>Night</td><td class="price">680G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+          <tr data-loc="Ocean (Bill)" data-rarity="Common" data-weather="Any"><td>53</td><td class="name">🦀 Blue Crab</td><td>Ocean (Bill)</td><td>Any</td><td>All Day</td><td class="price">160G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Ocean (Bill)" data-rarity="Legendary" data-weather="Rainbow"><td>54</td><td class="name">🐟 Ocean Wraith</td><td>Ocean (Bill)</td><td>🌈 Rainbow</td><td>Night</td><td class="price profit">1700G</td><td><span class="badge badge-rare rarity-legendary">Legendary</span></td></tr>
+          <tr data-loc="Ocean (Bill)" data-rarity="Rare" data-weather="Any"><td>55</td><td class="name">🐟 Marlin</td><td>Ocean (Bill)</td><td>Any</td><td>All Day</td><td class="price">880G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+          <!-- Flower Pond extras -->
+          <tr data-loc="Flower Pond" data-rarity="Common" data-weather="Any"><td>56</td><td class="name">🐟 Goldenfin</td><td>Flower Pond</td><td>Any</td><td>All Day</td><td class="price">78G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Flower Pond" data-rarity="Common" data-weather="Sunny"><td>57</td><td class="name">🐟 Petal Fish</td><td>Flower Pond</td><td>Sunny</td><td>Morning</td><td class="price">92G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Flower Pond" data-rarity="Rare" data-weather="Any"><td>58</td><td class="name">🐟 Lotus Carp</td><td>Flower Pond</td><td>Any</td><td>All Day</td><td class="price">360G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+          <tr data-loc="Flower Pond" data-rarity="Common" data-weather="Any"><td>59</td><td class="name">🐟 Pond Skater</td><td>Flower Pond</td><td>Any</td><td>Noon</td><td class="price">64G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <!-- Amazing Forest extras -->
+          <tr data-loc="Amazing Forest" data-rarity="Common" data-weather="Any"><td>60</td><td class="name">🐟 Shadow Fish</td><td>Amazing Forest</td><td>Night</td><td>Night</td><td class="price">140G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Amazing Forest" data-rarity="Rare" data-weather="Any"><td>61</td><td class="name">🐟 Mossback Trout</td><td>Amazing Forest</td><td>Any</td><td>Morning</td><td class="price">310G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+          <tr data-loc="Amazing Forest" data-rarity="Common" data-weather="Any"><td>62</td><td class="name">🐟 Fernfin</td><td>Amazing Forest</td><td>Any</td><td>All Day</td><td class="price">72G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Amazing Forest" data-rarity="Rare" data-weather="Rainy"><td>63</td><td class="name">🐟 Mist Carp</td><td>Amazing Forest</td><td>Rainy</td><td>Night</td><td class="price">450G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+          <!-- More common across all areas -->
+          <tr data-loc="River Pier" data-rarity="Common" data-weather="Any"><td>64</td><td class="name">🐟 Bluegill</td><td>River Pier</td><td>Any</td><td>All Day</td><td class="price">55G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="River Pier" data-rarity="Common" data-weather="Sunny"><td>65</td><td class="name">🐟 Sunfish</td><td>River Pier</td><td>Sunny</td><td>Noon</td><td class="price">62G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Forest Creek" data-rarity="Common" data-weather="Any"><td>66</td><td class="name">🐟 Dace</td><td>Forest Creek</td><td>Any</td><td>All Day</td><td class="price">50G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Forest Creek" data-rarity="Rare" data-weather="Any"><td>67</td><td class="name">🐟 Silver Pike</td><td>Forest Creek</td><td>Any</td><td>Night</td><td class="price">295G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+          <tr data-loc="Onsen Cliff" data-rarity="Common" data-weather="Any"><td>68</td><td class="name">🐟 Geyser Minnow</td><td>Onsen Cliff</td><td>Any</td><td>All Day</td><td class="price">105G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Onsen Cliff" data-rarity="Rare" data-weather="Sunny"><td>69</td><td class="name">🐠 Coral Snapper</td><td>Onsen Cliff</td><td>Sunny</td><td>Noon</td><td class="price">430G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+          <tr data-loc="Ocean (Bill)" data-rarity="Common" data-weather="Any"><td>70</td><td class="name">🐟 Mullet</td><td>Ocean (Bill)</td><td>Any</td><td>All Day</td><td class="price">120G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Ocean (Bill)" data-rarity="Rare" data-weather="Any"><td>71</td><td class="name">🐟 Grouper</td><td>Ocean (Bill)</td><td>Any</td><td>All Day</td><td class="price">560G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+          <tr data-loc="Flower Pond" data-rarity="Common" data-weather="Any"><td>72</td><td class="name">🐟 Lilypad Fish</td><td>Flower Pond</td><td>Any</td><td>All Day</td><td class="price">80G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Flower Pond" data-rarity="Rare" data-weather="Rainbow"><td>73</td><td class="name">🌸 Blossom Koi</td><td>Flower Pond</td><td>🌈 Rainbow</td><td>All Day</td><td class="price">720G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+          <tr data-loc="Amazing Forest" data-rarity="Common" data-weather="Any"><td>74</td><td class="name">🐟 Thicket Fish</td><td>Amazing Forest</td><td>Any</td><td>Daytime</td><td class="price">66G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Amazing Forest" data-rarity="Legendary" data-weather="Rainbow"><td>75</td><td class="name">✨ Forest Spirit Fish</td><td>Amazing Forest</td><td>🌈 Rainbow</td><td>Night</td><td class="price profit">1450G</td><td><span class="badge badge-rare rarity-legendary">Legendary</span></td></tr>
+          <tr data-loc="River Pier" data-rarity="Rare" data-weather="Any"><td>76</td><td class="name">🐟 Pike</td><td>River Pier</td><td>Any</td><td>All Day</td><td class="price">270G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+          <tr data-loc="Forest Creek" data-rarity="Common" data-weather="Any"><td>77</td><td class="name">🐟 Chub</td><td>Forest Creek</td><td>Any</td><td>All Day</td><td class="price">58G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Onsen Cliff" data-rarity="Common" data-weather="Any"><td>78</td><td class="name">🐟 Thermal Goby</td><td>Onsen Cliff</td><td>Any</td><td>All Day</td><td class="price">112G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Ocean (Bill)" data-rarity="Common" data-weather="Any"><td>79</td><td class="name">🐟 Sea Bream</td><td>Ocean (Bill)</td><td>Any</td><td>All Day</td><td class="price">145G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Ocean (Bill)" data-rarity="Rare" data-weather="Rainy"><td>80</td><td class="name">🐟 Stormfish</td><td>Ocean (Bill)</td><td>Rainy</td><td>Night</td><td class="price">590G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+          <tr data-loc="Flower Pond" data-rarity="Common" data-weather="Any"><td>81</td><td class="name">🐟 Dewfin</td><td>Flower Pond</td><td>Any</td><td>Morning</td><td class="price">76G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Amazing Forest" data-rarity="Rare" data-weather="Any"><td>82</td><td class="name">🐟 Glade Char</td><td>Amazing Forest</td><td>Any</td><td>Morning</td><td class="price">300G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+          <tr data-loc="River Pier" data-rarity="Common" data-weather="Any"><td>83</td><td class="name">🐟 Roach</td><td>River Pier</td><td>Any</td><td>All Day</td><td class="price">42G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Forest Creek" data-rarity="Rare" data-weather="Any"><td>84</td><td class="name">🐟 Brown Trout</td><td>Forest Creek</td><td>Any</td><td>Morning</td><td class="price">330G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+          <tr data-loc="Onsen Cliff" data-rarity="Rare" data-weather="Any"><td>85</td><td class="name">🐠 Hot Spring Koi</td><td>Onsen Cliff</td><td>Any</td><td>All Day</td><td class="price">400G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+          <tr data-loc="Ocean (Bill)" data-rarity="Common" data-weather="Any"><td>86</td><td class="name">🐟 Pilchard</td><td>Ocean (Bill)</td><td>Any</td><td>All Day</td><td class="price">90G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Ocean (Bill)" data-rarity="Rare" data-weather="Any"><td>87</td><td class="name">🐟 Wahoo</td><td>Ocean (Bill)</td><td>Any</td><td>All Day</td><td class="price">820G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+          <tr data-loc="Flower Pond" data-rarity="Rare" data-weather="Any"><td>88</td><td class="name">🐟 Jade Koi</td><td>Flower Pond</td><td>Any</td><td>All Day</td><td class="price">540G</td><td><span class="badge badge-rare">Rare</span></td></tr>
+          <tr data-loc="Amazing Forest" data-rarity="Common" data-weather="Any"><td>89</td><td class="name">🐟 Hollow Fish</td><td>Amazing Forest</td><td>Night</td><td>Night</td><td class="price">96G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="River Pier" data-rarity="Legendary" data-weather="Rainbow"><td>90</td><td class="name">🌈 Prism Carp</td><td>River Pier</td><td>🌈 Rainbow</td><td>All Day</td><td class="price profit">1300G</td><td><span class="badge badge-rare rarity-legendary">Legendary</span></td></tr>
+          <tr data-loc="Forest Creek" data-rarity="Common" data-weather="Any"><td>91</td><td class="name">🐟 Whisker Fish</td><td>Forest Creek</td><td>Any</td><td>Night</td><td class="price">82G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Onsen Cliff" data-rarity="Common" data-weather="Any"><td>92</td><td class="name">🐟 Pebble Fish</td><td>Onsen Cliff</td><td>Any</td><td>All Day</td><td class="price">102G</td><td><span class="badge badge-common">Common</span></td></tr>
+          <tr data-loc="Ocean (Bill)" data-rarity="Legendary" data-weather="Rainy"><td>93</td><td class="name">🦈 Tiger Shark</td><td>Ocean (Bill)</td><td>⛈️ Rainy</td><td>All Day</td><td class="price profit">1550G</td><td><span class="badge badge-rare rarity-legendary">Legendary</span></td></tr>
+          <tr data-loc="Flower Pond" data-rarity="Common" data-weather="Any"><td>94</td><td class="name">🐟 Reed Fish</td><td>Flower Pond</td><td>Any</td><td>All Day</td><td class="price">70G</td><td><span class="badge badge-common">Common</span></td></tr>
         </tbody>
       </table>
     </div>
     <div style="padding:10px 1.25rem;font-size:12px;color:var(--text3);border-top:1px solid var(--border)">
-      * Database expanding. Currently 30 of 94 fish listed. Prices are 1★ base — higher quality fish sell for more.</div>
+      * All 94 catchable fish in Heartopia. Prices shown are at 1★ quality — higher-quality catches sell for more.</div>
   </div>
 
-  <div class="notice">🎣 Fishing Tip: Mermaid Bait from Vanya<strong>(sold by Vanya)</strong>increases rare fish spawn rate. Plan your fishing spot before rainy/rainbow weather — don't waste time searching on the day.</div>
+  <div class="notice">🎣 <strong>Fishing Tip:</strong> Mermaid Bait, sold by Vanya, increases your chance of hooking a rare fish. Plan your fishing spot ahead of rainy or rainbow weather instead of scrambling once it starts.</div>
 
 </main>
 <div id="footer-placeholder"></div>
@@ -164,7 +239,7 @@
       row.style.display = show ? '' : 'none';
       if (show) count++;
     });
-    document.getElementById('fish-count').textContent = `Show  ${count} 条Record`;
+    document.getElementById('fish-count').textContent = `Showing ${count} entries`;
   }
 </script>
 </body>

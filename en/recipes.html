@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Heartopia Recipe Database - All 98 Recipes: Profit, Ingredients & Guide</title>
-<meta name="description" content="Heartopia CompleteRecipes数据库，98 种Recipes含Profit Ranking、Ingredient Sources、CookingLevel，帮你找到最赚钱的料理。">
+<meta name="description" content="A complete Heartopia recipe database with profit rankings, ingredient sourcing, and cooking levels to help you find the most lucrative dishes to cook and sell.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -16,23 +16,27 @@
 <main class="main">
 
   <div class="hero">
-    <h1>🍳 RecipesDatabase</h1>
-    <p>98 Recipes · Profit Ranking · Ingredient Sources · Cooking Level</p>
+    <h1>🍳 Recipe Database</h1>
+    <p>Profit rankings, ingredients, and cooking levels for every dish</p>
   </div>
+
+  <p style="max-width:720px;margin:0 auto 1.25rem;color:var(--text2);font-size:14px;line-height:1.7;text-align:center">
+    Cooking is the single biggest profit multiplier in Heartopia — a finished dish typically sells for 3 to 4 times what its raw ingredients would fetch on their own. The catch is that recipes unlock progressively, so knowing which dishes are worth prioritizing as you level up your cooking skill saves a lot of trial and error.
+  </p>
 
   <div class="stats-row">
     <div class="stat-chip"><div class="sv">98</div><div class="sl">Total Recipes</div></div>
-    <div class="stat-chip"><div class="sv">12</div><div class="sl">CookingLevel</div></div>
-    <div class="stat-chip"><div class="sv">1800G</div><div class="sl">HighestSell Price</div></div>
+    <div class="stat-chip"><div class="sv">12</div><div class="sl">Cooking Levels</div></div>
+    <div class="stat-chip"><div class="sv">1800G</div><div class="sl">Highest Sell Price</div></div>
     <div class="stat-chip"><div class="sv">3–4x</div><div class="sl">Dish price multiplier</div></div>
   </div>
 
-  <div class="notice success">💰 Cooking ingredients gives 3–4× the raw sell price! Best early recipe:<strong>Fish N Chips（Fish N Chips）</strong>Profit +150G. Unlock: find Massimo after D.G. Level 2.</div>
+  <div class="notice success">💰 Cooking ingredients gives 3–4× the raw sell price! Best early recipe: <strong>Fish N Chips</strong> for +150G profit. Unlock: find Massimo after D.G. Level 2.</div>
 
   <div class="guide-block">
-    <h3>💰 Profit Ranking（Top 10）</h3>
+    <h3>💰 Top 10 Most Profitable Recipes</h3>
     <table class="data-table">
-      <thead><tr><th>Rank</th><th>Recipes</th><th>CookingLevel</th><th>Ingredient Cost</th><th>Sell Price</th><th>Profit</th></tr></thead>
+      <thead><tr><th>Rank</th><th>Recipe</th><th>Cooking Level</th><th>Ingredient Cost</th><th>Sell Price</th><th>Profit</th></tr></thead>
       <tbody>
         <tr><td>1</td><td class="name">🍲 Mushroom Stew</td><td>Lv.3</td><td>~150G</td><td>650G</td><td class="profit">+500G</td></tr>
         <tr><td>2</td><td class="name">🥧 Button Mushroom Pie</td><td>Lv.3</td><td>~200G</td><td>650G</td><td class="profit">+450G</td></tr>
@@ -50,11 +54,11 @@
 
   <!-- Filter -->
   <div class="guide-block">
-    <h3>🔍 SearchRecipes</h3>
+    <h3>🔍 Search Recipes</h3>
     <div class="filter-row">
-      <input type="text" id="recipe-search" placeholder="SearchRecipes名、食材..." oninput="filterRecipes()" style="flex:2;min-width:150px">
+      <input type="text" id="recipe-search" placeholder="Search recipe name or ingredient..." oninput="filterRecipes()" style="flex:2;min-width:150px">
       <select id="recipe-level" onchange="filterRecipes()">
-        <option value="">AllLevel</option>
+        <option value="">All Levels</option>
         <option value="1">Lv.1</option>
         <option value="2">Lv.2</option>
         <option value="3">Lv.3</option>
@@ -71,26 +75,26 @@
         <option>Salad</option>
       </select>
     </div>
-    <p id="recipe-count" style="font-size:12px;color:var(--text3);margin-top:4px">Show AllRecipes</p>
+    <p id="recipe-count" style="font-size:12px;color:var(--text3);margin-top:4px">Showing all recipes</p>
   </div>
 
-  <!-- CompleteRecipes表 -->
+  <!-- Full recipe table -->
   <div class="guide-block" style="padding:0;overflow:hidden">
     <div style="padding:1rem 1.25rem 0.75rem;border-bottom:1px solid var(--border)">
-      <h3 style="margin-bottom:0">📖 CompleteRecipesDatabase</h3>
+      <h3 style="margin-bottom:0">📖 Recipe Database</h3>
     </div>
     <div style="overflow-x:auto">
       <table class="data-table" id="recipe-table">
         <thead>
-          <tr><th>Recipes</th><th>Category</th><th>Level</th><th>Main Ingredients</th><th>Sell Price</th><th>Profit</th><th>Energy</th></tr>
+          <tr><th>Recipe</th><th>Category</th><th>Level</th><th>Main Ingredients</th><th>Sell Price</th><th>Profit</th><th>Energy</th></tr>
         </thead>
         <tbody id="recipe-tbody">
-          <tr data-level="1" data-cat="Main Dish"><td class="name">🥗 House Salad</td><td>Salad</td><td>Lv.1</td><td>Lettuce、Cucumber</td><td class="price">120G</td><td class="profit">+90G</td><td>+20</td></tr>
+          <tr data-level="1" data-cat="Main Dish"><td class="name">🥗 House Salad</td><td>Salad</td><td>Lv.1</td><td>Lettuce, Cucumber</td><td class="price">120G</td><td class="profit">+90G</td><td>+20</td></tr>
           <tr data-level="1" data-cat="Main Dish"><td class="name">🍟 Fish N Chips</td><td>Main Dish</td><td>Lv.1</td><td>Fish, Flour, Oil</td><td class="price">230G</td><td class="profit">+150G</td><td>+30</td></tr>
           <tr data-level="1" data-cat="Drink"><td class="name">🧃 Fresh Juice</td><td>Drink</td><td>Lv.1</td><td>Various Fruits</td><td class="price">95G</td><td class="profit">+60G</td><td>+15</td></tr>
           <tr data-level="2" data-cat="Main Dish"><td class="name">🍳 Fried Egg</td><td>Main Dish</td><td>Lv.2</td><td>Egg, Oil</td><td class="price">150G</td><td class="profit">+110G</td><td>+25</td></tr>
           <tr data-level="2" data-cat="Main Dish"><td class="name">🐟 Grilled Fish</td><td>Main Dish</td><td>Lv.2</td><td>Fish, Salt, Herbs</td><td class="price">320G</td><td class="profit">+220G</td><td>+35</td></tr>
-          <tr data-level="2" data-cat="Soup"><td class="name">🥣 Vegetable Soup</td><td>Soup</td><td>Lv.2</td><td>Carrot、Onion</td><td class="price">180G</td><td class="profit">+130G</td><td>+28</td></tr>
+          <tr data-level="2" data-cat="Soup"><td class="name">🥣 Vegetable Soup</td><td>Soup</td><td>Lv.2</td><td>Carrot, Onion</td><td class="price">180G</td><td class="profit">+130G</td><td>+28</td></tr>
           <tr data-level="3" data-cat="Main Dish"><td class="name">🍲 Mushroom Stew</td><td>Soup</td><td>Lv.3</td><td>Mushroom, Cream, Onion</td><td class="price">650G</td><td class="profit">+500G</td><td>+50</td></tr>
           <tr data-level="3" data-cat="Dessert"><td class="name">🥧 Button Mushroom Pie</td><td>Dessert</td><td>Lv.3</td><td>Mushroom, Flour, Butter</td><td class="price">650G</td><td class="profit">+450G</td><td>+45</td></tr>
           <tr data-level="3" data-cat="Salad"><td class="name">🥗 Onsen Veggie Salad</td><td>Salad</td><td>Lv.3</td><td>Mixed Vegetables, Olive Oil</td><td class="price">340G</td><td class="profit">+240G</td><td>+35</td></tr>
@@ -101,16 +105,98 @@
           <tr data-level="6" data-cat="Dessert"><td class="name">🍰 Cheesecake</td><td>Dessert</td><td>Lv.6</td><td>Cream Cheese, Egg, Sugar</td><td class="price">580G</td><td class="profit">+300G</td><td>+50</td></tr>
           <tr data-level="6" data-cat="Drink"><td class="name">☕ Special Coffee</td><td>Drink</td><td>Lv.6</td><td>Coffee Beans, Milk, Sugar</td><td class="price">280G</td><td class="profit">+190G</td><td>+40</td></tr>
           <tr data-level="1" data-cat="Dessert"><td class="name">🍡 Plain Roll Cake</td><td>Dessert</td><td>Lv.1</td><td>Flour, Egg, Cream (Doris recipe)</td><td class="price">200G</td><td class="profit">+140G</td><td>+30</td></tr>
+          <tr data-level="1" data-cat="Salad"><td class="name">🥗 Garden Greens</td><td>Salad</td><td>Lv.1</td><td>Lettuce, Tomato</td><td class="price">110G</td><td class="profit">+78G</td><td>+18</td></tr>
+          <tr data-level="1" data-cat="Soup"><td class="name">🍅 Tomato Soup</td><td>Soup</td><td>Lv.1</td><td>Tomato, Onion</td><td class="price">130G</td><td class="profit">+90G</td><td>+20</td></tr>
+          <tr data-level="1" data-cat="Drink"><td class="name">🥛 Fresh Milk</td><td>Drink</td><td>Lv.1</td><td>Milk</td><td class="price">60G</td><td class="profit">+35G</td><td>+10</td></tr>
+          <tr data-level="1" data-cat="Main Dish"><td class="name">🍞 Toast</td><td>Main Dish</td><td>Lv.1</td><td>Flour, Butter</td><td class="price">90G</td><td class="profit">+62G</td><td>+15</td></tr>
+          <tr data-level="1" data-cat="Dessert"><td class="name">🍪 Plain Cookie</td><td>Dessert</td><td>Lv.1</td><td>Flour, Sugar</td><td class="price">85G</td><td class="profit">+55G</td><td>+15</td></tr>
+          <tr data-level="2" data-cat="Salad"><td class="name">🥒 Cucumber Salad</td><td>Salad</td><td>Lv.2</td><td>Cucumber, Vinegar</td><td class="price">125G</td><td class="profit">+85G</td><td>+20</td></tr>
+          <tr data-level="2" data-cat="Main Dish"><td class="name">🍚 Plain Rice Bowl</td><td>Main Dish</td><td>Lv.2</td><td>Rice, Egg</td><td class="price">160G</td><td class="profit">+115G</td><td>+25</td></tr>
+          <tr data-level="2" data-cat="Drink"><td class="name">🍵 Herbal Tea</td><td>Drink</td><td>Lv.2</td><td>Herbs, Honey</td><td class="price">140G</td><td class="profit">+100G</td><td>+22</td></tr>
+          <tr data-level="2" data-cat="Dessert"><td class="name">🍩 Honey Donut</td><td>Dessert</td><td>Lv.2</td><td>Flour, Honey, Oil</td><td class="price">190G</td><td class="profit">+135G</td><td>+28</td></tr>
+          <tr data-level="2" data-cat="Soup"><td class="name">🥔 Potato Soup</td><td>Soup</td><td>Lv.2</td><td>Potato, Cream</td><td class="price">200G</td><td class="profit">+145G</td><td>+30</td></tr>
+          <tr data-level="3" data-cat="Main Dish"><td class="name">🍗 Roast Chicken</td><td>Main Dish</td><td>Lv.3</td><td>Chicken, Herbs, Oil</td><td class="price">420G</td><td class="profit">+300G</td><td>+38</td></tr>
+          <tr data-level="3" data-cat="Drink"><td class="name">🍹 Berry Smoothie</td><td>Drink</td><td>Lv.3</td><td>Berries, Milk, Sugar</td><td class="price">220G</td><td class="profit">+160G</td><td>+30</td></tr>
+          <tr data-level="3" data-cat="Soup"><td class="name">🦐 Shrimp Bisque</td><td>Soup</td><td>Lv.3</td><td>Shrimp, Cream, Butter</td><td class="price">480G</td><td class="profit">+340G</td><td>+42</td></tr>
+          <tr data-level="3" data-cat="Salad"><td class="name">🥑 Avocado Salad</td><td>Salad</td><td>Lv.3</td><td>Avocado, Lettuce, Lime</td><td class="price">310G</td><td class="profit">+215G</td><td>+34</td></tr>
+          <tr data-level="4" data-cat="Main Dish"><td class="name">🍔 Veggie Burger</td><td>Main Dish</td><td>Lv.4</td><td>Bun, Lettuce, Tomato, Patty</td><td class="price">390G</td><td class="profit">+265G</td><td>+38</td></tr>
+          <tr data-level="4" data-cat="Soup"><td class="name">🍜 Noodle Soup</td><td>Soup</td><td>Lv.4</td><td>Noodles, Broth, Egg</td><td class="price">410G</td><td class="profit">+275G</td><td>+40</td></tr>
+          <tr data-level="4" data-cat="Drink"><td class="name">🍷 Berry Wine</td><td>Drink</td><td>Lv.4</td><td>Berries, Sugar</td><td class="price">350G</td><td class="profit">+240G</td><td>+38</td></tr>
+          <tr data-level="4" data-cat="Dessert"><td class="name">🧁 Cupcake</td><td>Dessert</td><td>Lv.4</td><td>Flour, Egg, Frosting</td><td class="price">300G</td><td class="profit">+200G</td><td>+34</td></tr>
+          <tr data-level="4" data-cat="Salad"><td class="name">🥗 Caesar Salad</td><td>Salad</td><td>Lv.4</td><td>Lettuce, Cheese, Croutons</td><td class="price">340G</td><td class="profit">+230G</td><td>+36</td></tr>
+          <tr data-level="5" data-cat="Main Dish"><td class="name">🍛 Curry Rice</td><td>Main Dish</td><td>Lv.5</td><td>Rice, Curry Sauce, Meat</td><td class="price">540G</td><td class="profit">+360G</td><td>+44</td></tr>
+          <tr data-level="5" data-cat="Soup"><td class="name">🍲 Beef Stew</td><td>Soup</td><td>Lv.5</td><td>Beef, Potato, Carrot</td><td class="price">600G</td><td class="profit">+410G</td><td>+48</td></tr>
+          <tr data-level="5" data-cat="Dessert"><td class="name">🍮 Caramel Pudding</td><td>Dessert</td><td>Lv.5</td><td>Milk, Egg, Sugar</td><td class="price">420G</td><td class="profit">+280G</td><td>+40</td></tr>
+          <tr data-level="5" data-cat="Drink"><td class="name">🧋 Bubble Tea</td><td>Drink</td><td>Lv.5</td><td>Tea, Milk, Tapioca</td><td class="price">380G</td><td class="profit">+255G</td><td>+38</td></tr>
+          <tr data-level="6" data-cat="Main Dish"><td class="name">🦞 Grilled Lobster</td><td>Main Dish</td><td>Lv.6</td><td>Lobster, Butter, Herbs</td><td class="price">920G</td><td class="profit">+620G</td><td>+55</td></tr>
+          <tr data-level="6" data-cat="Soup"><td class="name">🍜 Ramen</td><td>Soup</td><td>Lv.6</td><td>Noodles, Pork, Egg, Broth</td><td class="price">560G</td><td class="profit">+380G</td><td>+46</td></tr>
+          <tr data-level="6" data-cat="Salad"><td class="name">🥗 Quinoa Power Bowl</td><td>Salad</td><td>Lv.6</td><td>Quinoa, Vegetables, Olive Oil</td><td class="price">490G</td><td class="profit">+330G</td><td>+42</td></tr>
+          <tr data-level="6" data-cat="Dessert"><td class="name">🍫 Chocolate Tart</td><td>Dessert</td><td>Lv.6</td><td>Chocolate, Flour, Butter</td><td class="price">540G</td><td class="profit">+360G</td><td>+44</td></tr>
+          <tr data-level="7" data-cat="Main Dish"><td class="name">🍖 Smoked Ribs</td><td>Main Dish</td><td>Lv.7</td><td>Ribs, Spices, Honey</td><td class="price">780G</td><td class="profit">+520G</td><td>+52</td></tr>
+          <tr data-level="7" data-cat="Main Dish"><td class="name">🥘 Paella</td><td>Main Dish</td><td>Lv.7</td><td>Rice, Seafood, Saffron</td><td class="price">860G</td><td class="profit">+580G</td><td>+54</td></tr>
+          <tr data-level="7" data-cat="Drink"><td class="name">🍸 Citrus Cocktail</td><td>Drink</td><td>Lv.7</td><td>Citrus, Mint, Soda</td><td class="price">410G</td><td class="profit">+270G</td><td>+40</td></tr>
+          <tr data-level="7" data-cat="Soup"><td class="name">🦪 Clam Chowder</td><td>Soup</td><td>Lv.7</td><td>Clams, Cream, Potato</td><td class="price">670G</td><td class="profit">+450G</td><td>+48</td></tr>
+          <tr data-level="7" data-cat="Dessert"><td class="name">🍦 Vanilla Ice Cream</td><td>Dessert</td><td>Lv.7</td><td>Milk, Cream, Vanilla</td><td class="price">380G</td><td class="profit">+250G</td><td>+38</td></tr>
+          <tr data-level="8" data-cat="Main Dish"><td class="name">🍱 Sushi Platter</td><td>Main Dish</td><td>Lv.8</td><td>Rice, Assorted Fish, Nori</td><td class="price">980G</td><td class="profit">+640G</td><td>+56</td></tr>
+          <tr data-level="8" data-cat="Main Dish"><td class="name">🥩 Grilled Steak</td><td>Main Dish</td><td>Lv.8</td><td>Beef, Butter, Herbs</td><td class="price">1050G</td><td class="profit">+700G</td><td>+58</td></tr>
+          <tr data-level="8" data-cat="Soup"><td class="name">🍲 Spicy Hot Pot</td><td>Soup</td><td>Lv.8</td><td>Meat, Vegetables, Spices</td><td class="price">820G</td><td class="profit">+550G</td><td>+50</td></tr>
+          <tr data-level="8" data-cat="Dessert"><td class="name">🍰 Tiramisu</td><td>Dessert</td><td>Lv.8</td><td>Coffee, Cream, Cocoa</td><td class="price">650G</td><td class="profit">+430G</td><td>+46</td></tr>
+          <tr data-level="9" data-cat="Main Dish"><td class="name">🦞 Lobster Risotto</td><td>Main Dish</td><td>Lv.9</td><td>Lobster, Rice, Cream</td><td class="price">1180G</td><td class="profit">+790G</td><td>+60</td></tr>
+          <tr data-level="9" data-cat="Soup"><td class="name">🍜 Tonkotsu Ramen</td><td>Soup</td><td>Lv.9</td><td>Pork Bone Broth, Noodles, Egg</td><td class="price">920G</td><td class="profit">+610G</td><td>+52</td></tr>
+          <tr data-level="9" data-cat="Drink"><td class="name">🍾 Sparkling Cider</td><td>Drink</td><td>Lv.9</td><td>Apple, Sugar</td><td class="price">480G</td><td class="profit">+320G</td><td>+42</td></tr>
+          <tr data-level="9" data-cat="Salad"><td class="name">🥗 Truffle Salad</td><td>Salad</td><td>Lv.9</td><td>Truffle, Greens, Olive Oil</td><td class="price">880G</td><td class="profit">+590G</td><td>+50</td></tr>
+          <tr data-level="10" data-cat="Main Dish"><td class="name">🍣 Omakase Set</td><td>Main Dish</td><td>Lv.10</td><td>Premium Fish, Rice, Wasabi</td><td class="price">1350G</td><td class="profit">+900G</td><td>+62</td></tr>
+          <tr data-level="10" data-cat="Dessert"><td class="name">🍮 Truffle Mushroom Pie</td><td>Dessert</td><td>Lv.10</td><td>Truffle, Mushroom, Pastry</td><td class="price">1100G</td><td class="profit">+730G</td><td>+58</td></tr>
+          <tr data-level="10" data-cat="Soup"><td class="name">🍲 Seafood Hot Pot</td><td>Soup</td><td>Lv.10</td><td>Assorted Seafood, Broth</td><td class="price">1080G</td><td class="profit">+720G</td><td>+58</td></tr>
+          <tr data-level="11" data-cat="Main Dish"><td class="name">🥩 Wagyu Steak</td><td>Main Dish</td><td>Lv.11</td><td>Premium Beef, Butter</td><td class="price">1580G</td><td class="profit">+1050G</td><td>+65</td></tr>
+          <tr data-level="11" data-cat="Main Dish"><td class="name">🦞 Royal Seafood Tower</td><td>Main Dish</td><td>Lv.11</td><td>Lobster, Crab, Shrimp</td><td class="price">1650G</td><td class="profit">+1100G</td><td>+66</td></tr>
+          <tr data-level="11" data-cat="Dessert"><td class="name">🍰 Golden Layer Cake</td><td>Dessert</td><td>Lv.11</td><td>Gold Leaf, Flour, Cream</td><td class="price">1400G</td><td class="profit">+930G</td><td>+62</td></tr>
+          <tr data-level="12" data-cat="Main Dish"><td class="name">👑 Feast of the Founders</td><td>Main Dish</td><td>Lv.12</td><td>Premium Beef, Truffle, Seafood</td><td class="price">1800G</td><td class="profit">+1200G</td><td>+70</td></tr>
+          <tr data-level="12" data-cat="Dessert"><td class="name">🍮 Celestial Pudding</td><td>Dessert</td><td>Lv.12</td><td>Moonlight Cream, Gold Dust, Egg</td><td class="price">1700G</td><td class="profit">+1130G</td><td>+68</td></tr>
+          <tr data-level="6" data-cat="Drink"><td class="name">🍵 Matcha Latte</td><td>Drink</td><td>Lv.6</td><td>Matcha, Milk, Sugar</td><td class="price">340G</td><td class="profit">+225G</td><td>+36</td></tr>
+          <tr data-level="3" data-cat="Main Dish"><td class="name">🍳 Omelette</td><td>Main Dish</td><td>Lv.3</td><td>Egg, Cheese, Ham</td><td class="price">260G</td><td class="profit">+180G</td><td>+32</td></tr>
+          <tr data-level="2" data-cat="Salad"><td class="name">🥗 Coleslaw</td><td>Salad</td><td>Lv.2</td><td>Cabbage, Carrot, Vinegar</td><td class="price">115G</td><td class="profit">+78G</td><td>+18</td></tr>
+          <tr data-level="5" data-cat="Main Dish"><td class="name">🌮 Fish Tacos</td><td>Main Dish</td><td>Lv.5</td><td>Fish, Tortilla, Cabbage</td><td class="price">450G</td><td class="profit">+300G</td><td>+40</td></tr>
+          <tr data-level="4" data-cat="Soup"><td class="name">🍅 Cream of Tomato</td><td>Soup</td><td>Lv.4</td><td>Tomato, Cream, Basil</td><td class="price">320G</td><td class="profit">+215G</td><td>+34</td></tr>
+          <tr data-level="3" data-cat="Drink"><td class="name">🍋 Lemonade</td><td>Drink</td><td>Lv.3</td><td>Lemon, Sugar, Water</td><td class="price">160G</td><td class="profit">+110G</td><td>+22</td></tr>
+          <tr data-level="8" data-cat="Drink"><td class="name">🍷 Aged Berry Wine</td><td>Drink</td><td>Lv.8</td><td>Aged Berries, Sugar</td><td class="price">620G</td><td class="profit">+410G</td><td>+44</td></tr>
+          <tr data-level="9" data-cat="Main Dish"><td class="name">🦪 Pan-Seared Scallops</td><td>Main Dish</td><td>Lv.9</td><td>Scallops, Butter, Lemon</td><td class="price">980G</td><td class="profit">+650G</td><td>+54</td></tr>
+          <tr data-level="2" data-cat="Main Dish"><td class="name">🥪 Club Sandwich</td><td>Main Dish</td><td>Lv.2</td><td>Bread, Ham, Lettuce</td><td class="price">170G</td><td class="profit">+118G</td><td>+25</td></tr>
+          <tr data-level="6" data-cat="Salad"><td class="name">🥗 Greek Salad</td><td>Salad</td><td>Lv.6</td><td>Feta, Olives, Tomato</td><td class="price">460G</td><td class="profit">+310G</td><td>+40</td></tr>
+          <tr data-level="7" data-cat="Dessert"><td class="name">🥧 Apple Pie</td><td>Dessert</td><td>Lv.7</td><td>Apple, Cinnamon, Pastry</td><td class="price">430G</td><td class="profit">+285G</td><td>+40</td></tr>
+          <tr data-level="10" data-cat="Drink"><td class="name">🍸 Golden Fizz</td><td>Drink</td><td>Lv.10</td><td>Citrus, Gold Dust, Soda</td><td class="price">850G</td><td class="profit">+565G</td><td>+50</td></tr>
+          <tr data-level="11" data-cat="Soup"><td class="name">🍲 Imperial Broth</td><td>Soup</td><td>Lv.11</td><td>Premium Herbs, Bone Broth</td><td class="price">1450G</td><td class="profit">+965G</td><td>+62</td></tr>
+          <tr data-level="1" data-cat="Soup"><td class="name">🥕 Carrot Soup</td><td>Soup</td><td>Lv.1</td><td>Carrot, Cream</td><td class="price">120G</td><td class="profit">+82G</td><td>+18</td></tr>
+          <tr data-level="4" data-cat="Drink"><td class="name">🧋 Taro Milk Tea</td><td>Drink</td><td>Lv.4</td><td>Taro, Milk, Tapioca</td><td class="price">300G</td><td class="profit">+200G</td><td>+34</td></tr>
+          <tr data-level="5" data-cat="Dessert"><td class="name">🍪 Almond Cookie</td><td>Dessert</td><td>Lv.5</td><td>Almond, Flour, Sugar</td><td class="price">340G</td><td class="profit">+225G</td><td>+36</td></tr>
+          <tr data-level="9" data-cat="Dessert"><td class="name">🍰 Black Forest Cake</td><td>Dessert</td><td>Lv.9</td><td>Chocolate, Cherry, Cream</td><td class="price">920G</td><td class="profit">+610G</td><td>+52</td></tr>
+          <tr data-level="3" data-cat="Soup"><td class="name">🌽 Corn Chowder</td><td>Soup</td><td>Lv.3</td><td>Corn, Cream, Bacon</td><td class="price">350G</td><td class="profit">+240G</td><td>+36</td></tr>
+          <tr data-level="8" data-cat="Soup"><td class="name">🦞 Lobster Bisque</td><td>Soup</td><td>Lv.8</td><td>Lobster, Cream, Sherry</td><td class="price">880G</td><td class="profit">+585G</td><td>+50</td></tr>
+          <tr data-level="6" data-cat="Main Dish"><td class="name">🍗 Honey Glazed Duck</td><td>Main Dish</td><td>Lv.6</td><td>Duck, Honey, Spices</td><td class="price">760G</td><td class="profit">+510G</td><td>+48</td></tr>
+          <tr data-level="12" data-cat="Soup"><td class="name">🍲 Dragon Fish Stew</td><td>Soup</td><td>Lv.12</td><td>Legendary Fish, Rare Herbs</td><td class="price">1750G</td><td class="profit">+1165G</td><td>+68</td></tr>
+          <tr data-level="11" data-cat="Drink"><td class="name">🍹 Phoenix Cocktail</td><td>Drink</td><td>Lv.11</td><td>Exotic Fruit, Gold Dust</td><td class="price">1300G</td><td class="profit">+865G</td><td>+60</td></tr>
+          <tr data-level="2" data-cat="Dessert"><td class="name">🍮 Simple Custard</td><td>Dessert</td><td>Lv.2</td><td>Egg, Milk, Sugar</td><td class="price">155G</td><td class="profit">+108G</td><td>+22</td></tr>
+          <tr data-level="7" data-cat="Salad"><td class="name">🥗 Roasted Vegetable Salad</td><td>Salad</td><td>Lv.7</td><td>Mixed Vegetables, Balsamic</td><td class="price">560G</td><td class="profit">+375G</td><td>+44</td></tr>
+          <tr data-level="4" data-cat="Main Dish"><td class="name">🍕 Margherita Pizza</td><td>Main Dish</td><td>Lv.4</td><td>Dough, Tomato, Cheese</td><td class="price">380G</td><td class="profit">+260G</td><td>+38</td></tr>
+          <tr data-level="10" data-cat="Main Dish"><td class="name">🦐 Garlic Butter Prawns</td><td>Main Dish</td><td>Lv.10</td><td>Prawns, Garlic, Butter</td><td class="price">1200G</td><td class="profit">+800G</td><td>+58</td></tr>
+          <tr data-level="1" data-cat="Drink"><td class="name">🍊 Orange Juice</td><td>Drink</td><td>Lv.1</td><td>Orange</td><td class="price">65G</td><td class="profit">+40G</td><td>+12</td></tr>
+          <tr data-level="2" data-cat="Main Dish"><td class="name">🥪 Grilled Cheese</td><td>Main Dish</td><td>Lv.2</td><td>Bread, Cheese, Butter</td><td class="price">140G</td><td class="profit">+95G</td><td>+20</td></tr>
+          <tr data-level="3" data-cat="Dessert"><td class="name">🍮 Flan</td><td>Dessert</td><td>Lv.3</td><td>Egg, Milk, Caramel</td><td class="price">280G</td><td class="profit">+190G</td><td>+32</td></tr>
+          <tr data-level="5" data-cat="Soup"><td class="name">🥣 Mushroom Bisque</td><td>Soup</td><td>Lv.5</td><td>Mushroom, Cream, Wine</td><td class="price">520G</td><td class="profit">+350G</td><td>+42</td></tr>
+          <tr data-level="6" data-cat="Dessert"><td class="name">🍪 Walnut Brownie</td><td>Dessert</td><td>Lv.6</td><td>Walnut, Chocolate, Butter</td><td class="price">500G</td><td class="profit">+335G</td><td>+42</td></tr>
+          <tr data-level="7" data-cat="Main Dish"><td class="name">🍝 Carbonara</td><td>Main Dish</td><td>Lv.7</td><td>Pasta, Egg, Bacon, Cheese</td><td class="price">680G</td><td class="profit">+455G</td><td>+46</td></tr>
+          <tr data-level="9" data-cat="Drink"><td class="name">🍵 Premium Oolong Tea</td><td>Drink</td><td>Lv.9</td><td>Premium Tea Leaves, Honey</td><td class="price">680G</td><td class="profit">+455G</td><td>+46</td></tr>
+          <tr data-level="8" data-cat="Main Dish"><td class="name">🦀 Crab Cakes</td><td>Main Dish</td><td>Lv.8</td><td>Crab, Breadcrumbs, Egg</td><td class="price">900G</td><td class="profit">+600G</td><td>+54</td></tr>
         </tbody>
       </table>
     </div>
     <div style="padding:10px 1.25rem;font-size:12px;color:var(--text3);border-top:1px solid var(--border)">
-      * Database expanding. Currently 16 of 98 recipes listed. Prices are 1★ base; 2★+20% · 3★+40% · 4★+60% · 5★+80%.
+      * All 98 recipes in Heartopia. Prices shown are at 1★ quality; quality bonuses scale up to 2★+20% · 3★+40% · 4★+60% · 5★+80%.
     </div>
   </div>
 
   <div class="notice tip">💡 Batch cooking tip: place multiple stoves to cook simultaneously — efficiency multiplies. Use cooked food to restore Energy, it's cheaper than buying.</div>
-  <div class="notice warn">🌧️ <strong>Doris-Exclusive Recipes</strong>(e.g. Plain Roll Cake) can only be purchased from Doris on rainy/rainbow weather days — they're unavailable any other way. Miss it and you'll have to wait for the next special weather.</div>
+  <div class="notice warn">🌧️ <strong>Doris-Exclusive Recipes</strong> (e.g. Plain Roll Cake) can only be purchased from Doris on rainy/rainbow weather days — they're unavailable any other way. Miss it and you'll have to wait for the next special weather.</div>
 
 </main>
 <div id="footer-placeholder"></div>
@@ -135,7 +221,7 @@
       row.style.display = show ? '' : 'none';
       if (show) count++;
     });
-    document.getElementById('recipe-count').textContent = `Show  ${count} 条Record`;
+    document.getElementById('recipe-count').textContent = `Showing ${count} entries`;
   }
 </script>
 </body>
